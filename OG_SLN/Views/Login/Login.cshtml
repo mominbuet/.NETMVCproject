@@ -1,0 +1,45 @@
+﻿@model OG_SLN.SEC_USERS
+
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @id = "loginForm" }))
+{
+    @Html.ValidationSummary(true)
+
+        <div id="logBG">			
+            <h2>Login</h2>
+
+            
+                <div class="editor-label">
+                    @Html.Label("User ID / ইউজার আইডি:") 
+                    <span class="req"></span>
+                </div>
+            
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.USER_NAME)                
+                    @Html.ValidationMessageFor(model => model.USER_NAME)                                
+                </div>            
+                <div class="editor-label">
+                    @Html.Label("Password / পাসওয়ার্ড :")
+                    <span class="req"></span>
+                </div>            
+                <div class="editor-field">
+                    @Html.PasswordFor(model => model.USER_PWD)
+                    @Html.ValidationMessageFor(model => model.USER_PWD)                
+                </div>
+                <div class="editor-label">   
+                    &nbsp;     
+                </div>
+                
+                    <div style="margin-top:20px; float:right;">
+                        <input class="btn btn-success" type="submit" value="Login" />
+                    </div>
+                
+           <div class="clr"></div>
+        </div>
+
+}
+
+

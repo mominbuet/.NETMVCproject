@@ -1,0 +1,160 @@
+﻿@model OG_SLN.SET_ZONE
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    Create</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SET_ZONE</legend>
+        <div class="new_FormDiv">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DIVISION_NO)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.DIVISION_NO,
+                    new SelectList(ViewBag.divisions as System.Collections.IEnumerable,
+                    "DIVISION_NO", "DIVISION_NAME"))
+                @Html.ValidationMessageFor(model => model.DIVISION_NO)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ZONE_NAME)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ZONE_NAME)
+                @Html.ValidationMessageFor(model => model.ZONE_NAME)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ZONE_NAME_BNG)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ZONE_NAME_BNG)
+                @Html.ValidationMessageFor(model => model.ZONE_NAME_BNG)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ZONE_CODE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ZONE_CODE)
+                @Html.ValidationMessageFor(model => model.ZONE_CODE)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DETAILS_ZONE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DETAILS_ZONE)
+                @Html.ValidationMessageFor(model => model.DETAILS_ZONE)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DESC_ZONE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DESC_ZONE)
+                @Html.ValidationMessageFor(model => model.DESC_ZONE)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TOTAL_STUDENTS)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TOTAL_STUDENTS)
+                @Html.ValidationMessageFor(model => model.TOTAL_STUDENTS)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ZONE_GRADE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ZONE_GRADE)
+                @Html.ValidationMessageFor(model => model.ZONE_GRADE)
+            </div>
+            
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTUAL_LATI_VAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTUAL_LATI_VAL)
+            @Html.ValidationMessageFor(model => model.ACTUAL_LATI_VAL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTUAL_LONG_VAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTUAL_LONG_VAL)
+            @Html.ValidationMessageFor(model => model.ACTUAL_LONG_VAL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FROM_LATI_VAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FROM_LATI_VAL)
+            @Html.ValidationMessageFor(model => model.FROM_LATI_VAL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FROM_LONG_VAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FROM_LONG_VAL)
+            @Html.ValidationMessageFor(model => model.FROM_LONG_VAL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TO_LATI_VAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TO_LATI_VAL)
+            @Html.ValidationMessageFor(model => model.TO_LATI_VAL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TO_LONG_VAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TO_LONG_VAL)
+            @Html.ValidationMessageFor(model => model.TO_LONG_VAL)
+        </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_ZONE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ACTIVE_ZONE)
+                @Html.ValidationMessageFor(model => model.ACTIVE_ZONE)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_FROM)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ACTIVE_FROM, new { @class = "datesinspec" })
+                @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_TO)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ACTIVE_TO, new { @class = "datesinspec" })
+                @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SL_NUM)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SL_NUM)
+                @Html.ValidationMessageFor(model => model.SL_NUM)
+            </div>
+            <p>
+                <input type="submit" value="Create" class="btn btn-success" />
+            </p>
+        </div>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class="btn btn-primary"})
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

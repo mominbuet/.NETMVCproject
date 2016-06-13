@@ -1,0 +1,24 @@
+﻿@media print
+{
+    /*
+    #slideOut
+    {
+        display : none;
+    }
+    */
+    
+    footer
+    {
+        display : none;
+    }
+    
+    table.tabWidth
+    {
+        display : none;
+    }
+    
+    .verText
+    {
+        display : none;
+    }
+}

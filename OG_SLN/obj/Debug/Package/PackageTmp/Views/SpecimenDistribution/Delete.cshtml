@@ -1,0 +1,90 @@
+﻿@model OG_SLN.TRN_USER_SPECIMEN
+@{
+    ViewBag.Title = "Delete";
+}
+<h2>
+    Delete</h2>
+<h3>
+    Are you sure you want to delete this?</h3>
+<fieldset>
+    <table class="table table-responsive">
+        <tr>
+            <td>
+                Zonal Manager
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SEC_USERS.USER_NAME)
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Assign Date
+            </td>
+            <td>
+                @Html.ValueFor(model => model.ASSIGN_DATE, "{0:dd/MM/yyyy}")
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ACTIVE_STATUS)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Target Date From
+            </td>
+            <td>@Html.ValueFor(model => model.TARGET_DATE_TO, "{0:dd/MM/yyyy}")
+            </td>
+            <td>
+                To
+            </td>
+            <td>@Html.ValueFor(model => model.TARGET_DATE_FROM, "{0:dd/MM/yyyy}")
+            </td>
+        </tr>
+    </table>
+    <table id="spec_add_table" class="table table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    SpecimenID
+                </th>
+                <th>
+                    Specimen Name
+                </th>
+                <th>
+                    Qty
+                </th>
+                <th>
+                    Status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var det in ViewBag.dets)
+            {
+                <tr id="@det.SPECIMEN_NO" >
+                    <td>@det.SET_SPECIMEN.SPECIMEN_CODE
+                    </td>
+                    <td>@det.SET_SPECIMEN.SPECIMEN_NAME
+                    </td>
+                    <td>@det.QTY
+                    </td>
+                    <td>@det.IS_ACTIVE
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <div class="btn-group btn-group-sm">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        @Html.ActionLink("Back to List", "Index", new { }, new {@class="btn btn-primary" })
+        </div>
+}

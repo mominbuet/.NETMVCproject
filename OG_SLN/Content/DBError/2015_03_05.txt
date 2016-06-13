@@ -1,0 +1,116 @@
+ 
+
+*********************************1*********************************
+
+DATE: 05/03/2015 2:28:20 PM
+
+CONTROLLER: WS_UploadApi
+
+ACTION: Upload_Login
+
+MESSAGE: Object reference not set to an instance of an object.
+
+SOURCE: OG_SLN
+
+InnerException: 
+
+DATA: System.Collections.ListDictionaryInternal
+
+TARGETSITE: System.Web.Mvc.JsonResult Upload_Login(OG_SLN.TRN_LOG_INFO_BACK_MASTER)
+
+STACKTRACE:    at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+ERROR DETAILS: Object reference not set to an instance of an object.
+
+   at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+******************************************************************
+ 
+
+*********************************1*********************************
+
+DATE: 05/03/2015 2:32:10 PM
+
+CONTROLLER: WS_UploadApi
+
+ACTION: Upload_Login
+
+MESSAGE: Object reference not set to an instance of an object.
+
+SOURCE: OG_SLN
+
+InnerException: 
+
+DATA: System.Collections.ListDictionaryInternal
+
+TARGETSITE: System.Web.Mvc.JsonResult Upload_Login(OG_SLN.TRN_LOG_INFO_BACK_MASTER)
+
+STACKTRACE:    at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+ERROR DETAILS: Object reference not set to an instance of an object.
+
+   at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+******************************************************************
+ 
+
+*********************************1*********************************
+
+DATE: 05/03/2015 2:32:52 PM
+
+CONTROLLER: WS_UploadApi
+
+ACTION: Upload_Login
+
+MESSAGE: Object reference not set to an instance of an object.
+
+SOURCE: OG_SLN
+
+InnerException: 
+
+DATA: System.Collections.ListDictionaryInternal
+
+TARGETSITE: System.Web.Mvc.JsonResult Upload_Login(OG_SLN.TRN_LOG_INFO_BACK_MASTER)
+
+STACKTRACE:    at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+ERROR DETAILS: Object reference not set to an instance of an object.
+
+   at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+******************************************************************
+ 
+
+*********************************1*********************************
+
+DATE: 05/03/2015 2:38:13 PM
+
+CONTROLLER: WS_UploadApi
+
+ACTION: Upload_Login
+
+MESSAGE: Object reference not set to an instance of an object.
+
+SOURCE: OG_SLN
+
+InnerException: 
+
+DATA: System.Collections.ListDictionaryInternal
+
+TARGETSITE: System.Web.Mvc.JsonResult Upload_Login(OG_SLN.TRN_LOG_INFO_BACK_MASTER)
+
+STACKTRACE:    at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+ERROR DETAILS: Object reference not set to an instance of an object.
+
+   at OG_SLN.Controllers.WS_UploadApiController.Upload_Login(TRN_LOG_INFO_BACK_MASTER master_obj) in D:\OG_SLN\OG_SLN\OG_SLN\Controllers\WebApi\WS_UploadApiController.cs:line 1225
+
+
+******************************************************************

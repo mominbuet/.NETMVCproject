@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OG_SLN.SET_INSTITUTE_SEARCH_Result>
+@{
+    Layout = null;
+}
+
+@{
+    if (Model != null) {
+        <table  class="table table-bordered table-hover tabWidth">
+            <tr class="success">                
+                <th>Institute</th>
+                <th>Type</th>
+                <th>Thana</th>
+                <th>Action</th>
+            </tr>
+        @foreach(var item in Model) {
+            string caption = "+ Add";
+            string chk_str = "";
+            if ((item.USER_INST_ACTIVE.HasValue) && (item.USER_INST_ACTIVE.Value == 1)) {
+                caption = "- Cancel";
+                chk_str = "checked";
+            }
+            <tr>                                
+                <td>@item.INSTITUTE_NAME @item.INSTITUTE_NAME_BNG  (@item.INSTITUTE_NO)</td>
+                <td>@item.INST_TYPE_NAME</td>
+                <td>@item.THANA_NAME</td>
+                <td>@*@item.INSTITUTE_NO*@
+                    @Html.Hidden("INSTITUTE_NO", item.INSTITUTE_NO)
+                    @*@Html.CheckBox("INSTITUTE_NO[]", false, new { @value = item.INSTITUTE_NO })   *@
+                    <input type="checkbox" id="chkAdd_@item.INSTITUTE_NO" onclick="do_add(@item.INSTITUTE_NO);" @chk_str>
+                    @*<button id="btnAdd_@item.INSTITUTE_NO" onclick="return do_add(@item.INSTITUTE_NO);">@caption</button>*@
+                </td>
+            </tr>
+        }
+        </table>
+    }
+}

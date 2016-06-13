@@ -1,0 +1,93 @@
+﻿@model OG_SLN.SET_INSTITUTE
+@{
+    ViewBag.Title = "Details";
+}
+<h2>
+    Details</h2>
+<fieldset>
+    <legend>Institute</legend>
+    <div class="new_FormDiv">
+        <div class="editor-label">
+            Institute Name
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.INSTITUTE_NAME)
+        </div>
+        <div class="editor-label">
+            Institute Name Bangla
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.INSTITUTE_NAME_BNG)
+        </div>
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.DESC_INS)
+        </div>
+        <div class="editor-label">
+            Institute Type
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.SET_INST_TYPE.INST_TYPE_NAME)
+        </div>
+        <div class="editor-label">
+            Thana
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.SET_THANA.THANA_NAME)
+        </div>
+        <div class="editor-label">
+            F_INSTITUTION_DB_ID
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.F_INSTITUTION_DB_ID)
+        </div>
+        <div class="editor-label">
+            EIIN Number
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.EIIN_NUMBER)
+        </div>
+        <div class="editor-label">
+            Meet Person name
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.MEET_PERSON_NAME)
+        </div>
+        <div class="editor-label">
+            Contact Number
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.CONTACT_NUMBER)
+        </div>
+        <div class="editor-label">
+            Active
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.ACTIVE_INSTITUTE)
+        </div>
+        <div class="editor-label">
+            Active From
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.ACTIVE_FROM, "{0:yyyy-MM-dd}")
+        </div>
+        <div class="editor-label">
+            Active To
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.ACTIVE_TO, "{0:yyyy-MM-dd}")
+        </div>
+        <div class="editor-label">
+            Serial No
+        </div>
+        <div class="editor-field">
+            @Html.ValueFor(model => model.SL_NUM, "{0:0}")
+        </div>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.INSTITUTE_NO }, new { @class="btn btn-warning"}) 
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class="btn btn-primary"})
+</p>

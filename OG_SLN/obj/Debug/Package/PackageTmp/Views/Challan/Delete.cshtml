@@ -1,0 +1,99 @@
+﻿@model OG_SLN.TRN_CHALLAN_UPLOAD
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="col-6 col-sm-6 col-lg-9">
+
+<fieldset>
+    <legend>Challan/Return Upload</legend>
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.FILE_NAME)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.FILE_NAME)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.FILE_TYPE)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.FILE_TYPE)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.FILE_EXT)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.FILE_EXT)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.TOTAL_RECORDS)
+        </div>
+        <div class="display-field">
+            @int.Parse(Model.TOTAL_RECORDS.ToString())
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.TOTAL_HR_COUNT)
+        </div>
+        <div class="display-field">
+            @int.Parse(Model.TOTAL_HR_COUNT.ToString())
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.TOTAL_BOOK_COUNT)
+        </div>
+        <div class="display-field">
+            @int.Parse(Model.TOTAL_BOOK_COUNT.ToString())
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.FAILED_HR_COUNT)
+        </div>
+        <div class="display-field">
+            @int.Parse(Model.FAILED_HR_COUNT.ToString())
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.FAILED_BOOK_COUNT)
+        </div>
+        <div class="display-field">
+            @int.Parse(Model.FAILED_BOOK_COUNT.ToString())
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.UPLOAD_TYPE_NUM)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UPLOAD_TYPE)
+        </div>
+    </div>
+    <div class="form-group">
+    @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Delete" />
+        </p>
+    }
+    </div>
+</fieldset>
+</div>

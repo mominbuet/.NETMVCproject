@@ -1,0 +1,117 @@
+﻿
+
+<script type="text/javascript">
+    $(document).ready(function () { 
+        $("#Search_Division").change(function(){ 
+            console.log($("#Search_Division").val());
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/zilla/"+$("#Search_Division").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#Search_Zilla").empty();
+                    $("#Search_Zilla").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#Search_Zilla").append('<option value="' + val.zillano + '">' + val.zillaname + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+
+        $("#Search_Zilla").change(function(){ 
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/thana/"+$("#Search_Zilla").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#Search_Thana").empty();
+                    $("#Search_Thana").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#Search_Thana").append('<option value="' + val.thanano + '">' + val.thananame + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+    });
+</script>
+@{
+    string name = String.Empty;
+    string mobile = String.Empty;
+    string active = String.Empty;
+    string approved = String.Empty;
+    
+    string check = "checked='checked'";
+
+    OG_SLN.Models.ClientSearchViewModel searchModel = ViewBag.Search_Client_Model as OG_SLN.Models.ClientSearchViewModel;
+    if(searchModel != null)
+    {
+        if(!string.IsNullOrEmpty(searchModel.Search_Name))
+        {
+            name = searchModel.Search_Name;
+        }
+        if (!string.IsNullOrEmpty(searchModel.Search_Mobile))
+        {
+            mobile = searchModel.Search_Mobile;
+        }
+        if(searchModel.Search_Active.HasValue)
+        {
+            active = searchModel.Search_Active.ToString().ToLower();
+        }
+    }
+}
+
+@using(Html.BeginForm("Index", "ClientEntry", FormMethod.Get)) {   
+     <div class="col-8 marRight_2"> 
+        <div class="="table-responsive"">
+        <table class="tabWidth">
+            <tbody>
+                <tr >
+                    <td class="adminLef_col">Name : </td>
+                    <td class="adminRight_col">
+                        <input class="form-control" type="text" name="Search_Name" id="Search_Name" value="@name">
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="adminLef_col">Mobile:</td>
+                    <td class="adminRight_col">
+                        <input class="form-control" type="text" name="Search_Mobile" id="Search_Mobile" value="@mobile">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">Division :</td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("Search_Division", String.Empty)
+                    </td>
+                    <td class="midWidth">&nbsp;</td>
+                    <td class="adminLef_col">Zilla : </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("Search_Zilla", String.Empty)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="adminLef_col">Thana : </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("Search_Thana", String.Empty)
+                    </td>
+                    <td class="midWidth">&nbsp;</td>
+                    <td class="adminLef_col">Active :</td>
+                    <td class="adminRight_col">
+			            <label><input  type="radio" name="Search_Active" value="null" @{if(active==String.Empty) {@check}}>All</label>
+			            <label><input type="radio"  name="Search_Active" value="true" @{if(active=="true") {@check}}>Active</label>
+			            <label><input type="radio"  name="Search_Active" value="false" @{if(active=="false") {@check}}>Inactive</label>
+		            </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align:center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+}

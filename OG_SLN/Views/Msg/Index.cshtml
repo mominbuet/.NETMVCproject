@@ -1,0 +1,67 @@
+﻿@*@model IEnumerable<OG_SLN.TRN_MSG>*@
+@model PagedList.IPagedList<OG_SLN.TRN_MSG>
+
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{Html.RenderPartial("_MessageSearchPartial");}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+     <div class="row-fluid">
+      <div class="col-8 marRight_2">
+        <div class="table-responsive">
+                <table class="table table-responsive table-bordered table-hover tabWidth">
+                    <tr class="success">
+
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.MSG_SUBJECT)*@
+                            Subject
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.MSG_BODY)*@
+                            Body
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.IS_FOR_ALL)*@
+                            Created
+                        </th>
+
+                        <th></th>
+                    </tr>
+
+                @foreach (var item in Model) {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MSG_SUBJECT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MSG_BODY)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.INSERT_TIME)
+                        </td>
+
+                        <td>
+                            @*@Html.ActionLink("Edit", "Edit", new { id=item.MSG_NO }) |*@
+                            @Html.ActionLink("Details", "Details", new { id=item.MSG_NO }) 
+                            @*@Html.ActionLink("Delete", "Delete", new { id=item.MSG_NO })*@
+                        </td>
+                    </tr>
+                }
+
+                </table>
+                </div>
+        </div>
+    </div>
+
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

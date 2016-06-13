@@ -1,0 +1,95 @@
+﻿@model IEnumerable<OG_SLN.TPR_MONITOR_DETAIL_GET_Result>
+
+@using OG_SLN
+
+
+@{
+    USER_INFO_VIEWMODEL zonal = ViewBag.ZONAL_INFO as USER_INFO_VIEWMODEL;
+    decimal? Is_New = ViewBag.Is_New as decimal?;
+    decimal? Is_Collected = ViewBag.Is_Collected as decimal?;
+
+    if (!Is_New.HasValue) { Is_New = 0; }
+    if (!Is_Collected.HasValue) { Is_Collected = 0; }
+
+    int sl_no = 1;
+}
+
+<table class="table table-responsive table-bordered tabWidth">
+    <tr class="success">
+        <th colspan="4">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="4" style="text-align:center">
+            @if (Is_New > 0)
+            {
+                <h2>New Subjects Collected</h2>
+            }
+            else if (Is_Collected > 0 && Is_New == 0)
+            {
+                <h2>Subjects Collected</h2> 
+            }
+            else
+            {
+                 <h2>Institutes and Subjects Assigned</h2>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Zonal Name (Cell) :</td>
+        <td>@zonal.fullname (@zonal.mobile)</td>
+        <td class="tdLeft">Zonal Designation:</td>	
+        <td>@zonal.designation</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Zonal HR Divistion, Zilla, Thana :</td>
+        <td>@zonal.division, @zonal.zilla, @zonal.thana</td>
+        <td class="tdLeft">Zonal HR ID :</td>	
+        <td>@zonal.hrid</td>
+    </tr>
+</table>
+
+<table class="table table-responsive table-bordered tabWidth">
+    <tr class="trhead">
+        <td colspan="7" class="TableHeadLabel tdLeft">Assigned Subject List</td>
+    </tr>
+    <tr class="trhead">
+        <td class="tdLeft">Serial</td>
+        <td class="tdLeft">Institution Name (Code)</td>
+        <td class="tdLeft">Division, Zilla, Thana</td>
+        <td class="tdLeft">Total Subject Assigned</td>
+        <td class="tdLeft">Total Subject Collected</td>
+        <td class="tdLeft">Assign Datetime</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+         <tr>
+            <td>@sl_no</td>
+            <td><p>@item.INSTITUTE_NAME<br />
+                (@item.INSTITUTE_NO)</p></td>
+        
+            <td>@item.DIVISION_NAME,<br />
+                @item.ZILLA_NAME,<br />
+                @item.THANA_NAME</td>
+
+            <td>
+                <a href="#" onclick="return getSubjects('@item.PROJECT_INS_NO', 'A', @Is_New);"  data-toggle="modal" data-target="#subjects">
+                    @item.ASSIGN_CNT
+                </a>
+            </td>
+
+            <td>
+                <a href="#" onclick="return getSubjects('@item.PROJECT_INS_NO', 'C', @Is_New);"  data-toggle="modal" data-target="#subjects">
+                    @item.COLLECT_CNT
+                </a>
+            </td>
+
+            <td>@item.INSERT_TIME</td>
+        </tr>
+        
+        sl_no++;
+    }
+</table>
+

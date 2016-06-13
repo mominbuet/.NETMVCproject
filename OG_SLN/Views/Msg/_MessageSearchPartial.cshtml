@@ -1,0 +1,50 @@
+﻿
+@{
+
+    string datefrom = DateTime.Today.AddMonths(-1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+
+    OG_SLN.Models.MessageSearchViewModel searchModel = ViewBag.Search_Message_Model
+        as OG_SLN.Models.MessageSearchViewModel;
+    if(searchModel != null)
+    {
+        if(searchModel.Search_Date_From.HasValue)
+        {
+            datefrom = searchModel.Search_Date_From.Value.ToString("yyyy-MM-dd");
+        }
+        if (searchModel.Search_Date_From.HasValue)
+        {
+            dateto = searchModel.Search_Date_To.Value.ToString("yyyy-MM-dd");
+        }
+    }
+}
+
+@using(Html.BeginForm("Index", "Msg", FormMethod.Get)) {
+    
+    <div class="table-responsive">
+        <table class="table-responsive  tabWidth">
+            <tbody>
+
+                    <tr>
+                        <td class="adminLef_col">Entry Date From:</td>
+                        <td class="td_1 adminRight_col">
+                            @Html.TextBox("Search_Date_From", datefrom, new { @class = "dateclass form-control" })
+                        </td>
+                        <td class="midWidth"></td>
+                        <td class="adminLef_col">Entry Date To:</td>
+                        <td class="td_1 adminRight_col">
+                            @Html.TextBox("Search_Date_To", dateto, new { @class = "dateclass  form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="text-align:center;">
+                             <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                        </td>
+                    </tr>
+               </tbody>
+        </table>
+    </div>
+}

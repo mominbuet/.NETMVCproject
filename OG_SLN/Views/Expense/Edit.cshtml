@@ -1,0 +1,178 @@
+﻿@model OG_SLN.TRN_EXPENSE
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>
+    Edit</h2>
+<script type="text/javascript">
+    function setforEdit(detID)
+    {
+         $.post("@Url.Content("~")"+"Expense/GetExpenseFromSession",{test:detID},
+            function(data){
+                $("#"+detID).hide();
+                $("#detid").val(detID);
+                $('#ddlExpense option:contains(' + data.type + ')').attr('selected', 'selected');
+                $("#txtamnt").val(data.amnt);
+                $("#txtVendor").val(data.vendor);
+                $("#txtComments").val(data.coment);
+                
+            });
+    }
+    function setforDelete(detID)
+    {
+        confirm("Are you sure you want to remove this?")
+        {
+             $.post("@Url.Content("~")"+"Expense/RemoveExpenseFromSession",{test:detID},
+                function(data){
+                    $("#"+detID).hide();
+                });
+            }
+    }
+    $(document).ready(function () {
+        $.post("@Url.Content("~")"+"Expense/getPreviousDetails",{id:$("#EXP_NO").val()},
+        function(data){
+            $("#tblDetails > tbody").html(data.html);
+        });
+        
+        $("#btnAdd").click( function () {
+            var found = 0;
+            $('#tblDetails > thead > tr').each(function () {
+                if (($(this).attr('id') == $("#ddlExpense :selected").val()+"-"+$("#txtamnt").val()+"-"+$("#txtVendor").val())) {
+                    found = 1;
+                    $(this).addClass('danger');
+                }
+                else {
+                    //if ($(this).attr('editing') == "true") $(this).remove();
+                    $(this).removeClass('danger');
+                }
+            });
+            if (found != 1) {
+                if(parseInt($("#txtamnt").val())>0)
+                {
+                    $("#tblDetails").show();
+
+                    $.post("@Url.Content("~")"+"Expense/SaveExpenseOnSession",{ExpenseTypes:$("#ddlExpense :selected").val(),txtamnt:$("#txtamnt").val(),
+                                txtVendor:$("#txtVendor").val(),txtComments:$("#txtComments").val(),sessName:$("#detid").val()},
+                                function(data){
+                                        $("#tblDetails > tbody").append("<tr id='"+$("#ddlExpense :selected").val()+"-"+$("#txtamnt").val()+"-"+$("#txtVendor").val()+"'><td>"+
+                                        $('#ddlExpense :selected').text()+"</td><td>"+$("#txtamnt").val()+"</td><td>"+
+                                        $("#txtVendor").val()+"</td></tr>");
+                                    
+                                    });
+                }
+                else
+                    alert("Please insert numerical amount");
+                
+            }
+        });
+    });
+</script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.EXP_NO)
+    <fieldset>
+        <legend>TRN_EXPENSE</legend>
+        <div class="new_FormDiv">
+            <div class="editor-label">
+                Fiscal Year
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.FY_NO, new SelectList(ViewBag.FYs as System.Collections.IEnumerable,
+                "FY_NO", "FY_NAME"))
+                @Html.ValidationMessageFor(model => model.FY_NO)
+            </div>
+            <div class="editor-label">
+                User:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.USER_NO, new SelectList(ViewBag.Users as System.Collections.IEnumerable,
+                    "USER_NO", "USER_NAME"))
+                @Html.ValidationMessageFor(model => model.USER_NO)
+            </div>
+            <div class="editor-label">
+                Date
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.TRN_EXP_DATE,"{0:yyyy-MM-dd}", new { @class = "form-control datesinspec" })
+                @Html.ValidationMessageFor(model => model.TRN_EXP_DATE)
+            </div>
+            <div class="editor-label">
+                Remarks
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.Remarks_desc)
+                @Html.ValidationMessageFor(model => model.Remarks_desc)
+            </div>
+        </div>
+    </fieldset>
+    <input type="hidden" id="detid" name="detid" value="" />
+    <table class="table table-responsive">
+        <tr>
+            <td>
+                Expense Type
+            </td>
+            <td>
+                <select runat="server" id="ddlExpense" class="form-control">
+                    @foreach (var item in ViewBag.ExpenseTypes)
+                    {
+                        <option value="@item.EXP_TYPE_NO" tmptag ="@item.EXP_TYPE_CODE" >@item.EXP_TYPE_NAME</option>            
+                    }
+                </select>
+            </td>
+            <td>
+                Expense amount
+            </td>
+            <td>
+                <input id="txtamnt" class="form-control" type="text" placeholder="Enter Amount" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Vendor
+            </td>
+            <td>
+                <input id="txtVendor" class="form-control" type="text" placeholder="Enter Vendor" />
+            </td>
+            <td>
+                Comments
+            </td>
+            <td>
+                <textarea id="txtComments" rows="3" cols="10" class="form-control"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Add" class="btn btn-primary" id="btnAdd" />
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" value="Create" class="btn btn-success" />
+    </p>
+}
+<table id="tblDetails" class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                Type
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Vendor
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

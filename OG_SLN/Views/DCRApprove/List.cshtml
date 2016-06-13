@@ -1,0 +1,196 @@
+﻿@model IEnumerable<OG_SLN.VIEW_TRN_DCR_APPROVE_GET_Result2>
+@{
+    Layout = null;
+    
+    //string specifier = "#,#.00#;(#,#.0000#)";
+    string specifier = "";
+
+    var request = HttpContext.Current.Request;
+    var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+
+    if (!string.IsNullOrWhiteSpace(appUrl)) {
+        appUrl += "";
+    }
+
+    var baseUrl = string.Format("{0}://{1}{2}", request.Url.Scheme, request.Url.Authority, appUrl);
+
+    int count = 0;
+
+    int? TotalRecords = ViewBag.TotalRecords as int?;
+
+    int? page_number = ViewBag.page_number as int?;
+
+    int page_size = 10;
+    int total_pages = 0;
+
+    if ((TotalRecords % page_size) > 0) {
+        total_pages = (int) Math.Ceiling((double) (TotalRecords.Value / page_size));
+    } else {
+        total_pages = (TotalRecords.Value / page_size);
+    }
+}
+<p>&nbsp;
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<div class="row">
+      <div class="col-8 marRight_2">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover tabWidth">
+    <tr class="success">
+        <th>
+            @Html.DisplayName("DCR Type")        
+        </th>
+        <th>            
+            @Html.DisplayName("Fiscal Year")
+        </th>
+        <th>
+            @Html.DisplayName("ZM & Referred ZM")
+        </th>
+        @*<th>
+            @Html.DisplayName("Agent")
+        </th>*@
+        <th>
+            @Html.DisplayName("Location From and To")
+        </th>
+        <th>
+            @Html.DisplayName("Time From and To")
+        </th>
+        <th>
+            @Html.DisplayName("Institute")
+        </th>
+        <th>
+            @Html.DisplayName("Transport Type")
+        </th>
+        <th>
+            @Html.DisplayName("Cost")
+        </th>
+        <th>
+            @Html.DisplayName("DCR Date")
+        </th>
+        <th>
+            @Html.DisplayName("Approval, Verify Status")
+        </th>        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DCR_TYPE_CODE) - 
+            @Html.DisplayFor(modelItem => item.DCR_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZM_USER_FULL_NAME) 
+            Mob: 
+            @Html.DisplayFor(modelItem => item.ZM_USER_MOBILE)
+
+            Referred ZM 
+            @Html.DisplayFor(modelItem => item.REF_ZM_USER_FULL_NAME) <br />
+            Mob: 
+            @Html.DisplayFor(modelItem => item.REF_ZM_USER_MOBILE)
+
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.AGENT_USER_FULL_NAME) <br />
+            Mob:
+            @Html.DisplayFor(modelItem => item.AGENT_USER_MOBILE)
+        </td>*@
+        <td>
+            @{
+                
+    string str_WORK_AREA_FROM_LAT = string.Empty;
+    if (item.WORK_AREA_FROM_LAT.HasValue) {
+        str_WORK_AREA_FROM_LAT = item.WORK_AREA_FROM_LAT.Value.ToString(specifier);
+    }
+    string str_WORK_AREA_FROM_LON = string.Empty;
+    if (item.WORK_AREA_FROM_LON.HasValue) {
+        str_WORK_AREA_FROM_LON = item.WORK_AREA_FROM_LON.Value.ToString(specifier);
+    }
+    string str_WORK_AREA_TO_LAT = string.Empty;
+    if (item.WORK_AREA_TO_LAT.HasValue) {
+        str_WORK_AREA_TO_LAT = item.WORK_AREA_TO_LAT.Value.ToString(specifier);
+    }
+    string str_WORK_AREA_TO_LON = string.Empty;
+    if (item.WORK_AREA_TO_LON.HasValue) {
+        str_WORK_AREA_TO_LON = item.WORK_AREA_TO_LON.Value.ToString(specifier);
+    }
+             }
+            From: 
+            @*Lat: @Html.DisplayFor(modelItem => item.WORK_AREA_FROM_LAT) Lon: @Html.DisplayFor(modelItem => item.WORK_AREA_FROM_LON)*@
+            Lat: @str_WORK_AREA_FROM_LAT Lon: @str_WORK_AREA_FROM_LON 
+            Name: @Html.DisplayFor(modelItem => item.WORK_AREA_FROM_NAME)
+            To: 
+            @*Lat: @Html.DisplayFor(modelItem => item.WORK_AREA_TO_LAT) Lon: @Html.DisplayFor(modelItem => item.WORK_AREA_TO_LON)*@
+            Lat: @str_WORK_AREA_TO_LAT Lon: @str_WORK_AREA_TO_LON
+            Name: @Html.DisplayFor(modelItem => item.WORK_AREA_TO_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIME_FROM)
+            - 
+            @Html.DisplayFor(modelItem => item.TIME_TO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INST_TYPE_CODE)
+            @Html.DisplayFor(modelItem => item.INST_TYPE_NAME)
+            - 
+            @Html.DisplayFor(modelItem => item.INSTITUTE_NAME)
+            @*@Html.DisplayFor(modelItem => item.INSTITUTE_NAME_BNG)*@
+            @*@Html.DisplayFor(modelItem => item.INSTITUTE_DESC)*@
+            @*@Html.DisplayFor(modelItem => item.F_INSTITUTION_DB_ID)*@
+            @*@Html.DisplayFor(modelItem => item.EIIN_NUMBER)          *@         
+        </td>
+        <td>Actual: 
+            @Html.DisplayFor(modelItem => item.TRANS_TYPE_CODE)
+            @Html.DisplayFor(modelItem => item.TRANS_TYPE_NAME)
+            Approved: 
+            @Html.DisplayFor(modelItem => item.APPROVE_TRANS_TYPE_CODE)
+            @Html.DisplayFor(modelItem => item.APPROVE_TRANS_TYPE_NAME)
+        </td>
+        <td>
+            Actual: 
+            @Html.DisplayFor(modelItem => item.FARE_AMT)
+            Approved: 
+            @Html.DisplayFor(modelItem => item.APPROVE_FARE_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRN_DCR_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_TYPE) , 
+            @{                
+                string str_verify = "Not Verified";
+                if ((item.IS_VERIFY.HasValue) && (item.IS_VERIFY.Value == 1)) {
+                    str_verify = "Verified";
+                }
+                
+            }
+            <br /> <p>@str_verify</p> 
+            @*@Html.DisplayName("Auto Approve : ") @Html.DisplayFor(modelItem => item.IS_AUTO_APPROVE_NAME) *@
+        </td>        
+        <td>
+            @Html.ActionLink("View", "Details", new { id = item.DCR_NO }, new { @target = "_blank"})             
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</div>
+</div>
+<div id='Paging' style="text-align:center">
+    
+    @for (int i = 0; i < total_pages; i++) {
+        string link = (i + 1).ToString();
+        string url = baseUrl + "DCRApprove/GetPaged?page_number=" + link;
+
+        if (page_number == (i + 1)) {
+            <span style="font-weight:bold"> &nbsp;&nbsp; @link &nbsp;&nbsp; </span>
+        } else {
+            <a href="@url" onclick="return load_url('@url')">@link</a>    
+        }
+                
+    }
+</div>

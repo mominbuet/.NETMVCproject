@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "publish_confirm";
+}
+
+<h2>publish_confirm</h2>
+@using OG_SLN.Models
+@using OG_SLN.Helpers
+
+@model DcrPublishViewModel
+
+@{
+    ViewBag.Title = "DcrPublish";
+
+    int currentRowTotal = 0;
+    int totalExpense = 0;
+    int specimen_slno = 1;
+    int specimenTotal = 0;
+
+    int taAmtTotal = 0;
+    int teAmtTotal = 0;
+    int pbAmtTotal = 0;
+    int daAmtTotal = 0;
+    int obAmtTotal = 0;
+}
+
+<h2 style="text-align:center;">DcrPublish</h2>
+
+<link rel="Stylesheet" type="text/css" href="~/Content/print.css" media="print" />
+<link rel="Stylesheet" type="text/css" href="~/Content/Custom.css" />
+<link rel="Stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+<link rel="Stylesheet" type="text/css" href="~/Content/Site.css" />
+
+<style type="text/css">
+    .thclass 
+    {
+        text-align:left; 
+        border:solid 1px #e4e4e4; 
+        border-left:none;
+    }
+    
+    .tdclass
+    {
+        text-align:left; 
+        border:solid 1px #e4e4e4; 
+        border-top:none; 
+        border-left:none;
+    }
+    .right
+    {
+        text-align:right;
+    }
+    .center
+    {
+        text-align:center;
+    }
+    .page-break
+    {
+        page-break-after:always;
+        page-break-before:always;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+
+</script>
+
+
+<table width="100%" style="font-size:13px">
+    <tr>
+        <td><div id="publishres" style="display:none;height:20px"></div></td>
+    </tr>
+</table>
+  
+        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:13px">
+            <tr>
+                <td colspan="9"  style="text-align:center;  border:solid 1px #e4e4e4;">
+                   <h4>DCR Top Sheet</h4>
+              
+                </td>
+            </tr>
+            <tr>
+                <th style="text-align:center; border:solid 1px #e4e4e4;">
+                    Date
+                </th>
+                <th class="thclass right">
+                    T.A.
+                </th>
+                <th class="thclass right">
+                    T.Entertainment
+                </th>
+                <th class="thclass right">
+                    P.B.
+                </th>
+                <th class="thclass right">
+                    D.A.
+                </th>
+                <th class="thclass right">
+                    Other
+                </th>
+                <th class="thclass right">
+                    Total
+                </th>
+            </tr>
+
+            <tr style="font-weight:bold">
+                <td   style="text-align:center; border:solid 1px #e4e4e4; border-top:none;">Total DCR Bill</td>
+                <td class="tdclass right">@Html.ThousandConvert(taAmtTotal)</td>
+                <td class="tdclass right">@Html.ThousandConvert(teAmtTotal)</td>
+                <td class="tdclass right">@Html.ThousandConvert(pbAmtTotal)</td>
+                <td class="tdclass right">@Html.ThousandConvert(daAmtTotal)</td>
+                <td class="tdclass right">@Html.ThousandConvert(obAmtTotal)</td>
+                <td class="tdclass right">@Html.ThousandConvert(totalExpense)</td>
+            </tr>
+
+        </table>
+
+
+    <table class="page-break" width="100%" cellpadding="0" cellspacing="0" style="font-size:13px; margin-top:20px; border-width:5px;border-color:Black;">
+    <tr>
+        <td colspan="5"  style="text-align:center;  border:solid 1px #e4e4e4;">
+           <h4> Specimen Report</h4>
+        
+        </td>
+    </tr>
+    <tr>
+        <th  style="text-align:left; border:solid 1px #e4e4e4; border-top:none;">
+            SL No.
+        </th>
+        <th class="tdclass">
+            Specimen Code
+        </th>
+        <th class="tdclass">
+            Specimen Name (Eng)
+        </th>
+        <th class="tdclass">
+            Specimen Name (Bng)
+        </th>
+        <th class="tdclass center">
+            Quantity
+        </th>
+    </tr>
+
+    
+
+
+    <tr style="font-weight:bold">
+        <td colspan="4" align="center"  style="text-align:center;  border:solid 1px #e4e4e4;  border-top:none;">Grand Total</td>
+        <td  style="text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">@specimenTotal</td>
+    </tr>
+
+    </table>
+
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="div_sumdet">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

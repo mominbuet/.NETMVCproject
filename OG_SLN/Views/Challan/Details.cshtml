@@ -1,0 +1,155 @@
+﻿@model OG_SLN.TRN_CHALLAN_UPLOAD
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TRN_CHALLAN_UPLOAD</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPLOAD_DATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPLOAD_DATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_TYPE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_TYPE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_EXT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_EXT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TOTAL_RECORDS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TOTAL_RECORDS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TOTAL_HR_COUNT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TOTAL_HR_COUNT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TOTAL_BOOK_COUNT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TOTAL_BOOK_COUNT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FAILED_HR_COUNT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FAILED_HR_COUNT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FAILED_BOOK_COUNT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FAILED_BOOK_COUNT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPLOAD_TYPE_NUM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPLOAD_TYPE_NUM)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UPLOAD_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

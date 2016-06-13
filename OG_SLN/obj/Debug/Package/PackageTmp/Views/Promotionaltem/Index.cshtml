@@ -1,0 +1,79 @@
+﻿@model IEnumerable<OG_SLN.SET_PROMO_ITEM>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<div class="row">
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Type Name
+        </th>
+        <th>
+            Item Code
+        </th>
+        <th>
+            Item Description
+        </th>
+        <th>
+            Active
+        </th>
+        <th>
+            Active From
+        </th>
+        <th>
+            Active To
+        </th>
+        <th>
+            Sl num
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ValueFor(modelItem => item.PROMO_ITEM_TYPE_NO, "{0:0}")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PROMO_ITEM_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PROMO_ITEM_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PROMO_ITEM_DESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACTIVE_PROMO_ITEM)
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.ACTIVE_FROM, "{0:yyyy-MM-dd}")
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.ACTIVE_TO, "{0:yyyy-MM-dd}")
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.SL_NUM, "{0:0}")
+            </td>
+            <td>
+            <div class="btn-group btn-group-sm">
+                @Html.ActionLink("Edit", "Edit", new { id = item.PROMO_ITEM_NO }, new { @class = "btn btn-info" })
+                
+                @Html.ActionLink("Details", "Details", new { id = item.PROMO_ITEM_NO }, new { @class = "btn btn-success" })
+                
+                @Html.ActionLink("Delete", "Delete", new { id = item.PROMO_ITEM_NO }, new { @class = "btn btn-danger" })
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+</div>

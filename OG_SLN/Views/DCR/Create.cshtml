@@ -1,0 +1,467 @@
+﻿@using OG_SLN.Helpers
+@model OG_SLN.TRN_DCR
+@{
+    ViewBag.Title = "Create";
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<h2>
+    Create</h2>
+<style>
+    .ui-autocomplete
+    {
+        max-height: 200px;
+        overflow-y: auto; /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+    /* IE 6 doesn't support max-height
+    * we use height instead, but this forces the menu to always be this tall
+    */
+    * html .ui-autocomplete
+    {
+        height: 100px;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+
+    });
+    function setEdit(id) {
+        
+        $("#hdnEdit").val(id);
+        $.getJSON("@Url.Content("~")"+"DCR/getOnePrevData?id="+id, function(data) {
+            //alert(data.dcrNO);
+            $("#DCR_TYPE_NO option[value='"+data.typeNo+"']").attr('selected','selected');
+            $("#txtZMcell").val(data.userName);
+            $("#hdnZMCell").val(data.userNo);
+            $("#REF_ZM_MOBILE").val(data.ref_zm_mobile);
+            $("#ZM_MOBILE_REF").attr("checked",(data.is_ref==1)?"checked":"");
+            if($("#ZM_MOBILE_REF").attr("checked")=="checked")
+                $("#REF_ZM_MOBILE").show();
+            $("#TRN_DCR_DATE").val(data.date);
+            $("#WORK_AREA_FROM_NAME").val(data.startLoc);
+            $("#WORK_AREA_TO_NAME").val(data.endLoc);
+            $("#FARE_AMT").val(data.cost);
+            $("#txtINS").val(data.institute);
+            $("#hdnINS").val(data.instituteNo);
+            $("#FROM_TIME").val(data.startTime);
+            $("#TO_TIME").val(data.endTime);
+            $("#TRANS_TYPE_NO option[value='"+data.transport+"']").attr('selected','selected');
+            $.getJSON("@Url.Content("~")"+"DCR/getDetailFields?typeID="+ data.typeNo+"&editID="+$("#hdnEdit").val(), function(data) {
+                $("#tblDetail").html(data.html);
+            });
+            $.getJSON("@Url.Content("~")"+"DCR/getDetails?typeID="+ data.dcrNO, function(data) {
+                $("#tblDetailsAdd").html(data.html);
+                $("#tblDetailsAdd").show();
+            });
+            $("input[value='Create']").attr("value","Update");
+        });
+    }
+
+    function removeDCRDet(name)
+    {
+        confirm("Are you sure you want to remove this?")
+        {
+            $.post( "@Url.Content("~")"+"DCR/changeDeleteDCRFromSession",{ id: name } ,
+                function( data ) {
+                    alert(data.dt);
+                    $("#"+name).closest('tr').remove();
+            });
+        }
+    }
+    function editDCRDET(name)
+    {
+       $.post( "@Url.Content("~")"+"DCR/changeDeleteDCRFromSession",{ id: name } ,
+            function( data ) {
+                alert(data.dt);
+                $("#tblDetail").html(data.html);
+                 $("#"+name).closest('tr').remove();
+       });   
+    }
+    $(function () {
+        var teacherMap = new Object();var clientMap = new Object();
+        var teacherNameMap = new Object();var clientNameMap = new Object();
+        var specimenMap = new Object();
+        function log(message,container) {
+            //alert(message);
+            $(container).closest("td").next().text(message);
+        }
+//        $("#txtZMcell").autocomplete({
+//            source: function(req, add){
+//                $.getJSON("@Url.Content("~")"+"DCR/SearchUser?cell="+ req.term, function(data) {
+//                    var suggestions = [];
+//                    $.each(data, function(i, val){         
+//                        insMap[val.username]=val.userid;       
+//                        suggestions.push(val.username);
+//                        console.log(val.username);
+//                    });
+//                    add(suggestions);
+//                });
+//            },
+//            minLength: 2,
+//            select: function (event, ui) {
+//                var msg = (ui.item ?"ZM " + ui.item.value :"User not found " + this.value);
+//                $("#hdnZMCell").val(insMap[ui.item.value]);
+//                log(msg,this);
+//            }
+//        });
+        var cacheINS = {};var insMap = new Object();
+        $("#txtINS").autocomplete({
+            source: function(req, add){
+                if ( req.term in cacheINS ) {
+                  response( cacheINS[req.term] );
+                  return;
+                }
+                $.getJSON("@Url.Content("~")"+"DCR/SearchInstitution?term="+ req.term, function(data) {
+                    var suggestions = [];
+                    $.each(data, function(i, val){         
+                        insMap[val.INSTITUTE_NAME]=val.INSTITUTE_NO;       
+                        suggestions.push(val.INSTITUTE_NAME);
+                        console.log(val.INSTITUTE_NAME);
+                    });
+                    add(suggestions);
+                    cacheINS[req.term] = suggestions;
+                });
+            },
+            minLength: 2,
+            select: function (event, ui) {
+                var msg = (ui.item ?"Selected " + ui.item.value :"Not found " + this.value);
+                $("#hdnINS").val(insMap[ui.item.value]);
+                log(msg,this);
+            }
+        });
+        var cacheAREA = {};
+        $(".area").autocomplete({
+            source: function(req, add){
+                if ( req.term in cacheAREA ) {
+                  response( cacheAREA[ term ] );
+                  return;
+                }
+                $.getJSON("@Url.Content("~")"+"DCR/SearchArea?area="+ req.term, function(data) {
+                    var suggestions = [];
+                    $.each(data, function(i, val){                             
+                    suggestions.push(val.AreaName);
+                    console.log(val.AreaName);
+                    });
+                    add(suggestions);
+                });
+            },
+            minLength: 3,
+            select: function (event, ui) {
+                //var msg = (ui.item ?"Selected " + ui.item.value :"New area " + this.value);
+            }
+        });
+        //auto suggestion section done
+        $("#DCR_TYPE_NO").on("change",function(){
+            //alert(this.value);        
+            $.getJSON("@Url.Content("~")"+"DCR/getDetailFields?typeID="+ this.value+"&editID="+$("#hdnEdit").val(), function(data) {
+                $("#tblDetail").html(data.html);
+            });
+            $("#tblDetailsAdd").hide(); 
+        });
+        $(document).on("click","#chkBehalf",function(){
+            $("#txtBehalf").toggle(this.checked);
+        });
+        $(document).on("click","#ZM_MOBILE_REF",function(){
+            $("#REF_ZM_MOBILE").toggle(this.checked);
+        });
+        var cacheContactDetails={};
+        $(document).on("change keyup paste","#contactDetail",function(){
+            var tmp = $(this).attr("tmp");
+            console.log(tmp);
+            $(this).autocomplete({
+                source: function(req, add){
+                    if ( req.term in cacheContactDetails ) {
+                      response( cacheContactDetails[ term ] );
+                      return;
+                    }
+                    $.getJSON("@Url.Content("~")"+"DCR/SearchContact?type="+tmp+"&cell="+ req.term, function(data) {
+                        var suggestions = [];
+                        $.each(data, function(i, val){   
+                        suggestions.push((tmp=="teacher")?val.TEACHER_MOBILE:val.CLIENT_MOBILE);
+                        if(tmp=="teacher"){
+                            teacherMap[val.TEACHER_MOBILE]=val.TEACHER_NO;
+                            teacherNameMap[val.TEACHER_MOBILE]=val.TEACHER_NAME;  
+                        }
+                        else{
+                            clientMap[val.CLIENT_MOBILE]=val.CLIENT_NO;
+                            clientNameMap[val.CLIENT_MOBILE]=val.CLIENT_NAME;
+                        }
+                        });
+                        add(suggestions);
+                        cacheContactDetails[req.term]=suggestions;
+                    });
+                },
+                minLength: 3,
+                select: function (event, ui) {
+                var msg="";
+                 if(tmp=="teacher"){
+                    msg = (ui.item ?"Selected " + teacherNameMap[ui.item.value] :"New teacher Contact " + this.value);
+                    $("input[name=hdnContactNo]").val(teacherMap[ui.item.value]);
+                 }else{
+                    msg = (ui.item ?"Selected " + clientNameMap[ui.item.value] :"New Client Contact " + this.value);
+                    $("input[name=hdnContactNo]").val(clientMap[ui.item.value]);
+                 }
+                 log(msg,this);
+                }
+            });
+        });
+        var specimenCodeMap=new Object();
+        $(document).on("change keyup paste",".promotion",function(){
+            var tmp = $(this).attr("tmp");
+            $(this).autocomplete({
+                source: function(req, add){
+                    $.getJSON("@Url.Content("~")"+"DCR/SearchDistribution?type="+tmp+"&code="+ req.term, function(data) {
+                        var suggestions = [];
+                        $.each(data, function(i, val){   
+                        if(tmp=="specimen") {
+                            suggestions.push(val.SPECIMEN_NAME);
+                            specimenCodeMap[val.SPECIMEN_NAME]=val.SPECIMEN_CODE;
+                            specimenMap[val.SPECIMEN_NAME]=val.SPECIMEN_NO; 
+                            }
+                        else{             
+                            suggestions.push(val.PROMO_ITEM_NAME);
+                            specimenCodeMap[val.PROMO_ITEM_NAME]=val.PROMO_ITEM_CODE;
+                            specimenMap[val.PROMO_ITEM_NAME]=val.PROMO_ITEM_NO; 
+                            }
+                        });
+                        add(suggestions);
+                    });
+                },
+                minLength: 4,
+                select: function (event, ui) {
+                    var msg = (ui.item ?"Selected " + specimenCodeMap[ui.item.value] :"Not found " + this.value);
+                     $("#hdnDetCode").val(specimenMap[ui.item.value]);
+                    log(msg,this);
+                }
+            });
+        });
+        $("#tblDetailsAdd").hide();
+        $(document).on("click","#btnAdd",function(){
+            if($("#btnAdd").attr('tmp')=='specimen'||$("#btnAdd").attr('tmp')=='promotion')
+            {
+                //$("#btnAdd").val(($("#btnAdd").val()=="Edit")?"Add"?"Edit");
+                var tblDetailsAdd =$("#tblDetailsAdd");
+                var found=0;
+                /*$('#tblDetailsAdd > tbody >  tr').each(function() {
+                    if($(this).attr('id') == ($("#btnAdd").attr('tmp')+"-"+$("#hdnDetCode").val()))
+                    {    
+                        found=1;
+                        $(this).addClass('danger');
+                    }
+                    else{
+                        $(this).removeClass('danger');
+                   }
+                    $(this).removeClass('success');
+                });*/
+                if(found==0 && $("#contactDetail").val()){
+                    $("#tblDetailsAdd").append("<tr class='success' id='"+$("#btnAdd").attr('tmp')+"-"+$("#hdnDetCode").val()+"'><td>"+$("#promoID").val()+"</td><td>"+
+                    $("#QTY").val()+"</td><td></td><td>"+$("#contactDetail").val()+"</td><td>"+(($("#chkBehalf").checked)?"Yes":"No")+
+                    "</td><td>"+$("#txtBehalf").val()+"</td><td>"+
+                    "<input type=\"button\" value=\"Remove\" id='btnRemove' class=\"btn btn-danger\" onclick=\"removeDCRDet($(this).closest('tr').attr('id'));$(this).closest(\'tr\').remove();\" /></td></tr>");
+                    $.post("@Url.Content("~")"+"DCR/SaveDCROnSession",{id:$("#hdnDetCode").val(),qty:$("#QTY").val(),type:$("#btnAdd").attr('tmp'),teacher_no:$("input=[hdnContactNo]").val(),
+                                is_behalf:(($("#chkBehalf").checked)?1:0),teacher_mobile:$("#contactDetail").val(),BEHALF_MOBILE:$("#txtBehalf").val(),
+                                rcvType:($("input[name=FOR_WHOM]").attr("type")=="hidden")?$("input[name=FOR_WHOM]").val():$("input[name=FOR_WHOM]:checked").val(),
+                                detID:0},
+                                function(data){
+                                    //alert( "Data Loaded: " + data.dt );
+                                    tblDetailsAdd.show();  
+                                });
+                }
+                $("#theadsdmp").html("<tr><td>Item</td><td>Qty</td><td>Whom</td><td>Contact</td><td>On Behalf?</td><td>Mobile</td></tr>");              
+            }
+            else{
+                var tblDetailsAdd =$("#tblDetailsAdd");
+                var found=0;
+                /*$('#tblDetailsAdd > tbody >  tr').each(function() {
+                    if($(this).attr('id') == ($("#btnAdd").attr('tmp')+"-"+$("#contactDetail").val()))
+                    {    
+                        found=1;
+                        $(this).addClass('danger');
+                    }
+                    else{
+                        $(this).removeClass('danger');
+                   }
+                   $(this).removeClass('success');
+                });*/
+                if(found==0 && $("#contactDetail").val()){
+                    $("#tblDetailsAdd").append("<tr class='success' id='"+$("#btnAdd").attr('tmp')+"-"+$("#contactDetail").val()+"'><td>"+$("#contactDetail").val()+"</td><td>"+
+                    (($("input[name=FOR_WHOM]").attr("type")=="hidden")?$("input[name=FOR_WHOM]").val():$("input[name=FOR_WHOM]:checked").val())+"</td>"+
+                    "<td><input type=\"button\" value=\"Remove\" id='btnRemove' class=\"btn btn-danger\" onclick=\"removeDCRDet($(this).closest('tr').attr('id'));$(this).closest(\'tr\').remove();\" /></td></tr>");
+                    $.post("@Url.Content("~")"+"DCR/SaveDCROthersOnSession",{type:$("#btnAdd").attr('tmp'),
+                                teacher_no:$("input=[hdnContactNo]").val(),
+                                teacher_mobile:$("#contactDetail").val(),
+                                rcvType:($("input[name=FOR_WHOM]").attr("type")=="hidden")?$("input[name=FOR_WHOM]").val():$("input[name=FOR_WHOM]:checked").val(),
+                                detID:0},
+                                function(data){
+                                    tblDetailsAdd.show();  
+                   });
+                }
+                $("#theadsdmp").html("<tr><td>Contact No</td><td>Type</td></tr>");          
+            }      
+        });
+        $('form').on('submit', function(e) {
+            e.preventDefault();
+            if($( "#tblDetailsAdd tbody tr td" ).length>1 || $("option[value=5]").attr("selected")=="selected"){
+				if(confirm('Do u want to Save?')){
+					var obj = $(this), // (*) references the current object/form each time
+						url = obj.attr('action'),
+						method = obj.attr('method'),
+						data = $(this).serialize();
+                    $.ajax({
+						url: url,
+						type: method,
+						data: data,
+						success: function(response2) {
+							window.location.replace("@Url.Content("~")"+"DCR/Index");
+						}
+					});
+					return false; //disable refresh
+                }
+            }
+            else{
+                alert("Please insert details of DCR!"+$("option[value=5]").prop("selected"));
+            }
+        });
+    });
+    
+</script>
+@section shadScripts {
+    @Html.Raw(ViewBag.jsmsg)
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <input id="hdnEdit" type="hidden" name="edit_ID" value="0" />
+    <span class="glyphicon glyphicon-date"></span>
+    <fieldset>
+        <legend>DCR Entry</legend>
+        <table class="table table-responsive">
+            <tr>
+                <td>
+                    Work Type
+                </td>
+                <td>
+                    @Html.DropDownList("DCR_TYPE_NO", "<<--Please Select-->>")
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.DCR_TYPE_NO)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    HR
+                </td>
+                <td>
+                    @*<input id="txtZMcell" name="REF_ZM_MOBILE2" type="text" class="form-control" placeholder="Cell no here to search" />
+                    <input id="hdnZMCell" name="user_ID" type="hidden" value="0" />*@
+                    @Html.Hidden("USER_NO", "")
+                    @Html.Hidden("ZONAL_TYPE", "single")
+                    @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                </td>
+                <td>
+                </td>
+                <td>
+                    <label>
+                        <input id='ZM_MOBILE_REF' name="ZM_MOBILE_REF" type="checkbox" class="form-control" />Ref</label>
+                </td>
+                <td>
+                    <input style='display: none' name='REF_ZM_MOBILE' id='REF_ZM_MOBILE' type="text"
+                        class="form-control" />
+                    <input id="hdnREF_ZM_USER_NO" name="REF_ZM_USER_NO" type="hidden" value="0" />
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.TRN_DCR_DATE, new { @class = "datesinspec form-control" })
+                </td>
+                <td>@Html.ValidationMessageFor(model => model.TRN_DCR_DATE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Start Location
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.WORK_AREA_FROM_NAME, new { @class = "area form-control" })
+                </td>
+                <td>
+                </td>
+                <td>
+                    End Location
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.WORK_AREA_TO_NAME, new { @class = "area form-control" })
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Start time
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.FROM_TIME, new { @class = "timepicker form-control" })
+                </td>
+                <td>
+                </td>
+                <td>
+                    End Time
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.TO_TIME, new { @class = "timepicker form-control" })
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Transport
+                </td>
+                <td>
+                    @Html.DropDownList("TRANS_TYPE_NO", String.Empty)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.TRANS_TYPE_NO)
+                </td>
+                <td>
+                    Cost
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.FARE_AMT, new { @class = "form-control col-xs-2" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Institute
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.txtINS, new { @class = "form-control col-xs-2" })
+                    @Html.ValidationMessageFor(model => model.txtINS)
+                    <input id="hdnINS" type="hidden" name="INSTITUTE_NO" />
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+        <table id="tblDetail">
+        </table>
+        <table id="tblDetailsAdd" class="table table-responsive">
+            <thead id="theadsdmp">
+            </thead>
+        </table>
+        <p>
+            <input type="submit" value="Create" class="btn btn-success" />
+        </p>
+    </fieldset>
+
+}
+<div>
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+</div>

@@ -1,0 +1,134 @@
+﻿@model OG_SLN.TRN_MSG
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TRN_MSG</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FROM_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FROM_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MSG_SUBJECT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MSG_SUBJECT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MSG_BODY)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MSG_BODY)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_FOR_ALL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_FOR_ALL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_REPLY_ALLOW)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_REPLY_ALLOW)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TRN_MSG2.LAST_ACTION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TRN_MSG2.LAST_ACTION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_REPLY)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_REPLY)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MSG_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,190 @@
+﻿@model OG_SLN.TRN_USER_LOCATION
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TRN_USER_LOCATION</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ENTRY_STATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ENTRY_STATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_OFFLINE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_OFFLINE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAST_IS_OFFLINE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAST_IS_OFFLINE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_OFFLINE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_OFFLINE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_OFFLINE_SYNC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_OFFLINE_SYNC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_IS_OFFLINE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_IS_OFFLINE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_OFFLINE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_OFFLINE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_OFFLINE_SYNC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_OFFLINE_SYNC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_IS_OFFLINE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_IS_OFFLINE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAT_VAL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAT_VAL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LON_VAL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LON_VAL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LOCATION_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LOCATION_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OFFLINE_LOC_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OFFLINE_LOC_NO)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.LOC_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

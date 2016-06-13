@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>OMICON</title>
+        <link href="../../Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        
+       
+         @Styles.Render("~/Content/themes/base/css")
+         @Styles.Render("~/Content/css")
+         @Scripts.Render("~/bundles/jquery")
+         @Scripts.Render("~/bundles/jqueryui")
+         @Scripts.Render("~/bundles/bootstrap")
+         @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Custom.css")
+    </head>
+    <body>
+        <!--/start top herader-->
+        <div class="navbar navbar-fixed-top navbar-inverse fixHeader" role="navigation ">
+          <div class="container-fluid">
+            <div class="col-xs-12">
+        	     <div class="logo">
+                <img src="../../images/logo.png" width="80px"/></div>
+                <div class="col-xs-9 topAddress">
+            	    <b>LECTURE Publications Ltd.</b><br />
+                     <div class="dvAddress">
+				    Razzak Tower (5th Floor),  5 / Purana Paltan. Dhaka-1000 <br />
+				    37 North Brook Hall Road, Banglabazar, Dhaka-1100 <br />
+				    Phone: 7125223, 7118946, 7121015 Fax: 88-02-9514569<br />
+				    E-mail:publications@omicon.com,Web: www.omicon.com
+                    </div>
+                </div>
+            </div>
+
+          </div><!-- /.container -->
+        </div><!-- /.navbar -->
+	    <!--/end top herader-->
+
+
+       <div class="container">
+             <div class="row row-offcanvas row-offcanvas-right">
+
+                <div>
+                    <div class="row">
+                        @RenderSection("featured", required: false)
+                        <section >
+                            @RenderBody()
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>@*&copy; @DateTime.Now.Year - My ASP.NET MVC Application*@</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

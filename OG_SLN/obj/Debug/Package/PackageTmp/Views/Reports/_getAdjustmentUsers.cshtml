@@ -1,0 +1,108 @@
+﻿@model OG_SLN.Models.AdjustmentUserRecordModel
+
+@{
+    int sl_no = 1;
+    int approved_total = 0;
+    int received_total = 0;
+}
+
+<script type="text/javascript">
+    function getApprovedDetails(User_No, User_Name, Spec_Name, Spec_Name_Bng, Date_From, Date_To, Specimen_No) {
+        var searchModel = {
+            'User_No': User_No,
+            'User_Name' : User_Name,
+            'Specimen_Name': Spec_Name,
+            'Specimen_Name_Bng': Spec_Name_Bng,
+            'Date_From': Date_From,
+            'Date_To': Date_To,
+            'Specimen_No': Specimen_No
+        };
+
+        var url = '@Url.Content("~")' + 'Reports/GetAdjustmentApprovedDetails';
+        $.post(url, searchModel, function (res) {
+            $('#div_approved_details').html(res);
+            $('#div_approved_details').show();
+        });
+
+        return false;
+    }
+
+</script>
+
+@{
+    string datefrom = Model.Date_From.Value.ToString("yyyy-MM-dd");
+    string dateto = Model.Date_To.Value.ToString("yyyy-MM-dd");
+}
+
+<div class="table-responsive">
+    
+    <table class="table table-responsive table-bordered table-hover tabWidth">
+
+            <tr class="success">
+                <th colspan="6">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="6" style="width:100%; background:#EEEEEE; text-align:center;">
+
+                  <p><span style="font-size:26px;">All ZM Specimen Record</span><br>
+                    <span style="font-size:22px;"> From Date: @datefrom - To Date: @dateto</span><br>
+                    <span style="font-size:20px;"> Book Name (Eng): @Model.Specimen_Name - Book Name (Bangla): @Model.Specimen_Name_Bng</span></p>
+                  <p><span style="font-size:20px;">Specimen Code: @Model.Specimen_Code<br>
+                  </span></p>
+                </td>
+            </tr>
+
+
+            <tr style="font-weight:bold; font-size:16px; background:#DDDDDD;">
+                <td style="width: 10%">SL No.</td>
+                <td style="width: 30%">Zonal Name - ID<br />
+                    (Contact)</td>
+                <td style="width: 20%">Department,<br />
+                  Designation</td>
+                <td style="width: 20%">HR Division,<br />
+                  Zill,<br />
+                  Thana,</td>
+                <td style="width: 10%">Distributed Quantity (only approved qty)</td>
+                <td style="width: 10%">Total Receive Book (chalan)</td>
+            </tr>
+
+      @foreach (var item in Model.Specimen_Users)
+      {
+
+        <tr>
+            <td> 
+                @sl_no
+                @{sl_no++;}
+            </td>
+            <td>@item.USER_FULL_NAME <br />
+                ID: @item.USER_NAME, <br />
+                (@item.USER_MOBILE)</td>
+            <td style="text-align:left;">
+                @item.DEPT_NAME<br/>
+                @item.DESIG_NAME
+            </td>
+            <td style="text-align:left;">@item.DIVISION_NAME <br />
+                @item.ZILLA_NAME<br />
+                @item.THANA_NAME</td>
+            <td> 
+                <a class="approvedlink" href="#" onclick="getApprovedDetails('@item.USER_NO', '@item.USER_FULL_NAME', '@Model.Specimen_Name', '@Model.Specimen_Name_Bng', '@datefrom', '@dateto', '@Model.Specimen_No');" data-toggle="modal" data-target="#childModal">
+                    @item.QTY 
+                    @{approved_total += (int)item.QTY;}
+                </a> 
+            </td>
+            <td></td>
+        </tr>
+      
+      }
+
+      
+       <tr style="background:#DDDDDD; font-weight:bold; font-size:16px;">
+            <td colspan="4" align="right">Grand Total:</td>
+            <td> @approved_total</td>
+            <td></td>
+        </tr>
+    </table>
+</div>

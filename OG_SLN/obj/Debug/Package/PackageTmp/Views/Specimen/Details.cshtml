@@ -1,0 +1,83 @@
+﻿@model OG_SLN.SET_SPECIMEN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SET_SPECIMEN</legend>
+
+  
+   <div class="new_FormDiv">
+            <div class="editor-label">
+                Specimen Name
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.SPECIMEN_NAME)
+                @Html.ValidationMessageFor(model => model.SPECIMEN_NAME)
+            </div>
+            <div class="editor-label">
+                Specimen Code
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.SPECIMEN_CODE)
+                @Html.ValidationMessageFor(model => model.SPECIMEN_CODE)
+            </div>
+            <div class="editor-label">
+                BNG Name
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.SPECIMEN_NAME_BNG)
+                @Html.ValidationMessageFor(model => model.SPECIMEN_NAME_BNG)
+            </div>
+            <div class="editor-label">
+                Description
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.DESC_SPECIMEN)
+                @Html.ValidationMessageFor(model => model.SPECIMEN_DESC)
+            </div>
+            <div class="editor-label">
+                Book Type
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model=>model.SET_BOOK_TYPE.BOOK_TYPE_NAME)
+                @Html.ValidationMessageFor(model => model.BOOK_TYPE_NO)
+            </div>
+            <div class="editor-label">
+                Specimen UNQ CODE
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.BOOK_UNIQUE_CODE)
+                @Html.ValidationMessageFor(model => model.BOOK_UNIQUE_CODE)
+            </div>
+            <div class="editor-label">
+                Active
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.ACTIVE_SPECIMEN)
+                @Html.ValidationMessageFor(model => model.ACTIVE_SPECIMEN)
+            </div>
+            <div class="editor-label">
+                Active From
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.ACTIVE_FROM, "{0:yyyy-MM-dd}")
+                @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+            </div>
+            <div class="editor-label">
+                Active To
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.ACTIVE_TO, "{0:yyyy-MM-dd}")
+                @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+            </div>
+
+        </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SPECIMEN_NO }, new { @class="btn btn-warning"}) 
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class="btn btn-primary"})
+</p>

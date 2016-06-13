@@ -1,0 +1,49 @@
+﻿@model OG_SLN.TRN_CHALLAN_UPLOAD
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add Challan/Return</h2>
+
+<div class="col-6 col-sm-6 col-lg-9 ">
+
+@using (Html.BeginForm("Create", "Challan", FormMethod.Post, new { enctype = "multipart/form-data"}))
+{
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+        <legend>Challan/Return File Upload</legend>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPLOAD_TYPE_NUM)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.UPLOAD_TYPE_NUM)*@
+            @Html.DropDownList("UPLOAD_TYPE_NUM")
+            @Html.ValidationMessageFor(model => model.UPLOAD_TYPE_NUM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FILE_NAME)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.FILE_NAME)*@
+            <input class="text-box single-line" id="uploadExcel" name="uploadExcel" type="file" value="">
+            @Html.ValidationMessageFor(model => model.uploadExcel)
+        </div>
+
+        <div class="editor-label">
+            
+        </div>
+        <div class="editor-field" style="color:Red">
+            @Html.ValidationMessageFor(model => model.ERROR_MSG)
+        </div>
+
+        <p>
+            <input type="submit" value="Upload" />
+        </p>
+    </fieldset>
+    </div>
+}
+</div>

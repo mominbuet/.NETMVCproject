@@ -1,0 +1,79 @@
+﻿@*@model IEnumerable<OG_SLN.TPR_PROJECT_GET_Result>*@
+@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<OG_SLN.TPR_PROJECT_MONITOR_GET_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Collection Projects</h2>
+
+<table class="table table-bordered table-hover tabWidth">
+    <tr>
+        <th>
+            Collection Project Name
+        </th>
+        <th>
+            Class
+        </th>
+        <th>
+            Assigned Institute
+        </th>
+        <th>
+            Pending Institute
+        </th>
+        <th>
+            Declare Date
+        </th>
+        <th>
+            Deadline Date
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Select
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROJECT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLASS_NAME)
+        </td>
+        <td>@item.INS_ASSIGNED_CNT</td>
+        <td>@item.INS_PENDING_CNT</td>
+        <td>
+            @Html.ValueFor(modelItem => item.DECLARE_DATE, "{0:dd MMM, yyyy}")
+        </td>
+        <td>
+            @Html.ValueFor(modelItem => item.DEADLINE_DATE, "{0:dd MMM, yyyy}")
+        </td>
+        <td>
+            @if (item.IS_ACTIVE == 1)
+            {
+                <span>Active</span> 
+            }
+            else
+            {
+                <span>Inactive</span> 
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Select", "MonitorSelect", new { id=item.PROJECT_NO }) 
+        </td>
+    </tr>
+}
+
+</table>
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

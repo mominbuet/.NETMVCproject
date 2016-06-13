@@ -1,0 +1,40 @@
+﻿@model IEnumerable<OG_SLN.TPR_PROJECT_ASSIGNMENTS_GET_Result>
+
+@{
+    int serial = 1;
+}
+
+@foreach (var item in Model)
+{
+    <tr class="trhead assignments">
+        <td>@serial</td>
+
+        <td><p>@item.INSTITUTE_NAME<br />
+            (@item.INSTITUTE_NO)</p></td>
+        
+        <td>@item.DIVISION_NAME,<br />
+            @item.ZILLA_NAME,<br />
+            @item.THANA_NAME</td>
+
+        <td>
+            <a href="#" onclick="return getSubjects('@item.PROJECT_INS_NO', 'A');"  data-toggle="modal" data-target="#subjects">
+                @item.ASSIGN_CNT
+            </a>
+        </td>
+
+        <td>
+            <a href="#" onclick="return getSubjects('@item.PROJECT_INS_NO', 'C');"  data-toggle="modal" data-target="#subjects">
+                @item.COLLECT_CNT
+            </a>
+        </td>
+
+        <td>@item.INSERT_TIME</td>
+        <td>
+            @Html.ActionLink("Edit", "EditAssign", new { id = item.PROJECT_INS_NO }, new { @target = "_blank"})
+            @*@Html.ActionLink("Delete", "DeleteAssign", new { id = item.PROJECT_INS_NO })*@
+            <a href="#" onclick="return deleteAssignment(@item.PROJECT_INS_NO);">Delete</a>
+        </td>
+    </tr> 
+    
+    serial++;
+}

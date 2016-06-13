@@ -1,0 +1,79 @@
+﻿@model OG_SLN.SET_SUBJECT
+
+@{
+    ViewBag.Title = "EditSubject";
+}
+
+<h2>Edit Subject</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+
+        @Html.HiddenFor(model => model.SUBJECT_NO)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SUBJECT_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SUBJECT_NAME)
+            @Html.ValidationMessageFor(model => model.SUBJECT_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SUBJECT_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SUBJECT_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.SUBJECT_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SUBJECT_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SUBJECT_CODE)
+            @Html.ValidationMessageFor(model => model.SUBJECT_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SUBJECT_DESC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SUBJECT_DESC)
+            @Html.ValidationMessageFor(model => model.SUBJECT_DESC)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_STATUS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_STATUS)
+            @Html.ValidationMessageFor(model => model.ACTIVE_STATUS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_FROM)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ACTIVE_FROM, new { @class = "form-control dateclass" })
+            @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_TO)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ACTIVE_TO, new { @class = "form-control dateclass" })
+            @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+        </div>
+
+        <div class="editor-label">
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </div>
+    </fieldset>
+    </div>
+}

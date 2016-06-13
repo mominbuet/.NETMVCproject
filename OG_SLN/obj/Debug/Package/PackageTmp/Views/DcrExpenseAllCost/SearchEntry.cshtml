@@ -1,0 +1,88 @@
+﻿@using OG_SLN.Helpers
+@{
+    Layout = null;
+}
+@*@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Get, new { @class = "form-horizontal" }))*@
+@using (Html.BeginForm("Index", "DcrExpenseAllCost", FormMethod.Post))
+{
+    <table class="tabWidth">
+        <tbody>
+            <tr>
+                <td class="adminLef_col">
+                    ZM(iSearch):
+                </td>
+                <td>
+                    <input id="txtZM" type="text" class="form-control" />
+                    @Html.Hidden("USER_NO", "")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Division
+                </td>
+                <td>
+                    @Html.DropDownList("ddldivision", String.Empty)
+                </td>
+                <td class="midWidth">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    Zilla:
+                </td>
+                <td class="adminRight_col">
+                    <select id="ddlZillas" name="ddlZillas">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Thana
+                </td>
+                <td>
+                    <select id="ddlThanas" name="ddlThanas">
+                    </select>
+                </td>
+                <td class="midWidth">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    ZM:
+                </td>
+                <td class="adminRight_col">
+                    @Html.DropDownList("zmusers", String.Empty)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminLef_col">
+                    DCR Date From :
+                </td>
+                <td class="adminRight_col">
+                    <input id="DateFrom" name="DateFrom" 
+                     value="@DateTime.Today.ToString("yyyy-MM-dd")" 
+                                 class="form-control datesinspec"
+                     type="text" />
+                </td>
+                <td class="midWidth">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    DCR Date To :
+                </td>
+                <td class="adminRight_col">
+                    <input id="DateTo" name="DateTo" 
+                    value="@DateTime.Today.ToString("yyyy-MM-dd")"
+                    class="form-control datesinspec"
+                     type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <input id="Submit1" class="btn btn-success" type="submit" value="Search" onclick="return do_search()" />
+                        <input id="btnReset" class="btn btn-warning" type="reset" value="Reset" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}

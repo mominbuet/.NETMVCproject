@@ -1,0 +1,88 @@
+﻿@model IList<OG_SLN.Models.ControllerActionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<table>
+    <tr>
+        <th>
+            Controller
+        </th>
+        <th>
+            Action
+        </th>
+        <th>
+            Auto Include
+        </th>
+        <th>
+            Active
+        </th>
+        <th>
+            Public
+        </th>
+        <th>
+            Menu
+        </th>
+        <th>
+            Menu Name
+        </th>
+    </tr>
+
+@{
+    string c_name = "";
+    string color = "";
+}
+@for (var i = 0; i < Model.Count; i++) {
+    if (Model[i].actionName.Trim() == "Index") {
+        color = "red";
+    } else {
+        color = "black";
+    }     
+    <tr>
+        <td>
+        @{ 
+            if (c_name != Model[i].controllerName) {
+                        @Html.DisplayFor(modelItem => modelItem[i].controllerName)
+            } 
+        }
+        </td>
+        <td>
+            <span style="color:@color">
+            @Html.DisplayFor(modelItem => modelItem[i].actionName)
+            </span>            
+            @Html.HiddenFor(modelItem => modelItem[i].controllerName)
+            @Html.HiddenFor(modelItem => modelItem[i].actionName)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem[i].IsAutoInclude)
+        </td>
+        <td>
+            @*@Html.TextBoxFor(modelItem => modelItem[i].IsActive, new { @type = "checkbox", @checked = "checked" })*@
+            @Html.EditorFor(modelItem => modelItem[i].IsActive)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem[i].IsPublic)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem[i].IsMenu)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem[i].menuName)
+        </td>
+            
+    </tr>
+    c_name = Model[i].controllerName;
+}
+    <tr>
+        <td>
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </td>
+    </tr>
+</table>
+}

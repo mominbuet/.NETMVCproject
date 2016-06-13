@@ -1,0 +1,173 @@
+﻿@model OG_SLN.SET_FISCAL_YEAR
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SET_FISCAL_YEAR</legend>
+
+        @Html.HiddenFor(model => model.FY_NO)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_TIME)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_USER_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_TIME)
+            @Html.ValidationMessageFor(model => model.INSERT_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_USER_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_TIME)
+            @Html.ValidationMessageFor(model => model.UPDATE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_USER_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FY_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FY_NAME)
+            @Html.ValidationMessageFor(model => model.FY_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.START_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.START_DATE)
+            @Html.ValidationMessageFor(model => model.START_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.END_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.END_DATE)
+            @Html.ValidationMessageFor(model => model.END_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_CURRENT_YEAR)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_CURRENT_YEAR)
+            @Html.ValidationMessageFor(model => model.IS_CURRENT_YEAR)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_ACTIVE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_ACTIVE)
+            @Html.ValidationMessageFor(model => model.IS_ACTIVE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_FROM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_FROM)
+            @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_TO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_TO)
+            @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SL_NUM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SL_NUM)
+            @Html.ValidationMessageFor(model => model.SL_NUM)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

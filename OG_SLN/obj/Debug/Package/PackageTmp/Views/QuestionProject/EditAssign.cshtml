@@ -1,0 +1,154 @@
+﻿@using OG_SLN
+
+@model TPR_PROJECT_INSTITUTE
+
+@{
+    ViewBag.Title = "EditAssign";
+    List<SET_CLASS_SUBJECT_ASSIGN_GET_Result> Subjects = ViewBag.Subjects as List<SET_CLASS_SUBJECT_ASSIGN_GET_Result>;
+    TPR_PROJECT project = ViewBag.PROJECT as TPR_PROJECT;
+    USER_INFO_VIEWMODEL zonal_info = ViewBag.ZONAL_INFO;
+    INSTITUTE_INFO_VIEWMODEL ins_info = ViewBag.INSTITUTE_INFO;
+    TPR_PROJECT_INSTITUTE project_ins = ViewBag.PROJECT_INSTITITE;
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#allsubject').change(function () {
+            if ($(this).is(':checked')) {
+                $('.subject').prop('checked', true);
+                $('.targetdate').val($('#alltargetdate').val());
+            }
+            else {
+                $('.subject').prop('checked', false);
+                $('.targetdate').val('');
+            }
+        });
+    });
+</script>
+
+@using (Html.BeginForm())
+{
+<table class="table table-responsive table-bordered tabWidth">
+    <tr>
+        <td colspan="4" style="text-align:center">
+            <h2>Update Subject Assignment to Collection Project</h2>
+            @Html.Hidden("PROJECT_NO", project.PROJECT_NO)
+            @Html.Hidden("PROJECT_INS_NO", project_ins.PROJECT_INS_NO)
+        </td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Name:</td>
+        <td>@project.PROJECT_NAME</td>
+        <td class="tdLeft">Project Deadline:</td>	
+        <td>@project.DATE_DEADLINE</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Class:	</td>
+        <td>@project.SET_CLASS.CLASS_NAME</td>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="tdLeft">
+            <table class="table table-responsive table-bordered tabWidth">
+                <tr><td class="tdLeft">Zonal Manager :</td><td>@zonal_info.fullname</td></tr>
+                <tr><td class="tdLeft">Username :</td><td>@zonal_info.username</td></tr>
+                <tr><td class="tdLeft">Designation :</td><td>@zonal_info.designation</td></tr>
+                <tr><td class="tdLeft">Mobile :</td><td>@zonal_info.mobile</td></tr>
+                <tr><td class="tdLeft">Division :</td><td>@zonal_info.division</td></tr>
+                <tr><td class="tdLeft">Zilla :</td><td>@zonal_info.zilla</td></tr>
+                <tr><td class="tdLeft">Thana :</td><td>@zonal_info.thana</td></tr>
+            </table>
+        </td>
+
+        <td colspan="2" class="tdLeft">
+            <table id="ins_table" class="table table-responsive table-bordered tabWidth">
+                <tr><td class="tdLeft">Institute :</td><td>@ins_info.insname</td></tr>
+                <tr><td class="tdLeft">Code :</td><td>@ins_info.inscode</td></tr>
+                <tr><td class="tdLeft">Division :</td><td>@ins_info.division</td></tr>
+                <tr><td class="tdLeft">Zilla :</td><td>@ins_info.zilla</td></tr>
+                <tr><td class="tdLeft">Thana :</td><td>@ins_info.thana</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table table-responsive table-bordered  tabWidth">
+    <tr>
+        <td colspan="7" style="font-weight:bold">Collection Subject:</td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="checkbox" name="allsubject" id="allsubject" />
+            Select All
+        </td>
+        <td>Target Collection Date:</td>
+        <td colspan="5">
+            <input type="text" name="alltargetdate" id="alltargetdate" class="form-control dateclass" style="width:auto" /> 
+        </td>
+    </tr>
+
+@{
+    int subject_count = Subjects.Count;
+    int i = 0;
+    Institute_Subject subject = new Institute_Subject();
+
+    while (subject_count > 0)
+    {
+        <tr>
+            @if (subject_count > 0)
+            {
+                SET_CLASS_SUBJECT_ASSIGN_GET_Result sub = Subjects.ElementAt(i);
+
+                subject.SUBJECT_NO = (decimal)sub.SUBJECT_NO;
+                subject.SUBJECT_NAME = sub.SUBJECT_NAME;
+                subject.SUBJECT_NAME_BNG = sub.SUBJECT_NAME_BNG;
+                subject.IS_ACTIVE = sub.IS_ACTIVE == 1 ? true : false;
+                if (subject.IS_ACTIVE)
+                {
+                    subject.TARGET_DATE = sub.TARGET_DATE;
+                }
+                else
+                {
+                    subject.TARGET_DATE = null; 
+                }
+
+                Html.RenderPartial("_InstituteSubjectPartial", subject);
+                subject_count--; i++;
+            }
+            @if (subject_count > 0)
+            {
+                SET_CLASS_SUBJECT_ASSIGN_GET_Result sub = Subjects.ElementAt(i);
+
+                subject.SUBJECT_NO = (decimal)sub.SUBJECT_NO;
+                subject.SUBJECT_NAME = sub.SUBJECT_NAME;
+                subject.SUBJECT_NAME_BNG = sub.SUBJECT_NAME_BNG;
+                subject.IS_ACTIVE = sub.IS_ACTIVE == 1 ? true : false;
+                if (subject.IS_ACTIVE)
+                {
+                    subject.TARGET_DATE = sub.TARGET_DATE;
+                }
+                else
+                {
+                    subject.TARGET_DATE = null;
+                }
+
+                Html.RenderPartial("_InstituteSubjectPartial", subject);
+                subject_count--; i++;
+            }
+            else
+            {
+                <td colspan="3">&nbsp;</td>
+            }
+        </tr>
+    }
+}
+
+    <tr>
+        <td colspan="7" style="text-align:center;">
+            <input class="btn btn-success" type="submit" name="Submit" id="Submit" value="Assign" />
+        </td>
+    </tr>
+</table>
+}

@@ -1,0 +1,96 @@
+﻿@using OG_SLN.Helpers
+
+@{
+    string name = String.Empty;
+    string mobile = String.Empty;
+    string active = String.Empty;
+    string approved = String.Empty;
+    
+    string check = "checked='checked'";
+
+    OG_SLN.Models.TeacherSearchViewModel searchModel = ViewBag.Search_Teacher_Model as OG_SLN.Models.TeacherSearchViewModel;
+    if(searchModel != null)
+    {
+        if(!string.IsNullOrEmpty(searchModel.Search_Name))
+        {
+            name = searchModel.Search_Name;
+        }
+        if (!string.IsNullOrEmpty(searchModel.Search_Mobile))
+        {
+            mobile = searchModel.Search_Mobile;
+        }
+        if(searchModel.Search_Active.HasValue)
+        {
+            active = searchModel.Search_Active.ToString().ToLower();
+        }
+        if (searchModel.Search_Approved.HasValue)
+        {
+            approved = searchModel.Search_Approved.ToString().ToLower();
+        }
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+
+    });
+</script>
+
+@using(Html.BeginForm("Index", "TeacherEntry", FormMethod.Get)) {   
+     <div class="col-8 marRight_2"> 
+        <table class="tabWidth">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">Name : </td>
+                    <td class="adminRight_col">
+                        <input class="form-control" type="text" name="Search_Name" id="Search_Name" value="@name">
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="adminLef_col">Mobile:</td>
+                    <td class="adminRight_col">
+                        <input class="form-control" type="text" name="Search_Mobile" id="Search_Mobile" value="@mobile">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">Institute :</td>
+                    <td class="adminRight_col">
+                        @*@Html.DropDownList("Search_Institute", String.Empty)*@
+
+            
+                        @Html.Hidden("INSTITUTE_NO")
+                        @Html.Hidden("INSTITUTE_TYPE", "single")
+                        @Html.InstituteDialogFormLink("Select", Url.Action("Institute"), "Select Institute")
+
+                    </td>
+                    <td class="midWidth">&nbsp;</td>
+                    <td class="adminLef_col">Designation : </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("Search_Designation", String.Empty)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="adminLef_col">Active :</td>
+                    <td class="adminRight_col">
+			            <label><input  type="radio" name="Search_Active" value="null" @{if(active==String.Empty) {@check}}>All</label>
+			            <label><input type="radio"  name="Search_Active" value="true" @{if(active=="true") {@check}}>Active</label>
+			            <label><input type="radio"  name="Search_Active" value="false" @{if(active=="false") {@check}}>Inactive</label>
+		            </td>
+                    <td>&nbsp;</td>
+                    <td class="adminLef_col">Approved :</td>
+                    <td class="adminRight_col">
+			            <label><input  type="radio" name="Search_Approved" value="null" @{if(approved==String.Empty) {@check}}>All</label>
+			            <label><input type="radio"  name="Search_Approved" value="true" @{if(approved=="true") {@check}}>Approved</label>
+			            <label><input type="radio"  name="Search_Approved" value="false" @{if(approved=="false") {@check}}>Not Approved</label>
+		            </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align:center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}

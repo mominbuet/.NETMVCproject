@@ -1,0 +1,107 @@
+﻿@model OG_SLN.TRN_CHALLAN_UPLOAD
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div class="col-6 col-sm-6 col-lg-9 ">
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+        <legend>TRN_CHALLAN_UPLOAD</legend>
+
+        @Html.HiddenFor(model => model.UPLOAD_NO)
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPLOAD_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPLOAD_DATE)
+            @Html.ValidationMessageFor(model => model.UPLOAD_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FILE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FILE_NAME)
+            @Html.ValidationMessageFor(model => model.FILE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FILE_TYPE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FILE_TYPE)
+            @Html.ValidationMessageFor(model => model.FILE_TYPE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FILE_EXT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FILE_EXT)
+            @Html.ValidationMessageFor(model => model.FILE_EXT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TOTAL_RECORDS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TOTAL_RECORDS)
+            @Html.ValidationMessageFor(model => model.TOTAL_RECORDS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TOTAL_HR_COUNT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TOTAL_HR_COUNT)
+            @Html.ValidationMessageFor(model => model.TOTAL_HR_COUNT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TOTAL_BOOK_COUNT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TOTAL_BOOK_COUNT)
+            @Html.ValidationMessageFor(model => model.TOTAL_BOOK_COUNT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FAILED_HR_COUNT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FAILED_HR_COUNT)
+            @Html.ValidationMessageFor(model => model.FAILED_HR_COUNT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FAILED_BOOK_COUNT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FAILED_BOOK_COUNT)
+            @Html.ValidationMessageFor(model => model.FAILED_BOOK_COUNT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPLOAD_TYPE_NUM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPLOAD_TYPE_NUM)
+            @Html.ValidationMessageFor(model => model.UPLOAD_TYPE_NUM)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+    </div>
+}
+
+</div>

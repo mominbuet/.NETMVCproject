@@ -1,0 +1,177 @@
+﻿@model IEnumerable<OG_SLN.TRN_USER_LOCATION>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ENTRY_STATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_OFFLINE_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_IS_OFFLINE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_OFFLINE_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_OFFLINE_SYNC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_IS_OFFLINE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_OFFLINE_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_OFFLINE_SYNC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_IS_OFFLINE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAT_VAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LON_VAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOCATION_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OFFLINE_LOC_NO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENTRY_STATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_OFFLINE_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_OFFLINE_SYNC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_IS_OFFLINE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_OFFLINE_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_OFFLINE_SYNC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_IS_OFFLINE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_OFFLINE_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_OFFLINE_SYNC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_IS_OFFLINE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAT_VAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LON_VAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOCATION_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OFFLINE_LOC_NO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LOC_NO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LOC_NO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LOC_NO })
+        </td>
+    </tr>
+}
+
+</table>

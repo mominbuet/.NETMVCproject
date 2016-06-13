@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OMICON</title>
+    <link href="../../../Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/Content/Custom.css")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dateclass').datepicker({ dateFormat: 'yy-mm-dd' });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".datesinspec").datepicker({ dateFormat: 'yy-mm-dd',
+                "showAnim": "slide"
+            });
+
+            $(".timepicker").timepicker({
+                minuteStep: 5,
+                showInputs: false,
+                showMeridian: false,
+                disableFocus: true
+            });
+
+            $('#Selected_Zonal').change(function () {
+                if ($(this).val().length == 0) {
+                    $('#USER_NO').val('');
+                    $('#Search_Insert_User').val('');
+                    $('#Search_User').val('');
+                }
+            });
+
+            $('#Selected_Authority').change(function () {
+                if ($(this).val().length == 0) {
+                    $('#USER_PARENT_NO').val('');
+                }
+            });
+
+            $('.dialogLink').live('click', function () {
+                var element = $(this);
+
+                // Retrieve values from the HTML5 data attributes of the link
+                var dialogTitle = element.attr('data-dialog-title');
+                var updateTargetId = '#' + element.attr('data-update-target-id');
+                var updateUrl = element.attr('data-update-url');
+
+                var dialogDiv = "<div></div>";
+
+                // Load the form into the dialog div
+                $(dialogDiv).load(this.href, function () {
+                    $(this).dialog({
+                        modal: true,
+                        resizable: true,
+                        height: 600,
+                        width: 550,
+                        title: dialogTitle,
+                        open: function (event, ui) {
+                            $('.ui-dialog-titlebar-close').css('height', '25px').html('X');
+                        },
+                        close: function (event, ui) {
+                            //$(this).dialog('destroy');
+                            $(this).remove();
+                        }
+                    });
+                });
+                return false;
+            });
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#div_modal").ajaxStart(function () {
+                $(this).show();
+            }).ajaxStop(function () {
+                $(this).hide();
+            });
+
+            $.ajaxSetup({
+                error: function (jqXHR, exception) {
+                    if (jqXHR.status === 0) {
+                        alert('Not connect.\n Verify Network.');
+                    } else if (jqXHR.status == 404) {
+                        alert('Requested page not found. [404]');
+                    } else if (jqXHR.status == 500) {
+                        alert('Internal Server Error [500]. You may need to Login again');
+                        //window.location = "../../Registration/Login";
+                    } else if (exception === 'parsererror') {
+                        alert('Requested JSON parse failed.');
+                    } else if (exception === 'timeout') {
+                        alert('Time out error.');
+                    } else if (exception === 'abort') {
+                        alert('Ajax request aborted.');
+                    } else {
+                        alert('Uncaught Error.\n' + jqXHR.responseText);
+                    }
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript" language="javascript">
+        try {
+            var asyncState = true;
+            XMLHttpRequest.prototype.original_open = XMLHttpRequest.prototype.open;
+            XMLHttpRequest.prototype.open = function (method, url, async, user, password) {
+                async = asyncState;
+
+                var eventArgs = Array.prototype.slice.call(arguments);
+                return this.original_open.apply(this, eventArgs);
+
+            }
+        } catch (e) {
+            alert(e.message);
+        } finally {
+        }
+    
+        </script>
+<style type="text/css">
+    .pending-job
+    {
+        float: right;
+        border-width:0px;
+        cursor:pointer;
+        font-size: smaller;
+    }
+    
+    .pending-content
+    {
+        font-size: 10px;
+    }
+    .pending-content a
+    {
+        border:none;
+        text-decoration:none;
+        }
+</style>
+</head>
+<body>
+    <div id="div_modal" class="affix-top middle_loading" style="position:fixed;">
+        <div>
+            <img src="../../Images/loading.gif" />
+            Please Wait...</div>
+    </div>
+    <!--start menu--->
+    @{
+        List<OG_SLN.GEN_CONTROLLER_ACTION> menu_list = Session["sess_MENU_LIST"] as List<OG_SLN.GEN_CONTROLLER_ACTION>;
+        OG_SLN.SEC_USERS_LOGIN_Result1 user = Session["sess_sec_users"] as OG_SLN.SEC_USERS_LOGIN_Result1;
+    }
+    <!--start menu--->
+       <script type="text/javascript">
+           $(document).ready(function () {
+               $('#slideout').click(function () {
+                   $('#slideout_inner').toggle("slide");
+               });
+
+                var popover = $('.pending-job').popover({
+                    html: true,
+                    content: "loading...",
+                    placement: "bottom",
+                }).on('show.bs.popover', function(){
+                        var url = '@Url.Content("~")' + 'Login/PendingJob';
+                        var dcr_app_url = '@Url.Content("~")' + 'DcrCostApproval/Index';
+                        var dcr_off_url = '@Url.Content("~")' + 'OfflineEntryMonitor/Index';
+                        //var exp_app_url = '@Url.Content("~")' + 'ExpenseApprove/Index';
+                        var exp_off_url = '@Url.Content("~")' + 'OfflineExpenseCheck/Index';
+
+                        $.post(url, null, function(res){
+                            var content =   '<div class="pending-content">'
+                                          + 'Cost Approval - <a href="'+ dcr_app_url +'" target="_blank">' + res.dcr_approve + "</a><br />"
+                                          + 'Offline Entry Monitor - <a href="'+ dcr_off_url +'" target="_blank">' + res.dcr_offline + "</a><br />"
+                                          //+ 'Expense Approve - <a href="'+ exp_app_url +'" target="_blank">' + res.expense_approve + "</a><br />"
+                                          + 'Offline Expense Check - <a href="'+ exp_off_url +'" target="_blank">' + res.expense_offline + "</a><br />"
+                                          + '</div>';
+                                          console.log("zonal = " + res.is_zonal_or_agent);
+                            if(res.is_zonal_or_agent)
+                            {
+                                content =   '<div class="pending-content">'
+                                          + 'Cost Approval - ' + res.dcr_approve + "<br />"
+                                          + 'Offline Entry Monitor - ' + res.dcr_offline + "<br />"
+                                          //+ 'Expense Approve - ' + res.expense_approve + "<br />"
+                                          + 'Offline Expense Check - ' + res.expense_offline + "<br />"
+                                          + '</div>';
+                            }
+                            popover.attr('data-content', content);
+                        });
+                    });
+
+                $('.pending-job').popover('show');
+                $('.pending-job').popover('hide');
+           });
+       </script>
+    <div id="slideout">
+        <div class="verText">
+            Menu</div>
+        <div id="slideout_inner">
+            <div id="accordian">
+                @if (menu_list != null)
+                {
+                    foreach (OG_SLN.GEN_CONTROLLER_ACTION menu in menu_list)
+                    {
+                    <ul>
+                        <li>
+                            <h3>@Html.ActionLink(menu.MENU_NAME, menu.ACTION_NAME, menu.CONTROLLER_NAME)
+                            </h3>
+                            <!--ul>
+                                        <li><a href="#" class="tooltipleftmenu" title="This is report">
+                                            Reports
+                                        </a></li>
+                                    </ul-->
+                        </li>
+                    </ul>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <!--end lefmenu--->
+    
+    
+    <!--/start top herader-->
+    
+   <div class="navbar navbar-fixed-top navbar-inverse fixHeader" role="navigation ">
+        <div class="container-fluid">
+            <div class="col-xs-6 col-sm-6">
+                <div class="logo">
+                <img src="../../../images/logo.png" width="80px"/></div>
+                <div class="col-xs-8 col-sm-9 topAddress">
+                    <b>LECTURE Publications Ltd.</b><br />
+                    <div class="dvAddress">
+                        Razzak Tower (5th Floor), 5 / Purana Paltan. Dhaka-1000 <br /> 
+                        37 North Brook Hall Road, Banglabazar, Dhaka-1100 <br />
+                        Phone: 7125223, 7118946, 7121015 Fax: 88-02-9514569<br />
+                        E-mail:publications@omicon.com,Web: www.omicon.com
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4" style="float:right;">
+                <div class="row-fluid">
+                    <div class="col-4 showhUser">
+                        Welcome, @user.USER_FULL_NAME &nbsp;&nbsp;
+                        @*Last Login : @user.LAST_ACTION_TIME.ToString()*@
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="col-4 topButton">
+                        <button class="btn btn-success" onclick="location.href='/Login/ChangePassword'">
+                            Change Password</button>
+                        <button class="btn btn-info" onclick="location.href='/Login/Logout'">
+                            Logout</button>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <a class="pending-job">[ Pending Job ]</a>
+                </div>
+            </div>
+            <!-- /.nav-collapse -->
+        </div>
+        <!-- /.container -->
+    </div>
+    
+    
+    <!--/end top herader-->
+    
+    
+    
+    <div class="container" @*style="margin:120px;"*@> 
+        @*<div id="div_modal" class="loading modal">*@
+            @*<p><img src="../Images/loading.gif" /> Please Wait</p>*@
+        @*</div>*@
+        <div class="row row-offcanvas row-offcanvas-right">
+            <div class="row">
+                @RenderSection("featured", required: false)
+                <section>
+                            @RenderBody()
+                        </section>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - LECTURE Publications Ltd. (ISO 9001:2008 certified OMICON GROUP company)</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+    @RenderSection("shadScripts", required: false)
+    <script type="text/javascript">
+        
+    </script>
+</body>
+</html>

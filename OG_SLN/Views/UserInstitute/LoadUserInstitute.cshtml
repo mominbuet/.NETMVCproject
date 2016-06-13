@@ -1,0 +1,29 @@
+﻿@model IEnumerable<OG_SLN.SEC_USER_INSTITUTE_SEARCH_Result>
+@{
+    Layout = null;
+}
+
+@{
+    if (Model != null) {
+        <table  class="table table-bordered table-hover tabWidth">
+            <tr class="success">                
+                <th>Institute</th>
+                <th>Type</th>
+                <th>Thana</th>
+                <th>Status</th>
+            </tr>
+        @foreach(var item in Model) {
+            string status = "Inactive";
+            if ((item.IS_ACTIVE.HasValue) && (item.IS_ACTIVE == 1)) {
+                status = "Active";                
+            }     
+            <tr>                            
+                <td>@item.INSTITUTE_NAME @item.INSTITUTE_NAME_BNG</td>
+                <td>@item.INST_TYPE_NAME</td>
+                <td>@item.THANA_NAME</td>
+                <td>@status</td>
+            </tr>
+        }
+        </table>
+    }
+}

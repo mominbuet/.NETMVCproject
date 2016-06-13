@@ -1,0 +1,307 @@
+﻿@using OG_SLN.Helpers
+@{
+    ViewBag.Title = "DCR Summary List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var request = HttpContext.Current.Request;
+    var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+
+    if (!string.IsNullOrWhiteSpace(appUrl))
+    {
+        appUrl += "";
+    }
+
+    var baseUrl = string.Format("{0}://{1}{2}", request.Url.Scheme, request.Url.Authority, appUrl);
+}
+<script type="text/javascript" language="javascript">
+
+    /*$(document).ready(function () {
+    //do_search();
+        
+    });*/
+
+    function load_zilla() {
+        var DIVISION_NO = $('#DIVISION_NO').val();
+        if ((DIVISION_NO != null) && (DIVISION_NO != undefined) && (DIVISION_NO != '')) {
+            var url = '@baseUrl' + 'DCRSummarySearch/GetZilla?DIVISION_NO=' + DIVISION_NO;
+            $.get(url, function (res) {
+                $('#ZILLA_NO').empty();
+                $('#THANA_NO').empty();
+                $("<option />", {
+                    val: '',
+                    text: ''
+                }).appendTo($('#ZILLA_NO'));
+                $.each(res, function () {
+                    $("<option />", {
+                        val: this.ZILLA_NO,
+                        text: this.ZILLA_NAME
+                    }).appendTo($('#ZILLA_NO'));
+                });
+            });
+        } else {
+            $('#ZILLA_NO').empty();
+        }
+        return false;
+    }
+
+    function load_thana() {
+        var ZILLA_NO = $('#ZILLA_NO').val();
+        if ((ZILLA_NO != null) && (ZILLA_NO != undefined) && (ZILLA_NO != '')) {
+            var url = '@baseUrl' + 'DCRSummarySearch/GetThana?ZILLA_NO=' + ZILLA_NO;
+            $.get(url, function (res) {
+                $('#THANA_NO').empty();
+                $("<option />", {
+                    val: '',
+                    text: ''
+                }).appendTo($('#THANA_NO'));
+                $.each(res, function () {
+                    $("<option />", {
+                        val: this.THANA_NO,
+                        text: this.THANA_NAME
+                    }).appendTo($('#THANA_NO'));
+                });
+            });
+        } else {
+            $('#THANA_NO').empty();
+        }
+
+        return false;
+    }
+
+    function do_search() {
+        var DIVISION_NO = $('#DIVISION_NO').val();
+        var ZILLA_NO = $('#ZILLA_NO').val();
+        var THANA_NO = $('#THANA_NO').val();
+        var USER_NO = $('#USER_NO').val();
+        var MON_NO = $('#MON_NO').val();
+        var YEAR = $('#YEAR').val();
+        var TRN_DCR_DATE_FROM = $('#TRN_DCR_DATE_FROM').val();
+        var TRN_DCR_DATE_TO = $('#TRN_DCR_DATE_TO').val();
+
+        var TRN_DCR_SUM_SEARCH = {
+            'DIVISION_NO': DIVISION_NO,
+            'ZILLA_NO': ZILLA_NO,
+            'THANA_NO': THANA_NO,
+            'USER_NO': USER_NO,
+            'MON_NO': MON_NO,
+            'YEAR': YEAR,
+            'TRN_DCR_DATE_FROM': TRN_DCR_DATE_FROM,
+            'TRN_DCR_DATE_TO': TRN_DCR_DATE_TO
+        };
+
+        var url = '@baseUrl' + 'DCRSummarySearch/Index';
+        $.post(url, TRN_DCR_SUM_SEARCH, function (res) {
+            $('#div_list').html(res);
+
+            $('#div_sumdet').html('');
+            $('#div_sumdet').hide();
+
+        });
+
+        return false;
+    }
+
+    function do_clear() {
+        $('#div_list').html('');
+        $('#div_sumdet').html('');
+        $('#div_sumdet').hide();
+        return false;
+    }
+
+    function load_dcr(DEPT_NO, DIVISION_NO, ZILLA_NO, THANA_NO, USER_NO, MON_NO, YEAR, TRN_DCR_DATE_FROM, TRN_DCR_DATE_TO, DCR_TYPE_NO) {
+        if ((DEPT_NO == null) || (DEPT_NO == '')) {
+            DEPT_NO = 0;
+        }
+        if ((DIVISION_NO == null) || (DIVISION_NO == '')) {
+            DIVISION_NO = 0;
+        }
+        if ((ZILLA_NO == null) || (ZILLA_NO == '')) {
+            ZILLA_NO = 0;
+        }
+        if ((THANA_NO == null) || (THANA_NO == '')) {
+            THANA_NO = 0;
+        }
+        if ((USER_NO == null) || (USER_NO == '')) {
+            USER_NO = 0;
+        }
+        /*
+        if ((DCR_TYPE_NO == null) || (DCR_TYPE_NO == '')) {
+        DCR_TYPE_NO = 0;
+        }*/
+        var TRN_DCR_SUM_SEARCH = {
+            'DEPT_NO': DEPT_NO,
+            'DIVISION_NO': DIVISION_NO,
+            'ZILLA_NO': ZILLA_NO,
+            'THANA_NO': THANA_NO,
+            'USER_NO': USER_NO,
+            'MON_NO': MON_NO,
+            'YEAR': YEAR,
+            'TRN_DCR_DATE_FROM': TRN_DCR_DATE_FROM,
+            'TRN_DCR_DATE_TO': TRN_DCR_DATE_TO,
+            'DCR_TYPE_NO': DCR_TYPE_NO
+        };
+
+        var url = '@baseUrl' + 'DCRSummarySearch/GetDCRSumDet';
+        $.post(url, TRN_DCR_SUM_SEARCH, function (res) {
+            $('#div_sumdet').html(res);
+            $('#div_sumdet').show();
+        });
+
+        return false;
+
+    }
+
+    function close_div_sumdet() {
+        $('#div_sumdet').html('');
+        $('#div_sumdet').hide();
+    }
+
+    function load_url(url) {
+        $.get(url, function (res) {
+            $('#div_list').html(res);
+
+            $('#div_sumdet').html('');
+            $('#div_sumdet').hide();
+        });
+
+        return false;
+    }
+
+    $(function () {
+        do_search();
+
+    });
+</script>
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm())
+{
+    <div class="col-8 marRight_2" style="min-width: 100%">
+        <table class="table table-responsive">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">
+                        Division
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("DIVISION_NO", ViewBag.DIVISION_NO as IEnumerable<SelectListItem>, string.Empty, new { @onchange = "return load_zilla();" })
+                    </td>
+                    <td class="adminLef_col">
+                        Zilla
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("ZILLA_NO", ViewBag.ZILLA_NO as IEnumerable<SelectListItem>, string.Empty, new { @onchange = "return load_thana();", @class = "form-control" })
+                    </td>
+                    <td class="adminLef_col">
+                        Thana
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("THANA_NO", ViewBag.THANA_NO as IEnumerable<SelectListItem>, string.Empty, new { @class = "form-control" })
+                    </td>
+                    <td class="adminLef_col">
+                        Zonal Name
+                    </td>
+                    <td class="adminRight_col">
+                        @*@Html.DropDownList("USER_NO", string.Empty)*@
+                        @Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                    </td>
+                </tr>
+                <tr>
+                    @*<td class="adminLef_col">Month</td>
+                    <td class="adminRight_col">
+                        <select id="MON_NO" name="MON_NO">
+                            <option value=""></option>
+                            <option value="01">Jan</option>
+                            <option value="02">Feb</option>
+                            <option value="03">Mar</option>
+                            <option value="04">Apr</option>
+                            <option value="05">May</option>
+                            <option value="06">Jun</option>
+                            <option value="07">Jul</option>
+                            <option value="08">Aug</option>
+                            <option value="09">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                    </td>
+                    <td class="adminLef_col">Year</td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("YEAR", string.Empty, new {@maxlength = 4 })
+                    </td>*@
+                    <td class="adminLef_col">
+                        From Date
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("TRN_DCR_DATE_FROM", DateTime.Now.ToString("yyyy-MM-dd"), "{0:yyyy-MM-dd}", new { @class = "datesinspec form-control" })
+                    </td>
+                    <td class="adminLef_col">
+                        To Date
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("TRN_DCR_DATE_TO", DateTime.Now.ToString("yyyy-MM-dd"), "{0:yyyy-MM-dd}", new { @class = "datesinspec  form-control" })
+                    </td>
+                    <td class="adminLef_col">
+                    </td>
+                    <td class="adminRight_col">
+                    </td>
+                    <td class="adminLef_col">
+                        <button class="btn btn-success" onclick="return do_search()">
+                            Search</button>
+                    </td>
+                    <td class="adminRight_col">
+                        <button class="btn btn-danger" onclick="return do_clear()">
+                            Clear</button>
+                    </td>
+                </tr>
+                @*<tr>
+                    <td class="adminLef_col"></td>
+                    <td class="adminRight_col"></td>
+                    <td class="adminLef_col"></td>
+                    <td class="adminRight_col"></td>
+                    <td class="adminLef_col"></td>
+                    <td class="adminRight_col"></td>
+                    <td class="adminLef_col">
+                        <button onclick="return do_search()">Search</button>
+                    </td>
+                    <td class="adminRight_col">
+                        <button onclick="return do_clear()">Clear</button>
+                    </td>
+                </tr>*@
+            </tbody>
+        </table>
+    </div>
+     
+}
+<div id="div_list">
+</div>
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="div_sumdet" @*class="popup"*@ @*style="display:none"*@>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<div id="mdlDcrDetails"  class="modal fade bs-example-modal-lg"
+    tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content mc2">
+            @*<div class="modal-header">
+               
+            </div>*@
+            <div class="modal-body" id="childModal">
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<br />

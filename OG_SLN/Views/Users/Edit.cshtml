@@ -1,0 +1,360 @@
+﻿@model OG_SLN.SEC_USERS
+
+@using OG_SLN.Helpers
+
+@{
+    string type = ViewBag.User_Type as string;
+    string parent_name = ViewBag.User_Parent_Name as string;
+    //!String.IsNullOrEmpty(parent_name) ? parent_name : ""
+    ViewBag.Title = "Edit";
+}
+
+<script type="text/javascript">
+    var parent_name = '@parent_name';
+    $(document).ready(function () { 
+
+        $("#USER_TYPE_NO").change(function(){ 
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/authority/"+$("#USER_TYPE_NO").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#USER_PARENT_NO").empty();
+                    $("#USER_PARENT_NO").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#USER_PARENT_NO").append('<option value="' + val.authno + '">' + val.authname + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+
+        $("#COMP_NO").change(function(){ 
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/departments/"+$("#COMP_NO").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#DEPT_NO").empty();
+                    $("#DEPT_NO").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#DEPT_NO").append('<option value="' + val.deptno + '">' + val.deptname + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+
+        $("#DIVISION_NO").change(function(){ 
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/zilla/"+$("#DIVISION_NO").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#ZILLA_NO").empty();
+                    $("#ZILLA_NO").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#ZILLA_NO").append('<option value="' + val.zillano + '">' + val.zillaname + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+
+        $("#ZILLA_NO").change(function(){ 
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/thana/"+$("#ZILLA_NO").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#THANA_NO").empty();
+                    $("#THANA_NO").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#THANA_NO").append('<option value="' + val.thanano + '">' + val.thananame + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+        
+        if(parent_name.length > 0)
+        {
+            $('#Selected_Authority').val(parent_name);
+        }
+
+        $('.dateclass').datepicker({dateFormat: 'yy-mm-dd'});
+    });
+</script>
+
+<h2>Edit</h2>
+
+<div class="col-6 col-sm-6 col-lg-9">
+@{
+    string head_text = "Edit " + type;
+    if (type == "Special")
+    {
+        head_text = "Edit Sr. Manager / Div. Manager / Marketing Head";
+    }
+    else if (type == "GeneralUser")
+    {
+        head_text = "Edit General User (With Administrative Permision)";
+    }
+}
+
+ @using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Post, new { @class = "form-horizontal" }))
+ {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.USER_NO)
+        <fieldset>
+            <legend>@head_text</legend>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_TYPE_NO)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.DropDownList("USER_TYPE_NO", String.Empty)
+                     @Html.ValidationMessageFor(model => model.USER_TYPE_NO)
+                </div>
+             </div>
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.COMP_NO)
+                 </label>
+                <div class="col-sm-4">
+                      @Html.DropDownList("COMP_NO", String.Empty)
+                      @Html.ValidationMessageFor(model => model.COMP_NO)
+                </div>
+             </div>
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.DEPT_NO)
+                 </label>
+                <div class="col-sm-4">
+                      @Html.DropDownList("DEPT_NO", String.Empty)
+                      @Html.ValidationMessageFor(model => model.DEPT_NO)
+                </div>
+             </div>
+          
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.DESIG_NO)
+                 </label>
+                <div class="col-sm-4">
+                      @Html.DropDownList("DESIG_NO", String.Empty)
+                        @Html.ValidationMessageFor(model => model.DESIG_NO)
+                </div>
+             </div>
+
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.HR_EMP_ID)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.HR_EMP_ID, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.HR_EMP_ID)
+                </div>
+             </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_FULL_NAME)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.USER_FULL_NAME, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_FULL_NAME)
+                </div>
+             </div>
+
+
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_NICK_NAME)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.USER_NICK_NAME, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_NICK_NAME)
+                </div>
+             </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_CONTACT)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.USER_CONTACT, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_CONTACT)
+                </div>
+             </div>
+
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_MOBILE)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.USER_MOBILE, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_MOBILE)
+                </div>
+             </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_ADDR)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.USER_ADDR, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_ADDR)
+                </div>
+             </div>
+
+            
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_EMAIL)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.USER_EMAIL, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_EMAIL)
+                </div>
+             </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_NAME)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.USER_NAME, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_NAME)
+                </div>
+             </div>
+
+@*
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_PWD)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.PasswordFor(model => model.USER_PWD, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.USER_PWD)
+                </div>
+             </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.RETYPE_PASSWORD)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.PasswordFor(model => model.RETYPE_PASSWORD, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.RETYPE_PASSWORD)
+                </div>
+             </div>*@
+
+
+@{
+     if (type == "Zonal" || type == "Agent" || type == "Special")
+     {
+             <input type="hidden" name="User_ViewType" value="@type"/>
+    
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.USER_PARENT_NO)
+                </label>
+                <div class="col-sm-4">
+                     @*@Html.DropDownList("USER_PARENT_NO", String.Empty)
+                     @Html.ValidationMessageFor(model => model.USER_PARENT_NO)*@
+                     @*@Html.DropDownList("USER_PARENT_NO", String.Empty)*@
+                     @Html.HiddenFor(model => model.USER_PARENT_NO)
+                     @Html.ReportingAuthorityDialogFormLink("Select", Url.Action("GetReportingAuthorityForm"), "Select Reporting Authority")
+                     @Html.ValidationMessageFor(model => model.USER_PARENT_NO)
+                </div>
+             </div>
+    
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.Label("Division")
+                </label>
+                <div class="col-sm-4">
+                      @Html.DropDownList("DIVISION_NO", String.Empty)
+                </div>
+             </div>
+    
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.Label("Zilla")
+                </label>
+                <div class="col-sm-4">
+                      @Html.DropDownList("ZILLA_NO", String.Empty)
+                </div>
+             </div>
+    
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.Label("Thana")
+                </label>
+                <div class="col-sm-4">
+                      @Html.DropDownList("THANA_NO", String.Empty)
+                </div>
+             </div>
+     }
+}
+
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.ACTIVE_STATUS)
+                </label>
+                <div class="col-sm-4">
+                     @Html.CheckBoxFor(model => model.ACTIVE_STATUS)
+                     @Html.ValidationMessageFor(model => model.ACTIVE_STATUS)
+                </div>
+             </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.DATE_FROM)
+                </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.DATE_FROM, new { @class = "form-control dateclass" })
+                     @Html.ValidationMessageFor(model => model.DATE_FROM)
+                </div>
+             </div>
+           
+
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.DATE_TO)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.DATE_TO, new { @class = "form-control dateclass" })
+                     @Html.ValidationMessageFor(model => model.DATE_TO)
+                </div>
+             </div>
+
+              <div class="form-group">
+                 <div style="margin-left:390px;">
+                    <input class="btn btn-success" type="submit"  value="Save" />
+                </div>
+            </div>
+  
+        </fieldset>
+ }
+</div>

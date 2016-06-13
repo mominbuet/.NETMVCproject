@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+
+      $('#ddldivision').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#ddldivision").val(),type:"division"} ,
+            function( data ) {
+                $("#ddlZillas").html(data.zill);
+                $("#ddlThanas").html(data.thana);
+                $("#zmusers").html(data.zms);
+                console.log(data.zms);
+            });
+        });
+        $('#ddlZillas').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#ddlZillas").val(),type:"zilla"} ,
+            function( data ) {
+                $("#ddlThanas").html(data.thana);
+                $("#zmusers").html(data.zms);
+            });
+        });
+        $('#ddlThanas').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#ddlZillas").val(),type:"thana"} ,
+            function( data ) {
+                $("#zmusers").html(data.zms);
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    function do_search() {
+        var frm = $('form');
+        var url = $(frm).attr('action');
+        var data = $(frm).serialize();
+
+        $.post(url, data, function (res) {
+            $('#div_result').html(res);
+        });
+
+        return false;
+    }
+
+</script>
+
+
+<h2>Index</h2>
+
+<div id="div_search">
+    @{Html.RenderPartial("SearchEntry");}
+</div>
+<div id="div_result">
+    @{Html.RenderPartial("Result");}
+</div>

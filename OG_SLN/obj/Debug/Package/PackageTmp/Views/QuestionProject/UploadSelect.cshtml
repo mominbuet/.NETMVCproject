@@ -1,0 +1,282 @@
+﻿@using OG_SLN;
+@using OG_SLN.Helpers;
+
+@model TPR_PROJECT_INSTITUTE
+
+
+@{
+    ViewBag.Title = "Upload";
+    List<TPR_PROJECT_ASSIGNMENTS_GET_Result> Institutes = ViewBag.Institutes 
+        as List<TPR_PROJECT_ASSIGNMENTS_GET_Result>;
+    TPR_PROJECT project = ViewBag.Project as TPR_PROJECT;
+    decimal USER_NO = ViewBag.USER_NO;
+}
+<script src="@Url.Content("~/Scripts/autocomplete-2-table.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.form.min.js")" type="text/javascript"></script>
+
+
+<style type="text/css">
+    .tdLeft
+    {
+        font-weight: bold;
+    }
+    .file-names
+    {
+        display: none;
+        position:absolute;
+        padding:0 5px 0 5px;
+        line-height: 30px;
+        overflow:auto;
+        overflow-x:hidden;
+        background-color: #5cb85c;
+        color: #fff;
+        border: 1px solid #222;
+        text-align: left;
+        z-index: 600;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.ui-autocomplete table tbody tr').live('click', function () {
+
+            var content = '';
+
+            if (which_one == 1)    // institute
+            {
+                content += '<table class="table table-responsive table-bordered tabWidth">';
+                content += '<tr><td class="tdLeft">Institute :</td><td>' + ins_name + '</td></tr>';
+                content += '<tr><td class="tdLeft">Code :</td><td>' + ins_code + '</td></tr>';
+                content += '<tr><td class="tdLeft">Division :</td><td>' + ins_division + '</td></tr>';
+                content += '<tr><td class="tdLeft">Zilla :</td><td>' + ins_zilla + '</td></tr>';
+                content += '<tr><td class="tdLeft">Thana :</td><td>' + ins_thana + '</td></tr>';
+                content += '</table>';
+
+                $('#ins_res').html(content);
+            }
+        });
+
+        $('#Search').click(function () {
+            var pid = $('#PROJECT_NO').val();
+            var uid = $('#USER_NO').val();
+            var ins_no = $('#INSTITUTE_NO').val();
+
+            if(ins_no.length > 0)
+            {
+                $.get("@Url.Content("~")" + "QuestionProject/GetUploadSubjects?pid=" + pid
+                                          + '&uid=' + uid + '&ins_no=' + ins_no, 
+                    function(res) {
+                        $('#subject_list tbody tr:gt(1)').remove();
+                        $('#subject_list tbody').append(res);
+                });
+            }
+            else
+            {
+                alert("Please select Institute !!")
+            }
+            
+            return false;
+        });
+
+        $('.AttachButton').live('click', function(){
+            var ins_sub_no = $(this).attr('data-sub-no');
+            
+            $.get("@Url.Content("~")" + "QuestionProject/GetUploadForm/"+ins_sub_no, function(res){
+                $('#div_uploads').html(res);
+                $('#div_uploads').show();
+            });
+        });
+
+        $('.ins-select').click(function(){
+            $('#INSTITUTE_NO').val($(this).attr('data-ins-no'));
+            $('#txtINS').val($(this).attr('data-ins-name'));
+
+            var content = '';
+
+            content += '<table class="table table-responsive table-bordered tabWidth">';
+            content += '<tr><td class="tdLeft">Institute :</td><td>' + $(this).attr('data-ins-name') + '</td></tr>';
+            content += '<tr><td class="tdLeft">Code :</td><td>' + $(this).attr('data-ins-no') + '</td></tr>';
+            content += '<tr><td class="tdLeft">Division :</td><td>' + $(this).attr('data-division') + '</td></tr>';
+            content += '<tr><td class="tdLeft">Zilla :</td><td>' + $(this).attr('data-zilla') + '</td></tr>';
+            content += '<tr><td class="tdLeft">Thana :</td><td>' + $(this).attr('data-thana') + '</td></tr>';
+            content += '</table>';
+
+            $('#ins_res').html(content);
+
+            $('#Search').trigger('click');
+
+            //return false;
+        });
+        
+        $('.upload_cnt').live('hover', function(){
+            var ins_sub_no = $(this).attr('data-sub-no');
+
+            $.get("@Url.Content("~")" + "QuestionProject/GetUploadFiles/"+ins_sub_no, function(res){
+                console.log(res);
+                //$(this).parent().children('.file-names')[0].html(res);
+                $('#file-names-' + ins_sub_no).empty();
+                $('#file-names-' + ins_sub_no).html(res);
+                
+                $('#file-names-' + ins_sub_no).animate({
+                    opacity: 'toggle'
+                });
+            });
+            
+            //return false;
+        });
+        /*
+        $('.upload_cnt').on({
+            mouesover : function(){
+                alert("mouseoever laert");
+            }
+        });*/
+    });
+</script>
+@using (Html.BeginForm())
+{
+<table class="table table-responsive table-bordered tabWidth">
+    <tr>
+        <td colspan="4" style="text-align:center">
+            <h2>Assigned Institute & Subjects to Question Project</h2>
+            @Html.Hidden("PROJECT_NO", project.PROJECT_NO)
+            @Html.Hidden("USER_NO", USER_NO)
+        </td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Name:</td>
+        <td>@project.PROJECT_NAME</td>
+        <td class="tdLeft">Project Deadline:</td>	
+        <td>@project.DATE_DEADLINE</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Class:	</td>
+        <td>@project.SET_CLASS.CLASS_NAME</td>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Select Institution:</td>
+        <td>
+            <input id="txtINS" type="text" class="form-control" />
+            @Html.Hidden("INSTITUTE_NO", "")
+        </td>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Add From List:</td>
+        <td>
+            @Html.InstituteAssignedDialogFormLink("Select Institute", Url.Action("Institute", "QuestionProject", new { p_no = project.PROJECT_NO, u_no = USER_NO}),
+                    "Select Assigned Institute")
+        </td>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div id="ins_res">
+            </div>
+        </td>
+        <td colspan="2"></td>
+    </tr>
+</table>
+
+
+<table class="table table-responsive table-bordered  tabWidth">
+    <tr>
+        <td colspan="7" style="text-align:center;">
+            <input class="btn btn-success" type="submit" name="Search" id="Search" value="Get Subjects" />
+        </td>
+    </tr>
+</table>
+}
+
+<table id="subject_list"  class="table table-responsive table-bordered tabWidth">
+    <tr class="trhead">
+        <td colspan="5" class="TableHeadLabel tdLeft">Assigned Subject List</td>
+    </tr>
+    <tr class="trhead">
+        <td class="tdLeft">Serial</td>
+        <td class="tdLeft">
+            <p>Assigned<br /> 
+            Subject Name</p>
+        </td>
+        <td class="tdLeft">Already<br />
+        Uploaded</td>
+        <td class="tdLeft">No. of <br />
+        File Attach.</td>
+        <td class="tdLeft">Attach <br />
+        More Files</td>
+    </tr>
+</table>
+
+
+
+@if (Institutes.Count > 0)
+{
+    int serial = 1;
+    <table id="institute_list"  class="table table-responsive table-bordered tabWidth">
+        <tr class="trhead">
+            <td colspan="7" class="TableHeadLabel tdLeft">Assigned Institute List</td>
+        </tr>
+        <tr class="trhead">
+            <td class="tdLeft">Serial</td>
+            <td class="tdLeft">
+                <p>Assigned<br /> 
+                Institute Name<br />
+                (Code)</p>
+            </td>
+            <td class="tdLeft">Division,<br />
+            Zilla,<br />
+            Thana</td>
+            <td class="tdLeft">No. of Subject<br />
+             Assigned</td>
+            <td class="tdLeft">Pending <br />
+            Upload</td>
+            <td class="tdLeft">Project <br />
+            Deadline Date</td>
+            <td class="tdLeft">Select</td>
+        </tr>
+        @foreach(var ins in Institutes)
+        {
+            int pending_cnt = (int)ins.ASSIGN_CNT - (int)ins.COLLECT_CNT;
+            
+            <tr class="trhead">
+                <td>@serial</td>
+                <td>
+                    <p>@ins.INSTITUTE_NAME <br />
+                    (@ins.INSTITUTE_NO)</p>
+                </td>
+                <td>@ins.DIVISION_NAME,<br />
+                @ins.ZILLA_NAME,<br />
+                @ins.THANA_NAME</td>
+                <td>@ins.ASSIGN_CNT</td>
+                <td>@pending_cnt</td>
+                <td>@project.DATE_DEADLINE</td>
+                <td>
+                    <button type="button" class="btn btn-success ins-select" 
+                            data-ins-no="@ins.INSTITUTE_NO" 
+                            data-ins-name="@ins.INSTITUTE_NAME" 
+                            data-division="@ins.DIVISION_NAME"
+                            data-zilla="@ins.ZILLA_NAME" 
+                            data-thana="@ins.THANA_NAME" >
+                        Select
+                    </button>
+                </td>
+            </tr>
+            
+            serial++;
+        }
+    </table>
+}
+
+
+<div class="modal fade bs-example-modal-lg" id="uploads" tabindex="-1" role="dialog"
+    aria-labelledby="downloadModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="div_uploads">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

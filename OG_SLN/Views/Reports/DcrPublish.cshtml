@@ -1,0 +1,417 @@
+﻿@using OG_SLN.Models
+@using OG_SLN.Helpers
+@model DcrPublishViewModel
+@{
+    ViewBag.Title = "DcrPublish";
+
+   // bool Is_ZonalOrAgent = (bool)(ViewBag.Is_ZonalOrAgent);
+
+    int currentRowTotal = 0;
+    int totalExpense = 0;
+    int specimen_slno = 1;
+    int specimenTotal = 0;
+
+    int taAmtTotal = 0;
+    int teAmtTotal = 0;
+    int pbAmtTotal = 0;
+    int daAmtTotal = 0;
+    int obAmtTotal = 0;
+}
+<h2>
+    DCR Publish
+</h2>
+
+<style type="text/css">
+    .right
+    {
+        text-align:right;
+    }
+</style>
+<script src="@Url.Content("~/Scripts/autocomplete-table.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $('#publish').click(function () {
+            if (confirm("Do you really want to Publish?")) {
+                var url = '@Url.Content("~")' + 'Reports/DcrDoPublish';
+                $.post(url, null, function (res) {
+                    $('#publishres').html(res.message);
+                    $('#publishres').show().delay(2000).hide(1000);
+                });
+            }
+        });
+
+        $('#print').click(function () {
+            var url = '@Url.Content("~")'
+                + 'Reports/DcrPublish?'
+                + 'Search_User='+$('#Search_User').val()
+                + '&Search_Date_From='+$('#Search_Date_From').val()
+                + '&Search_Date_To='+$('#Search_Date_To').val()
+                + '&Print=Y&Search=Search';
+            $.get(url, function (res) {
+                printWindow = window.open('', '_blank');
+                printWindow.focus();
+                printWindow.document.body.innerHTML = res;
+                printWindow.print();
+            });
+        });
+        $('#preview').click(function () {
+            var url = '@Url.Content("~")'
+                + 'Reports/DcrPublish?'
+                + 'Search_User='+$('#Search_User').val()
+                + '&Search_Date_From='+$('#Search_Date_From').val()
+                + '&Search_Date_To='+$('#Search_Date_To').val()
+                + '&Print=Y&Search=Search';
+            $.get(url, function (res) {
+                printWindow = window.open('', '_blank');
+                printWindow.focus();
+                printWindow.document.body.innerHTML = res;
+                //printWindow.print();
+            });
+        });
+        $('#Search').click(function () {
+            if($('#Search_User').val().length == 0
+                && $('#USER_NO').val().length == 0)
+            {
+                alert('You must select a Zonal Manager');
+                return false;
+            }
+        });
+
+        $('#Search_Division').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Division").val(),type:"division"} ,
+            function( data ) {
+                $("#Search_Zilla").html(data.zill);
+                $("#Search_Thana").html(data.thana);
+                $("#Search_User").html(data.zms);
+                console.log(data.zms);
+            });
+        });
+        $('#Search_Zilla').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Zilla").val(),type:"zilla"} ,
+            function( data ) {
+                $("#Search_Thana").html(data.thana);
+                $("#Search_User").html(data.zms);
+            });
+        });
+        $('#Search_Thana').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Zilla").val(),type:"thana"} ,
+            function( data ) {
+                $("#Search_User").html(data.zms);
+            });
+        });
+    });
+
+
+    function getDcrDetailsForDate(date) {
+        
+        var searchModel = {
+            'Search_User': $('#Search_User').val(),
+            'Search_Date_From': date,
+            'Search_Date_To': date
+        };
+
+        var url = '@Url.Content("~")' + 'Reports/GetDcrDetailsForDate';
+        $.post(url, searchModel, function (res) {
+            $('#div_sumdet').html(res);
+            $('#div_sumdet').show();
+        });
+
+        return false;
+    }
+</script>
+
+@*
+@{
+
+    string datefrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+    string zonalno = "";
+
+    DcrPublishSearchModel searchModel = ViewBag.Search_DcrPublish_Model
+        as OG_SLN.Models.DcrPublishSearchModel;
+    if (searchModel != null)
+    {
+        if (searchModel.Search_User.HasValue)
+        {
+            zonalno = searchModel.Search_User.Value.ToString();
+        }
+        if (searchModel.Search_Date_From.HasValue)
+        {
+            datefrom = searchModel.Search_Date_From.Value.ToString("yyyy-MM-dd");
+        }
+        if (searchModel.Search_Date_To.HasValue)
+        {
+            dateto = searchModel.Search_Date_To.Value.ToString("yyyy-MM-dd");
+        }
+    }
+}
+@using (Html.BeginForm("DcrPublish", "Reports", FormMethod.Get, new { @id = "DcrPublishForm" }))
+{   
+    <div class="col-6 col-sm-6 col-lg-10 marRight_2">
+        <table class="tabWidth">
+            <tbody>
+                @if (!Is_ZonalOrAgent)
+                {
+                    <tr>
+                        <td class="adminLef_col">
+                            ZM(iSearch):
+                        </td>
+                        <td class="adminRight_col">
+                            <input id="txtZM" type="text" class="form-control" />
+                            
+                        </td>
+                        <td class="midWidth">
+                            &nbsp;
+                        </td>
+                        <td class="adminLef_col">
+                            Zonal Manager :
+                        </td>
+                        <td class="adminRight_col">
+                            <div class="input-group">
+                                
+                                @Html.Hidden("USER_NO", "")
+                                @Html.Hidden("ZONAL_TYPE", "single")
+                                <div class="input-group-btn">
+                                    @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminLef_col">
+                            Division
+                        </td>
+                        <td class="adminRight_col">
+                            @Html.DropDownList("Search_Division", "Please Select")
+                        </td>
+                        <td class="midWidth">
+                            &nbsp;
+                        </td>
+                        <td class="adminLef_col">
+                            Zilla:
+                        </td>
+                        <td class="adminRight_col">
+                            <select id="Search_Zilla">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminLef_col">
+                            Thana
+                        </td>
+                        <td class="adminRight_col">
+                            <select id="Search_Thana">
+                            </select>
+                        </td>
+                        <td class="midWidth">
+                            &nbsp;
+                        </td>
+                        <td class="adminLef_col">
+                            ZM:
+                        </td>
+                        <td class="adminRight_col">
+                            @Html.DropDownList("Search_User", String.Empty)
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td class="adminLef_col">
+                        Entry Date From:
+                    </td>
+                    <td class="td_1 adminRight_col">
+                        @Html.TextBox("Search_Date_From", datefrom, new { @class = "dateclass form-control" })
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Entry Date To:
+                    </td>
+                    <td class="td_1 adminRight_col">
+                        @Html.TextBox("Search_Date_To", dateto, new { @class = "dateclass  form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                    </td>
+                    <td class="adminRight_col">
+                    </td>
+                    <td class="midWidth">
+                    </td>
+                    <td style="text-align: center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}*@
+
+@if (Model != null)
+{
+    <table width="800px">
+        <tr>
+            <td>
+                <div id="publishres" style="display: none; height: 20px">
+                </div>
+            </td>
+        </tr>
+    </table>
+    if (Model.expenses.expense != null && Model.expenses.expense.Count > 0)
+    {
+    <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-hover tabWidth">
+          
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th class="right">
+                    T.A.
+                </th>
+                <th class="right">
+                    T.Entertainment
+                </th>
+                <th class="right">
+                    P.B.
+                </th>
+                <th class="right">
+                    D.A.
+                </th>
+                <th class="right">
+                    Other
+                </th>
+                <th class="right">
+                    Total
+                </th>
+            </tr>
+            @foreach (var item in Model.expenses.expense)
+            {
+                <tr>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.DT)*@ <a href="#" onclick="return getDcrDetailsForDate('@item.DT.Value.ToString("yyyy-MM-dd")')" data-toggle="modal" data-target="#myModal">
+                            @item.DT.Value.ToString("yyyy-MM-dd")
+                        </a>
+                    </td>
+                    <td class="right">
+                        @Html.ThousandConvert((int)item.TA_AMT)
+                        @{ currentRowTotal += (int)item.TA_AMT; taAmtTotal += (int)item.TA_AMT;  }
+                    </td>
+                    <td class="right">
+                        @*@Html.DisplayFor(modelItem => item.TE_AMT)*@
+                        @Html.ThousandConvert((int)item.TE_AMT)
+                        @{ currentRowTotal += (int)item.TE_AMT; teAmtTotal += (int)item.TE_AMT;  }
+                    </td>
+                    <td class="right">
+                        @*@Html.DisplayFor(modelItem => item.PB_AMT)*@
+                        @Html.ThousandConvert((int)item.PB_AMT)
+                        @{ currentRowTotal += (int)item.PB_AMT; pbAmtTotal += (int)item.PB_AMT;  }
+                    </td>
+                    <td class="right">
+                        @*@Html.DisplayFor(modelItem => item.EB_AMT)*@
+                        @Html.ThousandConvert((int)item.DA_AMT)
+                        @{ currentRowTotal += (int)item.DA_AMT; daAmtTotal += (int)item.DA_AMT;  }
+                    </td>
+                    <td class="right">
+                        @*@Html.DisplayFor(modelItem => item.OB_AMT)*@
+                        @Html.ThousandConvert((int)item.OB_AMT)
+                        @{ currentRowTotal += (int)item.OB_AMT; obAmtTotal += (int)item.OB_AMT;  }
+                    </td>
+                    <td class="right">
+                        @Html.ThousandConvert(currentRowTotal)
+                        @{
+                           totalExpense += currentRowTotal;
+                           currentRowTotal = 0;
+                        }
+                    </td>
+                </tr>
+            }
+            <tr style="font-weight: bold">
+                <td>
+                    Total DCR Bill
+                </td>
+                <td class="right">@Html.ThousandConvert(taAmtTotal)
+                </td>
+                <td class="right">@Html.ThousandConvert(teAmtTotal)
+                </td>
+                <td class="right">@Html.ThousandConvert(pbAmtTotal)
+                </td>
+                <td class="right">@Html.ThousandConvert(daAmtTotal)
+                </td>
+                <td class="right">@Html.ThousandConvert(obAmtTotal)
+                </td>
+                <td class="right">@Html.ThousandConvert(totalExpense)
+                </td>
+            </tr>
+        </table>
+    </div>
+    }
+
+    if (Model.specimens.specimen != null && Model.specimens.specimen.Count > 0)
+    {
+    <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-hover tabWidth">
+            <tr class="success">
+                <th>
+                    SL No.
+                </th>
+                <th>
+                    Specimen Code
+                </th>
+                <th>
+                    Specimen Name (Eng)
+                </th>
+                <th>
+                    Specimen Name (Bng)
+                </th>
+                <th>
+                    Quantity
+                </th>
+            </tr>
+            @foreach (var item in Model.specimens.specimen)
+            {
+                <tr>
+                    <td>
+                        @specimen_slno
+                        @{specimen_slno++;}
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPECIMEN_CODE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPECIMEN_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPECIMEN_NAME_BNG)
+                    </td>
+                    <td>
+                        @item.QTY
+                        @{ specimenTotal += (int)item.QTY;  }
+                    </td>
+                </tr>
+            }
+            <tr style="font-weight: bold">
+                <td colspan="4" align="center">
+                    Grand Total
+                </td>
+                <td>@specimenTotal
+                </td>
+            </tr>
+        </table>
+    </div>
+    }
+
+}
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="div_sumdet">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

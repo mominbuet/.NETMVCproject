@@ -1,0 +1,83 @@
+﻿@model OG_SLN.SET_FISCAL_YEAR
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SET_FISCAL_YEAR</legend>
+
+        
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.FY_NAME)
+            @Html.ValidationMessageFor(model => model.FY_NAME)
+        </div>
+
+        <div class="editor-label">
+            Start Date
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.START_DATE, new { @class="datesinspec"})
+            @Html.ValidationMessageFor(model => model.START_DATE)
+        </div>
+
+        <div class="editor-label">
+            End Date
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.END_DATE, new { @class = "datesinspec" })
+            @Html.ValidationMessageFor(model => model.END_DATE)
+        </div>
+
+        <div class="editor-label">
+            Current Year
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_Current_Year)
+            @Html.ValidationMessageFor(model => model.ACTIVE_Current_Year)
+        </div>
+
+        <div class="editor-label">
+            Active
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_Year)
+            @Html.ValidationMessageFor(model => model.ACTIVE_Year)
+        </div>
+
+        <div class="editor-label">
+            Active From
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ACTIVE_FROM, new { @class = "datesinspec" })
+            @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+        </div>
+
+        <div class="editor-label">
+            Active to
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ACTIVE_TO, new { @class = "datesinspec" })
+            @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+        </div>
+        <p>
+            <input type="submit" value="Create" class="btn btn-success"/>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class="btn btn-primary"})
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,292 @@
+﻿@model OG_SLN.SEC_USER_INSTITUTE
+
+@using OG_SLN.Helpers
+
+@{
+    ViewBag.Title = "Institute Mapping";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var request = HttpContext.Current.Request;
+    var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+
+    if (!string.IsNullOrWhiteSpace(appUrl)) {
+        appUrl += "";
+    }
+
+    var baseUrl = string.Format("{0}://{1}{2}", request.Url.Scheme, request.Url.Authority, appUrl);
+
+    List<OG_SLN.SEC_USER_INSTITUTE_SEARCH_Result> institute_list = ViewBag.institute_list as List<OG_SLN.SEC_USER_INSTITUTE_SEARCH_Result>;
+
+    IEnumerable<SelectList> user_list = ViewBag.user_list as IEnumerable<SelectList>;
+}
+
+<script type="text/javascript" language="javascript">
+    //var asyncState = false;
+    $(function () {
+
+    });
+
+    function search_institute() {
+        var USER_NO = $('#USER_NO').val();
+        if ((USER_NO == null) || (USER_NO == undefined) || (USER_NO == '')) {
+            alert('Zonal selection is required');
+        } else {
+            var url = '@baseUrl' + 'UserInstitute/LoadInstitute/';
+
+            var InstituteSearch = {
+                //'INSTITUTE_NO' :  $('#INSTITUTE_NO').val(), 
+                'INSTITUTE_NAME': $('#INSTITUTE_NAME').val(),
+                //'INSTITUTE_NAME_BNG' :  $('#INSTITUTE_NAME_BNG').val(), 
+                'INST_TYPE_NO': $('#INST_TYPE_NO').val(),
+                'THANA_NO': $('#THANA_NO').val(),
+                'F_INSTITUTION_DB_ID': $('#F_INSTITUTION_DB_ID').val(),
+                'EIIN_NUMBER': $('#EIIN_NUMBER').val(),
+                'USER_NO': $('#USER_NO').val()
+            };
+
+            $.post(url, InstituteSearch, function (res) {
+                $('#div_institute').html(res);
+            });
+
+            search_user_thana();
+        }
+
+        return false;
+    }
+
+    function do_save() {
+        var USER_NO = $('#USER_NO').val();
+        if ((USER_NO == null) || (USER_NO == undefined) || (USER_NO == '')) {
+            alert('Zonal selection is required');
+        } else {
+            var url = '@baseUrl' + 'UserInstitute/Create/';
+            var INSTITUE_LIST = [];
+            $("input[name='INSTITUE_NO[]']:checked").each(function () {
+                INSTITUE_LIST.push(parseInt($(this).val()));
+            });
+
+            
+        
+            var SecUserInstituteSave = {
+                'USER_NO': $('#USER_NO').val(),
+                'INSTITUE_LIST[]': INSTITUE_LIST.serialize()
+            };
+
+            $.post(url, SecUserInstituteSave, function (res) {
+                alert(res);
+            });
+        }        
+    }
+
+    function do_add(INSTITUTE_NO) {
+        var USER_NO = $('#USER_NO').val();
+        if ((USER_NO == null) || (USER_NO == undefined) || (USER_NO == '')) {
+            alert('Zonal selection is required');
+        } else {
+            var url = '@baseUrl' + 'UserInstitute/Create/';
+            var chkName = '#chkAdd_' + INSTITUTE_NO;
+
+            var IS_ACTIVE = 1;
+
+            if ($(chkName).prop('checked') == true) {
+                IS_ACTIVE = 1;
+            } else {
+                IS_ACTIVE = 0;
+            }
+
+            var SecUserInstituteSave = {
+                'USER_NO': $('#USER_NO').val(),
+                'INSTITUTE_NO': INSTITUTE_NO,
+                'IS_ACTIVE': IS_ACTIVE
+            };
+
+            $.post(url, SecUserInstituteSave, function (res) {
+                console.log(res);
+            });
+        }
+
+        //return false;
+    }
+
+    function search_all_institute() {
+        /*
+        var url = '@baseUrl' + 'UserInstitute/LoadUserInstitute/';
+
+        var SecUserInstituteSearch = {
+            'USER_NO': $('#USER_NO').val()
+        };
+
+        $.post(url, SecUserInstituteSearch, function (res) {
+            $('#div_user_institute').html(res);
+        });
+        */
+        search_user_thana();
+
+        search_institute();        
+
+        return false;
+    }
+
+    function search_user_thana() {
+        var USER_NO = $('#USER_NO').val();
+        if ((USER_NO == null) || (USER_NO == undefined) || (USER_NO == '')) {
+            alert('Zonal selection is required');
+        } else {
+            var THANA_NO = $('#THANA_NO').val();
+
+            var url = '@baseUrl' + 'UserInstitute/LoadUserThana/';
+
+            var SecUserThanaSearch = {
+                'USER_NO': $('#USER_NO').val(),
+                'THANA_NO': THANA_NO
+            };
+
+            if ((THANA_NO != null) && (THANA_NO != undefined) && (THANA_NO != '')) {
+                $.post(url, SecUserThanaSearch, function (res) {
+                    if (res.is_success == true) {
+                        $('#chk_USER_THANA').prop('checked', true);
+                    } else {
+                        $('#chk_USER_THANA').prop('checked', false);
+                    }
+                });
+            }
+        }
+        return false;
+    }
+
+    function do_thana_save() {
+        var USER_NO = $('#USER_NO').val();
+        if ((USER_NO == null) || (USER_NO == undefined) || (USER_NO == '')) {
+            alert('Zonal selection is required');
+        } else {
+            var url = '@baseUrl' + 'UserInstitute/SaveUserThana/';
+            var msg = '';
+
+            var IS_ACTIVE = 1;
+
+            if ($('#chk_USER_THANA').prop('checked') == true) {
+                IS_ACTIVE = 1;
+            } else {
+                IS_ACTIVE = 0;
+            }
+
+            if (IS_ACTIVE == 1) {
+                msg = 'Do you want to assign all institutes for the selected thana?';
+            } else {
+                msg = 'Do you want to remove all institutes from the selected thana?';
+            }
+
+            if (confirm(msg)) {
+                var SecUserThanaSearch = {
+                    'USER_NO': $('#USER_NO').val(),
+                    'THANA_NO': $('#THANA_NO').val(),
+                    'IS_ACTIVE': IS_ACTIVE
+                };
+
+                $.post(url, SecUserThanaSearch, function (res) {
+                    console.log(res);
+                });
+
+                search_institute();
+                //return true;
+            }
+        }
+
+        return false;
+    }
+
+    function load_thana() {
+        var url = '@baseUrl' + 'UserInstitute/GetThanaByZilla?ZILLA_NO=' + $('#ZILLA_NO').val();
+        $.get(url, function (res) {
+            $('#THANA_NO').empty();
+            $.each(res, function () {
+                $("<option />", {
+                    val: this.THANA_NO,
+                    text: this.THANA_NAME
+                }).appendTo($('#THANA_NO'));
+            });
+
+            search_all_institute();
+
+        });
+
+        return false;
+    }
+</script>
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@ViewBag.Title</legend>
+            <table>
+                <tr>
+                    <th>@Html.Label("Zonal Manager")</th>
+                    <th>
+                        @*@Html.DropDownList("USER_NO", null, new { @onchange = "search_user_thana()" })*@
+                        @Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                    </th>
+                </tr>
+            </table>        
+        <p>
+            
+        </p>
+
+    </fieldset>
+    <fieldset>
+        <legend>Search Institute</legend>
+        <table>
+            <tr>
+                <th>@Html.Label("Institute Type")</th>
+                <th>
+                    @Html.DropDownList("INST_TYPE_NO", String.Empty) 
+                </th>
+                <th>@Html.Label("Zilla/District")</th>
+                <th>
+                    @Html.DropDownList("ZILLA_NO", null, new { @onchange = "load_thana()" })
+                </th>
+                <th>@Html.Label("Thana")</th>
+                <th>
+                    @Html.DropDownList("THANA_NO", null, new { @onchange = "search_all_institute()" })
+                </th>
+                <th>
+                    <label for="chk_USER_THANA">Entire Thana</label>
+                    <input type="checkbox" id="chk_USER_THANA" name="chk_USER_THANA" onchange="return do_thana_save()" />                    
+                </th>   
+            </tr>
+            <tr>
+                <th>@Html.Label("Institute ID")</th>
+                <th>
+                    @Html.TextBox("F_INSTITUTION_DB_ID")
+                </th>
+                <th>@Html.Label("EIIN Number")</th>
+                <th>
+                    @Html.TextBox("EIIN_NUMBER")
+                </th>
+                <th>
+                    @Html.Label("Institute")
+                </th>
+                <th>
+                    @Html.TextBox("INSTITUTE_NAME")
+                </th>
+                <th>
+                    <button id="btnSearch" name="btnSearch" onclick="return search_institute()">Load</button>
+                </th>
+            </tr>
+        </table>
+
+        <div id="div_institute">
+        </div>
+    </fieldset>
+}
+
+<hr />
+
+<div id="div_user_institute">
+    @*@Html.Partial("LoadUserInstitute", institute_list)*@
+</div>

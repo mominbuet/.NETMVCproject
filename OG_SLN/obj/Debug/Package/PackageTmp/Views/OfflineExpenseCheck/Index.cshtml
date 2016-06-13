@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+<h2>
+    Other Expense</h2>
+
+<script type="text/javascript">
+    function btnConfirm2(btn,typeInput) {
+        confirm("Do you want to "+((typeInput==1)?"verify ":"reject ")+" this")
+        {
+            $.post( "@Url.Content("~")"+"OfflineExpenseCheck/AcceptRejectExpense",{ 
+            amt : $("#txt_" +btn.closest('tr').attr('id')).val(),
+            expdetNo : btn.closest('tr').attr('id'),
+            type: typeInput} ,
+            function( data ) {
+                //alert(data.output)
+                if(data.output=="Accepted")
+                    $(btn.closest('tr')).toggleClass('success');
+                else
+                    $(btn.closest('tr')).toggleClass('danger');
+                $(btn).hide();
+            });
+        }
+        //alert(btn.('tr').find('select[id="dcrType"]').val());
+    }
+
+</script>
+
+<div id="div_search">
+    <h3>
+        Pending Expense verification (@ViewBag.dcr_count)</h3>
+    @{Html.RenderPartial("_SearchExpenseCheck");}
+</div>
+<div id="div_display">
+    @{Html.RenderPartial("_ExpenseTable");}
+</div>

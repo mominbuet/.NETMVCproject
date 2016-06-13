@@ -1,0 +1,276 @@
+﻿@model OG_SLN.VIEW_TRN_DCR_APPROVE_GET_Result2
+
+@using OG_SLN.Models
+
+@{
+    ViewBag.Title = "DCR Details";
+
+    var request = HttpContext.Current.Request;
+    var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+
+    if (!string.IsNullOrWhiteSpace(appUrl)) {
+        appUrl += "";
+    }
+
+    var baseUrl = string.Format("{0}://{1}{2}", request.Url.Scheme, request.Url.Authority, appUrl);
+
+    decimal? user_type_no = ViewBag.USER_TYPE_NO as decimal?;
+
+    string user_type = user_type_no == (decimal)EUserTypes.AreaManager ? "area" : "other";
+    
+}
+
+<script language="javascript" type="text/javascript">
+    function do_approve() {
+        if (confirm('Do you want to continue?')) {
+            var url = '@baseUrl' + 'DCRApprove/DoApprove/';
+            //var url = '../DoApprove/';
+            var frm = $('form');
+            var data = $(frm).serialize();
+            $.post(url, data, function (res) {
+                alert(res.msg);
+            });
+        }
+
+        return false;
+    }
+
+    function do_verify() {
+        if (confirm('Do you want to verify?')) {
+            var url = '@baseUrl' + 'DCRApprove/Verify/';
+            //var url = '../DoApprove/';
+            var frm = $('form');
+            var data = $(frm).serialize();
+            $.post(url, data, function (res) {
+                alert(res.msg);
+            });
+        }
+
+        return false;
+    }
+
+    function do_close() {
+        if (confirm('Do you want to close?')) {
+            window.close();
+        }
+        return false;
+    }
+</script>
+
+<h2>@ViewBag.Title</h2>
+
+<div class="col-6 col-sm-6 col-lg-10 marRight_2"> 
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>@ViewBag.Title</legend>
+    @Html.HiddenFor(m => m.DCR_NO)
+
+    <div class="display-label">
+        @Html.DisplayName("DCR Type")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.DCR_TYPE_CODE) @Html.DisplayFor(m => m.DCR_TYPE) 
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayName("Fiscal Year")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.FY_NAME)
+    </div>
+
+    <div class="display-label"> 
+        @Html.DisplayName("ZM")       
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.ZM_USER_FULL_NAME)  Mobile: @Html.DisplayFor(m => m.ZM_USER_MOBILE)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayName("Agent")        
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(m => m.AGENT_USER_FULL_NAME)  Mobile: @Html.DisplayFor(m => m.AGENT_USER_MOBILE) 
+    </div>
+
+    <div class="display-label">   
+        @Html.DisplayName("Referred ZM")     
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(m => m.REF_ZM_USER_FULL_NAME) Mobile: @Html.DisplayFor(m => m.REF_ZM_USER_MOBILE)
+    </div>
+
+    <div class="display-label">        
+        @Html.DisplayName("Location From")
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(m => m.WORK_AREA_FROM_NAME) 
+    </div>
+
+    <div class="display-label">        
+        @Html.DisplayName("Location To")
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(m => m.WORK_AREA_TO_NAME)
+    </div>
+	
+    <div class="display-label">        
+        @Html.DisplayName("Time From")
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(m => m.TIME_FROM)
+    </div>
+	
+	<div class="display-label">       
+        @Html.DisplayName("Time To") 
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(m => m.TIME_TO)
+    </div>
+	
+    	<div class="display-label">
+        @Html.DisplayName("Institute Type")        
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.INST_TYPE_CODE)
+        @Html.DisplayFor(m => m.INST_TYPE_NAME)
+    </div>	
+
+	<div class="display-label">
+        @Html.DisplayName("Institute")        
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.INSTITUTE_NAME)
+        @Html.DisplayFor(m => m.INSTITUTE_NAME_BNG)
+        @Html.DisplayFor(m => m.INSTITUTE_DESC)
+        @Html.DisplayFor(m => m.F_INSTITUTION_DB_ID)
+        @Html.DisplayFor(m => m.EIIN_NUMBER)	
+    </div>	
+
+    <div class="display-label">        
+        @Html.DisplayName("Comments")
+    </div>
+    <div class="display-field">	
+        @Html.DisplayFor(modelItem => modelItem.COMMENTS)
+    </div>
+	
+	<div class="display-label">        
+        @Html.DisplayName("Actual Transport Type")
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(modelItem => modelItem.TRANS_TYPE_CODE)
+        @Html.DisplayFor(modelItem => modelItem.TRANS_TYPE_NAME)
+    </div>
+	
+	<div class="display-label">        
+        @Html.DisplayName("Approved Transport Type")
+    </div>
+    <div class="display-field">	
+        @Html.DisplayFor(modelItem => modelItem.APPROVE_TRANS_TYPE_CODE)
+        @Html.DisplayFor(modelItem => modelItem.APPROVE_TRANS_TYPE_NAME)	
+        @*@Html.DropDownList("APPROVE_TRANS_TYPE_NO", (Model.APPROVE_TRANS_TYPE_NO.HasValue ? Model.APPROVE_TRANS_TYPE_NO.Value.ToString() : string.Empty))*@
+        @Html.DropDownList("APPROVE_TRANS_TYPE_NO")
+    </div>
+	
+	<div class="display-label">        
+        @Html.DisplayName("Cost")
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(modelItem => modelItem.FARE_AMT)
+    </div>
+	
+	<div class="display-label">  
+        @Html.DisplayName("Approved Cost")      
+    </div>
+    <div class="display-field">	
+        @Html.EditorFor(modelItem => modelItem.APPROVE_FARE_AMT)	
+    </div>
+	
+	<div class="display-label">        
+        @Html.DisplayName("DCR Date")
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(modelItem => modelItem.TRN_DCR_DATE)
+    </div>
+	
+	<div class="display-label">      
+        @Html.DisplayName("Approval Status")  
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(modelItem => modelItem.APPROVE_TYPE)
+        @*@Html.DropDownList("APPROVE_TYPE_NO", (Model.APPROVE_TYPE_NO.HasValue ? Model.APPROVE_TYPE_NO.Value.ToString() : string.Empty))*@
+        @Html.DropDownList("APPROVE_TYPE_NO")
+    </div>
+
+    <div class="display-label">      
+        @Html.DisplayName("Auto Approval")  
+    </div>
+    <div class="display-field">		
+        @Html.DisplayFor(modelItem => modelItem.IS_AUTO_APPROVE)
+    </div>
+	
+	<div class="display-label">        
+        @Html.DisplayName("Reason")
+    </div>
+    <div class="display-field">	
+        @Html.DisplayFor(modelItem => modelItem.REASON_CODE)
+        @Html.DisplayFor(modelItem => modelItem.REASON_NAME)		
+        @Html.DropDownList("REASON_NO")
+        @Html.TextAreaFor(modelItem => modelItem.REAMRKS)
+    </div>    
+	
+	<div class="display-label">        
+    </div>
+    <div class="display-field">		
+    </div>	    
+</fieldset>
+    if ((Model.VIEW_TRN_DCR_DET_APRROVE_GET_Result != null) && (Model.VIEW_TRN_DCR_DET_APRROVE_GET_Result.Count > 0)) { 
+<div class="table-responsive">        
+<table class="table table-bordered table-hover tabWidth">
+    <tbody>
+        <tr class="success">
+            <th>Item</th>
+            <th>Contact</th>
+            <th>Qty</th>
+        </tr>
+        @foreach(var item in Model.VIEW_TRN_DCR_DET_APRROVE_GET_Result) {
+            <tr>
+                <td>
+                    @item.SPECIMEN_CODE @item.SPECIMEN_NAME
+                    @item.PROMO_ITEM_CODE @item.PROMO_ITEM_NAME
+                </td>
+                <td>
+                    @item.TEACHER_MOBILE @item.CLIENT_MOBILE 
+                </td>
+                <td>
+                    @item.SPECIMEN_QTY @item.PROMO_ITEM_QTY 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>        
+</div>
+    }
+    
+<fieldset>
+    <div id="buttons">
+        @*@if (user_type == "area")
+        {
+            <button id="verify" onclick="return do_verify()">Verify</button>
+        }
+        else
+        {
+            <button id="save" onclick="return do_approve()">Approve</button>
+        }*@
+
+        <button id="verify" onclick="return do_verify()">Verify</button>
+        <button id="save" onclick="return do_approve()">Approve</button>
+
+        <button id="close" onclick="return do_close()">Close</button>
+    </div>
+</fieldset>
+}
+</div>

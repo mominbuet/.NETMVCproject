@@ -1,0 +1,194 @@
+﻿@model IEnumerable<OG_SLN.TRN_DCR_SUMDET_SEARCH_Result>
+@{
+    ViewBag.Title = "DCR List";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+
+    var request = HttpContext.Current.Request;
+    var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+
+    if (!string.IsNullOrWhiteSpace(appUrl))
+    {
+        appUrl += "";
+    }
+
+    var baseUrl = string.Format("{0}://{1}{2}", request.Url.Scheme, request.Url.Authority, appUrl);
+
+    string specifier = "";
+
+    int count = 0;
+
+    bool Same_Date = (bool)ViewBag.Same_Date;
+
+    string map_url = "https://www.google.com/maps/dir";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".mdldet").on("click", function () {
+            var dcrNo = ($(this).attr("attr"));
+            $.getJSON("@Url.Content("~")"+"DcrCostApproval/getDCRDetails?dcrNo="+dcrNo, function( data ) {
+                
+                $("#childModal").html('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button><h4 class="modal-title" id="myLargeModalLabel">DCR Details</h4>'+
+                    data.html);
+                    //onclick="$(\'#myModal\').modal(\'hide\');"
+            });
+        });
+        $('#mdlDcrDetails').on('click', 'button[data-dismiss="modal"]', function(e) { 
+            e.stopPropagation(); 
+        });
+        
+        $('#map_url').attr('href', $('#map_span').html());
+    });
+</script>
+
+<div>
+    <div>
+        <div class="table-responsive">
+            <table class="table table-responsive small-font" style="font-size: 1.1em">
+                <tr class="success">
+                    <th colspan="11">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 50%;">
+                            Close</button>
+                    </th>
+                </tr>
+                <tr class="success">
+                    <th colspan="4">@ViewBag.Title
+                    </th>
+                    <th colspan="7">
+                        @if (Same_Date)
+                        {
+                            <a style="width:120px!important; " id="map_url" href="#" target="_blank">Map View</a>
+                        }
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Distributor Name
+                    </th>
+                    <th>
+                        Designation
+                    </th>
+                    <th>
+                        Institution Name, Thana, Zilla, Division
+                    </th>
+                    <th>
+                        Meet Person Cell
+                    </th>
+                    <th>
+                        Area From-To /<br />
+                        Comments
+                    </th>
+                    <th>
+                        Time From-To
+                    </th>
+                    <th>
+                        Work Type
+                    </th>
+                    <th>
+                        Transport Type
+                    </th>
+                    <th>
+                        Fair (TK)
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    string str_class = @"information";
+                    count++;
+                    /*string btn_class = @" btn-primary btn-sm";
+                    if (item.CNT_VAL != 0)
+                    {
+                        btn_class = @" btn-default btn-danger";
+                    }*/
+                    <tr id="@item.DCR_NO" class="@str_class">
+                        <th>@count
+                        </th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ZM_USER_FULL_NAME)
+                            <br />
+                            @Html.Raw("(")
+                            @Html.DisplayFor(modelItem => item.ZM_USER_NAME)
+                            @Html.Raw(")")
+                            <br />
+                            (@Html.DisplayFor(modelItem => item.ZM_USER_MOBILE))
+                        </td>
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.DESIG_NAME)*@
+                        </td>
+                        <td>
+                            @if (item.INSTITUTE_NO != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.INSTITUTE_NAME)
+                                @Html.Raw("(")
+                                @Html.ValueFor(modelItem => item.INSTITUTE_NO, "{0:0}")
+                                @Html.Raw("),")
+
+                            }
+                            @Html.DisplayFor(modelItem => item.THANA_NAME),
+                            @Html.DisplayFor(modelItem => item.ZILLA_NAME),
+                            @Html.DisplayFor(modelItem => item.DIVISION_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TEACHER_MOBILE)
+                            @Html.DisplayFor(modelItem => item.CLIENT_MOBILE)
+                        </td>
+                        <td>
+                            @item.WORK_AREA_FROM_NAME
+                            -
+                            @item.WORK_AREA_TO_NAME
+                            <p>
+                            @if (!string.IsNullOrEmpty(item.COMMENTS))
+                            {
+                                <span style="color:Blue">
+                                    Comments:
+                                    @item.COMMENTS
+                                </span> 
+                            }
+                            </p>
+                        </td>
+                        <td>
+                            @Html.ValueFor(modelItem => item.TIME_FROM, "{0:dd-MM-yy}") at
+                            @Html.ValueFor(modelItem => item.TIME_FROM, "{0:hh:mm}")
+                            to
+                            @Html.ValueFor(modelItem => item.TIME_TO, "{0:hh:mm}")
+                        </td>
+                        <td>
+                            <button class="mdldet" attr="@item.DCR_NO" data-toggle="modal" data-target="#mdlDcrDetails">@item.DCR_TYPE_CODE</button>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TRANS_TYPE_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FARE_AMT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.APPROVE_TYPE)
+                        </td>
+                    </tr>
+                    if ( count == 1 && item.WORK_AREA_FROM_LON.HasValue && item.WORK_AREA_FROM_LAT.HasValue)
+                    {
+                        map_url += "/'" + item.WORK_AREA_FROM_LAT + "," + item.WORK_AREA_FROM_LON + "'";
+                    }
+                    if (item.WORK_AREA_TO_LON.HasValue && item.WORK_AREA_TO_LAT.HasValue)
+                    {
+                        map_url += "/'" + item.WORK_AREA_TO_LAT + "," + item.WORK_AREA_TO_LON + "'";
+                    }
+                }
+                <tr class="success">
+                    <th colspan="11">
+                        <!--button onclick="return close_div_sumdet()">Close</button-->
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 50%;">
+                            Close</button>
+                            <span id="map_span" style="display:none">@map_url</span>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+﻿@model List<OG_SLN.DCR_PUB_ACCOUNTS_GET_Result>
+@using OG_SLN.Models
+@using OG_SLN.Helpers
+
+@{
+    Layout = null;
+    int? conf_count = ViewBag.Conf_Count;
+
+    int total_dcr = 0;
+    int total_der = 0;
+    int total_sd = 0;
+
+    OG_SLN.TRN_USER_PUBLISH publish = ViewBag.Publish as OG_SLN.TRN_USER_PUBLISH;
+    
+    int serialno = 1;
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#export').click(function () {
+
+            var frm = $('form');
+            var url = $(frm).attr('action');
+            var data = $(frm).serialize();
+
+            var publish_no = $('#Search_pubno').val();
+
+            var url = '@Url.Content("~")'
+                + 'Publish/AccountsExportExcel?id=' + publish_no;
+
+            window.location = url;
+        });
+
+        $('#zipdown').click(function () {
+            var publish_no = $('#Search_pubno').val();
+
+            var url = '@Url.Content("~")'
+                + 'Publish/DownloadZip?Search_pubno=' + publish_no;
+
+            window.location = url;
+        });
+
+    });
+
+</script>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover tabWidth">
+            @if (conf_count.HasValue && conf_count > 0)
+            {
+                <tr class="success">
+                @if (publish.IS_DISBURSE.HasValue && publish.IS_DISBURSE.Value == 0)
+                {
+                    <td colspan="7" style="background: #EEEEEE;">
+                        <form>
+                            <input type="button" class="btn btn-info" name="disburse" id="disburse" value="Disburse" />
+                            <input type="text" class="comments" name="comment" id="comment" value="" size="50" />
+                        </form>
+                    </td> 
+                }
+                else
+                {
+                    <td colspan="7" style="background: #EEEEEE;"></td> 
+                }
+                    <td colspan="6" align="right" style="background: #EEEEEE;">
+                        <input type="button" class="btn btn-info" name="export" id="export" value="Export In Excel" />
+                        <input type="button" class="btn btn-info" name="zipdown" id="zipdown" value="Zip Download" />
+                    </td>
+                </tr> 
+            }
+            <tr class="success">
+                <th>
+                    Serial No.
+                </th>
+                <th>
+                    Full Name
+                </th>
+                <th>
+                    Designation
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Division
+                </th>
+                <th>
+                    Zilla
+                </th>
+                <th>
+                    Thana
+                </th>
+                <th>
+                    Mobile
+                </th>
+                <th>
+                    Total DCR
+                </th>
+                <th>
+                    Total DER
+                </th>
+                <th>
+                    SD Count
+                </th>
+                <th>
+                   Download
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                int dcr_amt = 0;
+                int der_amt = 0;
+                int sd_cnt = 0;
+                <tr>
+                    <td>
+                        @serialno
+                        @{ serialno = ++serialno; }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_FULL_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESIG_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DEPT_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DIVISION_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZILLA_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.THANA_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_MOBILE)
+                    </td>
+                    <td>
+                        @{dcr_amt = (int)item.DCR_AMT; total_dcr += (int)item.DCR_AMT;}
+                       
+                        @Html.ThousandConvert(dcr_amt)
+
+                    </td>
+                    <td>
+                        @{der_amt = (int)item.DER_AMT; total_der += (int)item.DER_AMT;}
+                         @Html.ThousandConvert(der_amt)
+
+                    </td>
+                    <td>
+                        @{sd_cnt = (int)item.SD_CNT; total_sd += (int)item.SD_CNT;}
+                        @sd_cnt
+                    </td>
+                     @{
+                      string download_path = Url.Content("~") + "Publish/Download?Search_User=" + item.USER_NO + "&Search_pubno=" + publish.PUBLISH_NO;
+                }
+                <td>
+                    <a href="@download_path">
+                        HTML</a>
+                </td>
+                </tr>
+            }
+         <tr style="font-weight: bold">
+            <td colspan="8" style="text-align: center; border: solid 1px #e4e4e4; border-top: none;">
+                Total
+            </td>
+            <td class="tdclass right">@Html.ThousandConvert(total_dcr)
+            </td>
+            <td class="tdclass right">@Html.ThousandConvert(total_der)
+            </td>
+            <td class="tdclass right">@total_sd
+            </td>
+        </tr>
+        </table>
+    </div>
+</div>

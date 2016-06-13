@@ -1,0 +1,64 @@
+﻿@using OG_SLN.Helpers
+
+@{
+    ViewBag.Title = "View DCR Sheet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    bool Is_ZonalOrAgent = (bool)(ViewBag.Is_ZonalOrAgent);
+}
+
+<script type="text/javascript" language="javascript">
+
+    function show_dcr() { 
+
+        var url = '../ViewDCRSheet/Index';
+        var frm = $('form');
+        //var data = $(frm).serialize();
+
+        var USER_NO = $('#USER_NO').val();
+        var TRN_DCR_DATE = $('#TRN_DCR_DATE').val();
+
+        var VIEW_DCR_SHEET_Search = {
+            'USER_NO' : USER_NO,
+            'TRN_DCR_DATE': TRN_DCR_DATE 
+        };
+
+        $.post(url, VIEW_DCR_SHEET_Search, function (res) {
+            $('#div_dcr_sheet').html(res);
+        });
+        return false;
+    }
+</script>
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    <div class="col-8 marRight_2"> 
+        <table class="table table-bordered table-hover tabWidth">
+            <tbody>
+                <tr class="success">
+                @if (!Is_ZonalOrAgent)
+                {
+                    <th>Zonal Manager</th>
+                    <th>@Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager"), "Select Zonal Manager")
+                    </th>
+                }
+
+                    <th>Date From</th>
+                    <th>                        
+                        @Html.TextBox("TRN_DCR_DATE", DateTime.Now, "{0:yyyy-MM-dd}", new { @class = "datesinspec" })
+                    </th>
+                    <th></th>
+                    <th>
+                        <button id="btnShow" name="btnShow" onclick="return show_dcr()" >Show</button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+<div id="div_dcr_sheet">
+            
+</div>

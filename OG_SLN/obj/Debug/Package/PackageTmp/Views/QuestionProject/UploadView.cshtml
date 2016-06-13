@@ -1,0 +1,75 @@
+﻿@model IEnumerable<OG_SLN.TPR_PROJECT_GET_Result>
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Declared Projects</h2>
+
+<table class="table table-bordered table-hover tabWidth">
+    <tr>
+        <th>
+            Collection Project Name
+        </th>
+        <th>
+            Class
+        </th>
+        <th>
+            Assigned Institute
+        </th>
+        <th>
+            Pending Institute
+        </th>
+        <th>
+            Declare Date
+        </th>
+        <th>
+            Deadline Date
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Select
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROJECT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLASS_NAME)
+        </td>
+        <td>@item.INS_ASSIGNED_CNT</td>
+        <td>@item.INS_PENDING_CNT</td>
+        <td>
+            @Html.ValueFor(modelItem => item.DECLARE_DATE, "{0:dd MMM, yyyy}")
+        </td>
+        <td>
+            @Html.ValueFor(modelItem => item.DEADLINE_DATE, "{0:dd MMM, yyyy}")
+        </td>
+        <td>
+            @if (item.IS_ACTIVE == 1)
+            {
+                <p>Active</p>
+            }
+            else
+            {
+                <p>Inactive</p>
+            }
+        </td>
+        <td>
+            @if (item.DEADLINE_DATE.HasValue)
+            {
+                if (item.DEADLINE_DATE > DateTime.Now)
+                {
+                    @Html.ActionLink("Select", "UploadSelect", new { id = item.PROJECT_NO })
+                }
+            }
+        </td>
+    </tr>
+}
+
+</table>

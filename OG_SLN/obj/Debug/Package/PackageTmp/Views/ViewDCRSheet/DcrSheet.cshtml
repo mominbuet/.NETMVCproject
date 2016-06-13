@@ -1,0 +1,118 @@
+﻿@{
+    Layout = null;
+
+    DateTime? TRN_DCR_DATE = ViewBag.TRN_DCR_DATE as DateTime?;
+    string dcr_date = TRN_DCR_DATE.HasValue ? TRN_DCR_DATE.Value.Date.ToString("dd-MM-yyyy") : "";
+
+    OG_SLN.SEC_USERS_ZM_LOGIN_GET_Result user_result = ViewBag.user_result as OG_SLN.SEC_USERS_ZM_LOGIN_GET_Result;
+
+    List<OG_SLN.TRN_DCR_SHEET_SUM_Result> dcr_sum_result = ViewBag.dcr_sum_result as List<OG_SLN.TRN_DCR_SHEET_SUM_Result>;
+
+    List<OG_SLN.TRN_EXPENSE_SUM_Result> exp_result = ViewBag.exp_result as List<OG_SLN.TRN_EXPENSE_SUM_Result>;
+
+    decimal dcr_sum = 0;
+    decimal exp_sum = 0;
+    decimal total_amt = 0;
+}
+
+<div class="col-8 marRight_2"> 
+@{
+    if (user_result != null) {
+        <table class="table table-bordered table-hover tabWidth">
+            <tbody>
+                <tr class="success">
+                    <th>Name</th>
+                    <th>@user_result.USER_FULL_NAME</th>
+                    <th>Mobile</th>
+                    <th>@user_result.USER_MOBILE</th>
+                    <th>Date</th>
+                    <th>@dcr_date</th>
+                </tr>
+            </tbody>
+        </table>
+    }
+    
+    if (dcr_sum_result != null) {
+        <table class="table table-bordered table-hover tabWidth">
+            <tbody>
+                <tr class="success">
+                    <td></td>
+                    <th>Location From</th>
+                    <th>To</th>
+                    <th>Time From</th>
+                    <th>To</th>
+                    <th>Work Area</th>
+                    <th>Meet Person</th>
+                    <th>Work Purpose</th>
+                    <th>Transport</th>
+                    <th>Fare</th>
+                </tr>
+            @foreach(var item in dcr_sum_result) {
+                dcr_sum += (item.FARE_AMT.HasValue ? item.FARE_AMT.Value : 0);
+                <tr>
+                    <td>@item.DCR_NO</td>
+                    <td>@item.WORK_AREA_FROM_NAME</td>
+                    <td>@item.WORK_AREA_TO_NAME</td>
+                    <td>@item.TIME_FROM</td>
+                    <td>@item.TIME_TO</td>
+                    <td>@item.INSTITUTE_NAME</td>
+                    <td>
+                        @foreach (var det in item.TRN_DCR_SHEET_DET_List) { 
+                            @det.MEET_MOBILE 
+                            @Html.Raw(",<br>") 
+                        }
+                    </td>
+                    <td>@item.DCR_TYPE</td>
+                    <td>@item.TRANS_TYPE_NAME</td>
+                    <td style="text-align:right">@item.FARE_AMT</td>
+                </tr>
+            }
+                <tr class="success">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Sub Total:</th>
+                    <th style="text-align:right">@dcr_sum</th>
+                </tr>
+            </tbody>
+        </table>
+    }
+    
+    if (exp_result != null) {        
+        <table class="table table-bordered table-hover tabWidth">
+            <tbody>
+                <tr class="success">
+                    <th>Expense Head</th>
+                    <th>Amount</th>
+                </tr> 
+            @foreach (var item in exp_result) {
+                exp_sum += (item.EXP_AMT.HasValue ? item.EXP_AMT.Value : 0);
+                <tr>
+                    <td>@item.EXP_TYPE_NAME</td>
+                    <td style="text-align:right">@item.EXP_AMT</td>
+                </tr>             
+            }         
+                <tr class="success">
+                    <th>Sub Total</th>
+                    <th style="text-align:right">@exp_sum</th>
+                </tr>       
+            </tbody>
+        </table>
+    }
+
+    total_amt = dcr_sum + exp_sum;
+    <table class="table table-bordered table-hover tabWidth">
+        <tbody>                        
+            <tr class="success">
+                <th>Grand Total:</th>
+                <th style="text-align:right">@total_amt</th>
+            </tr>
+        </tbody>
+    </table>
+}
+</div>

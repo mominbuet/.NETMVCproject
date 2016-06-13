@@ -1,0 +1,73 @@
+﻿@model IEnumerable<OG_SLN.TRN_RETURN_DET>
+
+@{
+    ViewBag.Title = "Returns";
+}
+
+<h2>Returns</h2>
+
+<table class="table table-responsive table-bordered table-hover tabWidth small-font">
+    <tr class="success" style="font-size: 1.1em">
+        <th>
+            @*@Html.DisplayNameFor(model => model.RETURN_SLIP_NO)*@
+            Return Slip No
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.RETURN_DATE)*@
+            Return Date
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.BB_LIBRARY_CODE)*@
+            BB Library Code
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EMP_HR_ID)*@
+            Emp HR ID
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.BB_BOOK_CODE)*@
+            BB Book Code
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.BB_UNIQUE_CODE)*@
+            BB Unique Code
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.RETURN_QTY)*@
+            Return Qty
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RETURN_SLIP_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RETURN_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BB_LIBRARY_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_HR_ID)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.BB_BOOK_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BB_UNIQUE_CODE)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.RETURN_QTY)
+        </td>
+
+    </tr>
+}
+
+</table>

@@ -1,0 +1,237 @@
+﻿@model OG_SLN.TRN_USER_FEED_BACK
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TRN_USER_FEED_BACK</legend>
+
+        @Html.HiddenFor(model => model.FEED_BACK_NO)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_TIME)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_USER_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_OFFLINE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_OFFLINE_TIME)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_OFFLINE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_IS_OFFLINE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_IS_OFFLINE)
+            @Html.ValidationMessageFor(model => model.LAST_IS_OFFLINE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_TIME)
+            @Html.ValidationMessageFor(model => model.INSERT_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_USER_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_OFFLINE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_OFFLINE_TIME)
+            @Html.ValidationMessageFor(model => model.INSERT_OFFLINE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_OFFLINE_SYNC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_OFFLINE_SYNC)
+            @Html.ValidationMessageFor(model => model.INSERT_OFFLINE_SYNC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_IS_OFFLINE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_IS_OFFLINE)
+            @Html.ValidationMessageFor(model => model.INSERT_IS_OFFLINE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_TIME)
+            @Html.ValidationMessageFor(model => model.UPDATE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_USER_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_OFFLINE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_OFFLINE_TIME)
+            @Html.ValidationMessageFor(model => model.UPDATE_OFFLINE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_OFFLINE_SYNC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_OFFLINE_SYNC)
+            @Html.ValidationMessageFor(model => model.UPDATE_OFFLINE_SYNC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_IS_OFFLINE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_IS_OFFLINE)
+            @Html.ValidationMessageFor(model => model.UPDATE_IS_OFFLINE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.USER_NO)
+            @Html.ValidationMessageFor(model => model.USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FEEDBACK_TYPE_NO, "SET_FEEDBACK_TYPE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FEEDBACK_TYPE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.FEEDBACK_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MESSAGE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MESSAGE)
+            @Html.ValidationMessageFor(model => model.MESSAGE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_READ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_READ)
+            @Html.ValidationMessageFor(model => model.IS_READ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.READ_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.READ_USER_NO)
+            @Html.ValidationMessageFor(model => model.READ_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.READ_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.READ_TIME)
+            @Html.ValidationMessageFor(model => model.READ_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OFFLINE_FEEDBACK_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OFFLINE_FEEDBACK_NO)
+            @Html.ValidationMessageFor(model => model.OFFLINE_FEEDBACK_NO)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

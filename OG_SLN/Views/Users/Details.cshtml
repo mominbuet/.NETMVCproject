@@ -1,0 +1,141 @@
+﻿@model OG_SLN.SEC_USERS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    @{
+        string title = "";
+        string backurl = "";
+        
+        string usertype = ViewBag.User_Type;
+        if (usertype == "Admin") {
+            title = "Administrator/Super Administrator";
+            backurl = "Admin";
+        }
+        else if(usertype == "Zonal") {
+            title = "Zonal User";
+            backurl = "Zonal";
+        }
+        else if(usertype == "Agent") {
+            title = "Agents";
+            backurl = "Agent";
+        }
+    }
+    <legend>@title</legend>
+
+        <div class="table-responsive">
+            <table width="70%;">
+                <tr>
+                    <td><b> @Html.DisplayNameFor(model => model.GEN_USER_TYPES.USER_TYPE):</b></td>
+                    <td>@Html.DisplayFor(model => model.GEN_USER_TYPES.USER_TYPE)</td>
+                 </tr>
+                 
+                 <tr><td colspan="2">&nbsp;</td></tr>
+                 
+                 <tr>
+                    <td><b> @Html.DisplayNameFor(model => model.SET_DEPARTMENT.DEPT_NAME):</b></td>
+                    <td>@Html.DisplayFor(model => model.SET_DEPARTMENT.DEPT_NAME)</td>
+                 </tr>
+                 
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.SET_DESIGNATION.DESIG_NAME):</b></td>
+                    <td> @Html.DisplayFor(model => model.SET_DESIGNATION.DESIG_NAME)</td>
+                 </tr>
+
+                  <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.HR_EMP_ID):</b></td>
+                    <td>@Html.DisplayFor(model => model.HR_EMP_ID)</td>
+                 </tr>
+
+                  <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b> @Html.DisplayNameFor(model => model.USER_FULL_NAME):</b></td>
+                    <td>@Html.DisplayFor(model => model.USER_FULL_NAME)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.USER_NICK_NAME):</b></td>
+                    <td>@Html.DisplayFor(model => model.USER_NICK_NAME)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.USER_CONTACT):</b></td>
+                    <td> @Html.DisplayFor(model => model.USER_CONTACT)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.USER_MOBILE):</b></td>
+                    <td>@Html.DisplayFor(model => model.USER_MOBILE)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.USER_ADDR):</b></td>
+                    <td> @Html.DisplayFor(model => model.USER_ADDR)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b> @Html.DisplayNameFor(model => model.USER_EMAIL):</b></td>
+                    <td>  @Html.DisplayFor(model => model.USER_EMAIL)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b> @Html.DisplayNameFor(model => model.USER_NAME):</b></td>
+                    <td> @Html.DisplayFor(model => model.USER_NAME)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>  @Html.DisplayNameFor(model => model.IS_ACTIVE):</b></td>
+                    <td>  @Html.DisplayFor(model => model.IS_ACTIVE)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.DATE_FROM):</b></td>
+                    <td>@Html.DisplayFor(model => model.DATE_FROM)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                  <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.DATE_TO):</b></td>
+                    <td>@Html.DisplayFor(model => model.DATE_TO)</td>
+                 </tr>
+
+                 <tr><td colspan="2">&nbsp;</td></tr>
+                 <tr><td colspan="2">&nbsp;</td></tr>
+
+                 <tr>
+                    <td>&nbsp;</td>
+                    <td class="tab_Link">
+                         @Html.ActionLink("Edit", "Edit", new { id=Model.USER_NO }) 
+                         @Html.ActionLink("Back to List", backurl)
+                    </td>
+                 </tr>
+             </table>
+        </div>
+</fieldset>
+

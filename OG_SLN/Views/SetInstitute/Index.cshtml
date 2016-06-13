@@ -1,0 +1,104 @@
+﻿@model PagedList.IPagedList<OG_SLN.SET_INSTITUTE>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+@{Html.RenderPartial("_SearchInstitute");}
+<div class="row">
+    <table class="table table-responsive table-bordered table-hover tabWidth">
+        <tr class="success">
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                BNG Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Thana
+            </th>
+            <th>
+                F INSTITUTION DB ID
+            </th>
+            <th>
+                EIIN NUMBER
+            </th>
+            <th>
+                MEET PERSON NAME
+            </th>
+            <th>
+                CONTACT NUMBER
+            </th>
+            <th>
+                ACTIVE INSTITUTE
+            </th>
+            <th>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @decimal.Parse(item.INSTITUTE_NO.ToString()).ToString("00")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INSTITUTE_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INSTITUTE_NAME_BNG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INSTITUTE_DESC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SET_INST_TYPE.INST_TYPE_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SET_THANA.THANA_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.F_INSTITUTION_DB_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EIIN_NUMBER)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MEET_PERSON_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CONTACT_NUMBER)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ACTIVE_INSTITUTE)
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.INSTITUTE_NO }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Details", "Details", new { id = item.INSTITUTE_NO }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.INSTITUTE_NO }, new { @class = "btn btn-danger" })
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div id="example">
+</div>
+<div id='Paging' style="text-align: center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

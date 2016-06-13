@@ -1,0 +1,117 @@
+﻿@model List<OG_SLN.DCR_PUB_SALES_GET_Result>
+@using OG_SLN.Models
+@using OG_SLN.Helpers
+@{
+    ViewBag.Title = "SalesPanel";
+
+    int serial_num = 1;
+}
+<h2>
+    Sales Manager Panel</h2>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Filter_Type').val('S');
+
+        $('.pubselect').live('click', function () {
+            $('#Search_pubno').val($(this).attr('pub-no'));
+
+            var frm = $('form');
+            var url = $(frm).attr('action');
+            var data = $(frm).serialize();
+
+            $.post(url, data, function (res) {
+                $('#div_display').html(res);
+            });
+            return false;
+
+        });
+
+        $('.html-down').live('click', function () {
+
+            var user_no = $(this).attr('search-user');
+            var pub_no = $(this).attr('pub-no');
+
+            var url = "/Publish/ValidateHtmlDownload?Search_User=" + user_no + "&Search_pubno=" + pub_no;
+
+
+
+            $.ajax({ url: url,
+                type: 'POST',
+                success: function (data) {
+                    if (data.status == 'true') {
+                        window.location = '@Url.Content("~")' + "Publish/Download?Search_User=" + user_no + "&Search_pubno=" + pub_no;
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            });
+
+        });
+
+
+        $('#confirm').live('click', function () {
+            if ($('#comment').val() == '') {
+                alert("Please put your comments !!!");
+                return;
+            }
+            var users = $('.aclk');
+            var usernos = '';
+
+            jQuery.each(users, function (i) {
+                var ad = $(this).attr('user-no');
+                usernos += ad + ',';
+            });
+
+            usernos = usernos.substring(0, usernos.length - 1);
+
+            var user_list = {
+                'user_not_confirmed': usernos,
+                'IS_CONFIRM': 1,
+                'Comments': $('#comment').val(),
+                'PUBLISH_NO': $('#Search_pubno').val(),
+                'Search_Date_From': $("#Search_Date_From").val(),
+                'Search_Date_To': $("#Search_Date_To").val()
+            };
+
+            $.post("/Publish/DcrDoConfirm", user_list, function (res) {
+                console.log(res);
+            });
+        });
+
+        $('#reject').live('click', function () {
+            if ($('#comment').val() == '') {
+                alert("Please put your comments !!!");
+                return;
+            }
+            var users = $('.aclk');
+            var usernos = '';
+
+            jQuery.each(users, function (i) {
+                var ad = $(this).attr('user-no');
+                usernos += ad + ',';
+            });
+
+            usernos = usernos.substring(0, usernos.length - 1);
+
+            var user_list = {
+                'user_not_confirmed': usernos,
+                'IS_CONFIRM': 0,
+                'Comments': $('#comment').val(),
+                'PUBLISH_NO': $('#Search_pubno').val(),
+                'Search_Date_From': $("#Search_Date_From").val(),
+                'Search_Date_To': $("#Search_Date_To").val()
+            };
+
+            $.post("/Publish/DcrDoConfirm", user_list, function (res) {
+                console.log(res);
+            });
+        });
+    });
+</script>
+<div id="div_search">
+    @{Html.RenderPartial("_PublishListSearchPartial", new ViewDataDictionary {{"Filter_Type", "S" }});}
+</div>
+<div id="div_display">
+    @{Html.RenderPartial("_SalesPanelResult");}
+</div>

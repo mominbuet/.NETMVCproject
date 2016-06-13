@@ -1,0 +1,59 @@
+﻿@model IEnumerable<OG_SLN.SET_FEEDBACK_TYPE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-responsive table-bordered table-hover tabWidth small-font">
+    <tr class="success" style="font-size: 1.1em">
+        
+        <th>
+            @*@Html.DisplayNameFor(model => model.FEEDBACK_NAME)*@
+            Feedback Type Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.FEEDBACK_CODE)*@
+            Feedback Code
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.FEEDBACK_DESC)*@
+            Description
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.IS_ACTIVE)*@
+            Active
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.FEEDBACK_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEEDBACK_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEEDBACK_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_STATUS)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FEEDBACK_TYPE_NO }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.FEEDBACK_TYPE_NO }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.FEEDBACK_TYPE_NO })
+        </td>
+    </tr>
+}
+
+</table>

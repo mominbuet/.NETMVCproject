@@ -1,0 +1,257 @@
+﻿@using OG_SLN.Helpers
+
+@model System.Data.Objects.ObjectResult<OG_SLN.UPLOAD_USERS_GET_Result>
+@{
+    ViewBag.Title = "Uploads";
+}
+<h2>
+    Uploads</h2>
+<script src="@Url.Content("~/Scripts/autocomplete-table.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Search_Division').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Division").val(),type:"division"} ,
+            function( data ) {
+                $("#Search_Zilla").html(data.zill);
+                $("#Search_Thana").html(data.thana);
+                $("#Search_User").html(data.zms);
+                console.log(data.zms);
+            });
+        });
+        $('#Search_Zilla').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Zilla").val(),type:"zilla"} ,
+            function( data ) {
+                $("#Search_Thana").html(data.thana);
+                $("#Search_User").html(data.zms);
+            });
+        });
+        $('#Search_Thana').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Zilla").val(),type:"thana"} ,
+            function( data ) {
+                $("#Search_User").html(data.zms);
+            });
+        });
+    });
+
+    function getUploadDetails(User_No, User_Name, Division, Zilla, Thana, Date)
+    {
+        var searchModel = {
+            'User_No': User_No,
+            'User_Name' : User_Name,
+            'Division_Name' : Division,
+            'Zilla_Name' : Zilla,
+            'Thana_Name' : Thana,
+            'Date_From': Date,
+            'Date_To': Date
+        };
+
+        var url = '@Url.Content("~")' + 'Reports/GetUploadDetails';
+        $.post(url, searchModel, function (res) {
+            $('#div_uploads').html(res);
+            $('#div_uploads').show();
+        });
+
+        return false;
+    }
+</script>
+@{
+
+    string datefrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+    string divisionno = "";
+    string zillano = "";
+    string thanano = "";
+    string zonalno = "";
+
+    OG_SLN.UpDownSearchModel searchModel = ViewBag.Search_Model
+        as OG_SLN.UpDownSearchModel;
+    if (searchModel != null)
+    {
+        if (searchModel.Search_Division.HasValue)
+        {
+            divisionno = searchModel.Search_Division.Value.ToString();
+        }
+        if (searchModel.Search_Zilla.HasValue)
+        {
+            zillano = searchModel.Search_Zilla.Value.ToString();
+        }
+        if (searchModel.Search_Thana.HasValue)
+        {
+            thanano = searchModel.Search_Thana.Value.ToString();
+        }
+        if (searchModel.Search_User.HasValue)
+        {
+            zonalno = searchModel.Search_User.Value.ToString();
+        }
+        if (searchModel.Search_From.HasValue)
+        {
+            datefrom = searchModel.Search_From.Value.ToString("yyyy-MM-dd");
+        }
+        if (searchModel.Search_To.HasValue)
+        {
+            dateto = searchModel.Search_To.Value.ToString("yyyy-MM-dd");
+        }
+    }
+}
+@using (Html.BeginForm("Uploads", "Reports", FormMethod.Get, new { @id = "UploadsForm" }))
+{   
+    <div class="col-6 col-sm-6 col-lg-10 marRight_2">
+        <table class=" tabWidth">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">
+                        ZM(iSearch):
+                    </td>
+                    <td class="adminRight_col">
+                        <input id="txtZM" type="text" class="form-control" />
+                        @*@Html.Hidden("USER_NO", "")*@
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Zonal Manager :
+                    </td>
+                    <td class="adminRight_col">
+                        <div class="input-group">
+                            @*@Html.TextBox("ZMName", @dcrSearch.ZMName, new { @class = "form-control" })*@
+                            @Html.Hidden("USER_NO", "")
+                            @Html.Hidden("ZONAL_TYPE", "single")
+                            <div class="input-group-btn">
+                                @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                        Division
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("Search_Division", "Please Select")
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Zilla:
+                    </td>
+                    <td class="adminRight_col">
+                        <select id="Search_Zilla">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                        Thana
+                    </td>
+                    <td class="adminRight_col">
+                        <select id="Search_Thana">
+                        </select>
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        ZM:
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.DropDownList("Search_User", String.Empty)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                        Entry Date From:
+                    </td>
+                    <td class="td_1 adminRight_col">
+                        @Html.TextBox("Search_From", datefrom, new { @class = "dateclass  form-control" })
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Entry Date To:
+                    </td>
+                    <td class="td_1 adminRight_col">
+                        @Html.TextBox("Search_To", dateto, new { @class = "dateclass  form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminRight_col">
+                    </td>
+                    <td class="midWidth">
+                    </td>
+                    <td colspan="5" style="text-align: center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+@if (Model != null)
+{
+    <table class="table table-responsive">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Division
+            </th>
+            <th>
+                Zilla
+            </th>
+            <th>
+                Thana
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Count
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.USER_FULL_NAME
+                </td>
+                <td>
+                    @item.DIVISION_NAME
+                </td>
+                <td>
+                    @item.ZILLA_NAME
+                </td>
+                <td>
+                    @item.THANA_NAME
+                </td>
+                <td>
+                    @{
+                        string date = DateTime.Parse(@item.DT_UP.ToString()).ToString("yyyy-MM-dd");
+                    }
+                    @date
+                </td>
+                <td>
+                    <a href="#" onclick="return getUploadDetails('@item.USER_NO', '@item.USER_FULL_NAME', '@item.DIVISION_NAME', '@item.ZILLA_NAME', '@item.THANA_NAME', '@date');" data-toggle="modal" data-target="#uploads">
+                        @item.CNT
+                    </a>
+                </td>
+            </tr>
+        }
+    </table> 
+}
+
+
+<div class="modal fade bs-example-modal-lg" id="uploads" tabindex="-1" role="dialog"
+    aria-labelledby="uploadModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="div_uploads">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿@model OG_SLN.GEN_CONTROLLER_ACTION
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>GEN_CONTROLLER_ACTION</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CONTROLLER_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CONTROLLER_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ACTION_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ACTION_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_ACTIVE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_ACTIVE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_PUBLIC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_PUBLIC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GEN_CONTROLLER_ACTION2.CONTROLLER_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GEN_CONTROLLER_ACTION2.CONTROLLER_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_MENU)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_MENU)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MENU_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MENU_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GEN_CONTROLLER_ACTION3.CONTROLLER_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GEN_CONTROLLER_ACTION3.CONTROLLER_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_SUB_MENU)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_SUB_MENU)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DETAILS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DETAILS)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ACTION_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

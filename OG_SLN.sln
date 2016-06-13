@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OG_SLN", "OG_SLN\OG_SLN.csproj", "{F44DDEDF-4A3C-4584-A283-11B616DAB96A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OG_SLN.Tests", "OG_SLN.Tests\OG_SLN.Tests.csproj", "{A521B57B-091B-4BD8-AEBF-0825DA4CA0FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OG_SLN.ProcedurePagedList", "OG_SLN.ProcedurePagedList\OG_SLN.ProcedurePagedList.csproj", "{5F880B07-3ECE-453A-988E-DF53B6DBB916}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OG_SLN\\OG_SLN.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = OG_SLN\\
+		SccProjectUniqueName2 = OG_SLN.Tests\\OG_SLN.Tests.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = OG_SLN.Tests\\
+		SccProjectUniqueName3 = OG_SLN.ProcedurePagedList\\OG_SLN.ProcedurePagedList.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = OG_SLN.ProcedurePagedList\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F44DDEDF-4A3C-4584-A283-11B616DAB96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44DDEDF-4A3C-4584-A283-11B616DAB96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44DDEDF-4A3C-4584-A283-11B616DAB96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44DDEDF-4A3C-4584-A283-11B616DAB96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A521B57B-091B-4BD8-AEBF-0825DA4CA0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A521B57B-091B-4BD8-AEBF-0825DA4CA0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A521B57B-091B-4BD8-AEBF-0825DA4CA0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A521B57B-091B-4BD8-AEBF-0825DA4CA0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F880B07-3ECE-453A-988E-DF53B6DBB916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F880B07-3ECE-453A-988E-DF53B6DBB916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F880B07-3ECE-453A-988E-DF53B6DBB916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F880B07-3ECE-453A-988E-DF53B6DBB916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+﻿@model OG_SLN.Institute_Subject
+
+@using OG_SLN.Helpers
+
+@{
+    string id = Model.SUBJECT_NO.ToString();
+}
+
+@using (Html.BeginCollectionItem("Subjects", id))
+{
+    @Html.HiddenFor(model => model.SUBJECT_NO)
+    
+    <td>
+        @Html.CheckBoxFor(model => model.IS_ACTIVE, new { @class = "subject"})
+        @Html.DisplayFor(model => model.SUBJECT_NAME) (@Html.DisplayFor(model => model.SUBJECT_NAME_BNG))
+    </td>
+}

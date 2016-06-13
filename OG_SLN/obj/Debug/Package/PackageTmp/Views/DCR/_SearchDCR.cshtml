@@ -1,0 +1,91 @@
+﻿@using OG_SLN.Helpers
+
+@{
+    OG_SLN.DCRSearch dcrSearch = ViewBag.dcrSearch as OG_SLN.DCRSearch;
+}
+<script type="text/javascript">
+    $(function () {
+
+    });
+</script>
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Get, new { @class = "form-horizontal" }))
+{
+    <div class="col-8 marRight_2">
+        <table class="tabWidth">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">
+                        ZM name :
+                    </td>
+                    <td class="adminRight_col">
+                        @*@Html.TextBox("ZMName", @dcrSearch.ZMName, new { @class = "form-control" })*@
+                        @Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                    </td>
+                    <td style="width: 150px;">
+                        &nbsp;
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                        DCR Date From :
+                    </td>
+                    <td class="adminRight_col">
+                        <input id="DateFrom" name="DateFrom" 
+                     value="@{if (dcrSearch.DateFrom.ToString() != "")
+                              {
+                                 @(DateTime.Parse(dcrSearch.DateFrom.ToString()).ToString("yyyy-MM-dd"))}}" 
+                                 class="form-control datesinspec"
+                     type="text" />
+                    </td>
+                    <td style="width: 150px;">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        DCR Date To :
+                    </td>
+                    <td class="adminRight_col">
+                        <input id="DateTo" name="DateTo" 
+                    value="@{if (dcrSearch.DateTo.ToString() != "")
+                             {
+                                 @(DateTime.Parse(dcrSearch.DateTo.ToString()).ToString("yyyy-MM-dd"))}}"
+                    class="form-control datesinspec"
+                     type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                        REF ZM Cell :
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("RefZMName", @dcrSearch.RefZMName, new { @class = "form-control" })
+                    </td>
+                    <td style="width: 150px;">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Institution
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("institution", @dcrSearch.institution, new { @class = "form-control" })
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="btn-group btn-group-sm">
+                            <input id="Submit1" class="btn btn-success" type="submit" value="Search" />
+                            <input id="btnReset" class="btn btn-warning" type="reset" value="Reset" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,61 @@
+﻿@using OG_SLN.Helpers
+
+@{
+
+    string datefrom = DateTime.Today.AddMonths(-1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+
+    OG_SLN.Models.FeedbackSearchViewModel searchModel = ViewBag.Search_Feedback_Model
+        as OG_SLN.Models.FeedbackSearchViewModel;
+    if(searchModel != null)
+    {
+        if(searchModel.Search_Date_From.HasValue)
+        {
+            datefrom = searchModel.Search_Date_From.Value.ToString("yyyy-MM-dd");
+        }
+        if (searchModel.Search_Date_From.HasValue)
+        {
+            dateto = searchModel.Search_Date_To.Value.ToString("yyyy-MM-dd");
+        }
+    }
+}
+
+@using(Html.BeginForm("Index", "Feedback", FormMethod.Get)) {
+    
+    <div class="table-responsive">
+        <table class="table-responsive tabWidth">
+            <tbody>
+                <tr >
+                    <td>Feedback Type:</td>
+                    <td class="td_1">
+                        @Html.DropDownList("Search_Feedback_Type", String.Empty)
+                    </td>
+                    <td>User</td>
+                    <td class="td_1">
+                        @Html.Hidden("Search_User", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                    </td>
+                </tr>
+                <tr>
+                    <td>Entry Date From:</td>
+                    <td class="td_1">
+                        @Html.TextBox("Search_Date_From", datefrom, new { @class = "dateclass" })
+                    </td>
+                    <td>Entry Date To:</td>
+                    <td class="td_1">
+                        @Html.TextBox("Search_Date_To", dateto, new { @class = "dateclass" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="text-align:center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}

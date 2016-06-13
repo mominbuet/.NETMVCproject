@@ -1,0 +1,224 @@
+﻿
+<script type="text/javascript">
+
+    function get_zilla(){ 
+        $.ajax({
+            url: "@Url.Content("~")"+"web/webrequests/zilla/"+$("#Division_No").val(),
+            dataType: "json",
+            success: function(data) {
+                $("#Zilla_No").empty();
+                $("#Zonal_Thana").empty();
+                $("#Zilla_No").append('<option value=""></option>');
+                $.each(data, function(i, val){
+                    $("#Zilla_No").append('<option value="' + val.zillano + '">' + val.zillaname + '</option>');
+                }); 
+                        
+            }, error: function(data) {
+                console.log('error :' + data);
+            }
+        });
+    }
+
+    function get_thana(){
+        $.ajax({
+            url: "@Url.Content("~")"+"web/webrequests/thana/"+$("#Zilla_No").val(),
+            dataType: "json",
+            success: function(data) {
+                $("#Zonal_Thana").empty();
+                $("#Zonal_Thana").append('<option value=""></option>');
+                $.each(data, function(i, val){
+                    $("#Zonal_Thana").append('<option value="' + val.thanano + '">' + val.thananame + '</option>');
+                }); 
+                        
+            }, error: function(data) {
+                console.log('error :' + data);
+            }
+        });
+    }
+    
+
+    function zonal_search() {
+        var form = $('#GetZonalManagerForm');
+
+        $.ajax({
+            url: "@Url.Content("~")" + "web/webrequests/ZonalManager",
+            type: 'POST',
+            data: form.serialize(),
+            dataType: 'json',
+            success: function (data) {
+                //console.log(data);
+                var zonal_type = $("#ZONAL_TYPE").val();
+                var resdiv = $('#zonal_result');
+                $(resdiv).empty();
+
+                if(data.length > 0 && zonal_type == 'multi')
+                {
+                    $(resdiv).append('<tr><td colspan="2"><a href="#" class="selectall">Check All</a></td><td colspan="2"><a href="#" class="unselectall">Uncheck All</a></td></tr>');
+                }
+
+
+                if(data.length > 0)
+                {
+                    var header = '<tr><th>Select</th><th>Full Name</th><th>HR ID</th><th>Mobile</th><th>Email</th></tr>';
+                    $(resdiv).append(header);
+                }
+
+                if(zonal_type == 'single') {
+                    $.each(data, function(i, v) {
+                        var html = '';
+                        html += '<tr>';
+                        html += '<td><a href="#" class="selectlink" no="'+v.zonalno+'">Select</a></td>';
+                        html += '<td>'+ v.zonalname + '</td>';
+                        html += '<td>'+ v.zonalhremp +'</td>';
+                        html += '<td>'+ v.zonalmobile +'</td>';
+                        html += '<td>'+ v.zonalemail +'</td>';
+                        html += '</tr>';
+
+                        $(resdiv).append(html);
+                    });
+
+                    $('.selectlink').live('click', function () {
+                        var zonalno = $(this).attr('no');
+                        $("#USER_NO").val(zonalno);
+                        $("#Search_Insert_User").val(zonalno);
+                        $("#Search_User").val(zonalno);
+                        $("#Selected_Zonal").val($(this).parent().next().text());
+                        $("#Zonal_Name").val($(this).parent().next().text());
+                        //console.log($(this).text());
+                        //$('div.ui-dialog-content').dialog('destroy');
+                        $('div.ui-dialog-content').remove();
+                    });
+                }
+                else if(zonal_type == 'multi')
+                {
+                    $.each(data, function(i, v) {
+                        var html = '';
+                        html += '<tr>';
+                        html += '<td class="check"><input type="checkbox" name="ZonalManagers['+ v.zonalno +'].IS_ACTIVE" /></td>';
+                        
+                        html += '<td><div class="content">';
+                        html += '<input autocomplete="off" type="hidden" name="ZonalManagers.Index" value="'+ v.zonalno +'" />';
+                        html += '<input type="hidden" name="ZonalManagers['+ v.zonalno +'].USER_NO" value="'+ v.zonalno +'" />';
+                        html += v.zonalname + '</div></td>';
+                        html += '<td>'+ v.zonalhremp +'</td>';
+                        html += '<td>'+ v.zonalmobile +'</td>';
+                        html += '<td>'+ v.zonalemail +'</td>';
+                        html += '</tr>';
+
+                        $(resdiv).append(html);
+                    });
+                }
+            }
+        });
+    }
+    
+</script>
+
+<style type="text/css">
+    .Left_col
+    {
+        width: 120px;
+        vertical-align: top;
+    }
+    
+    .Right_col
+    {
+        width: 150px;
+        padding: 0 15px 20px 0;
+    }
+</style>
+
+@{
+    decimal? parent_no = null;
+}
+@if (ViewBag.Zonal_Parent_No != null)
+{
+    parent_no = ViewBag.Zonal_Parent_No as decimal?;
+}
+
+@using (Html.BeginForm("ZonalManager", "WebRequests", FormMethod.Post, new { @id = "GetZonalManagerForm" }))
+{ 
+    @Html.ValidationSummary(true)
+
+    <div>
+    <table>
+      <tr>
+        <td class="Left_col">Name:</td>
+        <td class="Right_col">
+            <input class="form-control" type="text" name="Zonal_Name" id="Zonal_Name" value="" />
+            
+            <input class="form-control" type="hidden" name="Zonal_Parent" id="Zonal_Parent" value="@parent_no" />
+            <input class="form-control" type="hidden" name="Zonal_User_Type" id="Zonal_User_Type" value="" />
+        </td>
+
+        <td class="Left_col">Hr ID:</td>
+        <td class="Right_col">
+            <input class="form-control" type="text" name="Zonal_Hrid" id="Zonal_Hrid" value="" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class="Left_col">Username:</td>
+        <td class="Right_col">
+            <input class="form-control" type="text" name="Zonal_Username" id="Zonal_Username" value="" />
+            
+        </td>
+
+        <td class="Left_col">Mobile:</td>
+        <td class="Right_col">
+            <input class="form-control" type="text" name="Zonal_Mobile" id="Zonal_Mobile" value="" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class="Left_col">Email:</td>
+        <td class="Right_col">
+            <input class="form-control" type="text" name="Zonal_Email" id="Zonal_Email" value="" />
+        </td>
+
+        <td class="Left_col">Division:</td>
+        <td class="Right_col">
+            @Html.DropDownList("Division_No", ViewBag.Division_No as IEnumerable<SelectListItem>, String.Empty, new { @onchange="get_zilla();" })
+        </td>
+      </tr>
+
+
+      <tr>
+        <td class="Left_col">Zilla:</td>
+        <td class="Right_col">
+            @Html.DropDownList("Zilla_No", null, new { @onchange = "get_thana();" })
+        </td>
+
+        <td class="Left_col">Thana:</td>
+        <td class="Right_col">
+            @Html.DropDownList("Zonal_Thana", String.Empty)
+        </td>
+      </tr>
+
+
+      <tr>
+        <td class="Left_col">Department:</td>
+        <td class="Right_col">
+            <!--input class="form-control" type="text" name="Zonal_Dept" id="Zonal_Dept" value="" /-->
+            @Html.DropDownList("Zonal_Dept", String.Empty)
+        </td>
+
+        <td class="Left_col">Designation:</td>
+        <td class="Right_col">
+            <!--input class="form-control" type="text" name="Zonal_Desig" id="Zonal_Desig" value="" /-->
+            @Html.DropDownList("Zonal_Desig", String.Empty)
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="4">
+            <input class="btn btn-success butTop_1" type="button" onclick="zonal_search();" value="Get Zonal Manager" />
+        </td>
+      </tr>
+    </table>
+    </div>
+}
+
+<table id="zonal_result">
+    
+</table>

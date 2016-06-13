@@ -1,0 +1,174 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    var request = HttpContext.Current.Request;
+    var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+    
+    if (!string.IsNullOrWhiteSpace(appUrl)) { 
+        appUrl += ""; 
+    }
+
+    var baseUrl = string.Format("{0}://{1}{2}", request.Url.Scheme, request.Url.Authority, appUrl);
+    
+    //string baseUrl = "test";
+    
+}
+
+<!-- <script type="text/javascript" src="../../Scripts/jquery-1.7.1.min.js"></script> -->
+
+<script type="text/javascript" language="javascript">
+    function do_login() {
+        var sec_users = {
+            'USER_NAME' : $('#USER_NAME').val(), 
+            'USER_PWD' : $('#USER_PWD').val(), 
+            'USER_MOBILE' : '01552482311' , 
+            'APP_VERSION' : '1'
+        };
+
+        var url = '@baseUrl' + 'WS_SEC_USERS/Login/';
+
+        //alert(url);
+
+        $.post(url, sec_users, function (res) {
+            console.log(res);
+        });
+
+    }
+
+    function do_expense() {
+        var url = '@baseUrl' + 'WS_UploadApi/Upload_Expense/';
+        //var TRN_EXPENSE_UP = {"ENTRY_STATE":"1","TRN_EXP_DATE":"1-23-2014 ","OFFLINE_EXP_NO":"7","TRN_EXPENSE_DET_UP": "[ {"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"71","EXP_TYPE_NO":"2","OFFLINE_EXP_NO":"7","EXP_AMT":"123"}, {"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"72","EXP_TYPE_NO":"3","OFFLINE_EXP_NO":"7","EXP_AMT":"123"}]","ACTION_OFFLINE_TIME":"23-01-2014 12:33:36"};
+        /*
+        var TRN_EXPENSE_UP = {"ENTRY_STATE":"1","TRN_EXP_DATE":"2014-01-23","OFFLINE_EXP_NO":"8",
+        "TRN_EXPENSE_DET_UP":[ 
+            {"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"81","EXP_TYPE_NO":"2","OFFLINE_EXP_NO":"8","EXP_AMT":"123"}, 
+            {"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"82","EXP_TYPE_NO":"3","OFFLINE_EXP_NO":"8","EXP_AMT":"63"}],
+            "ACTION_OFFLINE_TIME":"2014-01-23 07:58:11"};      
+        */
+        
+        var TRN_EXPENSE_UP = {"USER_INFO":{"USER_NAME":"test"},"TRN_EXPENSE_UP":[{"ENTRY_STATE":"1","TRN_EXP_DATE":"2014-02-15","IS_MANUAL_ENTRY":"0","OFFLINE_EXP_NO":"4","TRN_EXPENSE_DET_UP":[{"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"9","EXP_TYPE_NO":"2","OFFLINE_EXP_NO":"4","ACTION_OFFLINE_TIME":"2014-02-15 06:13:46","EXP_AMT":"423"},{"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"11","EXP_TYPE_NO":"2","OFFLINE_EXP_NO":"4","ACTION_OFFLINE_TIME":"2014-02-15 06:14:35","EXP_AMT":"543"},{"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"12","EXP_TYPE_NO":"5","OFFLINE_EXP_NO":"4","ACTION_OFFLINE_TIME":"2014-02-15 06:16:20","EXP_AMT":"3432"},{"ENTRY_STATE":"1","OFFLINE_EXP_DET_NO":"13","EXP_TYPE_NO":"6","OFFLINE_EXP_NO":"4","ACTION_OFFLINE_TIME":"2014-02-15 06:18:41","EXP_AMT":"1731"}],"ACTION_OFFLINE_TIME":"2014-02-15 04:09:29"}]};
+                      
+        $.ajax({
+            type: 'POST',
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(TRN_EXPENSE_UP),
+        }).done(function( res ) {
+            //alert( "Data Saved: " + msg );
+            console.log(res);
+        });
+    }
+
+    function do_location() {
+        var url = '@baseUrl' + 'WS_UploadApi/Upload_UserLocation/';
+        //var master_obj = {"TRN_USER_LOCATION_UP":[{"ENTRY_STATE":"1","LOCATION_NAME":"KBazar","LON_VAL":-102.084095,"ACTION_OFFLINE_TIME":"2014-01-26 05:33:25","OFFLINE_LOC_NO":"101","LAT_VAL":137.42200499999998}]};
+        //var master_obj = {"TRN_USER_LOCATION_UP":[{"ENTRY_STATE":"1","LOCATION_NAME":"ABCD","LON_VAL":"-122.084","ACTION_OFFLINE_TIME":"2014-01-28 02:51:47","OFFLINE_LOC_NO":"1","LAT_VAL":"37.422"},{"ENTRY_STATE":"3","LOCATION_NAME":"B34DC","LON_VAL":"-122.084","ACTION_OFFLINE_TIME":"2014-01-28 02:52:14","OFFLINE_LOC_NO":"2","LAT_VAL":"37.422"}]};
+        //var master_obj = {"TRN_USER_MOVEMENTS_UP":[{"MOVE_TIME":"02:33:14","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:38:15","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:42:25","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:47:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:55:56","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:00:01","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:02:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:07:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:15:02","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:17:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:22:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:30:01","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:32:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:37:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:45:02","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:47:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"}],"USER_INFO":{"USER_NAME":"test"}};
+        var master_obj = {"USER_INFO":{"USER_NAME":"test"},"TRN_USER_LOCATION_UP":[]};
+        $.ajax({
+            type: 'POST',
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(master_obj),
+        }).done(function( res ) {
+            //alert( "Data Saved: " + msg );
+            console.log(res);
+        });
+
+    }
+
+    /*
+    function do_login() {
+        var url = '@baseUrl' + 'WS_SEC_USERS/Login/';
+        console.log(url);
+        var data = {
+                    "USER_NAME" : "test", 
+                    "USER_PWD" : "test"
+                };
+        $.ajax({
+            type: 'POST',
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+        }).done(function( res ) {
+            //alert( "Data Saved: " + msg );
+            console.log(res);
+        });
+    }
+    */
+
+    function do_dcr() {
+        var url = '@baseUrl' + 'WS_UploadApi/Upload_DCR/';
+        var data = {"TRN_DCR_UP":[{"TRN_DCR_DET_UP":[{"CLIENT_MOBILE":"01720454569","SPECIMEN_NO":"102","IS_FOR_CLIENT":"1","ACTION_OFFLINE_TIME":"2014-01-28 06:30:36","SPECIMEN_QTY":"145","TEACHER_NO":"","IS_FOR_TEACHER":"1","ENTRY_STATE":"1","OFFLINE_DCR_DET_NO":"6","CLIENT_NO":"","TEACHER_MOBILE":"01720454569","OFFLINE_DCR_NO":"4","PROMO_ITEM_QTY":"145","PROMO_ITEM_NO":"102"}],"WORK_AREA_TO_LAT":"","DCR_TYPE_NO":"1","TRANS_TYPE_NO":"1","REF_ZM_USER_NO":"","ACTION_OFFLINE_TIME":"2014-01-28 06:29:15","COMMENTS":"nothing","INSTITUTE_NO":"1003","REF_ZM_MOBILE":"","FARE_AMT":"234","TIME_TO":"01:28:58","ENTRY_STATE":"1","WORK_AREA_TO_NAME":"dfg","TIME_FROM":"12:28:53","WORK_AREA_TO_LON":"","WORK_AREA_FROM_LON":"","IS_REF_ZM":"0","TIME_GAP":"3604692","WORK_AREA_FROM_NAME":"asd","TRN_DCR_DATE":"2014-01-28","OFFLINE_DCR_NO":"4","IS_MANUAL_ENTRY":"0","WORK_AREA_FROM_LAT":""},{"WORK_AREA_TO_LAT":"","DCR_TYPE_NO":"1","TRANS_TYPE_NO":"1","REF_ZM_USER_NO":"","ACTION_OFFLINE_TIME":"2014-01-29 12:04:43","COMMENTS":"","INSTITUTE_NO":"1002","REF_ZM_MOBILE":"","FARE_AMT":"123","TIME_TO":"07:04:33","ENTRY_STATE":"1","WORK_AREA_TO_NAME":"frc","TIME_FROM":"06:04:28","WORK_AREA_TO_LON":"","WORK_AREA_FROM_LON":"","IS_REF_ZM":"0","TIME_GAP":"3605828","WORK_AREA_FROM_NAME":"asf","TRN_DCR_DATE":"2014-01-28","OFFLINE_DCR_NO":"6","IS_MANUAL_ENTRY":"0","WORK_AREA_FROM_LAT":""}]};
+        $.ajax({
+            type: 'POST',
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+        }).done(function( res ) {
+            //alert( "Data Saved: " + msg );
+            console.log(res);
+        });
+    }
+
+    function change_password() {
+        var url = '@baseUrl' + 'WS_SEC_USERS/ChangePassword/';
+        var SEC_USER_CHANGE_PASSWORD = {"USER_NAME" : "test", "OLD_PASSWORD": "test", "NEW_PASSWORD" : "123"};
+        $.ajax({
+            type: 'POST',
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+        }).done(function( res ) {
+            //alert( "Data Saved: " + msg );
+            console.log(res);
+        });
+    }
+
+    function do_movement() {
+        var url = '@baseUrl' + 'WS_UploadApi/Upload_Movement/';
+        //var data = {"TRN_USER_MOVEMENTS_UP":[{"MOVE_TIME":"02:33:14","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:38:15","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:42:25","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:47:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"02:55:56","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:00:01","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:02:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:07:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:15:02","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:17:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:22:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:30:01","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:32:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:37:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:45:02","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"},{"MOVE_TIME":"03:47:24","MOVE_DATE":"2014-02-13","LAT_VAL":"38.422005","LON_VAL":"-122.084095"}],"USER_INFO":{"USER_NAME":"test"}};
+        var data = {"TRN_USER_MOVEMENTS_UP":[{"MOVE_TIME":"10:30:02 AM","BATT_PCT":"50.0","LON_VAL":"-122.084095","USER_NO":"45","MOVE_DATE":"2014-02-27","LAT_VAL":"38.422005"},{"MOVE_TIME":"10:30:09 AM","BATT_PCT":"50.0","LON_VAL":"-122.084095","USER_NO":"45","MOVE_DATE":"2014-02-27","LAT_VAL":"38.422005"},{"MOVE_TIME":"10:30:38 AM","BATT_PCT":"50.0","LON_VAL":"-122.084095","USER_NO":"45","MOVE_DATE":"2014-02-27","LAT_VAL":"38.422005"},{"MOVE_TIME":"10:31:08 AM","BATT_PCT":"50.0","LON_VAL":"-122.084095","USER_NO":"45","MOVE_DATE":"2014-02-27","LAT_VAL":"38.422005"},{"MOVE_TIME":"10:31:38 AM","BATT_PCT":"50.0","LON_VAL":"-122.084095","USER_NO":"45","MOVE_DATE":"2014-02-27","LAT_VAL":"38.422005"},{"MOVE_TIME":"10:32:08 AM","BATT_PCT":"50.0","LON_VAL":"-122.084095","USER_NO":"45","MOVE_DATE":"2014-02-27","LAT_VAL":"38.422005"}],"USER_INFO":{"USER_NAME":"test"}};
+        $.ajax({
+            type: 'POST',
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+        }).done(function( res ) {
+            //alert( "Data Saved: " + msg );
+            console.log(res);
+        });
+    }
+
+    function do_feedback() {
+        var url = '@baseUrl' + 'WS_UploadApi/Upload_Feedback/';
+        var data = {"TRN_USER_FEED_BACK_UP":[{"FEEDBACK_TYPE_NO":"2","ENTRY_STATE":"1","MESSAGE":"Hello Mr where is my money?","USER_NO":"45","ACTION_OFFLINE_TIME":"2014-02-16 06:59:42","OFFLINE_FEEDBACK_NO":"1"}]};
+        $.ajax({
+            type: 'POST',
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+        }).done(function( res ) {
+            //alert( "Data Saved: " + msg );
+            console.log(res);
+        });
+    }
+</script>
+
+<h2>@baseUrl</h2>
+
+@using (Html.BeginForm()) {
+    
+    <input type="text" id="USER_NAME" name="USER_NAME" />
+    <input type="text" id="USER_PWD" name="USER_PWD" />
+    
+    <button type="button" onclick="do_login()" value="login">Login</button>
+    <button type="button" onclick="change_password()" >Change Password</button>
+    <button type="button" onclick="do_expense()" value="expense">Expense</button>
+    <button type="button" onclick="do_location()" value="location">Location</button>
+    <button type="button" onclick="do_dcr()" value="DCR">DCR</button>
+    <button type="button" onclick="do_movement()" value="Movement">Movement</button>
+    <button type="button" onclick="do_feedback()" value="Feedback">Feedback</button>
+    
+}

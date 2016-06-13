@@ -1,0 +1,45 @@
+﻿@model OG_SLN.TPR_PROJECT
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add Question Project</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PROJECT_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PROJECT_NAME)
+            <span style="color: Red">
+                @Html.ValidationMessageFor(model => model.PROJECT_NAME)
+            </span>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLASS_NO, "Class")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CLASS_NO")
+            @Html.ValidationMessageFor(model => model.CLASS_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DEADLINE_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DEADLINE_DATE, new { @class = "form-control dateclass" })
+            @Html.ValidationMessageFor(model => model.DEADLINE_DATE)
+        </div>
+
+        <p>
+            <input type="submit" value="Add" />
+        </p>
+    </fieldset>
+    </div>
+}

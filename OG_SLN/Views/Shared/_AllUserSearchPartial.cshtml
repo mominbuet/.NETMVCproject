@@ -1,0 +1,137 @@
+﻿    <script type="text/javascript">
+        $(document).ready(function () { 
+            $("#Search_Company").change(function(){ 
+                $.ajax({
+                    url: "@Url.Content("~")"+"web/webrequests/departments/"+$("#Search_Company").val(),
+                    dataType: "json",
+                    success: function(data) {
+                        $("#Search_Department").empty();
+                        $.each(data, function(i, val){
+                            $("#Search_Department").append('<option value="' + val.deptno + '">' + val.deptname + '</option>');
+                        }); 
+                        
+                    }, error: function(data) {
+                        console.log('error :' + data);
+                    }
+                });
+            });
+        });
+
+    </script>
+@{
+    string action = ViewBag.User_Type as string;
+    
+    decimal? usertype = null;
+    decimal? companyno = null;
+    decimal? deptno = null;
+    decimal? designo = null;
+    string hrid = "";
+    string fullname = "";
+    string mobile = "";
+    string email = "";
+    string username = "";
+    string active = "";
+    string check = "checked='checked'";
+        
+    OG_SLN.Models.AllUserSearchViewModel searchModel = ViewBag.Search_User_Model as OG_SLN.Models.AllUserSearchViewModel;
+    if(searchModel != null)
+    {
+        if(!string.IsNullOrEmpty(searchModel.Search_Hrid))
+        {
+            hrid = searchModel.Search_Hrid;
+        }
+        if (!string.IsNullOrEmpty(searchModel.Search_Fullname))
+        {
+            fullname = searchModel.Search_Fullname;
+        }
+        if (!string.IsNullOrEmpty(searchModel.Search_Mobile))
+        {
+            mobile = searchModel.Search_Mobile;
+        }
+        if (!string.IsNullOrEmpty(searchModel.Search_Email))
+        {
+            email = searchModel.Search_Email;
+        }
+        if (!string.IsNullOrEmpty(searchModel.Search_Username))
+        {
+            username = searchModel.Search_Username;
+        }
+        if(searchModel.Search_Active.HasValue)
+        {
+            active = searchModel.Search_Active.ToString().ToLower();
+        }
+    }
+}
+
+@using(Html.BeginForm(action, "Users", FormMethod.Get)) {   
+     <div class="col-8 marRight_2"> 
+        <table class="tabWidth">
+                <tbody>
+                    <tr>
+                        <td class="adminLef_col">User Type :</td>
+                        <td class="adminRight_col">
+                            @Html.DropDownList("Search_User_Type", String.Empty)
+                        </td>
+                        <td class="midWidth">&nbsp;</td>
+                        <td class="adminLef_col">Designation : </td>
+                        <td class="adminRight_col">
+                            @Html.DropDownList("Search_Designation", String.Empty)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminLef_col">Company :</td>
+                        <td class="adminRight_col">
+                            @Html.DropDownList("Search_Company", String.Empty)
+                        </td>
+                        <td>&nbsp;</td>
+                        <td class="adminLef_col">Department :</td>
+                        <td class="adminRight_col">
+                            @Html.DropDownList("Search_Department", String.Empty)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminLef_col">HR ID :</td>
+                        <td class="adminRight_col">
+                            <input type="text" class="form-control" name="Search_Hrid" id="Search_Hrid" value="@hrid">
+                        </td>
+                        <td>&nbsp;</td>
+                        <td class="adminLef_col">Full Name : </td>
+                        <td class="adminRight_col">
+                            <input class="form-control" type="text" name="Search_Fullname" id="Search_Fullname" value="@fullname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminLef_col">Mobile:</td>
+                        <td class="adminRight_col">
+                            <input class="form-control" type="text" name="Search_Mobile" id="Search_Mobile" value="@mobile">
+                        </td>
+                        <td>&nbsp;</td>
+                        <td class="adminLef_col">Email: </td>
+                        <td class="adminRight_col">
+                            <input class="form-control" type="text" name="Search_Email" id="Search_Email" value="@email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminLef_col">User Name :</td>
+                        <td class="adminRight_col">
+                            <input class="form-control" type="text" name="Search_Username" id="Search_Username" value="@username">
+                        </td>
+                        <td>&nbsp;</td>
+                        <td class="adminLef_col">Status</td>
+                        <td class="adminRight_col">
+			                <label><input  type="radio" name="Search_Active" value="null" @{if(active=="") {@check}}>All</label>
+			                <label><input type="radio"  name="Search_Active" value="true" @{if(active=="true") {@check}}>Active</label>
+			                <label><input type="radio"  name="Search_Active" value="false" @{if(active=="false") {@check}}>Inactive</label>
+		                </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="text-align:center;">
+                            <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        }
+    </div>

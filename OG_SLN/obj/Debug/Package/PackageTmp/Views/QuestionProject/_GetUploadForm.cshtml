@@ -1,0 +1,48 @@
+﻿@model OG_SLN.TPR_UPLOAD_LIST
+
+@{
+    decimal Ins_Subject_No = ViewBag.Ins_Subject_No;
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#AttachForm').ajaxForm({
+            success: function (res) {
+                $('#uploads').modal('hide');
+                $('#subject_list tbody tr:gt(1)').remove();
+                $('#subject_list tbody').append(res);
+            }
+        });
+
+        $('#AttachForm').submit(function () {
+            //$(this).ajaxSubmit();
+
+            return false;
+        });
+    });
+</script>
+
+<form action="@Url.Action("AttachFile")" id="AttachForm" method="post" enctype="multipart/form-data">
+<table class="table table-responsive table-bordered tabWidth">
+    <tr class="success">
+        <th colspan="4">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+        <td>Select File</td>
+        <td colspan="4" style="text-align:center">
+            @Html.Hidden("INS_SUBJECT_NO", Ins_Subject_No)
+            <input class="text-box single-line" id="QuestionFile" name="QuestionFile" type="file" value="">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">&nbsp;</td>
+        <td>
+            <input type="submit" id="Attach" name="Attach" value="Submit" />
+        </td>
+    </tr>
+</table>
+</form>

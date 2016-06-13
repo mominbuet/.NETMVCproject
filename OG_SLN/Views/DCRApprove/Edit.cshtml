@@ -1,0 +1,573 @@
+﻿@model OG_SLN.VIEW_TRN_DCR_APPROVE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>VIEW_TRN_DCR_APPROVE</legend>
+
+        @Html.HiddenFor(model => model.DCR_NO)
+
+        @Html.HiddenFor(model => model.DCR_TYPE_NO)
+
+        @Html.HiddenFor(model => model.DCR_TYPE_CODE)
+
+        @Html.HiddenFor(model => model.DCR_TYPE)
+
+        @Html.HiddenFor(model => model.FY_NO)
+
+        @Html.HiddenFor(model => model.FY_NAME)
+
+        @Html.HiddenFor(model => model.START_DATE)
+
+        @Html.HiddenFor(model => model.END_DATE)
+
+        @Html.HiddenFor(model => model.USER_NO)
+
+        @Html.HiddenFor(model => model.ZM_USER_FULL_NAME)
+
+        @Html.HiddenFor(model => model.ZM_USER_MOBILE)
+
+        @Html.HiddenFor(model => model.ZM_USER_NAME)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AGENT_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AGENT_USER_NO)
+            @Html.ValidationMessageFor(model => model.AGENT_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AGENT_USER_FULL_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AGENT_USER_FULL_NAME)
+            @Html.ValidationMessageFor(model => model.AGENT_USER_FULL_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AGENT_USER_MOBILE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AGENT_USER_MOBILE)
+            @Html.ValidationMessageFor(model => model.AGENT_USER_MOBILE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AGENT_USER_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AGENT_USER_NAME)
+            @Html.ValidationMessageFor(model => model.AGENT_USER_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_REF_ZM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_REF_ZM)
+            @Html.ValidationMessageFor(model => model.IS_REF_ZM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REF_ZM_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REF_ZM_USER_NO)
+            @Html.ValidationMessageFor(model => model.REF_ZM_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REF_ZM_USER_FULL_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REF_ZM_USER_FULL_NAME)
+            @Html.ValidationMessageFor(model => model.REF_ZM_USER_FULL_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REF_ZM_USER_MOBILE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REF_ZM_USER_MOBILE)
+            @Html.ValidationMessageFor(model => model.REF_ZM_USER_MOBILE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REF_ZM_USER_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REF_ZM_USER_NAME)
+            @Html.ValidationMessageFor(model => model.REF_ZM_USER_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REF_ZM_MOBILE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REF_ZM_MOBILE)
+            @Html.ValidationMessageFor(model => model.REF_ZM_MOBILE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_FROM_LAT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_FROM_LAT)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_FROM_LAT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_FROM_LON)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_FROM_LON)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_FROM_LON)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_FROM_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_FROM_NAME)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_FROM_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_TO_LAT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_TO_LAT)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_TO_LAT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_TO_LON)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_TO_LON)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_TO_LON)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_TO_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_TO_NAME)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_TO_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIME_FROM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIME_FROM)
+            @Html.ValidationMessageFor(model => model.TIME_FROM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIME_TO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIME_TO)
+            @Html.ValidationMessageFor(model => model.TIME_TO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIME_GAP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIME_GAP)
+            @Html.ValidationMessageFor(model => model.TIME_GAP)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DIVISION_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DIVISION_NO)
+            @Html.ValidationMessageFor(model => model.DIVISION_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DIVISION_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DIVISION_NAME)
+            @Html.ValidationMessageFor(model => model.DIVISION_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DIVISION_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DIVISION_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.DIVISION_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DIVISION_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DIVISION_CODE)
+            @Html.ValidationMessageFor(model => model.DIVISION_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZONE_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZONE_NO)
+            @Html.ValidationMessageFor(model => model.ZONE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZONE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZONE_NAME)
+            @Html.ValidationMessageFor(model => model.ZONE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZONE_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZONE_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.ZONE_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZONE_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZONE_CODE)
+            @Html.ValidationMessageFor(model => model.ZONE_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZILLA_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZILLA_NO)
+            @Html.ValidationMessageFor(model => model.ZILLA_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZILLA_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZILLA_NAME)
+            @Html.ValidationMessageFor(model => model.ZILLA_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZILLA_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZILLA_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.ZILLA_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZILLA_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZILLA_CODE)
+            @Html.ValidationMessageFor(model => model.ZILLA_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.THANA_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.THANA_NO)
+            @Html.ValidationMessageFor(model => model.THANA_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.THANA_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.THANA_NAME)
+            @Html.ValidationMessageFor(model => model.THANA_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.THANA_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.THANA_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.THANA_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.THANA_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.THANA_CODE)
+            @Html.ValidationMessageFor(model => model.THANA_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSTITUTE_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSTITUTE_NO)
+            @Html.ValidationMessageFor(model => model.INSTITUTE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSTITUTE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSTITUTE_NAME)
+            @Html.ValidationMessageFor(model => model.INSTITUTE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSTITUTE_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSTITUTE_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.INSTITUTE_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSTITUTE_DESC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSTITUTE_DESC)
+            @Html.ValidationMessageFor(model => model.INSTITUTE_DESC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.F_INSTITUTION_DB_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.F_INSTITUTION_DB_ID)
+            @Html.ValidationMessageFor(model => model.F_INSTITUTION_DB_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EIIN_NUMBER)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EIIN_NUMBER)
+            @Html.ValidationMessageFor(model => model.EIIN_NUMBER)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INST_TYPE_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INST_TYPE_NO)
+            @Html.ValidationMessageFor(model => model.INST_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INST_TYPE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INST_TYPE_NAME)
+            @Html.ValidationMessageFor(model => model.INST_TYPE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INST_TYPE_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INST_TYPE_CODE)
+            @Html.ValidationMessageFor(model => model.INST_TYPE_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INST_TYPE_DESC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INST_TYPE_DESC)
+            @Html.ValidationMessageFor(model => model.INST_TYPE_DESC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRANS_TYPE_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TRANS_TYPE_NO)
+            @Html.ValidationMessageFor(model => model.TRANS_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRANS_TYPE_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TRANS_TYPE_CODE)
+            @Html.ValidationMessageFor(model => model.TRANS_TYPE_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRANS_TYPE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TRANS_TYPE_NAME)
+            @Html.ValidationMessageFor(model => model.TRANS_TYPE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TRANS_TYPE_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_TRANS_TYPE_NO)
+            @Html.ValidationMessageFor(model => model.APPROVE_TRANS_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TRANS_TYPE_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_TRANS_TYPE_CODE)
+            @Html.ValidationMessageFor(model => model.APPROVE_TRANS_TYPE_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TRANS_TYPE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_TRANS_TYPE_NAME)
+            @Html.ValidationMessageFor(model => model.APPROVE_TRANS_TYPE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FARE_AMT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FARE_AMT)
+            @Html.ValidationMessageFor(model => model.FARE_AMT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_FARE_AMT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_FARE_AMT)
+            @Html.ValidationMessageFor(model => model.APPROVE_FARE_AMT)
+        </div>
+
+        @Html.HiddenFor(model => model.TRN_DCR_DATE)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TYPE_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_TYPE_NO)
+            @Html.ValidationMessageFor(model => model.APPROVE_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TYPE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_TYPE)
+            @Html.ValidationMessageFor(model => model.APPROVE_TYPE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REASON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REASON_NO)
+            @Html.ValidationMessageFor(model => model.REASON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REASON_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REASON_NAME)
+            @Html.ValidationMessageFor(model => model.REASON_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REASON_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REASON_CODE)
+            @Html.ValidationMessageFor(model => model.REASON_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REAMRKS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REAMRKS)
+            @Html.ValidationMessageFor(model => model.REAMRKS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_MANUAL_ENTRY)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_MANUAL_ENTRY)
+            @Html.ValidationMessageFor(model => model.IS_MANUAL_ENTRY)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_TRN_LOCKED)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_TRN_LOCKED)
+            @Html.ValidationMessageFor(model => model.IS_TRN_LOCKED)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_LOCK_BY_SYSTEM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_LOCK_BY_SYSTEM)
+            @Html.ValidationMessageFor(model => model.IS_LOCK_BY_SYSTEM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OFFLINE_DCR_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OFFLINE_DCR_NO)
+            @Html.ValidationMessageFor(model => model.OFFLINE_DCR_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.COMMENTS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.COMMENTS)
+            @Html.ValidationMessageFor(model => model.COMMENTS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_IS_OFFLINE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_IS_OFFLINE)
+            @Html.ValidationMessageFor(model => model.INSERT_IS_OFFLINE)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

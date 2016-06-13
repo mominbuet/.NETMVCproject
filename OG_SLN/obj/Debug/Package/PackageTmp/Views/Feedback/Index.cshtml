@@ -1,0 +1,83 @@
+﻿@model PagedList.IPagedList<OG_SLN.TRN_USER_FEED_BACK>
+
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript" language="javascript">
+    $(function () {
+
+    });
+</script>
+<h2>Feedbacks</h2>
+@{Html.RenderPartial("_FeedbackSearchPartial");}
+     <div class="row">
+      <div class="col-8 marRight_2">
+        <div class="table-responsive">
+            <table class="table table-responsive table-bordered table-hover tabWidth">
+                <tbody>
+                <tr class="success">
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_NO)*@
+                        User
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.SET_FEEDBACK_TYPE.FEEDBACK_NAME)*@
+                        Feedback Type
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.MESSAGE)*@
+                        Message
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.IS_READ)*@
+                        Is Read
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.READ_TIME)*@
+                        Read Time
+                    </th>
+
+                    <th></th>
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+        
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SEC_USERS.USER_FULL_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SET_FEEDBACK_TYPE.FEEDBACK_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MESSAGE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.READ_STATUS)
+                    </td>
+
+                    <td> 
+                        @Html.DisplayFor(modelItem => item.READ_TIME)
+                    </td>
+
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id=item.FEED_BACK_NO }) |*@
+                        @Html.ActionLink("View", "Details", new { id=item.FEED_BACK_NO }) 
+                        @*@Html.ActionLink("Delete", "Delete", new { id=item.FEED_BACK_NO })*@
+                    </td>
+                </tr>
+            }
+
+            </table>
+            </div>
+        </div>
+    </div>
+
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

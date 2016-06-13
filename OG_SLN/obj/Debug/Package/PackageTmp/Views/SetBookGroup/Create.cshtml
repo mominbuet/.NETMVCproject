@@ -1,0 +1,75 @@
+﻿@model OG_SLN.SET_BOOK_GROUP
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    Create</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Set Book Group</legend>
+        <div class="new_FormDiv">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BOOK_GROUP_NAME)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.BOOK_GROUP_NAME)
+                @Html.ValidationMessageFor(model => model.BOOK_GROUP_NAME)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DESC_BOOK_GROUP)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DESC_BOOK_GROUP)
+                @Html.ValidationMessageFor(model => model.DESC_BOOK_GROUP)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BOOK_PROJ_TYPE_NO, "SET_BOOK_PROJ_TYPE")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.BOOK_PROJ_TYPE_NO, new SelectList(ViewBag.types as System.Collections.IEnumerable,
+                "BOOK_PROJ_TYPE_NO", "BOOK_PROJ_TYPE_NAME"))
+                @Html.ValidationMessageFor(model => model.BOOK_PROJ_TYPE_NO)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_GROUP)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ACTIVE_GROUP)
+                @Html.ValidationMessageFor(model => model.ACTIVE_GROUP)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_FROM)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ACTIVE_FROM, new { @class = "form-control datesinspec" })
+                @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_TO)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ACTIVE_TO, new { @class = "form-control datesinspec" })
+                @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SL_NUM)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SL_NUM)
+                @Html.ValidationMessageFor(model => model.SL_NUM)
+            </div>
+            <p>
+                <input type="submit" value="Create" class="btn btn-success" />
+            </p>
+        </div>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

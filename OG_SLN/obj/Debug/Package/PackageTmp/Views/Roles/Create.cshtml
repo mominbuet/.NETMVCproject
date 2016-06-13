@@ -1,0 +1,57 @@
+﻿@model OG_SLN.SET_ROLE
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+        <legend>Add Role</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ROLE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ROLE_NAME)
+            @Html.ValidationMessageFor(model => model.ROLE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ROLE_DETAILS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ROLE_DETAILS)
+            @Html.ValidationMessageFor(model => model.ROLE_DETAILS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.USER_TYPE_NO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("USER_TYPE_NO")
+            @Html.ValidationMessageFor(model => model.USER_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_ACTIVE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_ACTIVE)
+            @Html.ValidationMessageFor(model => model.IS_ACTIVE)
+        </div>
+
+        <br /><br />
+        <p>
+            <input class="btn btn-success butTop_1" type="submit" value="Create" />
+        </p>
+    </fieldset>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

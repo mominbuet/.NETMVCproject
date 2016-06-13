@@ -1,0 +1,110 @@
+﻿@model List<OG_SLN.DCR_PUB_MASTER_GET_Result>
+@using OG_SLN.Models
+@using OG_SLN.Helpers
+@{
+    int total_dcr = 0;
+    int total_der = 0;
+    int total_sd = 0;
+    int dcr_amt = 0;
+    int der_amt = 0;
+}
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover tabWidth" id="pubdata">
+            @if (Model.Count > 0)
+            {
+                <tr>
+                    <td>
+                    <input type="button" class="btn btn-info" name="publish-print" id="publish-print"
+                        value="Generate HTML for Publish" />
+                    </td>
+                </tr> 
+            }
+            <tr class="success">
+                <th>
+                    Full Name
+                </th>
+                <th>
+                    Designation
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Division
+                </th>
+                <th>
+                    Zilla
+                </th>
+                <th>
+                    Thana
+                </th>
+                <th>
+                    Mobile
+                </th>
+                <th>
+                    Total DCR
+                </th>
+                <th>
+                    Total DER
+                </th>
+                <th>
+                    SD Count
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                    <span class="pubusers" user-no="@item.USER_NO">
+                        @Html.DisplayFor(modelItem => item.USER_FULL_NAME)
+                        </span>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESIG_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DEPT_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DIVISION_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZILLA_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.THANA_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_MOBILE)
+                    </td>
+                    <td>
+                        
+                        @{dcr_amt = (int)item.DCR_AMT; total_dcr += (int)item.DCR_AMT; }
+                         @Html.ThousandConvert(dcr_amt)
+                    </td>
+                    <td>
+                        
+                        @{der_amt = (int)item.DER_AMT; total_der += (int)item.DER_AMT; }
+                        @Html.ThousandConvert(der_amt)
+                    </td>
+                    <td>
+                        @item.SD_CNT
+                        @{item.SD_CNT = (int)item.SD_CNT; total_sd += (int)item.SD_CNT; }
+                    </td>
+                </tr>
+            }
+          <tr style="font-weight: bold">
+            <td colspan="7" style="text-align: center; border: solid 1px #e4e4e4; border-top: none;">
+                Total
+            </td>
+            <td class="tdclass left">@Html.ThousandConvert(total_dcr)
+            </td>
+            <td class="tdclass left">@Html.ThousandConvert(total_der)
+            </td>
+            <td class="tdclass left">@total_sd
+            </td>
+        </tr>
+        </table>
+    </div>
+</div>

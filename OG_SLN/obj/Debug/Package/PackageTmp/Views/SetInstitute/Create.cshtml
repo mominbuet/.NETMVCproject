@@ -1,0 +1,138 @@
+﻿@model OG_SLN.SET_INSTITUTE
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    Create</h2>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ZILLA_NO").on("change",function(){
+             $.post("@Url.Content("~")"+"SetInstitute/getThana",{ zillaNo: $('#ZILLA_NO').val()} ,
+             function(data){
+                $("#THANA_NO").html(data.html);
+             });
+            
+            });
+        
+        });
+    </script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Institute</legend>
+        <div class="new_FormDiv">
+            <div class="editor-label">
+                Institute Name
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.INSTITUTE_NAME)
+                @Html.ValidationMessageFor(model => model.INSTITUTE_NAME)
+            </div>
+            <div class="editor-label">
+                Intitute Name BNG
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.INSTITUTE_NAME_BNG)
+                @Html.ValidationMessageFor(model => model.INSTITUTE_NAME_BNG)
+            </div>
+            <div class="editor-label">
+                Description
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.DESC_INS)
+                @Html.ValidationMessageFor(model => model.DESC_INS)
+            </div>
+            <div class="editor-label">
+                Intitute Type
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.INST_TYPE_NO, new SelectList(ViewBag.ins as System.Collections.IEnumerable,
+"INST_TYPE_NO", "INST_TYPE_NAME"))
+                @Html.ValidationMessageFor(model => model.INST_TYPE_NO)
+            </div>
+            <div class="editor-label">
+                Zilla
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.ZILLA_NO, new SelectList(ViewBag.Thanas as System.Collections.IEnumerable,
+"ZILLA_NO", "ZILLA_NAME"),string.Empty)
+                @Html.ValidationMessageFor(model => model.ZILLA_NO)
+            </div>
+             <div class="editor-label">
+                Thana
+            </div>
+            <div class="editor-field">
+               <select id="THANA_NO" name="THANA_NO" class="form-control">
+               </select>
+                @Html.ValidationMessageFor(model => model.THANA_NO)
+            </div>
+            <div class="editor-label">
+                F INSTITUTION DB ID
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.F_INSTITUTION_DB_ID)
+                @Html.ValidationMessageFor(model => model.F_INSTITUTION_DB_ID)
+            </div>
+            <div class="editor-label">
+                EIIN Number
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.EIIN_NUMBER)
+                @Html.ValidationMessageFor(model => model.EIIN_NUMBER)
+            </div>
+            <div class="editor-label">
+                MEET PERSON NAME
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.MEET_PERSON_NAME)
+                @Html.ValidationMessageFor(model => model.MEET_PERSON_NAME)
+            </div>
+            <div class="editor-label">
+                Contact Number
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.CONTACT_NUMBER)
+                @Html.ValidationMessageFor(model => model.CONTACT_NUMBER)
+            </div>
+            <div class="editor-label">
+                Active
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ACTIVE_INSTITUTE)
+                @Html.ValidationMessageFor(model => model.ACTIVE_INSTITUTE)
+            </div>
+            <div class="editor-label">
+                Active From
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ACTIVE_FROM, new { @class = "form-control datesinspec" })
+                @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+            </div>
+            <div class="editor-label">
+                Active To
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ACTIVE_TO, new { @class = "form-control datesinspec" })
+                @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+            </div>
+            <div class="editor-label">
+                Serial Number
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SL_NUM)
+                @Html.ValidationMessageFor(model => model.SL_NUM)
+            </div>
+            <p>
+                <input type="submit" value="Create" class ="btn btn-success"/>
+            </p>
+        </div>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class="btn btn-primary"})
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

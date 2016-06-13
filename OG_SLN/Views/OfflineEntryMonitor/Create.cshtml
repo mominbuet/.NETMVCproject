@@ -1,0 +1,643 @@
+﻿@model OG_SLN.TRN_DCR
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TRN_DCR</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_TIME)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_USER_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_OFFLINE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_OFFLINE_TIME)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_OFFLINE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_OFFLINE_SYNC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_IS_OFFLINE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_IS_OFFLINE)
+            @Html.ValidationMessageFor(model => model.LAST_IS_OFFLINE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_TIME)
+            @Html.ValidationMessageFor(model => model.INSERT_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_USER_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_OFFLINE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_OFFLINE_TIME)
+            @Html.ValidationMessageFor(model => model.INSERT_OFFLINE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_OFFLINE_SYNC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_OFFLINE_SYNC)
+            @Html.ValidationMessageFor(model => model.INSERT_OFFLINE_SYNC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_IS_OFFLINE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_IS_OFFLINE)
+            @Html.ValidationMessageFor(model => model.INSERT_IS_OFFLINE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_TIME)
+            @Html.ValidationMessageFor(model => model.UPDATE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_USER_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_OFFLINE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_OFFLINE_TIME)
+            @Html.ValidationMessageFor(model => model.UPDATE_OFFLINE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_OFFLINE_SYNC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_OFFLINE_SYNC)
+            @Html.ValidationMessageFor(model => model.UPDATE_OFFLINE_SYNC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_IS_OFFLINE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_IS_OFFLINE)
+            @Html.ValidationMessageFor(model => model.UPDATE_IS_OFFLINE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FY_NO, "SET_FISCAL_YEAR")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FY_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.FY_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.USER_NO, "SEC_USERS")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("USER_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AGENT_USER_NO, "SEC_USERS1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("AGENT_USER_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.AGENT_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRN_DCR_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TRN_DCR_DATE)
+            @Html.ValidationMessageFor(model => model.TRN_DCR_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TYPE_NO, "GEN_APPROVE_TYPE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("APPROVE_TYPE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.APPROVE_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_TIME)
+            @Html.ValidationMessageFor(model => model.APPROVE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_USER_NO)
+            @Html.ValidationMessageFor(model => model.APPROVE_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.APPROVE_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_TRN_LOCKED)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_TRN_LOCKED)
+            @Html.ValidationMessageFor(model => model.IS_TRN_LOCKED)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_LOCK_BY_SYSTEM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_LOCK_BY_SYSTEM)
+            @Html.ValidationMessageFor(model => model.IS_LOCK_BY_SYSTEM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRN_LOCK_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TRN_LOCK_DATE)
+            @Html.ValidationMessageFor(model => model.TRN_LOCK_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRN_LOCK_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TRN_LOCK_USER_NO)
+            @Html.ValidationMessageFor(model => model.TRN_LOCK_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRN_LOCK_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TRN_LOCK_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.TRN_LOCK_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_MANUAL_ENTRY)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_MANUAL_ENTRY)
+            @Html.ValidationMessageFor(model => model.IS_MANUAL_ENTRY)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DCR_TYPE_NO, "GEN_DCR_TYPE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DCR_TYPE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.DCR_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_REF_ZM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_REF_ZM)
+            @Html.ValidationMessageFor(model => model.IS_REF_ZM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REF_ZM_USER_NO, "SEC_USERS2")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("REF_ZM_USER_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.REF_ZM_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REF_ZM_MOBILE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REF_ZM_MOBILE)
+            @Html.ValidationMessageFor(model => model.REF_ZM_MOBILE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_PUR_NO, "SET_WORK_PURPOSE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("WORK_PUR_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.WORK_PUR_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_FROM_LAT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_FROM_LAT)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_FROM_LAT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_FROM_LON)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_FROM_LON)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_FROM_LON)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_FROM_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_FROM_NAME)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_FROM_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_TO_LAT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_TO_LAT)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_TO_LAT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_TO_LON)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_TO_LON)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_TO_LON)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WORK_AREA_TO_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WORK_AREA_TO_NAME)
+            @Html.ValidationMessageFor(model => model.WORK_AREA_TO_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIME_FROM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIME_FROM)
+            @Html.ValidationMessageFor(model => model.TIME_FROM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIME_TO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIME_TO)
+            @Html.ValidationMessageFor(model => model.TIME_TO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIME_GAP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIME_GAP)
+            @Html.ValidationMessageFor(model => model.TIME_GAP)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DIVISION_NO, "SET_DIVISION")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DIVISION_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.DIVISION_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZONE_NO, "SET_ZONE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ZONE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.ZONE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZILLA_NO, "SET_ZILLA")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ZILLA_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.ZILLA_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.THANA_NO, "SET_THANA")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("THANA_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.THANA_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSTITUTE_NO, "SET_INSTITUTE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("INSTITUTE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.INSTITUTE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FARE_AMT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FARE_AMT)
+            @Html.ValidationMessageFor(model => model.FARE_AMT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_FARE_AMT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.APPROVE_FARE_AMT)
+            @Html.ValidationMessageFor(model => model.APPROVE_FARE_AMT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REASON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REASON_NO)
+            @Html.ValidationMessageFor(model => model.REASON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REAMRKS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REAMRKS)
+            @Html.ValidationMessageFor(model => model.REAMRKS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_SMS_IMPORT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_SMS_IMPORT)
+            @Html.ValidationMessageFor(model => model.IS_SMS_IMPORT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMS_REC_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMS_REC_NO)
+            @Html.ValidationMessageFor(model => model.SMS_REC_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMS_IMPORT_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMS_IMPORT_TIME)
+            @Html.ValidationMessageFor(model => model.SMS_IMPORT_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMS_IMPORT_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMS_IMPORT_USER_NO)
+            @Html.ValidationMessageFor(model => model.SMS_IMPORT_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMS_IMPORT_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMS_IMPORT_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.SMS_IMPORT_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OFFLINE_DCR_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OFFLINE_DCR_NO)
+            @Html.ValidationMessageFor(model => model.OFFLINE_DCR_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TRANS_TYPE_NO, "SET_TRANSPORT_TYPE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TRANS_TYPE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.TRANS_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.APPROVE_TRANS_TYPE_NO, "SET_TRANSPORT_TYPE1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("APPROVE_TRANS_TYPE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.APPROVE_TRANS_TYPE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.COMMENTS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.COMMENTS)
+            @Html.ValidationMessageFor(model => model.COMMENTS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_AUTO_APPROVE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_AUTO_APPROVE)
+            @Html.ValidationMessageFor(model => model.IS_AUTO_APPROVE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_VERIFY)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_VERIFY)
+            @Html.ValidationMessageFor(model => model.IS_VERIFY)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VERIFY_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VERIFY_USER_NO)
+            @Html.ValidationMessageFor(model => model.VERIFY_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VERIFY_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VERIFY_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.VERIFY_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.edit_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.edit_ID)
+            @Html.ValidationMessageFor(model => model.edit_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.user_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.user_ID)
+            @Html.ValidationMessageFor(model => model.user_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.txtINS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.txtINS)
+            @Html.ValidationMessageFor(model => model.txtINS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FROM_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FROM_TIME)
+            @Html.ValidationMessageFor(model => model.FROM_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TO_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TO_TIME)
+            @Html.ValidationMessageFor(model => model.TO_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZM_MOBILE_IS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZM_MOBILE_IS)
+            @Html.ValidationMessageFor(model => model.ZM_MOBILE_IS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MANUAL_ENTRY_IS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MANUAL_ENTRY_IS)
+            @Html.ValidationMessageFor(model => model.MANUAL_ENTRY_IS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ENTRY_STATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ENTRY_STATE)
+            @Html.ValidationMessageFor(model => model.ENTRY_STATE)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

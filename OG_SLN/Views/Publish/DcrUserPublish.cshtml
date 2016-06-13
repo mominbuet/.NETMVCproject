@@ -1,0 +1,50 @@
+﻿@model List<OG_SLN.DCR_PUB_PUBLISH_LIST_GET_Result>
+@using OG_SLN.Models
+@using OG_SLN.Helpers
+@{
+    ViewBag.Title = "DcrUserPublish";
+}
+<h2>
+    DcrUserPublish</h2>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover tabWidth">
+            <tr class="success">
+                <th>
+                    Publish No.
+                </th>
+                <th>
+                    User No.
+                </th>
+                <th>
+                    Publish Date
+                </th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<table>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <a class="aclkn" href="#">@item.PUBLISH_NO
+                @{item.PUBLISH_NO = (int)item.PUBLISH_NO;  }
+            </a>
+            <input name= "Search_pubno"  class="pubcheck" value="@item.PUBLISH_NO"/><h3>
+            </h3>
+        </td>
+        <td>
+            @item.USER_NO
+            @{item.USER_NO = (int)item.USER_NO;}
+            <input type = "hidden" value="@item.USER_NO"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUBLISH_DATE)
+        </td>
+    </tr>
+     
+}
+</table> 

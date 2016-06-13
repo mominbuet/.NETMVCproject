@@ -1,0 +1,174 @@
+﻿    <script type="text/javascript">
+        $(document).ready(function () { 
+            $("#Search_Company").change(function(){ 
+                $.ajax({
+                    url: "@Url.Content("~")"+"web/webrequests/departments/"+$("#Search_Company").val(),
+                    dataType: "json",
+                    success: function(data) {
+                        $("#Search_Department").empty();
+                        $.each(data, function(i, val){
+                            $("#Search_Department").append('<option value="' + val.deptno + '">' + val.deptname + '</option>');
+                        }); 
+                        
+                    }, error: function(data) {
+                        console.log('error :' + data);
+                    }
+                });
+            });
+
+            $('.edituser').live('click', function() {
+                var parenttr = $(this).closest('tr');
+                var userno = parenttr.attr('no');
+                var hrid = parenttr.find('td.hrid').text();
+                var fullname = parenttr.find('td.fullname').text();
+                var mobile = parenttr.find('td.mobile').text();
+                var email = parenttr.find('td.email').text();
+                var username = parenttr.find('td.username').text();
+                var active = parenttr.find('td.active').attr('val');
+                var deptno = parenttr.find('span.deptno').text();
+                var designo = parenttr.find('span.designo').text();
+                var compno = parenttr.find('span.compno').text();
+                var usertype = parenttr.find('span.usertype').text();
+                var nickname = parenttr.find('span.nickname').text();
+                var word = parenttr.find('span.word').text();
+                var contact = parenttr.find('span.contact').text();
+                var address = parenttr.find('span.address').text();
+                var activefrom = parenttr.find('span.activefrom').text();
+                var activeto = parenttr.find('span.activeto').text();
+
+                $('#USER_TYPE_NO').val(usertype);
+                department_no = deptno;
+                $('#COMP_NO').val(compno).change();
+                $('#DEPT_NO').val(deptno);
+                $('#DESIG_NO').val(designo);
+                $('#HR_EMP_ID').val(hrid);
+                $('#USER_FULL_NAME').val(fullname);
+                $('#USER_NICK_NAME').val(nickname);
+                $('#USER_CONTACT').val(contact);
+                $('#USER_MOBILE').val(mobile);
+                $('#USER_ADDR').val(address);
+                $('#USER_EMAIL').val(email);
+                $('#USER_NAME').val(username);
+                $('#USER_PWD').val(word);
+                $('#ACTIVE_STATUS').prop('checked', active == 1 ? true : false);
+                $('#ACTIVE_FROM').val(activefrom);
+                $('#ACTIVE_TO').val(activeto);
+
+                console.log(active);
+            });
+
+            $('.deleteuser').live('click', function() {
+                var parenttr = $(this).closest('tr');
+                var userno = parenttr.attr('no');
+                console.log(userno);
+            });
+        });
+
+        function Search() {
+            $('#tbl_search_grid').find('tr:gt(0)').remove();
+
+            var url = "@Url.Content("~")"+"web/webrequests/search/";
+            var data = {
+                usertype : $('#Search_User_Type').val(),
+                companyno : $('#Search_Company').val(),
+                deptno : $('#Search_Department').val(),
+                designo : $('#Search_Designation').val(),
+                hrid : $('#Search_Hrid').val().trim(),// == null ? '' : $('#Search_Hrid').val(),
+                fullname : $('#Search_Fullname').val(),
+                mobile : $('#Search_Mobile').val(),
+                email : $('#Search_Email').val(),
+                username : $('#Search_Username').val(),
+                active : $('input[name=Search_Active]:checked').val(),
+            }
+
+            $.post(url, data, function(res) {
+                var row = '';
+                $.each(res, function(key, item) {
+                    row = '<tr no="' + item.userno + '" >';
+                    row += '<td class="hrid">' + item.hrid + '</td>';
+                    row += '<td class="fullname">' + (item.fullname == null ? '' : item.fullname) + '</td>';
+                    row += '<td class="mobile">' + (item.mobile == null ? '' : item.mobile) + '</td>';
+                    row += '<td class="email">' + (item.email == null ? '' : item.email) + '</td>';
+                    row += '<td class="username">' + (item.username == null ? '' : item.username) + '</td>';
+                    row += '<td class="active" val="'+item.active+'">' + (item.active == 1 ? 'Active' : 'Inactive') + '</td>';
+                    
+                    row += '<td>' + '<input type="button" value="Edit" class="edituser">';
+                    row += '<input type="button" value="Delete" class="deleteuser">' + '</td>';
+
+                    row += '<td style="display:none;">';
+                    row += '<span class="deptno">'+item.deptno+'</span>';
+                    row += '<span class="designo">'+item.designo+'</span>';
+                    row += '<span class="compno">'+item.compno+'</span>';
+                    row += '<span class="usertype">'+item.usertype+'</span>';
+                    row += '<span class="nickname">'+item.nickname+'</span>';
+                    row += '<span class="word">'+item.word+'</span>';
+                    row += '<span class="contact">'+item.contact+'</span>';
+                    row += '<span class="address">'+item.address+'</span>';
+                    row += '<span class="activefrom">'+item.activefrom+'</span>';
+                    row += '<span class="activeto">'+item.activeto+'</span>';
+                    row += '</td>';
+
+                    row += '</tr>';
+                    $('#tbl_search_grid').append(row);
+                    row = '';
+                });
+            });
+        }
+    </script>
+    
+    <table width="100%" border="1" cellpadding="2" cellspacing="0">
+        <tbody><tr>
+        <td>User Type :</td>
+        <td>
+            @Html.DropDownList("Search_User_Type", String.Empty)
+        </td>
+        <td>Company :</td>
+        <td>
+            @Html.DropDownList("Search_Company", String.Empty)
+        </td>
+        <td>Department :</td>
+        <td>
+            @Html.DropDownList("Search_Department", String.Empty)
+        </td>
+        <td>Designation : </td>
+        <td>
+            @Html.DropDownList("Search_Designation", String.Empty)
+        </td>
+        </tr>
+        <tr>
+        <td>HR ID :</td>
+        <td><input type="text" name="Search_Hrid" id="Search_Hrid"></td>
+        <td>Full Name : </td>
+        <td><input type="text" name="Search_Fullname" id="Search_Fullname"></td>
+        <td>Mobile:</td>
+        <td><input type="text" name="Search_Mobile" id="Search_Mobile"></td>
+        <td>Email: </td>
+        <td><input type="text" name="Search_Email" id="Search_Email"></td>
+        </tr>
+        <tr>
+        <td>User Name :</td>
+        <td><input type="text" name="Search_Username" id="Search_Username"></td>
+        <td>Status</td>
+        <td>
+			<label><input type="radio" name="Search_Active" value="null" checked="checked">All</label>
+			<label><input type="radio" name="Search_Active" value="true">Active</label>
+			<label><input type="radio" name="Search_Active" value="false">Inactive</label>
+		</td>
+        <td><input type="button" name="Search" id="Search" value="Search" onclick="Search();"></td>
+        <td><input type="button" name="Clear" id="Clear" value="Clear"></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr></tbody>
+    </table>
+
+    <table id="tbl_search_grid" width="100%" border="1" cellspacing="0" cellpadding="2">
+          <tbody><tr>
+            <td>HR ID </td>
+            <td>Full Name </td>
+            <td>Mobile</td>
+            <td>Email</td>
+            <td>User Name </td>
+            <td>Status</td>
+            <td>Action</td>
+          </tr></tbody>
+     </table>

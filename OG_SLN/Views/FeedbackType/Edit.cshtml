@@ -1,0 +1,57 @@
+﻿@model OG_SLN.SET_FEEDBACK_TYPE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Feedback Type</h2>
+
+<div class="col-6 col-sm-6 col-lg-9 ">
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+        
+        @Html.HiddenFor(model => model.FEEDBACK_TYPE_NO)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FEEDBACK_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FEEDBACK_NAME)
+            @Html.ValidationMessageFor(model => model.FEEDBACK_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FEEDBACK_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FEEDBACK_CODE)
+            @Html.ValidationMessageFor(model => model.FEEDBACK_CODE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FEEDBACK_DESC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FEEDBACK_DESC)
+            @Html.ValidationMessageFor(model => model.FEEDBACK_DESC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_STATUS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_STATUS)
+            @Html.ValidationMessageFor(model => model.ACTIVE_STATUS)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+    </div>
+}
+
+</div>

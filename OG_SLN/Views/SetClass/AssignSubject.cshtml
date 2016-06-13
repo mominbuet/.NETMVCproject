@@ -1,0 +1,64 @@
+﻿@using OG_SLN
+
+@model SET_CLASS
+
+@{
+    ViewBag.Title = "AssignSubject";
+
+    List<Class_Subject> Subjects = ViewBag.Subjects as List<Class_Subject>;
+}
+
+<h2>Assign Subjects to Class : @Model.CLASS_NAME</h2>
+<p>
+    @Html.ActionLink("Add New Subject", "AddSubject", new { id = Model.CLASS_NO }, new { @class = "btn btn-primary" })
+</p>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        @Html.HiddenFor(model => model.CLASS_NO)
+
+        <table class="table table-responsive table-bordered  tabWidth">
+            <tr>
+                <td colspan="7" style="font-weight:bold">Subjects:</td>
+            </tr>
+
+        @{
+            int subject_count = Subjects.Count;
+            int i = 0;
+
+            while (subject_count > 0)
+            {
+                <tr>
+                    @if (subject_count > 0)
+                    {
+                        Class_Subject subject = Subjects.ElementAt(i);
+
+                        Html.RenderPartial("_SubjectPartial", subject);
+                        subject_count--; i++;
+                    }
+                    @if (subject_count > 0)
+                    {
+                        Class_Subject subject = Subjects.ElementAt(i);
+
+                        Html.RenderPartial("_SubjectPartial", subject);
+                        subject_count--; i++;
+                    }
+                    else
+                    {
+                        <td colspan="3">&nbsp;</td>
+                    }
+                </tr>
+            }
+        }
+
+            <tr>
+                <td colspan="7" style="text-align:center;">
+                    <input class="btn btn-success" type="submit" name="Submit" id="Submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+
+    </fieldset>
+}

@@ -1,0 +1,138 @@
+﻿@using OG_SLN.Models
+@model List<OG_SLN.DCR_PUB_SALES_GET_Result>
+@using OG_SLN.Helpers
+@{
+    Layout = null;
+    int? pub_count = ViewBag.Pub_Count;
+    OG_SLN.TRN_USER_PUBLISH publish = ViewBag.Publish as OG_SLN.TRN_USER_PUBLISH;
+
+    int total_dcr = 0;
+    int total_der = 0;
+    int total_sd = 0;
+
+    int serial_no = 1;
+    
+}
+<div class="table-responsive">
+    <table class="table table-responsive table-bordered table-hover tabWidth">
+        @if (pub_count.HasValue && pub_count > 0 && !publish.IS_CONFIRM.HasValue)
+        {
+            <tr class="success">
+                <td colspan="12" style="background: #EEEEEE;">
+                    <form name="etc">
+                    <input type="button" class="btn btn-info" name="confirm" id="confirm" value="Confirm" />
+                    <input type="button" class="btn btn-info" name="reject" id="reject" value="Reject" />
+                    <input type="text" class="comments" name="comment" id="comment" value="" size="50" />
+                    </form>
+                </td>
+            </tr> 
+        }
+        <tr>
+            <th>
+                Serial No.
+            </th>
+            <th>
+                Full Name
+            </th>
+            <th>
+                Designation
+            </th>
+            <th>
+                Department
+            </th>
+            <th>
+                Division
+            </th>
+            <th>
+                Zilla
+            </th>
+            <th>
+                Thana
+            </th>
+            <th>
+                Mobile
+            </th>
+            <th>
+                Total DCR
+            </th>
+            <th>
+                Total DER
+            </th>
+            <th>
+                SD Count
+            </th>
+            <th>
+                Download
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            int dcr_amt = 0;
+            int der_amt = 0;
+            int sd_cnt = 0;
+            <tr>
+                <td>
+                    @serial_no
+                    @{
+            serial_no++ ;
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.USER_FULL_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESIG_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DEPT_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIVISION_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZILLA_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.THANA_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.USER_MOBILE)
+                </td>
+                <td>
+                    @{dcr_amt = (int)item.DCR_AMT; total_dcr += (int)item.DCR_AMT;}
+                    @Html.ThousandConvert(dcr_amt)
+                </td>
+                <td>
+                    @{der_amt = (int)item.DER_AMT; total_der += (int)item.DER_AMT;}
+                    @Html.ThousandConvert(der_amt)
+                </td>
+                <td>
+                    @{sd_cnt = (int)item.SD_CNT; total_sd += (int)item.SD_CNT;}
+                    @sd_cnt
+                </td>
+                @{
+                      string download_path = Url.Content("~") + "Publish/Download?Search_User=" + item.USER_NO + "&Search_pubno=" + publish.PUBLISH_NO;
+                }
+                <td>
+                    <a  class="html-down" search-user="@item.USER_NO" pub-no ="@publish.PUBLISH_NO" href="#">
+                        HTML</a>
+                </td>
+            </tr>
+        }
+        <tr style="font-weight: bold">
+            <td colspan="8" style="text-align: center; border: solid 1px #e4e4e4; border-top: none;">
+                Total
+            </td>
+            <td class="tdclass right">@Html.ThousandConvert(total_dcr)
+            </td>
+            <td class="tdclass right">@Html.ThousandConvert(total_der)
+            </td>
+            <td class="tdclass right">@total_sd
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+</div> 
+
+

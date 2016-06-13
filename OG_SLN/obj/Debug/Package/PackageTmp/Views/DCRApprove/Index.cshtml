@@ -1,0 +1,161 @@
+﻿@model IEnumerable<OG_SLN.VIEW_TRN_DCR_APPROVE>
+
+@using OG_SLN.Helpers
+
+@{
+    ViewBag.Title = "Approve DCR";
+}
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+
+    });
+
+    function do_search() {
+
+        var url = '../DCRApprove/Index';
+        var frm = $('form');
+        var data = $(frm).serialize();
+        $.post(url, data, function (res) {
+            $('#div_list').html(res);
+        });
+    }
+
+    function do_clear() {
+        $('#div_list').html('');
+    }
+
+    function load_url(url) {
+        $.get(url, function (res) {
+            $('#div_list').html(res);
+        });
+
+        return false;
+    }
+</script>
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    <div class="col-8 marRight_2"> 
+        <table class="tabWidth">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">Tab Entry</td>
+                    <td class="adminRight_col">
+                        @*<select name="INSERT_IS_OFFLINE" id="INSERT_IS_OFFLINE">
+                            <option value=""></option>
+                            <option value="1">Offline</option>
+                            <option value="0">Online</option>
+                        </select>*@
+                        <select name="IS_MANUAL_ENTRY" id="IS_MANUAL_ENTRY">
+	                        <option value=""></option>
+	                        <option value="1">Offline</option>
+	                        <option value="0">Online</option>
+                        </select>
+                    </td>
+                    <td class="adminLef_col">DCR Type</td>
+                    <td class="adminRight_col">@Html.DropDownList("DCR_TYPE_NO", String.Empty)</td>
+                    <td class="adminLef_col">Fiscal Year</td>
+                    <td class="adminRight_col">@Html.DropDownList("FY_NO", String.Empty)</td>                
+                </tr>
+
+                <tr>
+                   <td class="adminLef_col">Zonal Manager</td>
+                    @*<td class="adminRight_col">@Html.DropDownList("USER_NO", String.Empty)</td>*@
+                    <td class="adminRight_col">
+                        @Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager","ViewDCRSheet"), "Select Zonal Manager")
+                    </td> 
+
+                     <td class="adminLef_col">Is Referred ZM</td>
+                    <td class="adminRight_col">
+                        <select name="IS_REF_ZM" id="IS_REF_ZM">
+                            <option value=""></option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </td>               
+                    <td class="adminLef_col">Institute Type</td>
+                    <td class="adminRight_col">@Html.DropDownList("INST_TYPE_NO", String.Empty)</td>
+                </tr>
+
+
+                <tr>
+                   
+                    <td class="adminLef_col">Transport Type</td>
+                    <td class="adminRight_col">@Html.DropDownList("TRANS_TYPE_NO", String.Empty)</td>
+                    <td class="adminLef_col">Approved Transport Type</td>
+                    <td class="adminRight_col">@Html.DropDownList("APPROVE_TRANS_TYPE_NO", String.Empty)</td>
+                    <td class="adminLef_col">Approval Type</td>
+                    <td class="adminRight_col">@Html.DropDownList("APPROVE_TYPE_NO", String.Empty)</td>
+                </tr>
+
+                <tr>  
+                    <td class="adminLef_col">PC/Web Entry</td>
+                    <td class="adminRight_col">
+                        @*<select name="IS_MANUAL_ENTRY" id="IS_MANUAL_ENTRY">
+                            <option value=""></option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>*@
+                        <select name="INSERT_IS_OFFLINE" id="INSERT_IS_OFFLINE">
+	                        <option value=""></option>
+                            <option value="0">Yes</option>
+	                        <option value="1">No</option>	                        
+                        </select>
+                    </td>
+                    <td class="adminLef_col">Paid & Locked</td>
+                    <td class="adminRight_col">
+                        <select name="IS_TRN_LOCKED" id="IS_TRN_LOCKED">
+                            <option value=""></option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </td>
+
+                    <td class="adminLef_col">Is Offline Verified</td>
+                    <td class="adminRight_col">
+                        <select name="IS_VERIFY" id="IS_VERIFY">
+                            <option value=""></option>
+                            <option value="1">Yes</option>
+                            <option value="0" selected>No</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="adminLef_col">Is System Locked</td>
+                    <td class="adminRight_col">
+                        <select name="IS_LOCK_BY_SYSTEM" id="IS_LOCK_BY_SYSTEM">
+                            <option value=""></option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </td>
+                    <td>Date From</td>                    
+                    <td>                        
+                        @Html.TextBox("TRN_DCR_DATE_FROM", DateTime.Now, "{0:yyyy-MM-dd}", new { @class = "form-control datesinspec" })
+                    </td>
+                    <td>Date To</td>
+                    <td>
+                        @Html.TextBox("TRN_DCR_DATE_TO", DateTime.Now, "{0:yyyy-MM-dd}", new { @class = "form-control datesinspec" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminRight_col"><button type="button" value="Search" onclick="do_search()">Search</button></td>
+                    <td class="adminRight_col"><button type="button" value="Clear" onclick="do_clear()">Clear</button></td> 
+                    <td></td>       
+                    <td></td>  
+                    <td></td>  
+                    <td></td>              
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+}
+
+<div id="div_list">
+</div>

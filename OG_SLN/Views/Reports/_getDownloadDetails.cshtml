@@ -1,0 +1,33 @@
+﻿@model OG_SLN.Models.DownloadDetailsViewModel
+
+<div class="table-responsive">
+        <table id="dcr_expence" class="table table-responsive table-bordered table-hover tabWidth">
+    <tbody>
+        <tr class="success">
+            <th colspan="3">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+            </th>
+        </tr>
+
+        <tr>
+            <td>Zonal : @Model.User_Name</td>
+            <td>Division : @Model.Division_Name <br /> Zilla : @Model.Zilla_Name<br /> Thana : @Model.Thana_Name</td>
+            <td>Date : @Model.Date.Value.ToString("dd-MM-yyyy")</td>
+        </tr>
+
+        <tr>
+            <td>Download No</td>
+            <td>Download Time</td>
+            <td></td>
+        </tr>
+
+        @foreach (var item in Model.details) { 
+        <tr>
+            <td>@item.DOWN_NO</td>
+            <td>@item.LAST_DOWN_TIME</td>
+            <td>&nbsp;</td>
+        </tr>
+        }
+    </tbody>
+</table>
+</div>

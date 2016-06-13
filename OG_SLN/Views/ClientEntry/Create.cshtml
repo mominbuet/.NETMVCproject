@@ -1,0 +1,174 @@
+﻿@model OG_SLN.SET_CLIENT_INFO
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () { 
+        $("#DIVISION_NO").change(function(){ 
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/zilla/"+$("#DIVISION_NO").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#ZILLA_NO").empty();
+                    $("#ZILLA_NO").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#ZILLA_NO").append('<option value="' + val.zillano + '">' + val.zillaname + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+
+        $("#ZILLA_NO").change(function(){ 
+            $.ajax({
+                url: "@Url.Content("~")"+"web/webrequests/thana/"+$("#ZILLA_NO").val(),
+                dataType: "json",
+                success: function(data) {
+                    $("#THANA_NO").empty();
+                    $("#THANA_NO").append('<option value=""></option>');
+                    $.each(data, function(i, val){
+                        $("#THANA_NO").append('<option value="' + val.thanano + '">' + val.thananame + '</option>');
+                    }); 
+                        
+                }, error: function(data) {
+                    console.log('error :' + data);
+                }
+            });
+        });
+    });
+</script>
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+        <legend>Add Client</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENT_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLIENT_NAME)
+            @Html.ValidationMessageFor(model => model.CLIENT_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENT_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLIENT_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.CLIENT_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENT_NICK_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLIENT_NICK_NAME)
+            @Html.ValidationMessageFor(model => model.CLIENT_NICK_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENT_MOBILE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLIENT_MOBILE)
+            @Html.ValidationMessageFor(model => model.CLIENT_MOBILE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BIRTH_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.BIRTH_DATE, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.BIRTH_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MARRIAGE_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MARRIAGE_DATE, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.MARRIAGE_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENT_ADDR)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLIENT_ADDR)
+            @Html.ValidationMessageFor(model => model.CLIENT_ADDR)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENT_COMENTS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLIENT_COMENTS)
+            @Html.ValidationMessageFor(model => model.CLIENT_COMENTS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DIVISION_NO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DIVISION_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.DIVISION_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZILLA_NO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ZILLA_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.ZILLA_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.THANA_NO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("THANA_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.THANA_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_STATUS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_STATUS)
+            @Html.ValidationMessageFor(model => model.ACTIVE_STATUS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DATE_FROM)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DATE_FROM, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.DATE_FROM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DATE_TO)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DATE_TO, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.DATE_TO)
+        </div>
+
+        <p>
+            <input class="btn btn-success butTop_1" type="submit" value="Create" />
+        </p>
+    </fieldset>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

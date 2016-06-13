@@ -1,0 +1,51 @@
+﻿@*@model IEnumerable<OG_SLN.TRN_DCR_OFF_VERIFY_GET_Result>*@
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Offline DCR Confirmation/Verification</h2>
+<script type="text/javascript">
+    function btnConfirm(btn,typeInput) {
+        
+        if (confirm("Do you want to "+((typeInput==1)?"verify ":"reject ")+" this"))
+        {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/AcceptRejectDCR",{ transtype: $("#ddl_" +btn.closest('tr').attr('id')).val() ,
+            fare : $("#txt_" +btn.closest('tr').attr('id')).val(),
+            dcrNo : btn.closest('tr').attr('id'),
+            type:typeInput} ,
+            function( data ) {
+                //alert(data.output)
+                if(data.output=="Accepted")
+                    $(btn.closest('tr')).toggleClass('success');
+                else
+                    $(btn.closest('tr')).toggleClass('danger');
+                $(btn).hide();
+            });
+            
+            /*($("#ddl_" + btn.closest('tr').attr('id')).val() + " then " +
+                $("#txt_" + btn.closest('tr').attr('id')).val());*/
+        }
+        //alert(btn.('tr').find('select[id="dcrType"]').val());
+    }
+
+    function do_search() {
+        var frm = $('form');
+        var url = $(frm).attr('action');
+        var data = $(frm).serialize();
+        $.post(url, data, function(res) {
+            $('#div_display').html(res);
+        });
+
+        return false;
+    }
+</script>
+
+<div id="div_search">
+    @{Html.RenderPartial("_SearchOfflineEntry");}
+</div>
+
+<div id="div_display">
+
+@{Html.RenderPartial("_DcrOffTable");}
+
+</div>

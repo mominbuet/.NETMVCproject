@@ -1,0 +1,41 @@
+﻿@model OG_SLN.TRN_USER_FEED_BACK
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Feedback</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SEC_USERS.USER_FULL_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_FEEDBACK_TYPE.FEEDBACK_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_FEEDBACK_TYPE.FEEDBACK_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MESSAGE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MESSAGE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.READ_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.READ_TIME)
+    </div>
+
+</fieldset>
+

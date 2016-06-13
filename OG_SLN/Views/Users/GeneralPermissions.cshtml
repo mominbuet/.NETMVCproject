@@ -1,0 +1,71 @@
+﻿@model IList<OG_SLN.SET_USER_ACTION>
+@{
+    ViewBag.Title = "GeneralPermissions";
+}
+
+<h2>General User Permissions</h2>
+
+
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(true)
+
+    <h1>@ViewBag.USER_NAME</h1>
+    
+<table>
+    <tr>
+        <th>
+            Controller
+        </th>
+        <th>
+            Action
+        </th>
+        <th>
+            Form Name
+        </th>
+        <th>
+            Allow
+        </th>
+    </tr>
+@{
+    List<OG_SLN.USER_CONTROLLER_ACTION_GET_Result> controllers = ViewBag.controllerList;
+    string c_name = string.Empty;
+}
+@for (var i = 0; i < controllers.Count; i++) {
+    <tr>
+        <td>
+            @{
+    if (c_name != controllers[i].CONTROLLER_NAME) {
+                    @Html.DisplayFor(modelItem => controllers[i].CONTROLLER_NAME)
+    }
+            }
+
+            @Html.Hidden("[" + i + "].USER_NO", ViewBag.userNo as long?)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => controllers[i].ACTION_NAME)
+            @Html.Hidden("[" + i + "].ACTION_NO", controllers[i].ACTION_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => controllers[i].MENU_NAME)
+        </td>
+        <td>    
+            @{
+                bool check = false;
+                if (controllers[i].IS_ACTIVE == 1) {
+                    check = true;
+                }
+            }
+             @Html.CheckBox("[" + i + "].ACTIVE_STATUS", check) 
+        </td>
+    </tr>
+    c_name = controllers[i].CONTROLLER_NAME;
+}
+
+    <tr>
+        <td>
+            <input type="submit" value="Permit" />
+        </td>
+    </tr>
+</table>
+}

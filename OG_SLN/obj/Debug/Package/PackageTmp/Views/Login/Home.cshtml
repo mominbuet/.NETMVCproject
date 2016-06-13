@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home";
+
+    bool Is_ZonalOrAgent = ViewBag.Is_ZonalOrAgent;
+}
+
+<h2>Home</h2>
+
+
+<div id="div_search">
+    <h3>
+        Pending DCR Cost Approval (@if (!Is_ZonalOrAgent){<a href="@Url.Content("~")DcrCostApproval/Index" target="_blank">@ViewBag.dcr_approve_count</a>
+                                    } else {
+                                       @ViewBag.dcr_approve_count
+                                    })
+    </h3><br />
+
+    <h3>
+        Pending Offline DCR Verify (@if (!Is_ZonalOrAgent){
+                                        <a href="@Url.Content("~")OfflineEntryMonitor/Index" target="_blank">@ViewBag.dcr_offline_count</a>
+                                    } else {
+                                        @ViewBag.dcr_offline_count
+                                    })
+    </h3><br />
+
+    @*<h3>
+        Pending Expense Approve (@if (!Is_ZonalOrAgent){
+                                     <a href="@Url.Content("~")ExpenseApprove/Index" target="_blank">@ViewBag.expense_approve_count</a>
+                                  } else {
+                                     @ViewBag.expense_approve_count
+                                  })
+    </h3><br />*@
+
+    <h3>
+        Pending Offline Expense Verify (@if (!Is_ZonalOrAgent){
+                                            <a href="@Url.Content("~")OfflineExpenseCheck/Index" target="_blank">@ViewBag.expense_offline_count</a>
+                                        } else {
+                                            @ViewBag.expense_offline_count
+                                        })
+    </h3><br />
+</div>

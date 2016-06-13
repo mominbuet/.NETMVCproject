@@ -1,0 +1,128 @@
+﻿@model IEnumerable<OG_SLN.TPR_SUBJECTS_GET_Result>
+
+@using OG_SLN
+
+@{
+    OG_SLN.TPR_PROJECT_INSTITUTE pro_ins = ViewBag.PROJECT_INSTITUTE as OG_SLN.TPR_PROJECT_INSTITUTE;
+    OG_SLN.TPR_PROJECT project = ViewBag.PROJECT;
+    USER_INFO_VIEWMODEL zonal = ViewBag.ZONAL_INFO as USER_INFO_VIEWMODEL;
+    INSTITUTE_INFO_VIEWMODEL institute = ViewBag.INSTITUTE_INFO as INSTITUTE_INFO_VIEWMODEL;
+
+    bool Download_Allowed = ViewBag.Download_Allowed;
+    bool Reset_Allowed = ViewBag.Reset_Allowed;
+
+    int sl_no = 1;
+}
+
+<table class="table table-responsive table-bordered tabWidth">
+    <tr class="success">
+        <th colspan="4">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="4" style="text-align:center">
+            <h2>Subject Assigned</h2>
+            @Html.Hidden("PROJECT_INS_NO", pro_ins.PROJECT_INS_NO)
+        </td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Zonal Name (Cell) :</td>
+        <td>@zonal.fullname (@zonal.mobile)</td>
+        <td class="tdLeft">Zonal Designation:</td>	
+        <td>@zonal.designation</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Zonal HR Divistion, Zilla, Thana :</td>
+        <td>@zonal.division, @zonal.zilla, @zonal.thana</td>
+        <td class="tdLeft">Zonal HR ID :</td>	
+        <td>@zonal.hrid</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Institution Name :</td>
+        <td>@institute.insname</td>
+        <td class="tdLeft">Institution Code :</td>	
+        <td>@institute.inscode</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Institution Divistion, Zilla, Thana :</td>
+        <td>@institute.division, @institute.zilla, @institute.thana</td>
+        <td class="tdLeft">&nbsp;</td>	
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+<table class="table table-responsive table-bordered tabWidth">
+    <tr class="trhead">
+        <td colspan="7" class="TableHeadLabel tdLeft">Assigned Subject List</td>
+    </tr>
+    <tr class="trhead">
+        <td class="tdLeft">Serial</td>
+        <td class="tdLeft">Subject Name (Bangla)</td>
+        <td class="tdLeft">Target Collection Date</td>
+        <td class="tdLeft">Is Collected</td>
+        <td class="tdLeft">Collect Time</td>
+        <td class="tdLeft">Download</td>
+        <td class="tdLeft">Reset Attachment</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+         <tr>
+            <td>@sl_no</td>
+            <td>@item.SUBJECT_NAME (@item.SUBJECT_NAME_BNG)</td>
+            <td>
+                @{
+                    if(item.TARGET_DATE.HasValue)
+                    {
+                        @item.TARGET_DATE.Value.ToString("yyyy-MM-dd");
+                    }
+                }
+            </td>
+            <td>
+                @if (item.COLLECT_TIME.HasValue)
+                {
+                    <img src="../../Images/correct.gif"  alt="" width="16" /> 
+                }
+                else
+                {
+                    <img src="../../Images/delete.gif"  alt="" width="16" />
+                }
+            </td>
+            <td>
+                @{
+                    if (item.COLLECT_TIME.HasValue)
+                    {
+                        @item.COLLECT_TIME.Value.ToString("yyyy-MM-dd");
+                    }
+                }
+            </td>
+            <td>
+                @if(Download_Allowed)
+                {
+                    if (item.COLLECT_TIME.HasValue)
+                    {
+                        <span>
+                            @Html.ActionLink("Download", "Download", "QuestionMonitor", new { id = item.INS_SUBJECT_NO })
+                        </span>
+                    }
+                    else
+                    {
+                        <span>No files</span> 
+                    }
+                }
+            </td>
+            <td>
+                @if (Reset_Allowed && item.COLLECT_TIME.HasValue)
+                {
+                    <span>
+                        @Html.ActionLink("Reset", "Reset", "QuestionMonitor", new { id = item.INS_SUBJECT_NO })
+                    </span>
+                }
+            </td>
+        </tr>
+        
+        sl_no++;
+    }
+</table>
+

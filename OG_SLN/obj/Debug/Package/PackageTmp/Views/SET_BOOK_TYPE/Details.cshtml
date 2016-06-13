@@ -1,0 +1,51 @@
+﻿@model OG_SLN.SET_BOOK_TYPE
+@{
+    ViewBag.Title = "Details";
+}
+<h2>
+    Details</h2>
+<fieldset>
+    <legend>SET_BOOK_TYPE</legend>
+    <div class="new_FormDiv">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.BOOK_TYPE_NAME)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.BOOK_TYPE_NAME)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.BOOK_TYPE_DESC)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.BOOK_TYPE_DESC)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ACTIVE_BOOK_TYPE)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ACTIVE_BOOK_TYPE)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ACTIVE_FROM)
+        </div>
+        <div class="display-field">
+            @Html.ValueFor(model => model.ACTIVE_FROM, "{0:yyyy-MM-dd}")
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ACTIVE_TO)
+        </div>
+        <div class="display-field">
+            @Html.ValueFor(model => model.ACTIVE_TO, "{0:yyyy-MM-dd}")
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.SL_NUM)
+        </div>
+        <div class="display-field">
+            @Html.ValueFor(model => model.SL_NUM, "{0:0}")
+        </div>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BOOK_TYPE_NO }, new { @class="btn btn-info"}) |
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+</p>

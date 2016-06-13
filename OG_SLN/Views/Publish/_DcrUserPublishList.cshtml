@@ -1,0 +1,107 @@
+﻿@using OG_SLN.Models
+@using OG_SLN.Helpers
+@model List<OG_SLN.DCR_PUB_PUBLISH_LIST_GET_Result>
+@{
+    Layout = null;
+    string Filter_Type = ViewBag.Filter_Type as string;
+}
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover tabWidth">
+            <tr class="success">
+                <th>
+                    Publish No.
+                </th>
+                <th>
+                    User (User Name) <br /> Mobile
+                </th>
+                <th>
+                    DCR Amount
+                </th>
+                <th>
+                    DER Amount
+                </th>
+                <th>
+                    SD Count
+                </th>
+                <th>DCR Date From</th>
+                <th>DCR Date To</th>
+                <th>Confirm Status</th>
+                <th>
+                    Publish Date
+                </th>
+                @if (Filter_Type == "A")
+                {
+                    <th>Disburse Status</th> 
+                    <th>Disburse Date</th>
+                }
+            </tr>
+            @foreach (var item in Model)
+            {
+                string confirm_status = "Pending";
+                string disburse_status = "Pending";
+                int dcr_amt = 0;
+                int der_amt = 0;
+                int sd_cnt = 0;
+                if (item.DCR_AMT.HasValue) { dcr_amt = (int)item.DCR_AMT; }
+                if (item.DER_AMT.HasValue) { der_amt = (int)item.DER_AMT; }
+                if (item.SD_CNT.HasValue) { sd_cnt = (int)item.SD_CNT; }
+                <tr>
+                    <td>
+                        @if (item.IS_CONFIRM.HasValue && item.IS_CONFIRM == 0)
+                        {
+                            <span>@item.PUBLISH_NO</span>
+                        }
+                        else
+                        {
+                            <a class="pubselect" href="#" pub-no="@item.PUBLISH_NO" 
+                                date-from="@Html.ValueFor(modelItem => item.TRN_DATE_FROM, "{0:yyyy-MM-dd}")" 
+                                date-to="@Html.ValueFor(modelItem => item.TRN_DATE_TO, "{0:yyyy-MM-dd}")">@item.PUBLISH_NO</a> 
+                        }
+                    </td>
+                    <td>
+                        @item.USER_FULL_NAME (@item.USER_NAME) <br /> @item.USER_MOBILE
+                    </td>
+                    <td>
+                    @Html.ThousandConvert(dcr_amt)
+                    </td>
+                    <td>
+                    @Html.ThousandConvert(der_amt)
+                    </td>
+                    <td>
+                    @Html.ThousandConvert(sd_cnt)
+                    </td>
+                    <td>@Html.ValueFor(modelItem => item.TRN_DATE_FROM, "{0:yyyy-MM-dd}")</td>
+                    <td>@Html.ValueFor(modelItem => item.TRN_DATE_TO, "{0:yyyy-MM-dd}")</td>
+                    <td>
+                        @if (item.IS_CONFIRM.HasValue && item.IS_CONFIRM == 0)
+                        {
+                            confirm_status = "Rejected";
+                        }
+                        else if (item.IS_CONFIRM.HasValue && item.IS_CONFIRM == 1)
+                        {
+                            confirm_status = "Confirmed";
+                        }
+                        @confirm_status
+                    </td>
+                    <td>
+                        @Html.ValueFor(modelItem => item.PUBLISH_DATE, "{0:yyyy-MM-dd}")
+                    </td>
+                    @if (Filter_Type == "A")
+                    {
+                        <td>
+                            @if (item.IS_DISBURSE.HasValue && item.IS_DISBURSE == 1)
+                            {
+                                disburse_status = "Disbursed";
+                            }
+                            @disburse_status
+                        </td> 
+                        <td>
+                            @Html.ValueFor(modelItem => item.DISBURSE_DATE, "{0:yyyy-MM-dd}")
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>

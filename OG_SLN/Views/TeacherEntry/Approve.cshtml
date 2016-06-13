@@ -1,0 +1,144 @@
+﻿@model PagedList.IPagedList<OG_SLN.SET_TEACHER_INFO>
+
+@using OG_SLN.Models;
+
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Approve";
+    decimal? user_no = ViewBag.USER_NO;
+    decimal? logon_no = ViewBag.LOGON_NO;
+}
+
+<script type="text/javascript">
+    var user_no = null;
+    var logon_no = null;
+
+    function processRequest(action, datacount, teacher_id)      // datacount = S for Single, M for Multi
+    {
+        
+        var idList = new Array();
+
+        idList.push(user_no);
+        idList.push(logon_no);
+
+        if(datacount == 'S')
+        {
+            idList.push(parseInt(teacher_id));
+        }
+        else if(datacount == 'M')
+        {
+            var ids = $('input[type=checkbox]:checked');
+            
+            $.each(ids, function (index, value) {
+                var dataid = $(value).attr('data-id');
+                idList.push(parseInt(dataid));
+            });
+        }
+
+        $.ajax({
+            url: '@Url.Content("~")' + 'web/webrequests/'+action,
+            type: 'GET',
+            data: { idList: idList },
+            success: function (result) { 
+                console.log(result);
+                if(result == 'success')
+                {
+                    location.reload();
+                }
+            },
+        }, 'json');
+    }
+
+    $(document).ready(function () {
+        user_no = $('#user_no').val();
+        logon_no = $('#logon_no').val();
+
+        $('.approve').click(function () {
+            var teacher_id = $(this).attr('data-id');
+            processRequest('Approve', 'S', teacher_id);
+        });
+
+        $('.reject').click(function () {
+            var teacher_id = $(this).attr('data-id');
+            processRequest('Reject', 'S', teacher_id);
+        });
+
+        $('#Approve_Selected').click(function () {
+            processRequest('Approve', 'M', null);
+        });
+
+        $('#Reject_Selected').click(function () {
+            processRequest('Reject', 'M', null);
+        });
+    });
+
+    $(function () {
+
+    });
+
+</script>
+
+<h2>Approve Teacher Entry</h2>
+<hr />
+@{Html.RenderPartial("_TeacherApproveSearchPartial");}
+   <div class="col-8 marRight_2">
+    <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-hover tabWidth">
+            <tr class="success">
+                <th>Select</th>
+                <th>Institue</th>
+                <th>Teacher Name</th>
+                <th>Designation</th>
+                <th>Entry Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+@foreach (var item in Model)
+{
+            <tr>
+                <td>@Html.CheckBox("Select_Teacher", new { data_id=item.TEACHER_NO})</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SET_INSTITUTE.INSTITUTE_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TEACHER_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SET_TEACHER_DESIG.TEACHER_DESIG_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INSERT_TIME_STR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.APPROVED_STATUS)
+                </td>
+                <td> 
+                    <input class="btn btn-default approve" data-id="@item.TEACHER_NO" type="button" name="Search" id="Search" value="Approve"><br />
+                    <input class="btn btn-default reject"  data-id="@item.TEACHER_NO" type="button" name="Search" id="Search" value="Reject">
+                </td>
+            </tr>
+}
+            <tr>
+                <td colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="11" style="text-align:center;"> 
+                    <input class="btn btn-success" type="button" name="Approve_Selected" id="Approve_Selected" value="Approve Selected">
+                    &nbsp;&nbsp;
+                    <input class="btn btn-success" type="button" name="Reject_Selected" id="Reject_Selected" value="Reject Selected">
+                    <input type="hidden" id="user_no" name="user_no" value="@user_no" />
+                    <input type="hidden" id="logon_no" name="logon_no" value="@logon_no" />
+                </td>
+            </tr>
+         </table>
+    </div>
+   	   
+</div>
+      
+       
+ <div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Approve", new { page }))
+</div>

@@ -1,0 +1,78 @@
+﻿@model PagedList.IPagedList<OG_SLN.TRN_EXPENSE>
+
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+
+<hr />
+@{Html.RenderPartial("_SearchExpense");}
+    <div class="col-8 marRight_2">
+        <div class="table-responsive">
+            <table class="table table-responsive table-bordered table-hover tabWidth">
+                <tr class="success">
+
+                    <th>
+                       Insert Date
+                    </th>
+                    <th>
+                       Approve
+                    </th>
+                    <th>
+                       Fiscal Year
+                    </th>
+                    <th>
+                       UserName
+                    </th>
+                    <th>
+                        Remarks
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @item.TRN_EXP_DATE.ToString("yyyy-MM-dd")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GEN_APPROVE_TYPE.APPROVE_TYPE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SET_FISCAL_YEAR.FY_NAME)
+                        </td> 
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SEC_USERS.USER_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.REAMRKS)
+                        </td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EXP_NO }, new { @class = "btn btn-warning" })
+                                @Html.ActionLink("Details", "Details", new { id = item.EXP_NO }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EXP_NO }, new { @class = "btn btn-danger" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+<div id="example">
+</div>
+
+
+<div id="example"></div>
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

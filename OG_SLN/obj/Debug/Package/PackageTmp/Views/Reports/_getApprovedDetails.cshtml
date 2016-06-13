@@ -1,0 +1,73 @@
+﻿@model OG_SLN.Models.AdjustmentApprovedDetailsViewModel
+
+@{
+    int sl_no = 1;
+}
+
+
+<div class="table-responsive">
+    
+    <table class="table table-responsive table-bordered table-hover tabWidth">
+
+        <tr class="success">
+            <th colspan="6">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+            </th>
+        </tr>
+
+        <tr>
+            <td colspan="6" style="width:100%; background:#EEEEEE; text-align:center;">
+
+              <p><span style="font-size:26px;">Individual ZM SP Distribution</span><br />
+                <span style="font-size:22px;"> From Date: @Model.Date_From.Value.ToString("dd-MM-yyyy") - To Date: @Model.Date_To.Value.ToString("dd-MM-yyyy")</span><br />
+                <span style="font-size:20px;"> Book Name (Eng): @Model.Specimen_Name - Book Name (Bangla): @Model.Specimen_Name_Bng</span></p>
+              <p><span style="font-size:20px;">Specimen Code: @Model.Specimen_Code<br />
+                </span>
+              </p>
+            </td>
+        </tr>
+
+
+        <tr style="font-weight:bold; font-size:16px; background:#DDDDDD;">
+            <td style="width: 10%">SL No.</td>
+            <td style="width: 30%">Institute Name<br />
+                (Institute Code)</td>
+            
+            <td style="width: 20%">Institute Division,<br />
+              Zill,<br />
+              Thana,</td>
+            <td style="width: 20%">Contact Person No.</td>
+            <td style="width: 10%">Given Date</td>
+            <td style="width: 10%">Given Qty ((only approved qty))</td>
+        </tr>
+
+  @foreach (var item in Model.Approved_Details)
+  {
+
+    <tr>
+        <td> 
+            @sl_no
+            @{sl_no++;}
+        </td>
+        <td>@item.INSTITUTE_NAME <br />
+            (@item.INSTITUTE_NO)</td>
+        
+        <td style="text-align:left;">@item.DIVISION_NAME <br />
+            @item.ZILLA_NAME<br />
+            @item.THANA_NAME
+        </td>
+        <td style="text-align:left;">
+            @item.TEACHER_MOBILE<br/>
+        </td>
+        <td> 
+            @item.GIVEN_DATE.Value.Date.ToString("dd-MM-yyyy")
+        </td>
+        <td>
+            @item.QTY
+        </td>
+    </tr>
+      
+  }
+
+</table>
+</div>

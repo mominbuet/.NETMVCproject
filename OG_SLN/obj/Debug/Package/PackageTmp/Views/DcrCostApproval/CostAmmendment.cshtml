@@ -1,0 +1,81 @@
+﻿@*@model IEnumerable<OG_SLN.TRN_DCR_OFF_VERIFY_GET_Result>*@
+@{
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+<h2>DCR & Expense Amendment</h2>
+@*<div class="col-8 marRight_2">*@
+
+<script type="text/javascript">
+    function btnConfirm(btn,typeInput) {
+        
+        if (confirm("Do you want to "+((typeInput==1)?"amend ":"reject ")+" this?"))
+        {
+            $.post( "@Url.Content("~")"+"DcrCostApproval/AmmendDCR",{ 
+            fare : $("#txt_" +btn.closest('tr').attr('id')).val(),
+            dcrNo : btn.closest('tr').attr('id'),
+            type:typeInput} ,
+            function( data ) {
+                //alert(data.output)
+                if(data.output=="Accepted")
+                    $(btn.closest('tr')).toggleClass('success');
+                else
+                    $(btn.closest('tr')).toggleClass('danger');
+                //$(btn).hide();
+            });
+            /*($("#ddl_" + btn.closest('tr').attr('id')).val() + " then " +
+                $("#txt_" + btn.closest('tr').attr('id')).val());*/
+        } 
+        
+        //alert(btn.('tr').find('select[id="dcrType"]').val());
+    }
+
+
+    function btnConfirm2(btn,typeInput) {
+        if (confirm("Do you want to "+((typeInput==1)?"amend ":"reject ")+" this?"))
+        {
+            $.post( "@Url.Content("~")"+"DcrCostApproval/AmmendExpense", { 
+                EXP_DET_NO : btn.closest('tr').attr('id'), 
+                APPROVE_TYPE_NO : typeInput, 
+                APPROVE_EXP_TYPE_NO : $("#hid_" +btn.closest('tr').attr('id')).val() ,
+                APPROVE_EXP_AMT : $("#txt_" + btn.closest('tr').attr('id')).val()
+            } ,
+            function( data ) {
+                //alert(data.output)
+                if(data.output=="Accepted")
+                    $(btn.closest('tr')).toggleClass('success');
+                else
+                    $(btn.closest('tr')).toggleClass('danger');
+                //$(btn).hide();
+            });
+            /*($("#ddl_" + btn.closest('tr').attr('id')).val() + " then " +
+                $("#txt_" + btn.closest('tr').attr('id')).val());*/
+        }
+        //alert(btn.('tr').find('select[id="dcrType"]').val());
+    }
+
+    function do_search() {
+        var frm = $('form');
+        var url = $(frm).attr('action');
+        var data = $(frm).serialize();
+        $.post(url, data, function(res) {
+            $('#div_display').html(res);
+        });
+
+        return false;
+    }
+</script>
+
+<div id="div_search">
+    <h3>Pending DCR Approval (@ViewBag.dcr_count)</h3>
+
+@{Html.RenderPartial("_SearchOfflineEntry");}
+</div>
+
+<div id="div_display">
+
+@{Html.RenderPartial("_DcrAmend");}
+
+</div>
+
+@*</div>*@

@@ -1,0 +1,87 @@
+﻿
+@using OG_SLN.Helpers
+
+@{
+    string name = String.Empty;
+    string mobile = String.Empty;
+    string active = String.Empty;
+    string approved = String.Empty;
+    string datefrom = DateTime.Today.AddMonths(-1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+    
+    string check = "checked='checked'";
+
+    OG_SLN.Models.TeacherApproveSearchViewModel searchModel = ViewBag.Search_Teacher_Model 
+        as OG_SLN.Models.TeacherApproveSearchViewModel;
+    if(searchModel != null)
+    {
+        if(searchModel.Search_Date_From.HasValue)
+        {
+            datefrom = searchModel.Search_Date_From.Value.ToString("yyyy-MM-dd");
+        }
+        if (searchModel.Search_Date_From.HasValue)
+        {
+            dateto = searchModel.Search_Date_To.Value.ToString("yyyy-MM-dd");
+        }
+        if(searchModel.Search_Active.HasValue)
+        {
+            active = searchModel.Search_Active.ToString().ToLower();
+        }
+        if (searchModel.Search_Approved.HasValue)
+        {
+            approved = searchModel.Search_Approved.ToString().ToLower();
+        }
+    }
+}
+
+
+@using(Html.BeginForm("Approve", "TeacherEntry", FormMethod.Get)) {
+    
+     <div class="col-8 marRight_2">
+        <table class="tabWidth">
+            <tbody>
+                    <tr>
+                        <td>Zonal Manager:</td>
+                        <td class="td_1">
+                            @*@Html.DropDownList("Search_Insert_User", String.Empty)*@
+                            @Html.Hidden("Search_Insert_User", "")
+                            @Html.Hidden("ZONAL_TYPE", "single")
+                            @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                        </td>
+                        <td>Institute</td>
+                        <td class="td_1">
+                            <input name="Search_Institute" type="text"  class="approveInput" id="Search_Institute" value="234" />
+                        </td>
+                        <td>Designation</td>
+                        <td>
+                            @Html.DropDownList("Search_Designation", String.Empty)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Entry Date From:</td>
+                        <td class="td_1">
+                            @Html.TextBox("Search_Date_From", datefrom, new { @class = "approveInput dateclass" })
+                        </td>
+                        <td>Entry Date To:</td>
+                        <td class="td_1">
+                            @Html.TextBox("Search_Date_To", dateto, new { @class = "approveInput dateclass" })
+                        </td>
+                        <td>Status</td>
+                        <td>
+                            @Html.DropDownList("Search_Approved")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="text-align:center;">
+                             <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                        </td>
+                    </tr>
+               </tbody>
+        </table>
+    </div>
+
+}

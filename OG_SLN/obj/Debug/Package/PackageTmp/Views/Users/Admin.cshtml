@@ -1,0 +1,95 @@
+﻿@*@model IEnumerable<OG_SLN.SEC_USERS>*@
+@model PagedList.IPagedList<OG_SLN.SEC_USERS>
+
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Admin";
+    string type = "Admin";
+}
+
+<h2>Admin</h2>
+<hr>
+@{Html.RenderPartial("_AllUserSearchPartial");}
+<p>
+    @Html.ActionLink("Create New", "Create", new { type = @type }, new { @class="btn btn-primary"})
+</p>
+     <div class="row-fluid">
+      <div class="col-8 marRight_2">
+        <div class="table-responsive">
+            <table class="table table-responsive table-bordered table-hover tabWidth">
+                <tr class="success">
+                  
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.HR_EMP_ID)*@
+                        HR ID
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_FULL_NAME)*@
+                        Full Name
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_MOBILE)*@
+                        Mobile
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_EMAIL)*@
+                        Email
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_NAME)*@
+                        Username
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ACTIVE_STATUS)*@
+                        Active
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.SET_COMPANY.COMP_NAME)*@
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HR_EMP_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_FULL_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_MOBILE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_EMAIL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACTIVE_STATUS)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.SET_COMPANY.COMP_NAME)*@
+                    </td>
+                    <td class="tab_Link">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.USER_NO, type = @type }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.USER_NO, type = @type }) 
+                        @Html.ActionLink("Delete", "Delete", new { id=item.USER_NO })
+                        @Html.ActionLink("Change Password", "ChangePassword", new { id = item.USER_NO, type = @type })
+                    </td>
+                </tr>
+            }
+
+            </table>
+            </div>
+        </div>
+    </div>
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    
+    @Html.PagedListPager(Model, page => Url.Action("Admin", new { page }))
+</div>

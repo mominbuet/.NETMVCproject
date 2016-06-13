@@ -1,0 +1,66 @@
+﻿@model OG_SLN.SET_PROMO_ITEM
+@{
+    ViewBag.Title = "Details";
+}
+<h2>
+    Details</h2>
+<div class="rpt_1">
+    <fieldset>
+        <legend>Promotional Item Type</legend>
+        <div class="display-label">
+            Promo Item Type No
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PROMO_ITEM_NO)
+        </div>
+        <div class="display-label">
+            Promo Item Name
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PROMO_ITEM_NAME)
+        </div>
+        <div class="display-label">
+            Promo Item Code
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PROMO_ITEM_CODE)
+        </div>
+        <div class="display-label">
+            Promo Item Description
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.desc_created)
+        </div>
+        <div class="display-label">
+            Active
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ACTIVE_PROMO_ITEM)
+        </div>
+        <div class="display-label">
+            Active From
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ACTIVE_FROM, "{0:yyy-MM-dd}")
+        </div>
+        <div class="display-label">
+            Active To
+        </div>
+        <div class="display-field">
+            @Html.ValueFor(model => model.ACTIVE_TO, "{0:yyy-MM-dd}")
+        </div>
+        <div class="display-label">
+            Sl Num
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SL_NUM, "{0:0}")
+        </div>
+    </fieldset>
+    <hr />
+    <div class="btn-group btn-group-sm">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PROMO_ITEM_NO }, new { @class = "btn btn-info" })
+        @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+    </div>
+
+
+</div>

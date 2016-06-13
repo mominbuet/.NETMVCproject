@@ -1,0 +1,114 @@
+﻿@using OG_SLN.Helpers
+@{
+    OG_SLN.SpecimenDistSearch specSearch = ViewBag.specSearch as OG_SLN.SpecimenDistSearch;
+} 
+ <script type="text/javascript" language="javascript">
+     $(function () {
+
+     });
+
+</script>
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Get, new { @class = "form-horizontal" }))
+{
+     <div class="col-8 marRight_2"> 
+    <table class="tabWidth">
+        <tbody>
+            <tr>
+               @* <td class="adminLef_col">
+                    User name :
+                </td>
+                <td class="adminRight_col">
+                    @Html.TextBox("user_name", @specSearch.user_name, new { @class="form-control"})
+                </td>*@
+                  <td>
+                        User
+                    </td>
+                    <td>@Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                    </td>
+                <td style="width: 150px;">
+                    &nbsp;
+                </td>
+               @* <td class="adminLef_col">
+                    User No :
+                </td>
+                <td class="adminRight_col"> 
+                <select id="userno" name="userno">
+                    <option value="0">All</option>
+                        @foreach (var item in ViewBag.ZonalUsers)
+                        {
+                            <option value="@item.USER_NO" @{if (specSearch.userno == item.USER_NO)
+                                                            {@("selected=\"selected\"")}}>@item.USER_NAME</option>
+                        }
+                    </select>
+                </td>*@
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td class="adminLef_col">
+                    Assign Date From :
+                </td>
+                <td class="adminRight_col">
+                     <input id="AssignDateFrom" name="AssignDateFrom" 
+                     value="@{if( specSearch.AssignDateFrom.ToString()!=""){
+                                 @(DateTime.Parse(specSearch.AssignDateFrom.ToString()).ToString("yyyy-MM-dd"))}}" 
+                                 class="form-control datesinspec"
+                     type="text" />
+                     </td>
+                <td style="width: 150px;">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    Assign Date To :
+                </td>
+                <td class="adminRight_col">
+                    <input id="AssignDateTo" name="AssignDateTo" 
+                    value="@{if( specSearch.AssignDateTo.ToString()!=""){
+                                 @(DateTime.Parse(specSearch.AssignDateTo.ToString()).ToString("yyyy-MM-dd"))}}"
+                    class="form-control datesinspec"
+                     type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td class="adminLef_col">
+                    Active :
+                </td>
+                <td class="adminRight_col">
+                    <label><input  type="radio" name="Search_Active" value="all" 
+                    @{if (specSearch.isactive == "all"){@("checked=\"checked\"")}}>All</label>
+			                <label><input type="radio"  name="Search_Active" value="active"
+                            @{if (specSearch.isactive == "active"){@("checked=\"checked\"")}}>Active</label>
+			                <label><input type="radio"  name="Search_Active" value="inactive"
+                             @{if (specSearch.isactive == "inactive"){@("checked=\"checked\"")}}>Inactive</label>
+                </td>
+                <td style="width: 150px;">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    Specimen No :
+                </td>
+                <td class="adminRight_col">
+                
+                    <select id="specimen_no" name="specimen_no">
+                    <option value="0">Any</option>
+                        @foreach (var item in ViewBag.specs)
+                        {
+                            <option value="@item.SPECIMEN_NO"  @{if (specSearch.specimen_no == item.SPECIMEN_NO)
+                                                            {@("selected=\"selected\"")}}>@item.SPECIMEN_NAME</option>
+                        }
+                    </select>
+                     
+                </td>
+            </tr>
+            <tr>
+            <td colspan="2">
+            <div class="btn-group btn-group-sm">
+                <input id="Submit1" class="btn btn-success" type="submit" value="Search" />
+                
+                    <input id="Reset1" class="btn btn-warning" type="reset" value="Reset" />
+                    </div></td></tr>
+        </tbody>
+    </table>
+    </div>
+}

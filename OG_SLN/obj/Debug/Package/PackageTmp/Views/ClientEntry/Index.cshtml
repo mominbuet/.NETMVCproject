@@ -1,0 +1,92 @@
+﻿@*@model IEnumerable<OG_SLN.SET_CLIENT_INFO>*@
+@model PagedList.IPagedList<OG_SLN.SET_CLIENT_INFO>
+
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{Html.RenderPartial("_ClientSearchPartial");}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="col-8 marRight_2"> 
+        <div class="="table-responsive"">
+        <table class="table table-responsive table-bordered table-hover tabWidth">
+            <tbody>
+                <tr class="success">
+        <th>
+            @*@Html.DisplayNameFor(model => model.CLIENT_NAME)*@
+            Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CLIENT_MOBILE)*@
+            Mobile
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.BIRTH_DATE)*@
+            Birthdate
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MARRIAGE_DATE)*@
+            Marriage date
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SET_DIVISION.DIVISION_NAME)*@
+            Division
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SET_ZILLA.ZILLA_NAME)*@
+            Zilla
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SET_THANA.THANA_NAME)*@
+            Thana
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ACTIVE_STATUS)*@
+            Active
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENT_MOBILE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BIRTH_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARRIAGE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_DIVISION.DIVISION_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_ZILLA.ZILLA_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_THANA.THANA_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_STATUS)
+        </td>
+        <td class="tab_Link">
+            @Html.ActionLink("Edit", "Edit", new { id=item.CLIENT_NO }) 
+            @Html.ActionLink("Details", "Details", new { id=item.CLIENT_NO }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.CLIENT_NO })
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</div>

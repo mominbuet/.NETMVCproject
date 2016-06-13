@@ -1,0 +1,74 @@
+﻿@using OG_SLN.Helpers
+@{
+    OG_SLN.SearchExpense expSearch = ViewBag.expSearch as OG_SLN.SearchExpense;
+}
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Get, new { @class = "form-horizontal" }))
+{
+   <script type="text/javascript" language="javascript">
+    $(function () {
+
+    });
+
+</script>
+    <div class="col-8 marRight_2">
+        <table class="tabWidth">
+            <tbody>
+              
+                <tr>
+                    @*<td class="adminLef_col">
+                        User name :
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("userName", @expSearch.userName, new { @class = "form-control" })
+                    </td>*@
+                    <td>
+                        User
+                    </td>
+                    <td>@Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager","ViewDCRSheet"), "Select Zonal Manager")
+                    </td>
+                    <td class="adminLef_col">
+                        User Contact:
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("userContact", @expSearch.userContact, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                        Date From
+                    </td>
+                    <td class="adminRight_col">
+                        <input id="dateExpFrom" name="dateExpFrom" 
+                    value="@{if (expSearch.dateExpFrom.ToString() != "")
+                             {
+                                 @(DateTime.Parse(expSearch.dateExpFrom.ToString()).ToString("yyyy-MM-dd"))}}"
+                    class="form-control datesinspec"
+                     type="text" />
+                    </td>
+                    <td class="adminLef_col">
+                        Date To
+                    </td>
+                    <td class="adminRight_col">
+                        <input id="dateExpTo" name="dateExpTo" 
+                    value="@{if (expSearch.dateExpTo.ToString() != "")
+                             {
+                                 @(DateTime.Parse(expSearch.dateExpTo.ToString()).ToString("yyyy-MM-dd"))}}"
+                    class="form-control datesinspec"
+                     type="text" />
+                    </td>
+                </tr>
+                <tr>
+                   <td colspan="2">
+                        <div class="btn-group btn-group-sm">
+                            <input id="Submit1" class="btn btn-success" type="submit" value="Search" />
+                            <input id="Reset1" class="btn btn-warning" type="reset" value="Reset" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+    </div>
+}

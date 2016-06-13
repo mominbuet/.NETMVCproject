@@ -1,0 +1,1841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="GEN_APPROVE_TYPE">
+      <EntityTypeMapping TypeName="Model.GEN_APPROVE_TYPE">
+        <MappingFragment StoreEntitySet="GEN_APPROVE_TYPE">
+          <ScalarProperty Name="APPROVE_TYPE_NO" ColumnName="APPROVE_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_TYPE" ColumnName="APPROVE_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_DATA_TYPE">
+      <EntityTypeMapping TypeName="Model.GEN_DATA_TYPE">
+        <MappingFragment StoreEntitySet="GEN_DATA_TYPE">
+          <ScalarProperty Name="DATA_TYPE_NO" ColumnName="DATA_TYPE_NO" />
+          <ScalarProperty Name="DATA_TYPE" ColumnName="DATA_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_DATA_VERSION">
+      <EntityTypeMapping TypeName="Model.GEN_DATA_VERSION">
+        <MappingFragment StoreEntitySet="GEN_DATA_VERSION">
+          <ScalarProperty Name="VER_NO" ColumnName="VER_NO" />
+          <ScalarProperty Name="OBJECT_NAME" ColumnName="OBJECT_NAME" />
+          <ScalarProperty Name="CURR_VER" ColumnName="CURR_VER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_DCR_TYPE">
+      <EntityTypeMapping TypeName="Model.GEN_DCR_TYPE">
+        <MappingFragment StoreEntitySet="GEN_DCR_TYPE">
+          <ScalarProperty Name="DCR_TYPE_NO" ColumnName="DCR_TYPE_NO" />
+          <ScalarProperty Name="DCR_TYPE" ColumnName="DCR_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_SMS_TYPE">
+      <EntityTypeMapping TypeName="Model.GEN_SMS_TYPE">
+        <MappingFragment StoreEntitySet="GEN_SMS_TYPE">
+          <ScalarProperty Name="SMS_TYPE_NO" ColumnName="SMS_TYPE_NO" />
+          <ScalarProperty Name="SMS_TYPE" ColumnName="SMS_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_USER_TYPES">
+      <EntityTypeMapping TypeName="Model.GEN_USER_TYPES">
+        <MappingFragment StoreEntitySet="GEN_USER_TYPES">
+          <ScalarProperty Name="USER_TYPE_NO" ColumnName="USER_TYPE_NO" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+          <ScalarProperty Name="IS_MULTI_LOGIN" ColumnName="IS_MULTI_LOGIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_APPLICATIONS">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_APPLICATIONS">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_APPLICATIONS">
+          <ScalarProperty Name="APPLICATIONNAME" ColumnName="APPLICATIONNAME" />
+          <ScalarProperty Name="LOWEREDAPPLICATIONNAME" ColumnName="LOWEREDAPPLICATIONNAME" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_MEMBERSHIP">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_MEMBERSHIP">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_MEMBERSHIP">
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="PASSWORDFORMAT" ColumnName="PASSWORDFORMAT" />
+          <ScalarProperty Name="PASSWORDSALT" ColumnName="PASSWORDSALT" />
+          <ScalarProperty Name="MOBILEPIN" ColumnName="MOBILEPIN" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="LOWEREDEMAIL" ColumnName="LOWEREDEMAIL" />
+          <ScalarProperty Name="PASSWORDQUESTION" ColumnName="PASSWORDQUESTION" />
+          <ScalarProperty Name="PASSWORDANSWER" ColumnName="PASSWORDANSWER" />
+          <ScalarProperty Name="ISAPPROVED" ColumnName="ISAPPROVED" />
+          <ScalarProperty Name="ISLOCKEDOUT" ColumnName="ISLOCKEDOUT" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="LASTLOGINDATE" ColumnName="LASTLOGINDATE" />
+          <ScalarProperty Name="LASTPASSWORDCHANGEDDATE" ColumnName="LASTPASSWORDCHANGEDDATE" />
+          <ScalarProperty Name="LASTLOCKOUTDATE" ColumnName="LASTLOCKOUTDATE" />
+          <ScalarProperty Name="FAILEDPWDATTEMPTCOUNT" ColumnName="FAILEDPWDATTEMPTCOUNT" />
+          <ScalarProperty Name="FAILEDPWDATTEMPTWINSTART" ColumnName="FAILEDPWDATTEMPTWINSTART" />
+          <ScalarProperty Name="FAILEDPWDANSWERATTEMPTCOUNT" ColumnName="FAILEDPWDANSWERATTEMPTCOUNT" />
+          <ScalarProperty Name="FAILEDPWDANSWERATTEMPTWINSTART" ColumnName="FAILEDPWDANSWERATTEMPTWINSTART" />
+          <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_PATHS">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_PATHS">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_PATHS">
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="PATHID" ColumnName="PATHID" />
+          <ScalarProperty Name="PATH" ColumnName="PATH" />
+          <ScalarProperty Name="LOWEREDPATH" ColumnName="LOWEREDPATH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_PERSONALIZNALLUSERS">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_PERSONALIZNALLUSERS">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_PERSONALIZNALLUSERS">
+          <ScalarProperty Name="PATHID" ColumnName="PATHID" />
+          <ScalarProperty Name="PAGESETTINGS" ColumnName="PAGESETTINGS" />
+          <ScalarProperty Name="LASTUPDATEDDATE" ColumnName="LASTUPDATEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_PERSONALIZNPERUSER">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_PERSONALIZNPERUSER">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_PERSONALIZNPERUSER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PATHID" ColumnName="PATHID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PAGESETTINGS" ColumnName="PAGESETTINGS" />
+          <ScalarProperty Name="LASTUPDATEDDATE" ColumnName="LASTUPDATEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_PROFILE">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_PROFILE">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_PROFILE">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PROPERTYNAMES" ColumnName="PROPERTYNAMES" />
+          <ScalarProperty Name="PROPERTYVALUESSTRING" ColumnName="PROPERTYVALUESSTRING" />
+          <ScalarProperty Name="PROPERTYVALUESBINARY" ColumnName="PROPERTYVALUESBINARY" />
+          <ScalarProperty Name="LASTUPDATEDDATE" ColumnName="LASTUPDATEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_ROLES">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_ROLES">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_ROLES">
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+          <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+          <ScalarProperty Name="LOWEREDROLENAME" ColumnName="LOWEREDROLENAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_SESSIONAPPLICATIONS">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_SESSIONAPPLICATIONS">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_SESSIONAPPLICATIONS">
+          <ScalarProperty Name="APPID" ColumnName="APPID" />
+          <ScalarProperty Name="APPNAME" ColumnName="APPNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_SESSIONS">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_SESSIONS">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_SESSIONS">
+          <ScalarProperty Name="SESSIONID" ColumnName="SESSIONID" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="EXPIRES" ColumnName="EXPIRES" />
+          <ScalarProperty Name="LOCKDATE" ColumnName="LOCKDATE" />
+          <ScalarProperty Name="LOCKDATELOCAL" ColumnName="LOCKDATELOCAL" />
+          <ScalarProperty Name="LOCKCOOKIE" ColumnName="LOCKCOOKIE" />
+          <ScalarProperty Name="TIMEOUT" ColumnName="TIMEOUT" />
+          <ScalarProperty Name="LOCKED" ColumnName="LOCKED" />
+          <ScalarProperty Name="SESSIONITEMSHORT" ColumnName="SESSIONITEMSHORT" />
+          <ScalarProperty Name="SESSIONITEMLONG" ColumnName="SESSIONITEMLONG" />
+          <ScalarProperty Name="FLAGS" ColumnName="FLAGS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_SITEMAP">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_SITEMAP">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_SITEMAP">
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ROLES" ColumnName="ROLES" />
+          <ScalarProperty Name="PARENT" ColumnName="PARENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_ASPNET_USERS">
+      <EntityTypeMapping TypeName="Model.ORA_ASPNET_USERS">
+        <MappingFragment StoreEntitySet="ORA_ASPNET_USERS">
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="LOWEREDUSERNAME" ColumnName="LOWEREDUSERNAME" />
+          <ScalarProperty Name="MOBILEALIAS" ColumnName="MOBILEALIAS" />
+          <ScalarProperty Name="ISANONYMOUS" ColumnName="ISANONYMOUS" />
+          <ScalarProperty Name="LASTACTIVITYDATE" ColumnName="LASTACTIVITYDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_CLOSURE">
+      <EntityTypeMapping TypeName="Model.SEC_USER_CLOSURE">
+        <MappingFragment StoreEntitySet="SEC_USER_CLOSURE">
+          <ScalarProperty Name="CLOSE_NO" ColumnName="CLOSE_NO" />
+          <ScalarProperty Name="ANCESTOR_NO" ColumnName="ANCESTOR_NO" />
+          <ScalarProperty Name="DESCENDANT_NO" ColumnName="DESCENDANT_NO" />
+          <ScalarProperty Name="REL_DEPTH" ColumnName="REL_DEPTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_DCR_APPROVE">
+      <EntityTypeMapping TypeName="Model.SEC_USER_DCR_APPROVE">
+        <MappingFragment StoreEntitySet="SEC_USER_DCR_APPROVE">
+          <ScalarProperty Name="USER_DCR_APPROVE_NO" ColumnName="USER_DCR_APPROVE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_SEQUENCE" ColumnName="APPROVE_SEQUENCE" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_LOGON_APPROVE">
+      <EntityTypeMapping TypeName="Model.SEC_USER_LOGON_APPROVE">
+        <MappingFragment StoreEntitySet="SEC_USER_LOGON_APPROVE">
+          <ScalarProperty Name="LOGON_APPROVE_NO" ColumnName="LOGON_APPROVE_NO" />
+          <ScalarProperty Name="LOGON_NO" ColumnName="LOGON_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="APPROVE_TYPE_NO" ColumnName="APPROVE_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="APPROVE_SEQUENCE" ColumnName="APPROVE_SEQUENCE" />
+          <ScalarProperty Name="APPROVE_COMMENTS" ColumnName="APPROVE_COMMENTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_LOGONS">
+      <EntityTypeMapping TypeName="Model.SEC_USER_LOGONS">
+        <MappingFragment StoreEntitySet="SEC_USER_LOGONS">
+          <ScalarProperty Name="LOGON_NO" ColumnName="LOGON_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="IP_ADDR" ColumnName="IP_ADDR" />
+          <ScalarProperty Name="DEVICE_ID" ColumnName="DEVICE_ID" />
+          <ScalarProperty Name="LOGIN_TIME" ColumnName="LOGIN_TIME" />
+          <ScalarProperty Name="LOGOUT_TIME" ColumnName="LOGOUT_TIME" />
+          <ScalarProperty Name="IS_LOGGED_IN" ColumnName="IS_LOGGED_IN" />
+          <ScalarProperty Name="APPROVE_TYPE_NO" ColumnName="APPROVE_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_REQUIRED_QTY" ColumnName="APPROVE_REQUIRED_QTY" />
+          <ScalarProperty Name="APPROVE_AQUIRED_QTY" ColumnName="APPROVE_AQUIRED_QTY" />
+          <ScalarProperty Name="SESS_ID" ColumnName="SESS_ID" />
+          <ScalarProperty Name="LOGIN_MOBILE" ColumnName="LOGIN_MOBILE" />
+          <ScalarProperty Name="WEB_SERVER_ID" ColumnName="WEB_SERVER_ID" />
+          <ScalarProperty Name="APP_VERSION" ColumnName="APP_VERSION" />
+          <ScalarProperty Name="LOGIN_SIM" ColumnName="LOGIN_SIM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_MULTI_LOGIN">
+      <EntityTypeMapping TypeName="Model.SEC_USER_MULTI_LOGIN">
+        <MappingFragment StoreEntitySet="SEC_USER_MULTI_LOGIN">
+          <ScalarProperty Name="MULTI_LOGIN_NO" ColumnName="MULTI_LOGIN_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_SEQUENCE" ColumnName="APPROVE_SEQUENCE" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_ZONE">
+      <EntityTypeMapping TypeName="Model.SEC_USER_ZONE">
+        <MappingFragment StoreEntitySet="SEC_USER_ZONE">
+          <ScalarProperty Name="USER_ZONE_NO" ColumnName="USER_ZONE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="ZONE_NO" ColumnName="ZONE_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USERS">
+      <EntityTypeMapping TypeName="Model.SEC_USERS">
+        <MappingFragment StoreEntitySet="SEC_USERS">
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="USER_TYPE_NO" ColumnName="USER_TYPE_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DESIG_NO" ColumnName="DESIG_NO" />
+          <ScalarProperty Name="HR_EMP_ID" ColumnName="HR_EMP_ID" />
+          <ScalarProperty Name="USER_FULL_NAME" ColumnName="USER_FULL_NAME" />
+          <ScalarProperty Name="USER_NICK_NAME" ColumnName="USER_NICK_NAME" />
+          <ScalarProperty Name="USER_CONTACT" ColumnName="USER_CONTACT" />
+          <ScalarProperty Name="USER_MOBILE" ColumnName="USER_MOBILE" />
+          <ScalarProperty Name="USER_ADDR" ColumnName="USER_ADDR" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_PWD" ColumnName="USER_PWD" />
+          <ScalarProperty Name="USER_PARENT_NO" ColumnName="USER_PARENT_NO" />
+          <ScalarProperty Name="IS_MULTI_LOGIN" ColumnName="IS_MULTI_LOGIN" />
+          <ScalarProperty Name="MULTI_LOGIN_QTY" ColumnName="MULTI_LOGIN_QTY" />
+          <ScalarProperty Name="IS_MULTI_LOGIN_SEQUENTIAL" ColumnName="IS_MULTI_LOGIN_SEQUENTIAL" />
+          <ScalarProperty Name="IS_MULTI_DCR_APPROVE" ColumnName="IS_MULTI_DCR_APPROVE" />
+          <ScalarProperty Name="MULTI_DCR_APPROVE_QTY" ColumnName="MULTI_DCR_APPROVE_QTY" />
+          <ScalarProperty Name="IS_DCR_APPROVE_SEQUENTIAL" ColumnName="IS_DCR_APPROVE_SEQUENTIAL" />
+          <ScalarProperty Name="IS_ENABLE" ColumnName="IS_ENABLE" />
+          <ScalarProperty Name="IS_EXISTS" ColumnName="IS_EXISTS" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Model.SEC_USERS">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Model.Store.SEC_USERS_INSERT">
+            <ScalarProperty Name="USER_CONTACT" ParameterName="P_USER_CONTACT" />
+            <ScalarProperty Name="USER_NICK_NAME" ParameterName="P_USER_NICK_NAME" />
+            <ScalarProperty Name="USER_FULL_NAME" ParameterName="P_USER_FULL_NAME" />
+            <ScalarProperty Name="HR_EMP_ID" ParameterName="P_HR_EMP_ID" />
+            <ScalarProperty Name="DESIG_NO" ParameterName="P_DESIG_NO" />
+            <ScalarProperty Name="DEPT_NO" ParameterName="P_DEPT_NO" />
+            <ScalarProperty Name="USER_TYPE_NO" ParameterName="P_USER_TYPE_NO" />
+            <ScalarProperty Name="INSERT_LOGON_NO" ParameterName="P_INSERT_LOGON_NO" />
+            <ScalarProperty Name="INSERT_USER_NO" ParameterName="P_INSERT_USER_NO" />
+            <ScalarProperty Name="ACTIVE_TO" ParameterName="P_ACTIVE_TO" />
+            <ScalarProperty Name="ACTIVE_FROM" ParameterName="P_ACTIVE_FROM" />
+            <ScalarProperty Name="IS_ACTIVE" ParameterName="P_IS_ACTIVE" />
+            <ScalarProperty Name="IS_DCR_APPROVE_SEQUENTIAL" ParameterName="P_IS_DCR_APPROVE_SEQUENTIAL" />
+            <ScalarProperty Name="MULTI_DCR_APPROVE_QTY" ParameterName="P_MULTI_DCR_APPROVE_QTY" />
+            <ScalarProperty Name="IS_MULTI_DCR_APPROVE" ParameterName="P_IS_MULTI_DCR_APPROVE" />
+            <ScalarProperty Name="IS_MULTI_LOGIN_SEQUENTIAL" ParameterName="P_IS_MULTI_LOGIN_SEQUENTIAL" />
+            <ScalarProperty Name="MULTI_LOGIN_QTY" ParameterName="P_MULTI_LOGIN_QTY" />
+            <ScalarProperty Name="IS_MULTI_LOGIN" ParameterName="P_IS_MULTI_LOGIN" />
+            <ScalarProperty Name="USER_PARENT_NO" ParameterName="P_USER_PARENT_NO" />
+            <ScalarProperty Name="USER_PWD" ParameterName="P_USER_PWD" />
+            <ScalarProperty Name="USER_NAME" ParameterName="P_USER_NAME" />
+            <ScalarProperty Name="USER_EMAIL" ParameterName="P_USER_EMAIL" />
+            <ScalarProperty Name="USER_ADDR" ParameterName="P_USER_ADDR" />
+            <ScalarProperty Name="USER_MOBILE" ParameterName="P_USER_MOBILE" />
+          </InsertFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USERS_HIS">
+      <EntityTypeMapping TypeName="Model.SEC_USERS_HIS">
+        <MappingFragment StoreEntitySet="SEC_USERS_HIS">
+          <ScalarProperty Name="HIS_NO" ColumnName="HIS_NO" />
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="ACTION_TIME" ColumnName="ACTION_TIME" />
+          <ScalarProperty Name="ACTION_USER_NO" ColumnName="ACTION_USER_NO" />
+          <ScalarProperty Name="ACTION_LOGON_NO" ColumnName="ACTION_LOGON_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="USER_TYPE_NO" ColumnName="USER_TYPE_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DESIG_NO" ColumnName="DESIG_NO" />
+          <ScalarProperty Name="HR_EMP_ID" ColumnName="HR_EMP_ID" />
+          <ScalarProperty Name="USER_FULL_NAME" ColumnName="USER_FULL_NAME" />
+          <ScalarProperty Name="USER_NICK_NAME" ColumnName="USER_NICK_NAME" />
+          <ScalarProperty Name="USER_CONTACT" ColumnName="USER_CONTACT" />
+          <ScalarProperty Name="USER_MOBILE" ColumnName="USER_MOBILE" />
+          <ScalarProperty Name="USER_ADDR" ColumnName="USER_ADDR" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_PWD" ColumnName="USER_PWD" />
+          <ScalarProperty Name="USER_PARENT_NO" ColumnName="USER_PARENT_NO" />
+          <ScalarProperty Name="IS_MULTI_LOGIN" ColumnName="IS_MULTI_LOGIN" />
+          <ScalarProperty Name="MULTI_LOGIN_QTY" ColumnName="MULTI_LOGIN_QTY" />
+          <ScalarProperty Name="IS_MULTI_LOGIN_SEQUENTIAL" ColumnName="IS_MULTI_LOGIN_SEQUENTIAL" />
+          <ScalarProperty Name="IS_MULTI_DCR_APPROVE" ColumnName="IS_MULTI_DCR_APPROVE" />
+          <ScalarProperty Name="MULTI_DCR_APPROVE_QTY" ColumnName="MULTI_DCR_APPROVE_QTY" />
+          <ScalarProperty Name="IS_DCR_APPROVE_SEQUENTIAL" ColumnName="IS_DCR_APPROVE_SEQUENTIAL" />
+          <ScalarProperty Name="IS_ENABLE" ColumnName="IS_ENABLE" />
+          <ScalarProperty Name="IS_EXISTS" ColumnName="IS_EXISTS" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_BOOK_BRAND_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_BOOK_BRAND_TYPE">
+        <MappingFragment StoreEntitySet="SET_BOOK_BRAND_TYPE">
+          <ScalarProperty Name="BOOK_BRAND_TYPE_NO" ColumnName="BOOK_BRAND_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="BOOK_BRAND_TYPE_NAME" ColumnName="BOOK_BRAND_TYPE_NAME" />
+          <ScalarProperty Name="BOOK_BRAND_TYPE_DESC" ColumnName="BOOK_BRAND_TYPE_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_BOOK_GROUP">
+      <EntityTypeMapping TypeName="Model.SET_BOOK_GROUP">
+        <MappingFragment StoreEntitySet="SET_BOOK_GROUP">
+          <ScalarProperty Name="BOOK_GROUP_NO" ColumnName="BOOK_GROUP_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="BOOK_GROUP_NAME" ColumnName="BOOK_GROUP_NAME" />
+          <ScalarProperty Name="BOOK_GROUP_DESC" ColumnName="BOOK_GROUP_DESC" />
+          <ScalarProperty Name="BOOK_PROJ_TYPE_NO" ColumnName="BOOK_PROJ_TYPE_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_BOOK_PROJ_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_BOOK_PROJ_TYPE">
+        <MappingFragment StoreEntitySet="SET_BOOK_PROJ_TYPE">
+          <ScalarProperty Name="BOOK_PROJ_TYPE_NO" ColumnName="BOOK_PROJ_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="BOOK_PROJ_TYPE_NAME" ColumnName="BOOK_PROJ_TYPE_NAME" />
+          <ScalarProperty Name="BOOK_PROJ_TYPE_DESC" ColumnName="BOOK_PROJ_TYPE_DESC" />
+          <ScalarProperty Name="BOOK_BRAND_TYPE_NO" ColumnName="BOOK_BRAND_TYPE_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_BOOK_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_BOOK_TYPE">
+        <MappingFragment StoreEntitySet="SET_BOOK_TYPE">
+          <ScalarProperty Name="BOOK_TYPE_NO" ColumnName="BOOK_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="BOOK_TYPE_NAME" ColumnName="BOOK_TYPE_NAME" />
+          <ScalarProperty Name="BOOK_TYPE_DESC" ColumnName="BOOK_TYPE_DESC" />
+          <ScalarProperty Name="BOOK_GROUP_NO" ColumnName="BOOK_GROUP_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLASS">
+      <EntityTypeMapping TypeName="Model.SET_CLASS">
+        <MappingFragment StoreEntitySet="SET_CLASS">
+          <ScalarProperty Name="CLASS_NO" ColumnName="CLASS_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="CLASS_NAME" ColumnName="CLASS_NAME" />
+          <ScalarProperty Name="CLASS_NAME_BNG" ColumnName="CLASS_NAME_BNG" />
+          <ScalarProperty Name="CLASS_DESC" ColumnName="CLASS_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENT_INFO">
+      <EntityTypeMapping TypeName="Model.SET_CLIENT_INFO">
+        <MappingFragment StoreEntitySet="SET_CLIENT_INFO">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_NAME_BNG" ColumnName="CLIENT_NAME_BNG" />
+          <ScalarProperty Name="CLIENT_NICK_NAME" ColumnName="CLIENT_NICK_NAME" />
+          <ScalarProperty Name="CLIENT_DOB" ColumnName="CLIENT_DOB" />
+          <ScalarProperty Name="CLIENT_MARRIAGE_DATE" ColumnName="CLIENT_MARRIAGE_DATE" />
+          <ScalarProperty Name="CLIENT_ADDR" ColumnName="CLIENT_ADDR" />
+          <ScalarProperty Name="CLIENT_COMENTS" ColumnName="CLIENT_COMENTS" />
+          <ScalarProperty Name="DIVISION_NO" ColumnName="DIVISION_NO" />
+          <ScalarProperty Name="ZONE_NO" ColumnName="ZONE_NO" />
+          <ScalarProperty Name="ZILLA_NO" ColumnName="ZILLA_NO" />
+          <ScalarProperty Name="THANA_NO" ColumnName="THANA_NO" />
+          <ScalarProperty Name="IS_OFFLINE_ENTRY" ColumnName="IS_OFFLINE_ENTRY" />
+          <ScalarProperty Name="OFFLINE_ENTRY_TIME" ColumnName="OFFLINE_ENTRY_TIME" />
+          <ScalarProperty Name="OFFLINE_ENTRY_SYNC" ColumnName="OFFLINE_ENTRY_SYNC" />
+          <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_COMPANY">
+      <EntityTypeMapping TypeName="Model.SET_COMPANY">
+        <MappingFragment StoreEntitySet="SET_COMPANY">
+          <ScalarProperty Name="COMP_NO" ColumnName="COMP_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="COMP_DESC" ColumnName="COMP_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_DEPARTMENT">
+      <EntityTypeMapping TypeName="Model.SET_DEPARTMENT">
+        <MappingFragment StoreEntitySet="SET_DEPARTMENT">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="COMP_NO" ColumnName="COMP_NO" />
+          <ScalarProperty Name="PARENT_DEPT_NO" ColumnName="PARENT_DEPT_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_DESIGNATION">
+      <EntityTypeMapping TypeName="Model.SET_DESIGNATION">
+        <MappingFragment StoreEntitySet="SET_DESIGNATION">
+          <ScalarProperty Name="DESIG_NO" ColumnName="DESIG_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="DESIG_NAME" ColumnName="DESIG_NAME" />
+          <ScalarProperty Name="DESIG_CODE" ColumnName="DESIG_CODE" />
+          <ScalarProperty Name="DESIG_DESC" ColumnName="DESIG_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_DIVISION">
+      <EntityTypeMapping TypeName="Model.SET_DIVISION">
+        <MappingFragment StoreEntitySet="SET_DIVISION">
+          <ScalarProperty Name="DIVISION_NO" ColumnName="DIVISION_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="DIVISION_NAME" ColumnName="DIVISION_NAME" />
+          <ScalarProperty Name="DIVISION_NAME_BNG" ColumnName="DIVISION_NAME_BNG" />
+          <ScalarProperty Name="DIVISION_CODE" ColumnName="DIVISION_CODE" />
+          <ScalarProperty Name="DIVISION_DESC" ColumnName="DIVISION_DESC" />
+          <ScalarProperty Name="MARKET_DIV_DETAILS" ColumnName="MARKET_DIV_DETAILS" />
+          <ScalarProperty Name="DIVISION_MANAGER" ColumnName="DIVISION_MANAGER" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXISTS" ColumnName="IS_EXISTS" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="ACTUAL_LATI_VAL" ColumnName="ACTUAL_LATI_VAL" />
+          <ScalarProperty Name="ACTUAL_LONG_VAL" ColumnName="ACTUAL_LONG_VAL" />
+          <ScalarProperty Name="FROM_LATI_VAL" ColumnName="FROM_LATI_VAL" />
+          <ScalarProperty Name="FROM_LONG_VAL" ColumnName="FROM_LONG_VAL" />
+          <ScalarProperty Name="TO_LATI_VAL" ColumnName="TO_LATI_VAL" />
+          <ScalarProperty Name="TO_LONG_VAL" ColumnName="TO_LONG_VAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_DIVISION_HIS">
+      <EntityTypeMapping TypeName="Model.SET_DIVISION_HIS">
+        <MappingFragment StoreEntitySet="SET_DIVISION_HIS">
+          <ScalarProperty Name="HIS_NO" ColumnName="HIS_NO" />
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="ACTION_TIME" ColumnName="ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="DIVISION_NO" ColumnName="DIVISION_NO" />
+          <ScalarProperty Name="DIVISION_NAME" ColumnName="DIVISION_NAME" />
+          <ScalarProperty Name="DIVISION_NAME_BNG" ColumnName="DIVISION_NAME_BNG" />
+          <ScalarProperty Name="DIVISION_CODE" ColumnName="DIVISION_CODE" />
+          <ScalarProperty Name="DIVISION_DESC" ColumnName="DIVISION_DESC" />
+          <ScalarProperty Name="MARKET_DIV_DETAILS" ColumnName="MARKET_DIV_DETAILS" />
+          <ScalarProperty Name="DIVISION_MANAGER" ColumnName="DIVISION_MANAGER" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXISTS" ColumnName="IS_EXISTS" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="ACTUAL_LATI_VAL" ColumnName="ACTUAL_LATI_VAL" />
+          <ScalarProperty Name="ACTUAL_LONG_VAL" ColumnName="ACTUAL_LONG_VAL" />
+          <ScalarProperty Name="FROM_LATI_VAL" ColumnName="FROM_LATI_VAL" />
+          <ScalarProperty Name="FROM_LONG_VAL" ColumnName="FROM_LONG_VAL" />
+          <ScalarProperty Name="TO_LATI_VAL" ColumnName="TO_LATI_VAL" />
+          <ScalarProperty Name="TO_LONG_VAL" ColumnName="TO_LONG_VAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_EXP_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_EXP_TYPE">
+        <MappingFragment StoreEntitySet="SET_EXP_TYPE">
+          <ScalarProperty Name="EXP_TYPE_NO" ColumnName="EXP_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="EXP_TYPE_NAME" ColumnName="EXP_TYPE_NAME" />
+          <ScalarProperty Name="EXP_TYPE_DETAILS" ColumnName="EXP_TYPE_DETAILS" />
+          <ScalarProperty Name="EXP_TYPE_DESC" ColumnName="EXP_TYPE_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_FISCAL_YEAR">
+      <EntityTypeMapping TypeName="Model.SET_FISCAL_YEAR">
+        <MappingFragment StoreEntitySet="SET_FISCAL_YEAR">
+          <ScalarProperty Name="FY_NO" ColumnName="FY_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="FY_NAME" ColumnName="FY_NAME" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="IS_CURRENT_YEAR" ColumnName="IS_CURRENT_YEAR" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_INST_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_INST_TYPE">
+        <MappingFragment StoreEntitySet="SET_INST_TYPE">
+          <ScalarProperty Name="INST_TYPE_NO" ColumnName="INST_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="INST_TYPE_NAME" ColumnName="INST_TYPE_NAME" />
+          <ScalarProperty Name="INST_TYPE_CODE" ColumnName="INST_TYPE_CODE" />
+          <ScalarProperty Name="INST_TYPE_DESC" ColumnName="INST_TYPE_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_INSTITUTE">
+      <EntityTypeMapping TypeName="Model.SET_INSTITUTE">
+        <MappingFragment StoreEntitySet="SET_INSTITUTE">
+          <ScalarProperty Name="INSTITUTE_NO" ColumnName="INSTITUTE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="INSTITUTE_NAME" ColumnName="INSTITUTE_NAME" />
+          <ScalarProperty Name="INSTITUTE_NAME_BNG" ColumnName="INSTITUTE_NAME_BNG" />
+          <ScalarProperty Name="INSTITUTE_DESC" ColumnName="INSTITUTE_DESC" />
+          <ScalarProperty Name="INST_TYPE_NO" ColumnName="INST_TYPE_NO" />
+          <ScalarProperty Name="THANA_NO" ColumnName="THANA_NO" />
+          <ScalarProperty Name="F_INSTITUTION_DB_ID" ColumnName="F_INSTITUTION_DB_ID" />
+          <ScalarProperty Name="EIIN_NUMBER" ColumnName="EIIN_NUMBER" />
+          <ScalarProperty Name="MEET_PERSON_NAME" ColumnName="MEET_PERSON_NAME" />
+          <ScalarProperty Name="CONTACT_NUMBER" ColumnName="CONTACT_NUMBER" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="ACTUAL_LATI_VAL" ColumnName="ACTUAL_LATI_VAL" />
+          <ScalarProperty Name="ACTUAL_LONG_VAL" ColumnName="ACTUAL_LONG_VAL" />
+          <ScalarProperty Name="FROM_LATI_VAL" ColumnName="FROM_LATI_VAL" />
+          <ScalarProperty Name="FROM_LONG_VAL" ColumnName="FROM_LONG_VAL" />
+          <ScalarProperty Name="TO_LATI_VAL" ColumnName="TO_LATI_VAL" />
+          <ScalarProperty Name="TO_LONG_VAL" ColumnName="TO_LONG_VAL" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_MASTER_DATA">
+      <EntityTypeMapping TypeName="Model.SET_MASTER_DATA">
+        <MappingFragment StoreEntitySet="SET_MASTER_DATA">
+          <ScalarProperty Name="MASTER_DATA_NO" ColumnName="MASTER_DATA_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="DATA_TYPE_NO" ColumnName="DATA_TYPE_NO" />
+          <ScalarProperty Name="DATA_LABEL" ColumnName="DATA_LABEL" />
+          <ScalarProperty Name="DATA_VALUE" ColumnName="DATA_VALUE" />
+          <ScalarProperty Name="IS_LIST" ColumnName="IS_LIST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_MASTER_DATA_LIST">
+      <EntityTypeMapping TypeName="Model.SET_MASTER_DATA_LIST">
+        <MappingFragment StoreEntitySet="SET_MASTER_DATA_LIST">
+          <ScalarProperty Name="DATA_LIST_NO" ColumnName="DATA_LIST_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="MASTER_DATA_NO" ColumnName="MASTER_DATA_NO" />
+          <ScalarProperty Name="LIST_LABEL" ColumnName="LIST_LABEL" />
+          <ScalarProperty Name="LIST_VALUE" ColumnName="LIST_VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_ORG_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_ORG_TYPE">
+        <MappingFragment StoreEntitySet="SET_ORG_TYPE">
+          <ScalarProperty Name="ORG_TYPE_NO" ColumnName="ORG_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="ORG_TYPE_NAME" ColumnName="ORG_TYPE_NAME" />
+          <ScalarProperty Name="ORG_TYPE_CODE" ColumnName="ORG_TYPE_CODE" />
+          <ScalarProperty Name="ORG_TYPE_DESC" ColumnName="ORG_TYPE_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_PROMO_ITEM">
+      <EntityTypeMapping TypeName="Model.SET_PROMO_ITEM">
+        <MappingFragment StoreEntitySet="SET_PROMO_ITEM">
+          <ScalarProperty Name="PROMO_ITEM_NO" ColumnName="PROMO_ITEM_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="PROMO_ITEM_TYPE_NO" ColumnName="PROMO_ITEM_TYPE_NO" />
+          <ScalarProperty Name="PROMO_ITEM_NAME" ColumnName="PROMO_ITEM_NAME" />
+          <ScalarProperty Name="PROMO_ITEM_CODE" ColumnName="PROMO_ITEM_CODE" />
+          <ScalarProperty Name="PROMO_ITEM_DESC" ColumnName="PROMO_ITEM_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_PROMO_ITEM_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_PROMO_ITEM_TYPE">
+        <MappingFragment StoreEntitySet="SET_PROMO_ITEM_TYPE">
+          <ScalarProperty Name="PROMO_ITEM_TYPE_NO" ColumnName="PROMO_ITEM_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="PROMO_ITEM_TYPE_NAME" ColumnName="PROMO_ITEM_TYPE_NAME" />
+          <ScalarProperty Name="PROMO_ITEM_TYPE_CODE" ColumnName="PROMO_ITEM_TYPE_CODE" />
+          <ScalarProperty Name="PROMO_ITEM_TYPE_DESC" ColumnName="PROMO_ITEM_TYPE_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_REASON">
+      <EntityTypeMapping TypeName="Model.SET_REASON">
+        <MappingFragment StoreEntitySet="SET_REASON">
+          <ScalarProperty Name="REASON_NO" ColumnName="REASON_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="REASON_NAME" ColumnName="REASON_NAME" />
+          <ScalarProperty Name="REASON_CODE" ColumnName="REASON_CODE" />
+          <ScalarProperty Name="REASON_DESC" ColumnName="REASON_DESC" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_SPECIMEN">
+      <EntityTypeMapping TypeName="Model.SET_SPECIMEN">
+        <MappingFragment StoreEntitySet="SET_SPECIMEN">
+          <ScalarProperty Name="SPECIMEN_NO" ColumnName="SPECIMEN_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="SPECIMEN_NAME" ColumnName="SPECIMEN_NAME" />
+          <ScalarProperty Name="SPECIMEN_CODE" ColumnName="SPECIMEN_CODE" />
+          <ScalarProperty Name="SPECIMEN_NAME_BNG" ColumnName="SPECIMEN_NAME_BNG" />
+          <ScalarProperty Name="SPECIMEN_DESC" ColumnName="SPECIMEN_DESC" />
+          <ScalarProperty Name="BOOK_TYPE_NO" ColumnName="BOOK_TYPE_NO" />
+          <ScalarProperty Name="BOOK_UNIQUE_CODE" ColumnName="BOOK_UNIQUE_CODE" />
+          <ScalarProperty Name="POSITION_ID" ColumnName="POSITION_ID" />
+          <ScalarProperty Name="IS_CHECK_BY_ADMIN" ColumnName="IS_CHECK_BY_ADMIN" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_SUBJECT">
+      <EntityTypeMapping TypeName="Model.SET_SUBJECT">
+        <MappingFragment StoreEntitySet="SET_SUBJECT">
+          <ScalarProperty Name="SUBJECT_NO" ColumnName="SUBJECT_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="SUBJECT_NAME" ColumnName="SUBJECT_NAME" />
+          <ScalarProperty Name="SUBJECT_NAME_BNG" ColumnName="SUBJECT_NAME_BNG" />
+          <ScalarProperty Name="SUBJECT_CODE" ColumnName="SUBJECT_CODE" />
+          <ScalarProperty Name="SUBJECT_DESC" ColumnName="SUBJECT_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_TEACHER_CONTACT">
+      <EntityTypeMapping TypeName="Model.SET_TEACHER_CONTACT">
+        <MappingFragment StoreEntitySet="SET_TEACHER_CONTACT">
+          <ScalarProperty Name="TEACH_CONTACT_NO" ColumnName="TEACH_CONTACT_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="TEACHER_NO" ColumnName="TEACHER_NO" />
+          <ScalarProperty Name="CONTACT_NUMBER" ColumnName="CONTACT_NUMBER" />
+          <ScalarProperty Name="IS_FIRST_PRIORITY" ColumnName="IS_FIRST_PRIORITY" />
+          <ScalarProperty Name="IS_NUMBER_WORKING" ColumnName="IS_NUMBER_WORKING" />
+          <ScalarProperty Name="IS_OFFLINE_ENTRY" ColumnName="IS_OFFLINE_ENTRY" />
+          <ScalarProperty Name="OFFLINE_ENTRY_TIME" ColumnName="OFFLINE_ENTRY_TIME" />
+          <ScalarProperty Name="OFFLINE_ENTRY_SYNC" ColumnName="OFFLINE_ENTRY_SYNC" />
+          <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_TEACHER_DESIG">
+      <EntityTypeMapping TypeName="Model.SET_TEACHER_DESIG">
+        <MappingFragment StoreEntitySet="SET_TEACHER_DESIG">
+          <ScalarProperty Name="TEACH_DESIG_NO" ColumnName="TEACH_DESIG_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="TEACHER_DESIG_NAME" ColumnName="TEACHER_DESIG_NAME" />
+          <ScalarProperty Name="TEACHER_DESIG_NAME_BNG" ColumnName="TEACHER_DESIG_NAME_BNG" />
+          <ScalarProperty Name="TEACHER_DESIG_DESC" ColumnName="TEACHER_DESIG_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_TEACHER_INFO">
+      <EntityTypeMapping TypeName="Model.SET_TEACHER_INFO">
+        <MappingFragment StoreEntitySet="SET_TEACHER_INFO">
+          <ScalarProperty Name="TEACHER_NO" ColumnName="TEACHER_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="TEACHER_NAME" ColumnName="TEACHER_NAME" />
+          <ScalarProperty Name="TEACHER_NAME_BNG" ColumnName="TEACHER_NAME_BNG" />
+          <ScalarProperty Name="TEACHER_NICK_NAME" ColumnName="TEACHER_NICK_NAME" />
+          <ScalarProperty Name="TEACHER_DOB" ColumnName="TEACHER_DOB" />
+          <ScalarProperty Name="TEACHER_MARRIAGE_DATE" ColumnName="TEACHER_MARRIAGE_DATE" />
+          <ScalarProperty Name="TEACHER_ADDR" ColumnName="TEACHER_ADDR" />
+          <ScalarProperty Name="TEACHER_COMENTS" ColumnName="TEACHER_COMENTS" />
+          <ScalarProperty Name="INSTITUTE_NO" ColumnName="INSTITUTE_NO" />
+          <ScalarProperty Name="TEACH_DESIG_NO" ColumnName="TEACH_DESIG_NO" />
+          <ScalarProperty Name="IS_OFFLINE_ENTRY" ColumnName="IS_OFFLINE_ENTRY" />
+          <ScalarProperty Name="OFFLINE_ENTRY_TIME" ColumnName="OFFLINE_ENTRY_TIME" />
+          <ScalarProperty Name="OFFLINE_ENTRY_SYNC" ColumnName="OFFLINE_ENTRY_SYNC" />
+          <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_TEACHER_SUBJECT">
+      <EntityTypeMapping TypeName="Model.SET_TEACHER_SUBJECT">
+        <MappingFragment StoreEntitySet="SET_TEACHER_SUBJECT">
+          <ScalarProperty Name="TEACH_SUB_NO" ColumnName="TEACH_SUB_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="TEACHER_NO" ColumnName="TEACHER_NO" />
+          <ScalarProperty Name="SUBJECT_NO" ColumnName="SUBJECT_NO" />
+          <ScalarProperty Name="CLASS_NO" ColumnName="CLASS_NO" />
+          <ScalarProperty Name="IS_ALL_CLASS" ColumnName="IS_ALL_CLASS" />
+          <ScalarProperty Name="IS_OFFLINE_ENTRY" ColumnName="IS_OFFLINE_ENTRY" />
+          <ScalarProperty Name="OFFLINE_ENTRY_TIME" ColumnName="OFFLINE_ENTRY_TIME" />
+          <ScalarProperty Name="OFFLINE_ENTRY_SYNC" ColumnName="OFFLINE_ENTRY_SYNC" />
+          <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_THANA">
+      <EntityTypeMapping TypeName="Model.SET_THANA">
+        <MappingFragment StoreEntitySet="SET_THANA">
+          <ScalarProperty Name="THANA_NO" ColumnName="THANA_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="ZONE_NO" ColumnName="ZONE_NO" />
+          <ScalarProperty Name="ZILLA_NO" ColumnName="ZILLA_NO" />
+          <ScalarProperty Name="THANA_NAME" ColumnName="THANA_NAME" />
+          <ScalarProperty Name="THANA_NAME_BNG" ColumnName="THANA_NAME_BNG" />
+          <ScalarProperty Name="THANA_CODE" ColumnName="THANA_CODE" />
+          <ScalarProperty Name="THANA_DESC" ColumnName="THANA_DESC" />
+          <ScalarProperty Name="ACTUAL_LATI_VAL" ColumnName="ACTUAL_LATI_VAL" />
+          <ScalarProperty Name="ACTUAL_LONG_VAL" ColumnName="ACTUAL_LONG_VAL" />
+          <ScalarProperty Name="FROM_LATI_VAL" ColumnName="FROM_LATI_VAL" />
+          <ScalarProperty Name="FROM_LONG_VAL" ColumnName="FROM_LONG_VAL" />
+          <ScalarProperty Name="TO_LATI_VAL" ColumnName="TO_LATI_VAL" />
+          <ScalarProperty Name="TO_LONG_VAL" ColumnName="TO_LONG_VAL" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_TRANSPORT_TYPE">
+      <EntityTypeMapping TypeName="Model.SET_TRANSPORT_TYPE">
+        <MappingFragment StoreEntitySet="SET_TRANSPORT_TYPE">
+          <ScalarProperty Name="TRANS_TYPE_NO" ColumnName="TRANS_TYPE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="TRANS_TYPE_NAME" ColumnName="TRANS_TYPE_NAME" />
+          <ScalarProperty Name="TRANS_TYPE_DETAILS" ColumnName="TRANS_TYPE_DETAILS" />
+          <ScalarProperty Name="TRANS_TYPE_DESC" ColumnName="TRANS_TYPE_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_WORK_PURPOSE">
+      <EntityTypeMapping TypeName="Model.SET_WORK_PURPOSE">
+        <MappingFragment StoreEntitySet="SET_WORK_PURPOSE">
+          <ScalarProperty Name="WORK_PUR_NO" ColumnName="WORK_PUR_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="WORK_PUR_NAME" ColumnName="WORK_PUR_NAME" />
+          <ScalarProperty Name="WORK_PUR_DETAILS" ColumnName="WORK_PUR_DETAILS" />
+          <ScalarProperty Name="WORK_PUR_CODE" ColumnName="WORK_PUR_CODE" />
+          <ScalarProperty Name="WORK_PUR_DESC" ColumnName="WORK_PUR_DESC" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_ZILLA">
+      <EntityTypeMapping TypeName="Model.SET_ZILLA">
+        <MappingFragment StoreEntitySet="SET_ZILLA">
+          <ScalarProperty Name="ZILLA_NO" ColumnName="ZILLA_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="DIVISION_NO" ColumnName="DIVISION_NO" />
+          <ScalarProperty Name="ZILLA_NAME" ColumnName="ZILLA_NAME" />
+          <ScalarProperty Name="ZILLA_NAME_BNG" ColumnName="ZILLA_NAME_BNG" />
+          <ScalarProperty Name="ZILLA_CODE" ColumnName="ZILLA_CODE" />
+          <ScalarProperty Name="ZILLA_DESC" ColumnName="ZILLA_DESC" />
+          <ScalarProperty Name="DIVISION_NAME" ColumnName="DIVISION_NAME" />
+          <ScalarProperty Name="ACTUAL_LATI_VAL" ColumnName="ACTUAL_LATI_VAL" />
+          <ScalarProperty Name="ACTUAL_LONG_VAL" ColumnName="ACTUAL_LONG_VAL" />
+          <ScalarProperty Name="FROM_LATI_VAL" ColumnName="FROM_LATI_VAL" />
+          <ScalarProperty Name="FROM_LONG_VAL" ColumnName="FROM_LONG_VAL" />
+          <ScalarProperty Name="TO_LATI_VAL" ColumnName="TO_LATI_VAL" />
+          <ScalarProperty Name="TO_LONG_VAL" ColumnName="TO_LONG_VAL" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_ZONE">
+      <EntityTypeMapping TypeName="Model.SET_ZONE">
+        <MappingFragment StoreEntitySet="SET_ZONE">
+          <ScalarProperty Name="ZONE_NO" ColumnName="ZONE_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="IS_MIGRATED" ColumnName="IS_MIGRATED" />
+          <ScalarProperty Name="MIGRATE_DATE" ColumnName="MIGRATE_DATE" />
+          <ScalarProperty Name="MIGRATE_COMMENTS" ColumnName="MIGRATE_COMMENTS" />
+          <ScalarProperty Name="DIVISION_NO" ColumnName="DIVISION_NO" />
+          <ScalarProperty Name="ZONE_NAME" ColumnName="ZONE_NAME" />
+          <ScalarProperty Name="ZONE_NAME_BNG" ColumnName="ZONE_NAME_BNG" />
+          <ScalarProperty Name="ZONE_CODE" ColumnName="ZONE_CODE" />
+          <ScalarProperty Name="ZONE_DETAILS" ColumnName="ZONE_DETAILS" />
+          <ScalarProperty Name="ZONE_DESC" ColumnName="ZONE_DESC" />
+          <ScalarProperty Name="TOTAL_STUDENTS" ColumnName="TOTAL_STUDENTS" />
+          <ScalarProperty Name="ZONE_GRADE" ColumnName="ZONE_GRADE" />
+          <ScalarProperty Name="ACTUAL_LATI_VAL" ColumnName="ACTUAL_LATI_VAL" />
+          <ScalarProperty Name="ACTUAL_LONG_VAL" ColumnName="ACTUAL_LONG_VAL" />
+          <ScalarProperty Name="FROM_LATI_VAL" ColumnName="FROM_LATI_VAL" />
+          <ScalarProperty Name="FROM_LONG_VAL" ColumnName="FROM_LONG_VAL" />
+          <ScalarProperty Name="TO_LATI_VAL" ColumnName="TO_LATI_VAL" />
+          <ScalarProperty Name="TO_LONG_VAL" ColumnName="TO_LONG_VAL" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="IS_VOID" ColumnName="IS_VOID" />
+          <ScalarProperty Name="IS_EXIST" ColumnName="IS_EXIST" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="SL_NUM" ColumnName="SL_NUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_DCR">
+      <EntityTypeMapping TypeName="Model.TRN_DCR">
+        <MappingFragment StoreEntitySet="TRN_DCR">
+          <ScalarProperty Name="DCR_NO" ColumnName="DCR_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="LAST_ACTION_OFFLINE_TIME" ColumnName="LAST_ACTION_OFFLINE_TIME" />
+          <ScalarProperty Name="LAST_ACTION_OFFLINE_SYNC" ColumnName="LAST_ACTION_OFFLINE_SYNC" />
+          <ScalarProperty Name="LAST_IS_OFFLINE" ColumnName="LAST_IS_OFFLINE" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="INSERT_OFFLINE_TIME" ColumnName="INSERT_OFFLINE_TIME" />
+          <ScalarProperty Name="INSERT_OFFLINE_SYNC" ColumnName="INSERT_OFFLINE_SYNC" />
+          <ScalarProperty Name="INSERT_IS_OFFLINE" ColumnName="INSERT_IS_OFFLINE" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_OFFLINE_TIME" ColumnName="UPDATE_OFFLINE_TIME" />
+          <ScalarProperty Name="UPDATE_OFFLINE_SYNC" ColumnName="UPDATE_OFFLINE_SYNC" />
+          <ScalarProperty Name="UPDATE_IS_OFFLINE" ColumnName="UPDATE_IS_OFFLINE" />
+          <ScalarProperty Name="FY_NO" ColumnName="FY_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="AGENT_USER_NO" ColumnName="AGENT_USER_NO" />
+          <ScalarProperty Name="TRN_DCR_DATE" ColumnName="TRN_DCR_DATE" />
+          <ScalarProperty Name="APPROVE_TYPE_NO" ColumnName="APPROVE_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="APPROVE_REQUIRED_QTY" ColumnName="APPROVE_REQUIRED_QTY" />
+          <ScalarProperty Name="APPROVE_AQUIRED_QTY" ColumnName="APPROVE_AQUIRED_QTY" />
+          <ScalarProperty Name="ORDER_QTY" ColumnName="ORDER_QTY" />
+          <ScalarProperty Name="COLLECTION_QTY" ColumnName="COLLECTION_QTY" />
+          <ScalarProperty Name="OTH_EXP_DETAILS" ColumnName="OTH_EXP_DETAILS" />
+          <ScalarProperty Name="OTH_EXP_AMT" ColumnName="OTH_EXP_AMT" />
+          <ScalarProperty Name="OFFICIAL_CALL_MINUTES" ColumnName="OFFICIAL_CALL_MINUTES" />
+          <ScalarProperty Name="MARKET_CALL_MINUTES" ColumnName="MARKET_CALL_MINUTES" />
+          <ScalarProperty Name="IS_TRN_LOCKED" ColumnName="IS_TRN_LOCKED" />
+          <ScalarProperty Name="IS_LOCK_BY_SYSTEM" ColumnName="IS_LOCK_BY_SYSTEM" />
+          <ScalarProperty Name="TRN_LOCK_DATE" ColumnName="TRN_LOCK_DATE" />
+          <ScalarProperty Name="TRN_LOCK_USER_NO" ColumnName="TRN_LOCK_USER_NO" />
+          <ScalarProperty Name="TRN_LOCK_LOGON_NO" ColumnName="TRN_LOCK_LOGON_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_DCR_APPROVE">
+      <EntityTypeMapping TypeName="Model.TRN_DCR_APPROVE">
+        <MappingFragment StoreEntitySet="TRN_DCR_APPROVE">
+          <ScalarProperty Name="DCR_APPROVE_NO" ColumnName="DCR_APPROVE_NO" />
+          <ScalarProperty Name="DCR_NO" ColumnName="DCR_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="APPROVE_TYPE_NO" ColumnName="APPROVE_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="APPROVE_SEQUENCE" ColumnName="APPROVE_SEQUENCE" />
+          <ScalarProperty Name="APPROVE_COMMENTS" ColumnName="APPROVE_COMMENTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_DCR_DET">
+      <EntityTypeMapping TypeName="Model.TRN_DCR_DET">
+        <MappingFragment StoreEntitySet="TRN_DCR_DET">
+          <ScalarProperty Name="DCR_DET_NO" ColumnName="DCR_DET_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="LAST_ACTION_OFFLINE_TIME" ColumnName="LAST_ACTION_OFFLINE_TIME" />
+          <ScalarProperty Name="LAST_ACTION_OFFLINE_SYNC" ColumnName="LAST_ACTION_OFFLINE_SYNC" />
+          <ScalarProperty Name="LAST_IS_OFFLINE" ColumnName="LAST_IS_OFFLINE" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="INSERT_OFFLINE_TIME" ColumnName="INSERT_OFFLINE_TIME" />
+          <ScalarProperty Name="INSERT_OFFLINE_SYNC" ColumnName="INSERT_OFFLINE_SYNC" />
+          <ScalarProperty Name="INSERT_IS_OFFLINE" ColumnName="INSERT_IS_OFFLINE" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_OFFLINE_TIME" ColumnName="UPDATE_OFFLINE_TIME" />
+          <ScalarProperty Name="UPDATE_OFFLINE_SYNC" ColumnName="UPDATE_OFFLINE_SYNC" />
+          <ScalarProperty Name="UPDATE_IS_OFFLINE" ColumnName="UPDATE_IS_OFFLINE" />
+          <ScalarProperty Name="DCR_NO" ColumnName="DCR_NO" />
+          <ScalarProperty Name="DCR_TYPE_NO" ColumnName="DCR_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_TYPE_NO" ColumnName="APPROVE_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_TIME" ColumnName="APPROVE_TIME" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="REASON_NO" ColumnName="REASON_NO" />
+          <ScalarProperty Name="REAMRKS" ColumnName="REAMRKS" />
+          <ScalarProperty Name="WORK_AREA_FROM_LAT" ColumnName="WORK_AREA_FROM_LAT" />
+          <ScalarProperty Name="WORK_AREA_FROM_LON" ColumnName="WORK_AREA_FROM_LON" />
+          <ScalarProperty Name="WORK_AREA_FROM_NAME" ColumnName="WORK_AREA_FROM_NAME" />
+          <ScalarProperty Name="WORK_AREA_TO_LAT" ColumnName="WORK_AREA_TO_LAT" />
+          <ScalarProperty Name="WORK_AREA_TO_LON" ColumnName="WORK_AREA_TO_LON" />
+          <ScalarProperty Name="WORK_AREA_TO_NAME" ColumnName="WORK_AREA_TO_NAME" />
+          <ScalarProperty Name="TIME_FROM" ColumnName="TIME_FROM" />
+          <ScalarProperty Name="TIME_TO" ColumnName="TIME_TO" />
+          <ScalarProperty Name="TIME_GAP" ColumnName="TIME_GAP" />
+          <ScalarProperty Name="DIVISION_NO" ColumnName="DIVISION_NO" />
+          <ScalarProperty Name="ZONE_NO" ColumnName="ZONE_NO" />
+          <ScalarProperty Name="ZILLA_NO" ColumnName="ZILLA_NO" />
+          <ScalarProperty Name="THANA_NO" ColumnName="THANA_NO" />
+          <ScalarProperty Name="INSTITUTE_NO" ColumnName="INSTITUTE_NO" />
+          <ScalarProperty Name="IS_FOR_TEACHER" ColumnName="IS_FOR_TEACHER" />
+          <ScalarProperty Name="TEACHER_NO" ColumnName="TEACHER_NO" />
+          <ScalarProperty Name="MEET_PERSON_NAME" ColumnName="MEET_PERSON_NAME" />
+          <ScalarProperty Name="MEET_PERSON_MOBILE" ColumnName="MEET_PERSON_MOBILE" />
+          <ScalarProperty Name="SPECIMEN_NO" ColumnName="SPECIMEN_NO" />
+          <ScalarProperty Name="SPECIMEN_QTY" ColumnName="SPECIMEN_QTY" />
+          <ScalarProperty Name="REF_ZM_USER_NO" ColumnName="REF_ZM_USER_NO" />
+          <ScalarProperty Name="WORK_PUR_NO" ColumnName="WORK_PUR_NO" />
+          <ScalarProperty Name="TRANS_TYPE_NO" ColumnName="TRANS_TYPE_NO" />
+          <ScalarProperty Name="IS_CONVEYANCE" ColumnName="IS_CONVEYANCE" />
+          <ScalarProperty Name="CONVENYANCE_BILL" ColumnName="CONVENYANCE_BILL" />
+          <ScalarProperty Name="IS_SMS_IMPORT" ColumnName="IS_SMS_IMPORT" />
+          <ScalarProperty Name="SMS_REC_NO" ColumnName="SMS_REC_NO" />
+          <ScalarProperty Name="SMS_IMPORT_TIME" ColumnName="SMS_IMPORT_TIME" />
+          <ScalarProperty Name="SMS_IMPORT_USER_NO" ColumnName="SMS_IMPORT_USER_NO" />
+          <ScalarProperty Name="SMS_IMPORT_LOGON_NO" ColumnName="SMS_IMPORT_LOGON_NO" />
+          <ScalarProperty Name="PROMO_ITEM_NO" ColumnName="PROMO_ITEM_NO" />
+          <ScalarProperty Name="IS_FOR_CLIENT" ColumnName="IS_FOR_CLIENT" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="IS_PLAIN_ENTRY" ColumnName="IS_PLAIN_ENTRY" />
+          <ScalarProperty Name="PROMO_NAME" ColumnName="PROMO_NAME" />
+          <ScalarProperty Name="PROMO_DOB" ColumnName="PROMO_DOB" />
+          <ScalarProperty Name="PROMO_MOBILE" ColumnName="PROMO_MOBILE" />
+          <ScalarProperty Name="PROMO_ADDR" ColumnName="PROMO_ADDR" />
+          <ScalarProperty Name="PROMO_ORGANIZATION" ColumnName="PROMO_ORGANIZATION" />
+          <ScalarProperty Name="ORG_TYPE_NO" ColumnName="ORG_TYPE_NO" />
+          <ScalarProperty Name="PROMO_ITEM_QTY" ColumnName="PROMO_ITEM_QTY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_DOWNLOAD_LOG">
+      <EntityTypeMapping TypeName="Model.TRN_DOWNLOAD_LOG">
+        <MappingFragment StoreEntitySet="TRN_DOWNLOAD_LOG">
+          <ScalarProperty Name="DOWN_NO" ColumnName="DOWN_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="DOWN_DATE" ColumnName="DOWN_DATE" />
+          <ScalarProperty Name="SESS_ID" ColumnName="SESS_ID" />
+          <ScalarProperty Name="LOGIN_MOBILE" ColumnName="LOGIN_MOBILE" />
+          <ScalarProperty Name="WEB_SERVER_ID" ColumnName="WEB_SERVER_ID" />
+          <ScalarProperty Name="APP_VERSION" ColumnName="APP_VERSION" />
+          <ScalarProperty Name="LOGIN_SIM" ColumnName="LOGIN_SIM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_MSG">
+      <EntityTypeMapping TypeName="Model.TRN_MSG">
+        <MappingFragment StoreEntitySet="TRN_MSG">
+          <ScalarProperty Name="MSG_NO" ColumnName="MSG_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="FROM_USER_NO" ColumnName="FROM_USER_NO" />
+          <ScalarProperty Name="MSG_SUBJECT" ColumnName="MSG_SUBJECT" />
+          <ScalarProperty Name="MSG_BODY" ColumnName="MSG_BODY" />
+          <ScalarProperty Name="IS_FOR_ALL" ColumnName="IS_FOR_ALL" />
+          <ScalarProperty Name="IS_REPLY_ALLOW" ColumnName="IS_REPLY_ALLOW" />
+          <ScalarProperty Name="REF_MSG_NO" ColumnName="REF_MSG_NO" />
+          <ScalarProperty Name="IS_REPLY" ColumnName="IS_REPLY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_MSG_RECIEVER">
+      <EntityTypeMapping TypeName="Model.TRN_MSG_RECIEVER">
+        <MappingFragment StoreEntitySet="TRN_MSG_RECIEVER">
+          <ScalarProperty Name="MSG_REC_NO" ColumnName="MSG_REC_NO" />
+          <ScalarProperty Name="LAST_ACTION" ColumnName="LAST_ACTION" />
+          <ScalarProperty Name="LAST_ACTION_TIME" ColumnName="LAST_ACTION_TIME" />
+          <ScalarProperty Name="LAST_ACTION_USER_NO" ColumnName="LAST_ACTION_USER_NO" />
+          <ScalarProperty Name="LAST_ACTION_LOGON_NO" ColumnName="LAST_ACTION_LOGON_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="MSG_NO" ColumnName="MSG_NO" />
+          <ScalarProperty Name="REC_USER_NO" ColumnName="REC_USER_NO" />
+          <ScalarProperty Name="IS_READ" ColumnName="IS_READ" />
+          <ScalarProperty Name="READ_TIME" ColumnName="READ_TIME" />
+          <ScalarProperty Name="READ_USER_NO" ColumnName="READ_USER_NO" />
+          <ScalarProperty Name="READ_LOGON_NO" ColumnName="READ_LOGON_NO" />
+          <ScalarProperty Name="READ_OFFLINE_TIME" ColumnName="READ_OFFLINE_TIME" />
+          <ScalarProperty Name="READ_OFFLINE_SYNC" ColumnName="READ_OFFLINE_SYNC" />
+          <ScalarProperty Name="READ_IS_OFFLINE" ColumnName="READ_IS_OFFLINE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_SMS_RECEIVE">
+      <EntityTypeMapping TypeName="Model.TRN_SMS_RECEIVE">
+        <MappingFragment StoreEntitySet="TRN_SMS_RECEIVE">
+          <ScalarProperty Name="SMS_REC_NO" ColumnName="SMS_REC_NO" />
+          <ScalarProperty Name="FROM_MOBILE" ColumnName="FROM_MOBILE" />
+          <ScalarProperty Name="SMS_DATE" ColumnName="SMS_DATE" />
+          <ScalarProperty Name="SMS_BODY" ColumnName="SMS_BODY" />
+          <ScalarProperty Name="IS_VALID_FORMAT" ColumnName="IS_VALID_FORMAT" />
+          <ScalarProperty Name="APPROVE_TYPE_NO" ColumnName="APPROVE_TYPE_NO" />
+          <ScalarProperty Name="APPROVE_USER_NO" ColumnName="APPROVE_USER_NO" />
+          <ScalarProperty Name="APPROVE_LOGON_NO" ColumnName="APPROVE_LOGON_NO" />
+          <ScalarProperty Name="IS_PROCESSED" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="PROCESS_USER_NO" ColumnName="PROCESS_USER_NO" />
+          <ScalarProperty Name="PROCESS_LOGON_NO" ColumnName="PROCESS_LOGON_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_SMS_SEND">
+      <EntityTypeMapping TypeName="Model.TRN_SMS_SEND">
+        <MappingFragment StoreEntitySet="TRN_SMS_SEND">
+          <ScalarProperty Name="SMS_SEND_NO" ColumnName="SMS_SEND_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="INSERT_TIME" ColumnName="INSERT_TIME" />
+          <ScalarProperty Name="INSERT_USER_NO" ColumnName="INSERT_USER_NO" />
+          <ScalarProperty Name="INSERT_LOGON_NO" ColumnName="INSERT_LOGON_NO" />
+          <ScalarProperty Name="SMS_TYPE_NO" ColumnName="SMS_TYPE_NO" />
+          <ScalarProperty Name="FROM_MOBILE" ColumnName="FROM_MOBILE" />
+          <ScalarProperty Name="TO_MOBILE" ColumnName="TO_MOBILE" />
+          <ScalarProperty Name="SMS_BODY" ColumnName="SMS_BODY" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+          <ScalarProperty Name="SMS_RESPONSE_TEXT" ColumnName="SMS_RESPONSE_TEXT" />
+          <ScalarProperty Name="SMS_PROVIDER_NAME" ColumnName="SMS_PROVIDER_NAME" />
+          <ScalarProperty Name="IS_SUCCESS" ColumnName="IS_SUCCESS" />
+          <ScalarProperty Name="IS_DELIVERED" ColumnName="IS_DELIVERED" />
+          <ScalarProperty Name="DELIVERY_TIME" ColumnName="DELIVERY_TIME" />
+          <ScalarProperty Name="IS_RETRY" ColumnName="IS_RETRY" />
+          <ScalarProperty Name="PARENT_SMS_SEND_NO" ColumnName="PARENT_SMS_SEND_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_UPLOAD_LOG">
+      <EntityTypeMapping TypeName="Model.TRN_UPLOAD_LOG">
+        <MappingFragment StoreEntitySet="TRN_UPLOAD_LOG">
+          <ScalarProperty Name="UP_NO" ColumnName="UP_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="UP_DATE" ColumnName="UP_DATE" />
+          <ScalarProperty Name="SESS_ID" ColumnName="SESS_ID" />
+          <ScalarProperty Name="LOGIN_MOBILE" ColumnName="LOGIN_MOBILE" />
+          <ScalarProperty Name="WEB_SERVER_ID" ColumnName="WEB_SERVER_ID" />
+          <ScalarProperty Name="APP_VERSION" ColumnName="APP_VERSION" />
+          <ScalarProperty Name="LOGIN_SIM" ColumnName="LOGIN_SIM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_VW_ASPNET_APPLICATIONS">
+      <EntityTypeMapping TypeName="Model.ORA_VW_ASPNET_APPLICATIONS">
+        <MappingFragment StoreEntitySet="ORA_VW_ASPNET_APPLICATIONS">
+          <ScalarProperty Name="APPLICATIONNAME" ColumnName="APPLICATIONNAME" />
+          <ScalarProperty Name="LOWEREDAPPLICATIONNAME" ColumnName="LOWEREDAPPLICATIONNAME" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_VW_ASPNET_MEMUSERS">
+      <EntityTypeMapping TypeName="Model.ORA_VW_ASPNET_MEMUSERS">
+        <MappingFragment StoreEntitySet="ORA_VW_ASPNET_MEMUSERS">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PASSWORDFORMAT" ColumnName="PASSWORDFORMAT" />
+          <ScalarProperty Name="MOBILEPIN" ColumnName="MOBILEPIN" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="LOWEREDEMAIL" ColumnName="LOWEREDEMAIL" />
+          <ScalarProperty Name="PASSWORDQUESTION" ColumnName="PASSWORDQUESTION" />
+          <ScalarProperty Name="PASSWORDANSWER" ColumnName="PASSWORDANSWER" />
+          <ScalarProperty Name="ISAPPROVED" ColumnName="ISAPPROVED" />
+          <ScalarProperty Name="ISLOCKEDOUT" ColumnName="ISLOCKEDOUT" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="LASTLOGINDATE" ColumnName="LASTLOGINDATE" />
+          <ScalarProperty Name="LASTPASSWORDCHANGEDDATE" ColumnName="LASTPASSWORDCHANGEDDATE" />
+          <ScalarProperty Name="LASTLOCKOUTDATE" ColumnName="LASTLOCKOUTDATE" />
+          <ScalarProperty Name="FAILEDPWDATTEMPTCOUNT" ColumnName="FAILEDPWDATTEMPTCOUNT" />
+          <ScalarProperty Name="FAILEDPWDATTEMPTWINSTART" ColumnName="FAILEDPWDATTEMPTWINSTART" />
+          <ScalarProperty Name="FAILEDPWDANSWERATTEMPTCOUNT" ColumnName="FAILEDPWDANSWERATTEMPTCOUNT" />
+          <ScalarProperty Name="FAILEDPWDANSWERATTEMPTWINSTART" ColumnName="FAILEDPWDANSWERATTEMPTWINSTART" />
+          <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="MOBILEALIAS" ColumnName="MOBILEALIAS" />
+          <ScalarProperty Name="ISANONYMOUS" ColumnName="ISANONYMOUS" />
+          <ScalarProperty Name="LASTACTIVITYDATE" ColumnName="LASTACTIVITYDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_VW_ASPNET_PROFILES">
+      <EntityTypeMapping TypeName="Model.ORA_VW_ASPNET_PROFILES">
+        <MappingFragment StoreEntitySet="ORA_VW_ASPNET_PROFILES">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="LASTUPDATEDDATE" ColumnName="LASTUPDATEDDATE" />
+          <ScalarProperty Name="DATASIZE" ColumnName="DATASIZE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_VW_ASPNET_ROLES">
+      <EntityTypeMapping TypeName="Model.ORA_VW_ASPNET_ROLES">
+        <MappingFragment StoreEntitySet="ORA_VW_ASPNET_ROLES">
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+          <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+          <ScalarProperty Name="LOWEREDROLENAME" ColumnName="LOWEREDROLENAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_VW_ASPNET_SESSIONS">
+      <EntityTypeMapping TypeName="Model.ORA_VW_ASPNET_SESSIONS">
+        <MappingFragment StoreEntitySet="ORA_VW_ASPNET_SESSIONS">
+          <ScalarProperty Name="SESSIONID" ColumnName="SESSIONID" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="EXPIRES" ColumnName="EXPIRES" />
+          <ScalarProperty Name="LOCKDATE" ColumnName="LOCKDATE" />
+          <ScalarProperty Name="LOCKDATELOCAL" ColumnName="LOCKDATELOCAL" />
+          <ScalarProperty Name="LOCKCOOKIE" ColumnName="LOCKCOOKIE" />
+          <ScalarProperty Name="TIMEOUT" ColumnName="TIMEOUT" />
+          <ScalarProperty Name="LOCKED" ColumnName="LOCKED" />
+          <ScalarProperty Name="DATASIZE" ColumnName="DATASIZE" />
+          <ScalarProperty Name="FLAGS" ColumnName="FLAGS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_VW_ASPNET_UIR">
+      <EntityTypeMapping TypeName="Model.ORA_VW_ASPNET_UIR">
+        <MappingFragment StoreEntitySet="ORA_VW_ASPNET_UIR">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORA_VW_ASPNET_USERS">
+      <EntityTypeMapping TypeName="Model.ORA_VW_ASPNET_USERS">
+        <MappingFragment StoreEntitySet="ORA_VW_ASPNET_USERS">
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="LOWEREDUSERNAME" ColumnName="LOWEREDUSERNAME" />
+          <ScalarProperty Name="MOBILEALIAS" ColumnName="MOBILEALIAS" />
+          <ScalarProperty Name="ISANONYMOUS" ColumnName="ISANONYMOUS" />
+          <ScalarProperty Name="LASTACTIVITYDATE" ColumnName="LASTACTIVITYDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ORA_ASPNET_USERSINROLES" TypeName="Model.ORA_ASPNET_USERSINROLES" StoreEntitySet="ORA_ASPNET_USERSINROLES">
+      <EndProperty Name="ORA_ASPNET_ROLES">
+        <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+      </EndProperty>
+      <EndProperty Name="ORA_ASPNET_USERS">
+        <ScalarProperty Name="USERID" ColumnName="USERID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="SEC_USERS_INSERT" FunctionName="Model.Store.SEC_USERS_INSERT" />
+  </EntityContainerMapping>
+</Mapping>

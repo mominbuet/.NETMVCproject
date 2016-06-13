@@ -1,0 +1,63 @@
+﻿@model OG_SLN.SET_PROMO_ITEM_TYPE
+@{
+    ViewBag.Title = "Delete";
+}
+<h2>
+    Delete</h2>
+<h3>
+    Are you sure you want to delete this?</h3>
+    <div class="rpt_1">
+<fieldset>
+        <legend>Promotional Item Type</legend>
+        <div class="display-label">
+            Type Name
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PROMO_ITEM_TYPE_NAME)
+        </div>
+        <div class="display-label">
+            Type Code
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PROMO_ITEM_TYPE_CODE)
+        </div>
+        <div class="display-label">
+            Type Desctiption
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PROMO_ITEM_TYPE_DESC)
+        </div>
+        <div class="display-label">
+            Active
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ACTIVE_ITEM_TYPE)
+        </div>
+        <div class="display-label">
+            Active From
+        </div>
+        <div class="display-field">
+            @Html.ValueFor(model => model.ACTIVE_FROM, "{0:yyyy-MM-dd}")
+        </div>
+        <div class="display-label">
+            Active To
+        </div>
+        <div class="display-field">
+            @Html.ValueFor(model => model.ACTIVE_TO, "{0:yyyy-MM-dd}")
+        </div>
+        <div class="display-label">
+            Sl Num
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SL_NUM, "{0:0}")
+        </div>
+    </fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        |
+        @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+    </p>
+}
+</div>

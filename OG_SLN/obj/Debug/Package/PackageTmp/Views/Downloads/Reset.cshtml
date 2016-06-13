@@ -1,0 +1,184 @@
+﻿@model System.Data.Objects.ObjectResult<OG_SLN.DOWNLOAD_RESET_ZONAL_GET_Result>
+
+@using OG_SLN.Helpers
+
+@{
+    ViewBag.Title = "Reset Downloads";
+}
+
+
+<h2>Reset Downloads</h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Search_Division').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Division").val(),type:"division"} ,
+            function( data ) {
+                $("#Search_Zilla").html(data.zill);
+                $("#Search_Thana").html(data.thana);
+            });
+        });
+        $('#Search_Zilla').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#Search_Zilla").val(),type:"zilla"} ,
+            function( data ) {
+                $("#Search_Thana").html(data.thana);
+            });
+        });
+
+        $('.resetdown').click(function(){
+            if(confirm("Do you want to reset downloads?"))
+            {
+                var thiselement = this;
+                var username = $(this).attr('data-username');
+                var dateupto = $(this).parent().siblings('.tddate').children('.dateclass').val();
+
+                $.post( "@Url.Content("~")"+"Downloads/doReset",{ name: username, date: dateupto} ,
+                function( data ) {
+                    $('.message').html(data.message);
+                    $('.message').show(1000).hide(1000);
+                });
+            }
+        });
+
+    });
+</script>
+
+@{
+
+    string datefrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+    string divisionno = "";
+    string zillano = "";
+    string thanano = "";
+    string zonalno = "";
+
+    OG_SLN.UpDownSearchModel searchModel = ViewBag.Search_Model
+        as OG_SLN.UpDownSearchModel;
+    if (searchModel != null)
+    {
+        if (searchModel.Search_Division.HasValue)
+        {
+            divisionno = searchModel.Search_Division.Value.ToString();
+        }
+        if (searchModel.Search_Zilla.HasValue)
+        {
+            zillano = searchModel.Search_Zilla.Value.ToString();
+        }
+        if (searchModel.Search_Thana.HasValue)
+        {
+            thanano = searchModel.Search_Thana.Value.ToString();
+        }
+        if (searchModel.Search_User.HasValue)
+        {
+            zonalno = searchModel.Search_User.Value.ToString();
+        }
+        if (searchModel.Search_To.HasValue)
+        {
+            dateto = searchModel.Search_To.Value.ToString("yyyy-MM-dd");
+        }
+    }
+}
+
+
+@using (Html.BeginForm("Reset", "Downloads", FormMethod.Get, new { @id = "ResetForm" }))
+{   
+     <div class="col-6 col-sm-6 col-lg-10 marRight_2"> 
+        <table class="tabWidth">
+            <tbody>
+                <tr>
+                    <td>Division</td>
+                    <td>
+                        @Html.DropDownList("Search_Division", "Please Select")
+                    </td>
+                    <td style="width: 150px;">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Zilla:
+                    </td>
+                    <td class="adminRight_col">
+                       <select id="Search_Zilla"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thana</td>
+                    <td>
+                        <select id="Search_Thana"></select>
+                    </td>
+                    <td style="width: 150px;">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        ZM:
+                    </td>
+                    <td class="adminRight_col">
+                       @*@Html.DropDownList("Search_User", String.Empty)*@
+                        @Html.Hidden("Search_User", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                    </td>                    
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align:center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+
+@if (Model != null)
+{
+   <table width="800px">
+    <tr>
+        <td colspan="6" class="message" style="color:Green"></td>
+        <td><p>&nbsp;</p></td>
+    </tr>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Username
+        </th>
+        <th>
+            HR ID
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            From Date
+        </th>
+        <th>
+            Reset
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @item.USER_FULL_NAME
+        </td>
+        <td>
+            @item.USER_NAME
+        </td>
+        <td>
+            @item.HR_EMP_ID
+        </td>
+        <td>
+            @item.USER_EMAIL
+        </td>
+        <td class="tddate">
+            <input type="text" class="dateclass" />
+        </td>
+        <td>
+            <input class="resetdown" type="button" data-username="@item.USER_NAME" value="Reset Download" />
+        </td>
+    </tr>
+}
+   </table> 
+}

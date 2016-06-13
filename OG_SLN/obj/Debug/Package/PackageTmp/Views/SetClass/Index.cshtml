@@ -1,0 +1,67 @@
+﻿@model IEnumerable<OG_SLN.SET_CLASS>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CLASS_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLASS_NAME_BNG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLASS_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_ACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVE_FROM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVE_TO)
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLASS_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLASS_NAME_BNG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESC_CLASS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACTIVE_CLASS)
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.ACTIVE_FROM, "{0:yyyy-MM-dd}")
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.ACTIVE_TO, "{0:yyyy-MM-dd}")
+            </td>
+            <td>
+                @Html.ActionLink("Subjects", "AssignSubject", new { id = item.CLASS_NO }, new { @class = "btn btn-success" })
+@*
+                |
+                @Html.ActionLink("Edit", "Edit", new { id = item.CLASS_NO }, new { @class = "btn btn-info" })
+                |
+                @Html.ActionLink("Details", "Details", new { id = item.CLASS_NO }, new { @class = "btn btn-success" })
+                |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CLASS_NO }, new { @class = "btn btn-danger" })
+*@
+            </td>
+        </tr>
+    }
+</table>

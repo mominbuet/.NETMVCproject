@@ -1,0 +1,179 @@
+﻿@model PagedList.IPagedList<OG_SLN.TRN_DCR>
+
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<h2 class="hidden-print">
+    Index</h2>
+    <style>
+    .ui-autocomplete
+    {
+        max-height: 300px;
+        overflow-y: auto; /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+    /* IE 6 doesn't support max-height
+    * we use height instead, but this forces the menu to always be this tall
+    */
+    * html .ui-autocomplete
+    {
+        height: 100px;
+    }
+</style>
+    <script type="text/javascript">
+var cacheINS = {};var insMap = new Object();
+    $(function () {
+        function log(message,container) {
+            //alert(message);
+            $(container).closest("td").next().text(message);
+        }
+       
+        $("#ZMName").autocomplete({
+            source: function(req, add){
+                $.getJSON("@Url.Content("~")"+"DCR/SearchUser?cell="+ req.term, function(data) {
+                    var suggestions = [];
+                    $.each(data, function(i, val){         
+                        insMap[val.username]=val.userid;       
+                        suggestions.push(val.username);
+                        console.log(val.username);
+                    });
+                    add(suggestions);
+                });
+            },
+            minLength: 2,
+            select: function (event, ui) {
+                var msg = (ui.item ?"ZM " + ui.item.value :"User not found " + this.value);
+                $("#hdnZMCell").val(insMap[ui.item.value]);
+                log(msg,this);
+            }
+        });
+        $("#institution").autocomplete({
+            source: function(req, add){
+                if ( req.term in cacheINS ) {
+                  response( cacheINS[req.term] );
+                  return;
+                }
+                $.getJSON("@Url.Content("~")"+"DCR/SearchInstitution?term="+ req.term, function(data) {
+                    var suggestions = [];
+                    $.each(data, function(i, val){         
+                        insMap[val.INSTITUTE_NAME]=val.INSTITUTE_NO;       
+                        suggestions.push(val.INSTITUTE_NAME);
+                    });
+                    add(suggestions);
+                    cacheINS[req.term] = suggestions;
+                });
+            },
+            minLength: 2,
+            select: function (event, ui) {
+                var msg = (ui.item ? ui.item.value :"Not found " + this.value);
+                $("#hdnINS").val(insMap[ui.item.value]);
+                log(msg,this);
+            }
+        });
+    });
+</script>
+<p class="hidden-print">
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<hr />
+<div class="hidden-print">
+@{Html.RenderPartial("_SearchDCR");}
+</div>
+<div class="row ">
+<div class="col-8">
+    <div class="table table-responsive">
+        <table class="table table-bordered table-hover">
+            <tr class="success">
+                <th>
+                    DCR Type
+                </th>
+                <th>
+                    User
+                </th>
+                <th>
+                    DCR Date(yyyy-mm-dd)
+                </th>
+                <th>
+                    Manual Entry
+                </th>
+                <th>
+                    Ref ZM
+                </th>
+                <th>
+                    Area From
+                </th>
+                <th>
+                    Area To
+                </th>
+                <th>
+                    Time From
+                </th>
+                <th>
+                    Time To
+                </th>
+                <th>
+                    Institution
+                </th>
+                <th>
+                    Fare
+                </th>
+                <th>
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GEN_DCR_TYPE.DCR_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SEC_USERS.USER_FULL_NAME)
+                    </td>
+                    <td>
+                        @item.TRN_DCR_DATE.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MANUAL_ENTRY_IS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.REF_ZM_MOBILE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WORK_AREA_FROM_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WORK_AREA_TO_NAME)
+                    </td>
+                    <td>
+                        @DateTime.Parse(item.TIME_FROM.ToString()).ToString("HH:mm")
+                    </td>
+                    <td>
+                        @DateTime.Parse(item.TIME_TO.ToString()).ToString("HH:mm")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SET_INSTITUTE.INSTITUTE_NAME)
+                    </td>
+                    <td>
+                        @decimal.Parse(item.FARE_AMT.ToString()).ToString("00.0")
+                    </td>
+                    <td>
+                    <div class="btn-group btn-group-sm">
+                        @Html.ActionLink("Edit", "Create", new { id = item.DCR_NO }, new { @class = "btn btn-info" })
+                       
+                        @Html.ActionLink("Details", "Details", new { id = item.DCR_NO }, new { @class = "btn btn-success" })
+                        
+                        @Html.ActionLink("Delete", "Delete", new { id = item.DCR_NO }, new { @class = "btn btn-danger" })
+                    </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+</div>
+<div id='Paging' style="text-align:center" class="hidden-print">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<OG_SLN.VIEW_TRN_EXPENSE_APPROVE>
+
+@using OG_SLN.Helpers
+
+@{
+    ViewBag.Title = "Approve Expense";
+}
+
+<script language="javascript" type="text/javascript">
+    function do_search() {
+
+        var url = '../ExpenseApprove/Index';
+        var frm = $('form');
+        var data = $(frm).serialize();
+        $.post(url, data, function (res) {
+            $('#div_list').html(res);
+        });
+    }
+
+    function do_clear() {
+        $('#div_list').html('');
+    }
+
+    $(function () {
+
+    });
+
+</script>
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    <div class="col-8 marRight_2"> 
+        <table >
+            <tbody>
+                <tr>                    
+                    <td class="adminLef_col">Fiscal Year</td>
+                    <td class="adminRight_col">@Html.DropDownList("FY_NO", String.Empty)</td>                
+                    
+                    <td class="adminLef_col">Approval Type</td>
+                    <td class="adminRight_col">@Html.DropDownList("APPROVE_TYPE_NO", String.Empty)</td>
+                    <td class="adminLef_col">Zonal Manager</td>
+                    <td class="adminRight_col">
+                        @*@Html.DropDownList("USER_NO", String.Empty)*@
+                        @Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>Date From</td>                    
+                    <td>                        
+                        @Html.TextBox("TRN_EXP_DATE_FROM", DateTime.Now, "{0:yyyy-MM-dd}", new { @class = "datesinspec" })
+                    </td>
+                    <td>Date To</td>
+                    <td>
+                        @Html.TextBox("TRN_EXP_DATE_TO", DateTime.Now, "{0:yyyy-MM-dd}", new { @class = "datesinspec" })
+                    </td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="adminRight_col"><button type="button" value="Search" onclick="do_search()">Search</button></td>
+                    <td class="adminRight_col"><button type="button" value="Clear" onclick="do_clear()">Clear</button></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                 <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+}
+
+<div id="div_list">
+</div>

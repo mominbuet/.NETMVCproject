@@ -1,0 +1,164 @@
+﻿
+<script type="text/javascript">
+    
+    function institute_search() {
+        var form = $('#GetInstituteForm');
+        console.log(form.serialize());
+
+        $.ajax({
+            url: "@Url.Content("~")" + "web/webrequests/institute",
+            type: 'POST',
+            data: form.serialize(),
+            dataType: 'json',
+            success: function (data) {
+                //console.log(data);
+                var ins_type = $("#INSTITUTE_TYPE").val();
+                var resdiv = $('#ins_result');
+                $(resdiv).empty();
+
+                var header = '<tr><th>Select</th><th>Institute Name</th><th>Type</th><th>EIIN</th><th>DB ID</th></tr>';
+                $(resdiv).append(header);
+
+                if(ins_type == 'single') {
+                    $.each(data, function(i, v) {
+                        var html = '';
+                        html += '<tr>';
+                        html += '<td><a href="#" class="selectlink" no="'+v.insno+'">Select</a></td>';
+                        html += '<td>'+ v.insname + '</td>';
+                        html += '<td>'+ v.instype +'</td>';
+                        html += '<td>'+ v.inseiin +'</td>';
+                        html += '<td>'+ v.insdbid +'</td>';
+                        html += '</tr>';
+
+                        $(resdiv).append(html);
+                    });
+
+                    $('.selectlink').live('click', function () {
+                        var zonalno = $(this).attr('no');
+                        $("#INSTITUTE_NO").val(zonalno);
+                        $("#Selected_Institute").val($(this).parent().next().text());
+                        $("#Institute_Name").val($(this).parent().next().text());
+                        
+                        $('div.ui-dialog-content').remove();
+                    });
+                }
+                else if(ins_type == 'multi')
+                {
+                    $.each(data, function(i, v) {
+                        var html = '';
+                        html += '<tr>';
+                        html += '<td class="check"><input type="checkbox" name="Institutes['+ v.insno +'].IS_ACTIVE" /></td>';
+                        
+                        html += '<td><div class="content">';
+                        html += '<input autocomplete="off" type="hidden" name="Institutes.Index" value="'+ v.insno +'" />';
+                        html += '<input type="hidden" name="Institutes['+ v.insno +'].INSTITUTE_NO" value="'+ v.insno +'" />';
+                        html += v.insname + '</div></td>';
+                        html += '<td>'+ v.instype +'</td>';
+                        html += '<td>'+ v.inseiin +'</td>';
+                        html += '<td>'+ v.insdbid +'</td>';
+                        html += '</tr>';
+
+                        $(resdiv).append(html);
+                    });
+                }
+            }
+        });
+    }
+
+    
+    function get_zilla(){
+        $.ajax({
+            url: "@Url.Content("~")"+"web/webrequests/zilla/"+$("#DIVISION_NO").val(),
+            dataType: "json",
+            success: function(data) {
+                $("#ZILLA_NO").empty();
+                //$("#ZILLA_NO").append('<option value=""></option>');
+                $.each(data, function(i, val){
+                    $("#ZILLA_NO").append('<option value="' + val.zillano + '">' + val.zillaname + '</option>');
+                }); 
+                        
+            }, error: function(data) {
+                console.log('error :' + data);
+            }
+        });
+    }
+
+    function get_thana(){
+        $.ajax({
+            url: "@Url.Content("~")"+"web/webrequests/thana/"+$("#ZILLA_NO").val(),
+            dataType: "json",
+            success: function(data) {
+                $("#THANA_NO").empty();
+                $("#THANA_NO").append('<option value=""></option>');
+                $.each(data, function(i, val){
+                    $("#THANA_NO").append('<option value="' + val.thanano + '">' + val.thananame + '</option>');
+                }); 
+                        
+            }, error: function(data) {
+                console.log('error :' + data);
+            }
+        });
+    }
+    
+</script>
+
+@using (Html.BeginForm("Institute", "WebRequests", FormMethod.Post, new { @id = "GetInstituteForm"}))
+{ 
+    @Html.ValidationSummary(true)
+    <div class="row">
+       <div class="col-8 marRight_2">
+        <table>
+          <tr>
+            <td class="adminLef_col">Institute Type:</td>
+            <td class="adminRight_col">
+                @*<input class="form-control" type="text" name="Institute_Type" id="Institute_Type" value="" />*@
+                @Html.DropDownList("Institute_Type", String.Empty)
+            </td>
+          </tr>
+
+          <tr>
+            <td class="adminLef_col">Institute DB Id:</td>
+            <td class="adminRight_col">
+                <input class="form-control" type="text" name="Institute_Dbid" id="Institute_Dbid" value="" />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="adminLef_col">Institute Name:</td>
+            <td class="adminRight_col">
+                <input class="form-control" type="text" name="Institute_Name" id="Institute_Name" value="" />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="adminLef_col">Division:</td>
+            <td class="adminRight_col">
+                @Html.DropDownList("DIVISION_NO", ViewBag.DIVISION_NO as IEnumerable<SelectListItem>, new { @onchange="get_zilla();"})
+            </td>
+          </tr>
+          <tr>
+            <td class="adminLef_col">Zilla:</td>
+            <td class="adminRight_col">
+                @Html.DropDownList("ZILLA_NO", ViewBag.ZILLA_NO as IEnumerable<SelectListItem>, new { @onchange = "get_thana();" })
+            </td>
+          </tr>
+          <tr>
+            <td class="adminLef_col">Thana:</td>
+            <td class="adminRight_col">
+                @Html.DropDownList("THANA_NO", String.Empty)
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+                <input class="btn btn-success butTop_1" type="button" onclick="institute_search();" value="Get Institute" />
+            </td>
+           </tr>
+        </table>
+        </div>
+    </div>
+}
+
+
+<div id="ins_result">
+</div>

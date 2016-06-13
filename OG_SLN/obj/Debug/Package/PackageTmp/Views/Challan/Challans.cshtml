@@ -1,0 +1,81 @@
+﻿@model IEnumerable<OG_SLN.TRN_CHALLAN_DET>
+
+@{
+    ViewBag.Title = "Challans";
+}
+
+<h2>Challans</h2>
+
+<table class="table table-responsive table-bordered table-hover tabWidth small-font">
+    <tr class="success" style="font-size: 1.1em">
+        <th>
+            @*@Html.DisplayNameFor(model => model.CHALLAN_NO)*@
+            Challan No
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CHALLAN_DATE)*@
+            Challan Date
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.BB_LIBRARY_CODE)*@
+            BB Library Code
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EMP_HR_ID)*@
+            Emp HR ID
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.BB_BOOK_CODE)*@
+            BB Book Code
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.BB_UNIQUE_CODE)*@
+            BB Unique Code
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.SUPPLY_QTY)*@
+            Supply Qty
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DIST_MAX_DAY)*@
+            Max Dist. Days
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CHALLAN_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHALLAN_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BB_LIBRARY_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_HR_ID)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.BB_BOOK_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BB_UNIQUE_CODE)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.SUPPLY_QTY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIST_MAX_DAY)
+        </td>
+
+    </tr>
+}
+
+</table>

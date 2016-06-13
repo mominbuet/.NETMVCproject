@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "ZonalWiseSpecimen";
+}
+
+<h2></h2>
+@*@model IEnumerable<OG_SLN.SEC_USERS>*@
+@model OG_SLN.ProcedurePagedList.IProcPagedList<OG_SLN.VIEW_TRN_DCR_APPROVE_GET_Result2>
+
+@using OG_SLN.ProcedurePagedList;
+
+
+<h2>ZonalWiseSpecimen</h2>
+<hr>
+
+     <div class="row">
+      <div class="col-6 col-sm-6 col-lg-10 marRight_2">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover tabWidth">
+                <tr class="success">
+                  
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.HR_EMP_ID)*@
+                        Fiscal Year
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_FULL_NAME)*@
+                        Dcr Type
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_MOBILE)*@
+                        Thana
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.USER_EMAIL)*@
+                        Zonal Name
+                    </th>
+
+                    <th>
+                    </th>
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FY_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DCR_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.THANA_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZM_USER_FULL_NAME)
+                    </td>
+                    
+                </tr>
+            }
+
+            </table>
+            </div>
+        </div>
+    </div>
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    
+    @Html.PagedListPager(Model, page => Url.Action("ZonalWiseSpecimen", new { page }))
+</div>

@@ -1,0 +1,137 @@
+﻿@model System.Data.Objects.ObjectResult<OG_SLN.SEC_USERS_APP_VERSION_GET_Result>
+
+@{
+    ViewBag.Title = "AppVersion";
+}
+
+<h2>AppVersion</h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#is_current').click(function () {
+            var val = $(this).val();
+            val == 'False' ? $(this).val('True') : $(this).val('False');
+        });
+    });
+</script>
+
+@{
+
+    string app_version = "";
+    bool is_current = false;
+    string check = "";
+
+    int slcount = 1;
+
+    OG_SLN.AppVersionSearchModel searchModel = ViewBag.Search_Model
+        as OG_SLN.AppVersionSearchModel;
+    if (searchModel != null)
+    {
+        if (!string.IsNullOrEmpty(searchModel.app_version))
+        {
+            app_version = searchModel.app_version;
+        }
+
+        is_current = searchModel.is_current;
+
+        check = searchModel.is_current ? "checked=\"checked\"" : "";
+    }
+}
+
+
+@using (Html.BeginForm("AppVersion", "Reports", FormMethod.Get, new { @id = "AppVersionForm" }))
+{   
+     <div class="col-6 col-sm-6 col-lg-10 marRight_2"> 
+        <table class="tabWidth">
+            <tbody>
+
+                <tr>
+                    <td>App Version:</td>
+                    <td class="td_1">
+                        @Html.DropDownList("app_version")
+                    </td>
+                    <td>Other Versions:</td>
+                    <td class="td_1">
+                        <input type="checkbox" id="is_current" name="is_current" value="@is_current.ToString()" @check />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="5" style="text-align:center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+
+@if (Model != null)
+{
+   <table width="800px">
+    <tr>
+        <th>
+            SL
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Designation
+        </th>
+        <th>
+            Mobile
+        </th>
+        <th>
+            Division
+        </th>
+        <th>
+            Zilla
+        </th>
+        <th>
+            Thana
+        </th>
+        <th>
+            Last Login Time
+        </th>
+        <th>
+            App Version
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @slcount
+            @{slcount++;}
+        </td>
+        <td>
+            @item.USER_FULL_NAME
+        </td>
+        <td>
+            @item.DESIG_NAME
+        </td>
+        <td>
+            @item.USER_MOBILE
+        </td>
+        <td>
+            @item.DIVISION_NAME
+        </td>
+        <td>
+            @item.ZILLA_NAME
+        </td>
+        <td>
+            @item.THANA_NAME
+        </td>
+        <td>
+            @item.LAST_LOGIN_TIME
+        </td>
+        <td>
+            @item.APP_VERSION
+        </td>
+    </tr>
+}
+   </table> 
+}

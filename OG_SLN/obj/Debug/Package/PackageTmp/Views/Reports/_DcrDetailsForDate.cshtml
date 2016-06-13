@@ -1,0 +1,289 @@
+﻿@model OG_SLN.Models.DcrDetailsModel
+
+@{
+    string Print = ViewBag.Print;
+    int expenseSubTotal = 0;
+    int dcrSubTotal = 0;
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.dcrEditBtn').click(function () {
+            var dcrno = $(this).attr('dcrno');
+            var thiselem = $(this);
+
+            $.get("@Url.Content("~")"+"Reports/DcrEdit/"+dcrno, function(res){
+                var content = $('#DcrEditContent');
+                if(content.length == 0)
+                {
+                    $(thiselem).closest("tr").after(res);
+                }
+            });
+        });
+
+        $('#DcrEditSubmit').die('click').live('click', function(){
+            event.preventDefault();
+            var thiselem = $(this);
+            $.post("@Url.Content("~")"+"Reports/DcrEdit", $('#DcrEditForm').serialize(), function(res){
+                if(res.msg == 'success')
+                {
+                    var val = parseFloat($(thiselem).parent().parent().parent().prev()
+                        .children('.fareamt').text());
+
+                    var subtotal = parseFloat($("#dcrSubTotal b").text());
+
+                    subtotal = subtotal - val + parseFloat($('#APPROVE_FARE_AMT').val());
+
+                    $(thiselem).parent().parent().parent().prev()
+                        .children('.fareamt').text($('#APPROVE_FARE_AMT').val());
+
+                    $("#dcrSubTotal b").text(subtotal);
+
+                    var trans_val = $('#TRANS_TYPE_NO').val();
+
+                    $(thiselem).parent().parent().parent().prev()
+                        .children('.transtype').text($('#TRANS_TYPE_NO option[value="'+trans_val+'"]').text());
+                    $('#DcrEditContent').remove();
+                }
+            });
+            return false;
+        });
+
+        $('#DcrCancel').live('click', function(){
+            $('#DcrEditContent').remove();
+        });
+
+        $('.expenseEditBtn').click(function () {
+            var expno = $(this).attr('expno');
+            var thiselem = $(this);
+
+            $.get("@Url.Content("~")"+"Reports/ExpenseEdit/"+expno, function(res){
+                var content = $('#ExpenseEditContent');
+                if(content.length == 0)
+                {
+                    $(thiselem).closest("tr").after(res);
+                }
+            });
+        });
+
+        $('#ExpenseEditSubmit').die('click').live('click', function(){
+            event.preventDefault();
+            var thiselem = $(this);
+            $.post("@Url.Content("~")"+"Reports/ExpenseEdit", $('#ExpenseEditForm').serialize(), function(res){
+                if(res.msg == 'success')
+                {
+                    var val = parseFloat($(thiselem).parent().parent().parent().prev()
+                        .children('.expamt').text());
+
+                    var subtotal = parseFloat($("#expenseSubTotal b").text());
+
+                    subtotal = subtotal - val + parseFloat($('#APPROVE_EXP_AMT').val());
+                    
+                    $(thiselem).parent().parent().parent().prev()
+                        .children('.expamt').text($('#APPROVE_EXP_AMT').val());
+
+                    $("#expenseSubTotal b").text(subtotal);
+
+                    $('#ExpenseEditContent').remove();
+                }
+            });
+            return false;
+        });
+
+        $('#ExpenseCancel').live('click', function(){
+            $('#ExpenseEditContent').remove();
+        });
+    });
+</script>
+
+<table id="dcr_expence" style="display:block; margin-bottom:-2px; font-size:13px; margin-top:30px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+
+    <tbody>
+    @if (Print != "Y")
+    {
+        <tr class="success">
+            <th colspan="5">@ViewBag.Title</th>
+            <th colspan="6">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+            </th>
+        </tr>
+    }
+        <tr style="height:0px; font-size:0px;">
+            <td width="5%">&nbsp;</td>
+            <td width="18%">&nbsp;</td>
+            <td width="18%">&nbsp;</td>
+            <td width="5%">&nbsp;</td>
+            <td width="5%">&nbsp;</td>
+            <td width="25%">&nbsp;</td>
+            <td width="8%">&nbsp;</td>
+            <td width="4%">&nbsp;</td>
+            <td width="4%">&nbsp;</td>
+            <td width="4%">&nbsp;</td>
+            <td width="3%">&nbsp;</td>
+            <td width="3%">&nbsp;</td>
+        </tr>
+        <tr style="font-weight:bold;">
+            @if (Print != "Y")
+            {
+                <td colspan="9" style="background:#DDDDDD; text-align:center; border:solid 1px #e4e4e4;">&nbsp;</td>
+            }
+            else
+            {
+                <td colspan="7" style="background:#DDDDDD; text-align:center; border:solid 1px #e4e4e4;">&nbsp;</td> 
+            }
+            <td style="background:#DDDDDD; text-align:center; border:solid 1px #e4e4e4; border-left:none;">DCR.Date</td>
+            <td style=" font-weight:bold; text-align:center; border:solid 1px #e4e4e4; border-left:none;">
+                <a>@Model.date.Value.ToString("yyyy.MM.dd")</a>
+            </td>
+        </tr>
+
+        <tr style="font-size:13px; background:#DDDDDD; font-weight:bold;">
+            @if (Print != "Y")
+            {
+                <td rowspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-top:nonel;">Is Confirmed</td>
+            }
+            <td colspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">Area of Work </td>
+            <td colspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">Time of Work</td>
+            <td rowspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">Institution<br />Name</td>
+            <td rowspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">Teacher Number</td>
+            <td rowspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">P. Work</td>
+            <td rowspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">T. Type</td>
+            <td rowspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">Fare</td>
+            @if (Print != "Y")
+            {
+                <td rowspan="2" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none;">Edit</td>
+            }
+        </tr>
+        <tr style="font-size:13px; background:#DDDDDD; font-weight:bold;">
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-top:none;">From</td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">To</td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">From</td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">To</td>
+        </tr>
+@foreach (var item in Model.detail)
+{ 
+        <tr>
+            @if (Print != "Y")
+            {
+                <td style=" text-align:center; border:solid 1px #e4e4e4; border-top:none;">
+                
+                    @if (item.IS_PUBLISHED == 1)
+                    {
+                        <img src="../../Images/correct.gif" alt="" width="16" />
+                    }
+                    else
+                    {
+                        <img src="../../Images/delete.gif" alt="" width="16" /> 
+                    }
+                </td>
+            }
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.WORK_AREA_FROM_NAME
+            </td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.WORK_AREA_TO_NAME
+            </td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.TIME_FROM
+            </td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.TIME_TO
+            </td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.INSTITUTE_NAME
+            </td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.TEACHER_MOBILE
+            </td>
+            <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.DCR_TYPE_CODE
+            </td>
+            <td class="transtype" style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.TRANS_TYPE_CODE
+            </td>
+            <td class="fareamt" style=" text-align:right; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                @item.APPROVE_FARE_AMT
+                @{dcrSubTotal += (int)item.APPROVE_FARE_AMT;}
+            </td>
+            @if (item.IS_PUBLISHED != 1 && Print != "Y")
+            {
+                <td style=" text-align:center; border:solid 1px #e4e4e4; border-left:none; border-top:none;">
+                    <input type="button" class="dcrEditBtn" dcrno="@item.DCR_NO" value="Edit" />
+                </td>
+            }
+        </tr>
+}
+        <tr>
+            @if (Print != "Y")
+            {
+                <td colspan="7">&nbsp;</td>
+            }
+            else
+            {
+                <td colspan="6">&nbsp;</td>
+            }
+            <td colspan="2" style=" text-align:center;"> <b>Sub Total : </b></td>
+            <td id="dcrSubTotal" style=" text-align:right;"> <b>@dcrSubTotal</b></td>
+        </tr>
+    </tbody>
+</table>
+
+@if (Model.expense != null && Model.expense.Count > 0)
+{
+    <table id="dcr_other" style="font-size:13px; text-align:center; margin-top:20px" width="50%" border="1" cellpadding="5" cellspacing="0">
+        <tbody>
+            <tr style="background:#DDDDDD; font-weight:bold;">
+            @if (Print != "Y")
+            {
+                <td><strong>Is Confirmed</strong></td>
+            }
+                <td><strong>Exp Type</strong></td>
+                <td><strong>Cost</strong></td>
+                <td><strong>Vendor</strong></td>
+            @if (Print != "Y") 
+            { 
+                <td><strong>Edit</strong></td>
+            }
+            </tr>
+        @foreach (var item in Model.expense)
+        {
+            <tr>
+                @if (Print != "Y")
+                {
+                    <td>
+                
+                        @if (item.IS_PUBLISHED == 1)
+                        {
+                            <img src="../../Images/correct.gif" alt="" width="16" />
+                        }
+                        else
+                        {
+                            <img src="../../Images/delete.gif" alt="" width="16" /> 
+                        }
+                    </td>
+                }
+                <td width="200">@item.EXP_TYPE_CODE</td>
+                <td width="200" class="expamt">@item.APPROVE_EXP_AMT</td>
+                @{expenseSubTotal += (int)item.APPROVE_EXP_AMT;}
+                <td width="200">@item.VENDOR</td>
+                @if (item.IS_PUBLISHED != 1 && Print != "Y")
+                {
+                    <td width="200">
+                        <input type="button" class="expenseEditBtn" expno="@item.EXP_DET_NO" value="Edit" />
+                    </td>
+                }
+                
+		    </tr>
+        }
+            <tr>
+                @if (Print != "Y")
+                {
+                    <td>&nbsp;</td>
+                }
+                <td> <b>Sub Total : </b></td>
+                <td id="expenseSubTotal"> <b>@expenseSubTotal</b></td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+}

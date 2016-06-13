@@ -1,0 +1,324 @@
+﻿@model OG_SLN.TRN_USER_PROMO_ITEM
+@{
+    ViewBag.Title = "Create";
+}
+<script type="text/javascript">
+        function setEdit(name, qty) {
+            //alert(name);
+            $('#ddlspecimens option:contains(' + name + ')').attr('selected', 'selected');
+            $("#txtqty").val(qty);
+            $("#view_specname").html($('#ddlspecimens :selected').attr('tmptag'));
+            var tmpID = $('#ddlspecimens option:contains(' + name + ')').prop('value');
+           
+            $('#spec_add_table > tbody > tr').each(function() {
+              $(this).removeClass('warning');
+            });
+            $('#'+tmpID).addClass("warning");
+             $('#'+tmpID).attr("editing","true");
+             $("#btn_add_spec").val("Update");
+            //alert( name);
+            /*if($("input[name=edit_ID]").val()!="0")
+                alert($("input[name=edit_ID]").val());*/
+        }
+        function removeSpecimen(name)
+        {
+            confirm("Are you sure you want to remove this?")
+            {
+                 $.post( "@Url.Content("~")"+"PromotionalItemDistribution/RemoveSpecimenFromDB",{ specid: name ,edit_id : $('input[name=edit_ID]').val()} ,
+                 function( data ) {
+                    //alert(data);
+                 });
+             }
+        }
+        $(document).ready(function () {
+            $(".datesinspec").datepicker({dateFormat: 'yy-mm-dd'});
+            $("#spec_add_table").hide();
+            $("#view_specname").html($("#ddlspecimens > option").attr('tmptag'));
+            $('#ddlspecimens').on('change', function () {
+                $("#view_specname").html($('#ddlspecimens :selected').attr('tmptag'));
+                $("#spec_add_table").show();
+                //alert($('#ddlspecimens :selected').attr('tmptag'));
+            });
+            $("#btn_cancel_spec").on("click", function () {
+                $("#view_specname").html('');
+                $("#txtqty").val('');
+            });
+            $("#btn_add_spec").on("click", function () {
+                var found=0;
+                $('#spec_add_table > tbody > tr').each(function() {
+                    if(($(this).attr('id')== $('#ddlspecimens :selected').val())&&
+                        $(this).attr('editing')!="true")
+                    {    
+                        found=1;
+                        $(this).addClass('danger');
+                    }
+                    else{
+                        if($(this).attr('editing')=="true") $(this).remove();
+                        $(this).removeClass('danger');
+                   }
+                });
+                if(found!=1)
+                {
+                    //alert("here");
+                    if(parseInt($("#txtqty").val())>0)
+                    {
+                        $("#spec_add_table").show();
+                        var status=($("#ACTIVE_SPEC").prop('checked')?'Active':'Inactive');
+                        $("#spec_add_table > tbody").append('<tr id="' + $('#ddlspecimens :selected').val() + '"><td>' + $('#ddlspecimens :selected').text() + '</td><td>' + $('#ddlspecimens :selected').attr('tmptag')
+                        + '</td><td>' + $("#txtqty").val() + '</td><td>'+status+'</td><td><input type="button" class="btn btn-small btn-info" onclick="setEdit($(this).closest(\'tr\').children(\':eq(0)\').text(),$(this).closest(\'tr\').children(\':eq(2)\').text())" value="Edit">' +
+                        '<input type="button" class="btn btn-small btn-danger" onclick="removeSpecimen( $(this).closest(\'tr\').attr(\'id\'));$(this).closest(\'tr\').remove();\" value="Remove"><td></tr>');
+                        $.ajax
+                        ({
+                            type: "POST",
+                            url: "@Url.Content("~")"+"PromotionalItemDistribution/SaveSpecimenOnSession",
+                            data: "{'id': '" + $('#ddlspecimens :selected').val() + "', 'qty':'" + $('#txtqty').val() + "', 'status':'" + status + "'}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (msg) {
+                                //alert(msg.dt)
+                            }, error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.responseText);
+                                //alert(thrownError);
+                            }
+                        });
+                        $("#btn_add_spec").val("Add");
+                    }
+                    else
+                    {
+                        $("#txtqty").focus();
+                        alert("Please insert a numerical value in quantity field");
+                    }
+                }
+
+            });
+            $('form').on('submit', function() {
+                event.preventDefault();
+				if(confirm('Do u want to Save?')){
+					var obj = $(this), // (*) references the current object/form each time
+						url = obj.attr('action'),
+						method = obj.attr('method'),
+						data = $( this ).serialize();
+                    $.ajax({
+						url: url,
+						type: method,
+						data: data,
+						success: function(response2) {
+							$(this).clearForm();
+						}
+					});
+					return false; //disable refresh
+                }
+           });
+        });
+       function setforEdit(specid)
+       {
+            var flg=0;
+            $('#prevData > tbody > tr').each(function() {
+                if(flg==0)
+                {
+                    flg=1;
+                    return;
+                }
+                //alert($(this).attr('id'));
+                if($(this).prop('id')!=specid)
+                    $(this).removeClass('success');
+                else
+                    $(this).addClass('success');
+            });
+            $('input[type=submit]').prop('value','Update');
+            //alert(specid);
+            $('input[name=edit_ID]').val(specid);
+            $.getJSON("@Url.Content("~")"+"PromotionalItemDistribution/getOnePrevData/"+specid, function( data ) {
+                var items = [];
+                //console.log(data.userno);
+                $('input[name=ASSIGN_DATE]').val(data.assign_date);
+                $('input[name=TARGET_DATE_FROM]').val(data.target_date_from);
+                $('input[name=TARGET_DATE_TO]').val(data.target_date_to);
+                $('select[name=USER_NO]').val(data.userno);
+                $('input[name=ACTIVE_STATUS]').prop('checked',(data.active==1)?true:false);
+             });
+            $.get("@Url.Content("~")"+"PromotionalItemDistribution/getPrevDetails/"+specid, function( data ) {
+                $("#spec_add_table").show();
+                $("#spec_add_table > tbody").html(data);
+            });
+            $("#spec_add_table").show();
+            $("html, body").animate({ scrollTop: 0 }, 1500);
+       }
+</script>
+@section shadScripts {
+    @Html.Raw(ViewBag.jsmsg)
+}
+<h2>
+    Create</h2>
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+    <input id="hdnedit_ID" name="edit_ID" type="hidden" value="0" />
+    
+    <table class="table table-responsive">
+        <tr>
+            <td>
+                Zonal Manager
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.USER_NO, new SelectList(ViewBag.ZonalUsers as System.Collections.IEnumerable, "USER_NO", "USER_NAME"), new { @class = "form-control" })
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Assign Date
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.ASSIGN_DATE, "{0:yyyy-MM-dd}", new { @class = "form-control datesinspec", @Value = ViewBag.futureDate })
+                @Html.ValidationMessageFor(model => model.ASSIGN_DATE)
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                @Html.CheckBoxFor(model => model.ACTIVE_STATUS)
+                @Html.ValidationMessageFor(model => model.ACTIVE_STATUS)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Target Date From
+            </td>
+            <td>@Html.TextBoxFor(model => model.TARGET_DATE_FROM, "{0:yyyy-MM-dd}", new { @class = "form-control datesinspec", @Value = ViewBag.currentDate })
+                @Html.ValidationMessageFor(model => model.TARGET_DATE_FROM)
+            </td>
+            <td>
+                To
+            </td>
+            <td>@Html.TextBoxFor(model => model.TARGET_DATE_TO, "{0:yyyy-MM-dd}", new { @class = "form-control datesinspec", @Value = ViewBag.futureDate })
+                @Html.ValidationMessageFor(model => model.TARGET_DATE_TO)
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                Promotional Item Code
+            </td>
+            <td>
+                <select class="form-control" runat="server" id="ddlspecimens">
+                    @foreach (var item in ViewBag.specimens)
+                    {
+                        <option value="@item.PROMO_ITEM_NO" tmptag ="@item.PROMO_ITEM_NAME" >@item.PROMO_ITEM_CODE</option>            
+                    }
+                </select>
+            </td>
+            <td>
+                <span style="min-width: 250px;" id="view_specname"></span>
+            </td>
+            <td>
+                Qty
+            </td>
+            <td>
+                <input id="txtqty" class="form-control" type="text" placeholder="Enter quantity" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status
+            </td>
+            <td>@Html.CheckBox("ACTIVE_SPEC", true)
+            </td>
+            <td style="min-width: 250px;">
+            </td>
+            <td>
+                <input id="btn_add_spec" type="button" class="btn btn-success btn-small" value="Add" />
+            </td>
+            <td>
+                <input id="btn_cancel_spec" type="button" value="Cancel" class="btn btn-warning  btn-small" />
+            </td>
+        </tr>
+    </table>
+    <table id="spec_add_table" class="table table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    PromotionItem ID
+                </th>
+                <th>
+                    PromotionItem Name
+                </th>
+                <th>
+                    Qty
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+  
+    <p>
+    <div class="btn-group btn-group-sm">
+        <input type="submit" value="Create" class="btn btn-success" />
+        <input id="Reset1" type="reset" value="Reset" class="btn btn-warning" />
+        </div>
+    </p>
+}
+<table id="prevData" class="table table-responsive">
+    <tr>
+        <td>
+            Zonal Manager
+        </td>
+        <td>
+            Status
+        </td>
+        <td>
+            Assign Date
+        </td>
+        <td>
+            Target Date To
+        </td>
+        <td>
+            Target Date From
+        </td>
+        <td>
+            Action
+        </td>
+    </tr>
+    @foreach (var item in ViewBag.PrevDataList)
+    {
+        <tr id = "@item.user_spec_no">
+            <td>
+                @item.username
+            </td>
+            <td>
+                @item.active
+            </td>
+            <td>
+                @item.assignDate.ToString("yyyy-MM-dd")
+            </td>
+            <td>
+                @item.targetDateFrom.ToString("yyyy-MM-dd")
+            </td>
+            <td>
+                @item.targetDateTo.ToString("yyyy-MM-dd")
+            </td>
+            <td>
+                <input value="Edit" class="btn btn-small btn-info" type="button" 
+                    onclick="setforEdit(@item.user_spec_no); "/>
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Html.Raw(ViewBag.jsmsg)
+}

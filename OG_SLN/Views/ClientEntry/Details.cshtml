@@ -1,0 +1,114 @@
+﻿@model OG_SLN.SET_CLIENT_INFO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Client Details</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENT_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENT_NAME_BNG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_NAME_BNG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENT_NICK_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_NICK_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENT_MOBILE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_MOBILE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BIRTH_DATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BIRTH_DATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MARRIAGE_DATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MARRIAGE_DATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENT_ADDR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_ADDR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENT_COMENTS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_COMENTS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_DIVISION.DIVISION_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_DIVISION.DIVISION_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_ZILLA.ZILLA_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_ZILLA.ZILLA_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_THANA.THANA_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_THANA.THANA_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ACTIVE_STATUS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ACTIVE_STATUS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DATE_FROM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DATE_FROM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DATE_TO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DATE_TO)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CLIENT_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

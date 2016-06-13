@@ -1,0 +1,91 @@
+﻿@*@model IEnumerable<OG_SLN.TRN_CHALLAN_UPLOAD>*@
+
+@model PagedList.IPagedList<OG_SLN.TRN_CHALLAN_UPLOAD>
+
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Challan/Return</h2>
+
+<p>
+    @Html.ActionLink("Add Challan/Return", "Create")
+</p>
+<table class="table table-responsive table-bordered table-hover tabWidth small-font">
+    <tr class="success" style="font-size: 1.1em">
+        <th>
+            @*@Html.DisplayNameFor(model => model.FILE_NAME)*@
+            File Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.FILE_EXT)*@
+            File Ext
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.INSERT_TIME)*@
+            Date-Time
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TOTAL_RECORDS)*@
+            Total Records
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TOTAL_HR_COUNT)*@
+            Total HR
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TOTAL_BOOK_COUNT)*@
+            Total Specimen
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.UPLOAD_TYPE_NUM)*@
+            Upload Type
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_EXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_TIME)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.TOTAL_RECORDS)*@
+            @int.Parse(item.TOTAL_RECORDS.ToString())
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.TOTAL_HR_COUNT)*@
+            @int.Parse(item.TOTAL_HR_COUNT.ToString())
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.TOTAL_BOOK_COUNT)*@
+            @int.Parse(item.TOTAL_BOOK_COUNT.ToString())
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPLOAD_TYPE)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.UPLOAD_NO })
+            @Html.ActionLink("Delete", "Delete", new { id=item.UPLOAD_NO })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

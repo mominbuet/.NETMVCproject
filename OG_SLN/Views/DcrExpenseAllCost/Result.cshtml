@@ -1,0 +1,41 @@
+﻿@using OG_SLN.Helpers
+@{
+    Layout = null;
+
+    List<OG_SLN.TRN_GET_ALL_COST_Result> result = ViewBag.result as List<OG_SLN.TRN_GET_ALL_COST_Result>;
+
+    OG_SLN.TRN_GET_ALL_COST_Result item = result.FirstOrDefault();
+
+    decimal total_all_cost = 0;
+    decimal total_approve_cost = 0;
+
+    decimal all_fare_amt = item.ALL_FARE_AMT == null ? 0 : item.ALL_FARE_AMT.Value;
+    decimal all_exp_amt = item.ALL_EXP_AMT == null ? 0 : item.ALL_EXP_AMT.Value;
+    decimal approve_fare_amt = item.APPROVE_FARE_AMT == null ? 0 : item.APPROVE_FARE_AMT.Value;
+    decimal approve_exp_amt = item.APPROVE_EXP_AMT == null ? 0 : item.APPROVE_EXP_AMT.Value;
+    
+    if (item != null) {
+        total_all_cost = (item.ALL_FARE_AMT == null ? 0 : item.ALL_FARE_AMT.Value) + (item.ALL_EXP_AMT == null ? 0 : item.ALL_EXP_AMT.Value);
+        total_approve_cost = (item.APPROVE_FARE_AMT == null ? 0 : item.APPROVE_FARE_AMT.Value) + (item.APPROVE_EXP_AMT == null ? 0 : item.APPROVE_EXP_AMT.Value);
+    }
+}
+<table class="tabWidth" style="font-weight:bold;text-align:right;">
+    <tr>
+        <td class="adminLef_col"></td>
+        <td class="adminLef_col">DCR</td>
+        <td class="adminLef_col">Expense</td>
+        <td class="adminLef_col">Total</td>
+    </tr>
+    <tr>
+        <td class="adminLef_col">ZM Entry</td>
+        <td class="adminLef_col">@Html.ThousandConvert((int)all_fare_amt)</td>
+        <td class="adminLef_col">@Html.ThousandConvert((int)all_exp_amt)</td>
+        <td class="adminLef_col">@Html.ThousandConvert((int)total_all_cost)</td>
+    </tr>
+    <tr>
+        <td class="adminLef_col">Approved</td>
+        <td class="adminLef_col">@Html.ThousandConvert((int)approve_fare_amt)</td>
+        <td class="adminLef_col">@Html.ThousandConvert((int)approve_exp_amt)</td>
+        <td class="adminLef_col">@Html.ThousandConvert((int)total_approve_cost)</td>
+    </tr>
+</table>

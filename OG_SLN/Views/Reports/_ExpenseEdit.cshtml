@@ -1,0 +1,27 @@
+﻿@model OG_SLN.TRN_EXPENSE_DET
+
+<tr style="background:#e4e4e4;" id="ExpenseEditContent"><td colspan="4">
+@using (Html.BeginForm("ExpenseEdit", "Reports", FormMethod.Post, new { @id = "ExpenseEditForm"}))
+{ 
+    @Html.HiddenFor(model => model.EXP_DET_NO)
+
+    @Html.HiddenFor(model => model.APPROVE_EXP_TYPE_NO)
+    
+    <div style="text-align:left; float:left;">
+        <table>
+            <tr>
+                <td style="width:145px; line-height:20px; text-align:center;">Cost</td>
+                <td>
+                    <div class="editor-field" style="margin-top:-1px!important;">
+                        @Html.TextBoxFor(model => model.APPROVE_EXP_AMT)
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <input style="float:left; margin-left:5%; margin-top:5px;" type="button" id="ExpenseCancel" value="Cancel" />
+    <input style="float:left; margin-left:5%; margin-top:5px;" type="button" id="ExpenseEditSubmit" value="Save" />
+}
+
+</td></tr>

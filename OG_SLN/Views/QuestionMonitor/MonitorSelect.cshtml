@@ -1,0 +1,291 @@
+﻿@using OG_SLN;
+
+@model TPR_PROJECT_INSTITUTE
+
+
+@{
+    ViewBag.Title = "Monitor";
+    List<SET_CLASS_SUBJECT_GET_Result> Subjects = ViewBag.Subjects as List<SET_CLASS_SUBJECT_GET_Result>;
+    TPR_PROJECT project = ViewBag.Project as TPR_PROJECT;
+
+    List<TPR_ASSIGN_MONITOR_GET_Result> assigned_list = ViewBag.Assigned_List as List<TPR_ASSIGN_MONITOR_GET_Result>;
+}
+<script src="@Url.Content("~/Scripts/autocomplete-2-table.js")" type="text/javascript"></script>
+
+<style type="text/css">
+    .tdLeft
+    {
+        font-weight: bold;
+    }
+</style>
+
+<script type="text/javascript">
+    function getDetails(user_no, is_collected, is_new)
+    {
+        $('#Is_Collected').val(is_collected);
+        $('#Is_New').val(is_new);
+
+        var temp_user_no = $('#USER_NO').val();
+        $('#USER_NO').val(user_no);
+
+        var data = $('form').serialize();
+
+        $('#USER_NO').val(temp_user_no);
+
+        var url = '@Url.Content("~")' + 'QuestionMonitor/GetInstituteAssigned';
+        $.post(url, data, function (res) {
+            $('#div_institutes').html(res);
+            $('#div_institutes').show();
+        });
+
+        return false;
+    }
+
+    function getSubjects(project_ins_no, sub_type, is_new)
+    {
+        $('#Proj_Ins_No').val(project_ins_no);
+
+        var data = $('form').serialize();
+
+        var url = '@Url.Content("~")' + 'QuestionMonitor/GetSubjects';
+        $.post(url, data, function (res) {
+            $('#div_subjects').html(res);
+            $('#div_subjects').show();
+        });
+
+        return false;
+    }
+
+    $(document).ready(function () {
+        $('.ui-autocomplete table tbody tr').live('click', function () {
+            var pid = $('#PROJECT_NO').val();
+            var uid = $('#USER_NO').val();
+
+            var content = '';
+
+            if (which_one == 0) // zonal manager
+            {
+                content += '<table class="table table-responsive table-bordered tabWidth">';
+                content += '<tr><td class="tdLeft">Zonal Manager :</td><td>' + zm_fullname + '</td></tr>';
+                content += '<tr><td class="tdLeft">Username :</td><td>' + zm_username + '</td></tr>';
+                content += '<tr><td class="tdLeft">Designation :</td><td>' + zm_designation + '</td></tr>';
+                content += '<tr><td class="tdLeft">Mobile :</td><td>' + zm_mobile + '</td></tr>';
+                content += '<tr><td class="tdLeft">Division :</td><td>' + zm_division + '</td></tr>';
+                content += '<tr><td class="tdLeft">Zilla :</td><td>' + zm_zilla + '</td></tr>';
+                content += '<tr><td class="tdLeft">Thana :</td><td>' + zm_thana + '</td></tr>';
+                content += '</table>';
+
+                $('#zm_res').html(content);
+            }
+            else if (which_one == 1)    // institute
+            {
+                content += '<table class="table table-responsive table-bordered tabWidth">';
+                content += '<tr><td class="tdLeft">Institute :</td><td>' + ins_name + '</td></tr>';
+                content += '<tr><td class="tdLeft">Code :</td><td>' + ins_code + '</td></tr>';
+                content += '<tr><td class="tdLeft">Division :</td><td>' + ins_division + '</td></tr>';
+                content += '<tr><td class="tdLeft">Zilla :</td><td>' + ins_zilla + '</td></tr>';
+                content += '<tr><td class="tdLeft">Thana :</td><td>' + ins_thana + '</td></tr>';
+                content += '</table>';
+
+                $('#ins_res').html(content);
+            }
+        });
+
+        $('#allsubject').change(function () {
+            if ($(this).is(':checked')) {
+                $('.subject').prop('checked', true);
+            }
+            else {
+                $('.subject').prop('checked', false);
+            }
+        });
+
+        $('#Search').click(function () {
+            var data = $('form').serialize();
+            $.post("@Url.Content("~")" + "QuestionMonitor/MonitorSelect", data, function(res) {
+                $('#assign_list tbody tr:gt(1)').remove();
+                $('#assign_list tbody').append(res);
+            });
+            
+            return false;
+        });
+
+        $('.ResetLink').click(function(){
+            var ins_subject_no = $(this).attr('id');
+            var url = '@Url.Content("~")' + 'QuestionMonitor/Reset/' + ins_subject_no;
+            $.get(url, function (res) {
+                console.log(res);
+                if(res.message == "success")
+                {
+                    alert('Reset Successful');
+                }
+            }, 'json');
+
+            return false;
+        });
+    });
+</script>
+@using (Html.BeginForm())
+{
+<table class="table table-responsive table-bordered tabWidth">
+    <tr>
+        <td colspan="4" style="text-align:center">
+            <h2>Monitor Collection Project</h2>
+            @Html.Hidden("PROJECT_NO", project.PROJECT_NO)
+            @Html.Hidden("Is_Collected", "")
+            @Html.Hidden("Is_New", "")
+            @Html.Hidden("Proj_Ins_No", "")
+        </td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Name:</td>
+        <td>@project.PROJECT_NAME</td>
+        <td class="tdLeft">Project Deadline:</td>	
+        <td>@project.DATE_DEADLINE</td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Class:	</td>
+        <td>@project.SET_CLASS.CLASS_NAME</td>
+        <td class="adminLef_col" style="font-weight:bold">
+            ZM(iSearch):
+        </td>
+        <td>
+            <input id="txtZM" type="text" class="form-control" />
+            @Html.HiddenFor(model => model.USER_NO)
+        </td>
+    </tr>
+    <tr>
+        <td class="tdLeft">Select Institution:</td>
+        <td>
+            <input id="txtINS" type="text" class="form-control" />
+            @Html.HiddenFor(model => model.INSTITUTE_NO)
+        </td>
+        <td class="tdLeft">Target Collection Date:</td>
+        <td>
+            @Html.TextBoxFor(model => model.Target_Date, new { @class = "form-control dateclass"})
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div id="zm_res">
+            </div>
+        </td>
+        <td colspan="2">
+            <div id="ins_res">
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table table-responsive table-bordered  tabWidth">
+    <tr>
+        <td colspan="7" style="font-weight:bold">Collection Subject:</td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="checkbox" name="allsubject" id="allsubject" />
+            Select All
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+
+@{
+    int subject_count = Subjects.Count;
+    int i = 0;
+    Institute_Subject subject = new Institute_Subject();
+
+    while (subject_count > 0)
+    {
+        <tr>
+            @if (subject_count > 0)
+            {
+                SET_CLASS_SUBJECT_GET_Result sub = Subjects.ElementAt(i);
+
+                subject.SUBJECT_NO = (decimal)sub.SUBJECT_NO;
+                subject.SUBJECT_NAME = sub.SUBJECT_NAME;
+                subject.SUBJECT_NAME_BNG = sub.SUBJECT_NAME_BNG;
+                subject.IS_ACTIVE = false;
+
+                Html.RenderPartial("_SubjectPartial", subject);
+                subject_count--; i++;
+            }
+            @if (subject_count > 0)
+            {
+                SET_CLASS_SUBJECT_GET_Result sub = Subjects.ElementAt(i);
+
+                subject.SUBJECT_NO = (decimal)sub.SUBJECT_NO;
+                subject.SUBJECT_NAME = sub.SUBJECT_NAME;
+                subject.SUBJECT_NAME_BNG = sub.SUBJECT_NAME_BNG;
+                subject.IS_ACTIVE = false;
+
+                Html.RenderPartial("_SubjectPartial", subject);
+                subject_count--; i++;
+            }
+            else
+            {
+                <td colspan="3">&nbsp;</td>
+            }
+        </tr>
+    }
+}
+
+    <tr>
+        <td colspan="7" style="text-align:center;">
+            <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search" />
+        </td>
+    </tr>
+</table>
+}
+
+    <table id="assign_list"  class="table table-responsive table-bordered tabWidth">
+        <tr class="trhead">
+          <td colspan="7" class="TableHeadLabel tdLeft">Person Assigned Institution &amp; Subject List</td>
+        </tr>
+        <tr class="trhead">
+          <td class="tdLeft">Serial</td>
+          <td class="tdLeft"><p>Zonal Name -<br />
+            HR ID <br />
+            (Cell)</p></td>
+          <td class="tdLeft">HR Division,<br />
+            Zilla,<br />
+            Thana</td>
+          <td class="tdLeft">Total Institute <br />
+            Assigned</td>
+            <td class="tdLeft">Total Subject <br />
+            Assigned</td>
+          <td class="tdLeft">Total Subject <br />
+            Collected</td>
+          <td class="tdLeft">New Collected</td>
+        </tr>
+        @{
+            Html.RenderPartial("_GetAssignedList", assigned_list);
+        }
+  </table>
+
+
+<div class="modal fade bs-example-modal-lg" id="institutes" tabindex="-1" role="dialog"
+    aria-labelledby="downloadModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="div_institutes">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="subjects" tabindex="-1" role="dialog"
+    aria-labelledby="downloadModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="div_subjects">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

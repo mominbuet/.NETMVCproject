@@ -1,0 +1,102 @@
+﻿@using OG_SLN.Helpers
+@using OG_SLN.Models
+@{
+    Layout = null;
+    DcrPublishSearchModel searchModel = ViewBag.Search_DcrPublish_Model as DcrPublishSearchModel;
+
+    string datefrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+    string pubno = "";
+    string filter_type = ViewData["Filter_Type"] as string;
+}
+<script src="@Url.Content("~/Scripts/autocomplete-table.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    function do_search() {
+        var frm = $('form');
+        var url = '@Url.Content("~")' + 'Publish/DcrUserPublish';
+        var data = $(frm).serialize();
+
+        $.post(url, data, function (res) {
+            $('#publish_list').html(res);
+        });
+        return false;
+    }
+</script>
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("controller"), FormMethod.Post))
+{
+    <table class="tabWidth">
+        <tbody>
+            <tr>
+                <td class="adminLef_col">
+                    ZM(iSearch):
+                </td>
+                <td>
+                    <input id="txtZM" type="text" class="form-control" />
+                    @Html.Hidden("USER_NO", "")
+                    @Html.Hidden("Search_User", "")
+                    @Html.Hidden("Search_pubno", "")
+                    @Html.Hidden("Filter_Type", "")
+                </td>
+                <td style="width: 2%;">
+                </td>
+                <td class="adminLef_col">
+                    ZM name :
+                </td>
+                <td class="adminRight_col">
+                    <div class="input-group">
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        <div class="input-group-btn">
+                            @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="adminLef_col">
+                    Publish Date From:
+                </td>
+                <td class="adminRight_col">
+                    @Html.TextBox("Search_Date_From", datefrom, new {@id = "publishfrom", @class = "dateclass form-control" })
+                </td>
+                <td style="width: 2%">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    Publish Date To:
+                </td>
+                <td class="adminRight_col">
+                    @Html.TextBox("Search_Date_To", dateto, new { @id = "publishto", @class = "dateclass form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td class="adminLef_col">
+                    DCR Date From:
+                </td>
+                <td class="adminRight_col">
+                    @Html.TextBox("Dcr_Date_From", "", new { @id = "dcrfrom", @class = "dateclass form-control" })
+                </td>
+                <td style="width: 2%">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    DCR Date To:
+                </td>
+                <td class="adminRight_col">
+                    @Html.TextBox("Dcr_Date_To", "", new { @id = "dcrto", @class = "dateclass form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="btn-group btn-group-sm">
+                        <input id="Submit1" class="btn btn-success" type="submit" value="Search Publish List"
+                            onclick="return do_search()" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="publish_list" colspan="5" class="adminLef_col">
+                </td>
+            </tr>
+        </tbody>
+    </table>   
+}

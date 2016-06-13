@@ -1,0 +1,70 @@
+﻿@model IEnumerable<OG_SLN.SET_FISCAL_YEAR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Starting Date
+        </th>
+        <th>
+            Ending Date
+        </th>
+        <th>
+            Current Year?
+        </th>
+        <th>
+            Active?
+        </th>
+        <th>
+            Active From
+        </th>
+        <th>
+            Active To
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.START_DATE, "{0:yyyy-MM-dd}")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.END_DATE,"{0:yyyy-MM-dd}")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_Current_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_Year)
+        </td>
+        <td>
+            @Html.ValueFor(modelItem => item.ACTIVE_FROM,"{0:yyyy-MM-dd}")
+        </td>
+        <td>
+            @Html.ValueFor(modelItem => item.ACTIVE_TO,"{0:yyyy-MM-dd}")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FY_NO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FY_NO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FY_NO })
+        </td>
+    </tr>
+}
+
+</table>

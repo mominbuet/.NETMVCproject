@@ -1,0 +1,79 @@
+﻿@model OG_SLN.TRN_EXPENSE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+@section shadScripts {
+    @Html.Raw(ViewBag.jsmsg)
+}
+<script type="text/javascript">
+
+    function setEdit(id2) {
+        $.post("@Url.Content("~")"+"Expense/getPreviousDetailsWithoutButton",{id:id2},
+        function(data){
+            $("#tblDetails > tbody").html(data.html);
+        });
+    }   
+        
+</script>
+ <fieldset>
+        <legend>Expense</legend>
+        <div class="new_FormDiv">
+         <div class="editor-label">
+                User:
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.SEC_USERS.USER_NAME)
+            </div>
+            <div class="editor-label">
+                Fiscal Year
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.SET_FISCAL_YEAR.FY_NAME)
+                
+            </div>
+           
+            <div class="editor-label">
+                Date
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.TRN_EXP_DATE,"{0:yyyy-MM-dd}")
+                
+            </div>
+            <div class="editor-label">
+                Remarks
+            </div>
+            <div class="editor-field">
+                @Html.ValueFor(model => model.Remarks_desc)
+            </div>
+        </div>
+    </fieldset>
+    <table id="tblDetails" class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                Type
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Vendor
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+    </p>
+}

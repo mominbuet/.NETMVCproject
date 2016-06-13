@@ -1,0 +1,133 @@
+﻿@model OG_SLN.SET_PROMO_ITEM
+
+@{
+    ViewBag.Title = "Create";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".datesinspec").datepicker({ dateFormat: 'yy-mm-dd' });
+    });        
+</script>
+
+<div class="col-6 col-sm-6 col-lg-9">
+    <h2>Create</h2>
+
+     @using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Post, new { @class = "form-horizontal" }))
+          {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>SET_PROMO_ITEM</legend>
+
+
+            
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.PROMO_ITEM_TYPE_NO)
+                 </label>
+                <div class="col-sm-4">
+                     
+                     @Html.DropDownListFor(model => model.PROMO_ITEM_TYPE_NO, new SelectList(ViewBag.PROMO_ITEM_TYPES as System.Collections.IEnumerable, "PROMO_ITEM_TYPE_NO", "PROMO_ITEM_TYPE_NAME"))
+                     @Html.ValidationMessageFor(model => model.PROMO_ITEM_TYPE_NO)
+                </div>
+             </div>
+
+           
+           <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.PROMO_ITEM_NAME)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.PROMO_ITEM_NAME, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.PROMO_ITEM_NAME)
+                </div>
+             </div>
+
+
+
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.PROMO_ITEM_CODE)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.PROMO_ITEM_CODE, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.PROMO_ITEM_CODE)
+                </div>
+             </div>
+
+           
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.PROMO_ITEM_DESC)
+                 </label>
+                <div class="col-sm-4">
+                    @Html.EditorFor(model => model.desc_created, new { @Class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PROMO_ITEM_DESC)
+                </div>
+             </div>
+            
+
+            <div class="form-group">
+                <table style="margin-left:15px;">
+                    <tr>
+                        <td style="width:240px;">
+                            @Html.LabelFor(model => model.ACTIVE_PROMO_ITEM)
+                        </td>
+                        <td>
+                             @Html.EditorFor(model => model.ACTIVE_PROMO_ITEM)
+                             @Html.ValidationMessageFor(model => model.ACTIVE_PROMO_ITEM)
+                        </td>
+                     </tr>
+                </table>
+             </div>
+
+
+
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.ACTIVE_FROM)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.ACTIVE_FROM, "{0:yyyy-MM-dd}", new { @class = "form-control datesinspec", @Value = ViewBag.futureDate })
+                     @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+                </div>
+             </div>
+
+           
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.ACTIVE_TO)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.ACTIVE_TO, new { @class = "form-control datesinspec" , @Value = ViewBag.futureDate})
+                     @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+                </div>
+             </div>
+
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">
+                     @Html.LabelFor(model => model.SL_NUM)
+                 </label>
+                <div class="col-sm-4">
+                     @Html.TextBoxFor(model => model.SL_NUM, new { @class = "form-control" })
+                     @Html.ValidationMessageFor(model => model.SL_NUM)
+                </div>
+             </div>
+
+              <div class="form-group">
+                     <div style="margin-left:390px;">
+                        <input class="btn btn-success" type="submit" value="Create" />
+                    </div>
+              </div>
+
+        </fieldset>
+    }
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index", new { @class="btn btn-primary"})
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

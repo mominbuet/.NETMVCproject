@@ -1,0 +1,80 @@
+﻿@{
+    OG_SLN.SpecimenSearch insSearch = ViewBag.insSearch as OG_SLN.SpecimenSearch;
+}
+
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Get, new { @class = "form-horizontal" }))
+{
+    <div class="col-8 marRight_2">
+        <table class="tabWidth">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">
+                        Specimen No :
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("sno", @insSearch.sno, new { @class = "form-control" })
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Specimen Name :
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("sname", @insSearch.sname, new { @class = "form-control" })
+                    </td>
+                </tr>
+
+                <tr>
+                    
+                    <td class="adminLef_col">
+                        Specimen Code:
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("scode", @insSearch.scode, new { @class = "form-control" })
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="adminLef_col">
+                        Insert Time From :
+                    </td>
+                    <td class="adminRight_col">
+                        <input id="AssignDateFrom" name="AssignDateFrom" 
+                     value="@{if (insSearch.activeFrom.ToString() != "")
+                              {
+                                 @(DateTime.Parse(insSearch.activeFrom.ToString()).ToString("yyyy-MM-dd"))}}" 
+                                 class="form-control datesinspec"
+                     type="text" />
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Insert Time to :
+                    </td>
+                    <td class="adminRight_col">
+                        <input id="AssignDateTo" name="AssignDateTo" 
+                    value="@{if (insSearch.activeTo.ToString() != "")
+                             {
+                                 @(DateTime.Parse(insSearch.activeTo.ToString()).ToString("yyyy-MM-dd"))}}"
+                    class="form-control datesinspec"
+                     type="text" />
+                    </td>
+                </tr>
+                <tr> 
+                <td colspan="3">
+                <div class="btn-group btn-group-sm">
+                        <input id="Submit1" class="btn btn-success" type="submit" value="Search" />
+                        <input id="Reset1" class="btn btn-warning" type="reset" value="Reset" />
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,2689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GEN_APPROVE_TYPE" EntityType="Model.GEN_APPROVE_TYPE" />
+    <EntitySet Name="GEN_DATA_TYPE" EntityType="Model.GEN_DATA_TYPE" />
+    <EntitySet Name="GEN_DATA_VERSION" EntityType="Model.GEN_DATA_VERSION" />
+    <EntitySet Name="GEN_DCR_TYPE" EntityType="Model.GEN_DCR_TYPE" />
+    <EntitySet Name="GEN_SMS_TYPE" EntityType="Model.GEN_SMS_TYPE" />
+    <EntitySet Name="GEN_USER_TYPES" EntityType="Model.GEN_USER_TYPES" />
+    <EntitySet Name="ORA_ASPNET_APPLICATIONS" EntityType="Model.ORA_ASPNET_APPLICATIONS" />
+    <EntitySet Name="ORA_ASPNET_MEMBERSHIP" EntityType="Model.ORA_ASPNET_MEMBERSHIP" />
+    <EntitySet Name="ORA_ASPNET_PATHS" EntityType="Model.ORA_ASPNET_PATHS" />
+    <EntitySet Name="ORA_ASPNET_PERSONALIZNALLUSERS" EntityType="Model.ORA_ASPNET_PERSONALIZNALLUSERS" />
+    <EntitySet Name="ORA_ASPNET_PERSONALIZNPERUSER" EntityType="Model.ORA_ASPNET_PERSONALIZNPERUSER" />
+    <EntitySet Name="ORA_ASPNET_PROFILE" EntityType="Model.ORA_ASPNET_PROFILE" />
+    <EntitySet Name="ORA_ASPNET_ROLES" EntityType="Model.ORA_ASPNET_ROLES" />
+    <EntitySet Name="ORA_ASPNET_SESSIONAPPLICATIONS" EntityType="Model.ORA_ASPNET_SESSIONAPPLICATIONS" />
+    <EntitySet Name="ORA_ASPNET_SESSIONS" EntityType="Model.ORA_ASPNET_SESSIONS" />
+    <EntitySet Name="ORA_ASPNET_SITEMAP" EntityType="Model.ORA_ASPNET_SITEMAP" />
+    <EntitySet Name="ORA_ASPNET_USERS" EntityType="Model.ORA_ASPNET_USERS" />
+    <EntitySet Name="SEC_USER_CLOSURE" EntityType="Model.SEC_USER_CLOSURE" />
+    <EntitySet Name="SEC_USER_DCR_APPROVE" EntityType="Model.SEC_USER_DCR_APPROVE" />
+    <EntitySet Name="SEC_USER_LOGON_APPROVE" EntityType="Model.SEC_USER_LOGON_APPROVE" />
+    <EntitySet Name="SEC_USER_LOGONS" EntityType="Model.SEC_USER_LOGONS" />
+    <EntitySet Name="SEC_USER_MULTI_LOGIN" EntityType="Model.SEC_USER_MULTI_LOGIN" />
+    <EntitySet Name="SEC_USER_ZONE" EntityType="Model.SEC_USER_ZONE" />
+    <EntitySet Name="SEC_USERS" EntityType="Model.SEC_USERS" />
+    <EntitySet Name="SEC_USERS_HIS" EntityType="Model.SEC_USERS_HIS" />
+    <EntitySet Name="SET_BOOK_BRAND_TYPE" EntityType="Model.SET_BOOK_BRAND_TYPE" />
+    <EntitySet Name="SET_BOOK_GROUP" EntityType="Model.SET_BOOK_GROUP" />
+    <EntitySet Name="SET_BOOK_PROJ_TYPE" EntityType="Model.SET_BOOK_PROJ_TYPE" />
+    <EntitySet Name="SET_BOOK_TYPE" EntityType="Model.SET_BOOK_TYPE" />
+    <EntitySet Name="SET_CLASS" EntityType="Model.SET_CLASS" />
+    <EntitySet Name="SET_CLIENT_INFO" EntityType="Model.SET_CLIENT_INFO" />
+    <EntitySet Name="SET_COMPANY" EntityType="Model.SET_COMPANY" />
+    <EntitySet Name="SET_DEPARTMENT" EntityType="Model.SET_DEPARTMENT" />
+    <EntitySet Name="SET_DESIGNATION" EntityType="Model.SET_DESIGNATION" />
+    <EntitySet Name="SET_DIVISION" EntityType="Model.SET_DIVISION" />
+    <EntitySet Name="SET_DIVISION_HIS" EntityType="Model.SET_DIVISION_HIS" />
+    <EntitySet Name="SET_EXP_TYPE" EntityType="Model.SET_EXP_TYPE" />
+    <EntitySet Name="SET_FISCAL_YEAR" EntityType="Model.SET_FISCAL_YEAR" />
+    <EntitySet Name="SET_INST_TYPE" EntityType="Model.SET_INST_TYPE" />
+    <EntitySet Name="SET_INSTITUTE" EntityType="Model.SET_INSTITUTE" />
+    <EntitySet Name="SET_MASTER_DATA" EntityType="Model.SET_MASTER_DATA" />
+    <EntitySet Name="SET_MASTER_DATA_LIST" EntityType="Model.SET_MASTER_DATA_LIST" />
+    <EntitySet Name="SET_ORG_TYPE" EntityType="Model.SET_ORG_TYPE" />
+    <EntitySet Name="SET_PROMO_ITEM" EntityType="Model.SET_PROMO_ITEM" />
+    <EntitySet Name="SET_PROMO_ITEM_TYPE" EntityType="Model.SET_PROMO_ITEM_TYPE" />
+    <EntitySet Name="SET_REASON" EntityType="Model.SET_REASON" />
+    <EntitySet Name="SET_SPECIMEN" EntityType="Model.SET_SPECIMEN" />
+    <EntitySet Name="SET_SUBJECT" EntityType="Model.SET_SUBJECT" />
+    <EntitySet Name="SET_TEACHER_CONTACT" EntityType="Model.SET_TEACHER_CONTACT" />
+    <EntitySet Name="SET_TEACHER_DESIG" EntityType="Model.SET_TEACHER_DESIG" />
+    <EntitySet Name="SET_TEACHER_INFO" EntityType="Model.SET_TEACHER_INFO" />
+    <EntitySet Name="SET_TEACHER_SUBJECT" EntityType="Model.SET_TEACHER_SUBJECT" />
+    <EntitySet Name="SET_THANA" EntityType="Model.SET_THANA" />
+    <EntitySet Name="SET_TRANSPORT_TYPE" EntityType="Model.SET_TRANSPORT_TYPE" />
+    <EntitySet Name="SET_WORK_PURPOSE" EntityType="Model.SET_WORK_PURPOSE" />
+    <EntitySet Name="SET_ZILLA" EntityType="Model.SET_ZILLA" />
+    <EntitySet Name="SET_ZONE" EntityType="Model.SET_ZONE" />
+    <EntitySet Name="TRN_DCR" EntityType="Model.TRN_DCR" />
+    <EntitySet Name="TRN_DCR_APPROVE" EntityType="Model.TRN_DCR_APPROVE" />
+    <EntitySet Name="TRN_DCR_DET" EntityType="Model.TRN_DCR_DET" />
+    <EntitySet Name="TRN_DOWNLOAD_LOG" EntityType="Model.TRN_DOWNLOAD_LOG" />
+    <EntitySet Name="TRN_MSG" EntityType="Model.TRN_MSG" />
+    <EntitySet Name="TRN_MSG_RECIEVER" EntityType="Model.TRN_MSG_RECIEVER" />
+    <EntitySet Name="TRN_SMS_RECEIVE" EntityType="Model.TRN_SMS_RECEIVE" />
+    <EntitySet Name="TRN_SMS_SEND" EntityType="Model.TRN_SMS_SEND" />
+    <EntitySet Name="TRN_UPLOAD_LOG" EntityType="Model.TRN_UPLOAD_LOG" />
+    <EntitySet Name="ORA_VW_ASPNET_APPLICATIONS" EntityType="Model.ORA_VW_ASPNET_APPLICATIONS" />
+    <EntitySet Name="ORA_VW_ASPNET_MEMUSERS" EntityType="Model.ORA_VW_ASPNET_MEMUSERS" />
+    <EntitySet Name="ORA_VW_ASPNET_PROFILES" EntityType="Model.ORA_VW_ASPNET_PROFILES" />
+    <EntitySet Name="ORA_VW_ASPNET_ROLES" EntityType="Model.ORA_VW_ASPNET_ROLES" />
+    <EntitySet Name="ORA_VW_ASPNET_SESSIONS" EntityType="Model.ORA_VW_ASPNET_SESSIONS" />
+    <EntitySet Name="ORA_VW_ASPNET_UIR" EntityType="Model.ORA_VW_ASPNET_UIR" />
+    <EntitySet Name="ORA_VW_ASPNET_USERS" EntityType="Model.ORA_VW_ASPNET_USERS" />
+    <AssociationSet Name="SEC_USER_LOGON_APPROVE_R02" Association="Model.SEC_USER_LOGON_APPROVE_R02">
+      <End Role="GEN_APPROVE_TYPE" EntitySet="GEN_APPROVE_TYPE" />
+      <End Role="SEC_USER_LOGON_APPROVE" EntitySet="SEC_USER_LOGON_APPROVE" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USER_LOGONS_R01" Association="Model.SEC_USER_LOGONS_R01">
+      <End Role="GEN_APPROVE_TYPE" EntitySet="GEN_APPROVE_TYPE" />
+      <End Role="SEC_USER_LOGONS" EntitySet="SEC_USER_LOGONS" />
+    </AssociationSet>
+    <AssociationSet Name="SET_MASTER_DATA_R01" Association="Model.SET_MASTER_DATA_R01">
+      <End Role="GEN_DATA_TYPE" EntitySet="GEN_DATA_TYPE" />
+      <End Role="SET_MASTER_DATA" EntitySet="SET_MASTER_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R08" Association="Model.TRN_DCR_DET_R08">
+      <End Role="GEN_DCR_TYPE" EntitySet="GEN_DCR_TYPE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_SMS_SEND_R03" Association="Model.TRN_SMS_SEND_R03">
+      <End Role="GEN_SMS_TYPE" EntitySet="GEN_SMS_TYPE" />
+      <End Role="TRN_SMS_SEND" EntitySet="TRN_SMS_SEND" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USERS_R01" Association="Model.SEC_USERS_R01">
+      <End Role="GEN_USER_TYPES" EntitySet="GEN_USER_TYPES" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APPLICATIONID" Association="Model.FK_APPLICATIONID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_ROLES" EntitySet="ORA_ASPNET_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBERSHIP_APPID" Association="Model.FK_MEMBERSHIP_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_MEMBERSHIP" EntitySet="ORA_ASPNET_MEMBERSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PATHS_APPID" Association="Model.FK_PATHS_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_PATHS" EntitySet="ORA_ASPNET_PATHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SITEMAP_APPID" Association="Model.FK_SITEMAP_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_SITEMAP" EntitySet="ORA_ASPNET_SITEMAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERS_APPID" Association="Model.FK_USERS_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBERSHIP_USERID" Association="Model.FK_MEMBERSHIP_USERID">
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+      <End Role="ORA_ASPNET_MEMBERSHIP" EntitySet="ORA_ASPNET_MEMBERSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONALIZATIONALLUSERS_PATHID" Association="Model.PERSONALIZATIONALLUSERS_PATHID">
+      <End Role="ORA_ASPNET_PATHS" EntitySet="ORA_ASPNET_PATHS" />
+      <End Role="ORA_ASPNET_PERSONALIZNALLUSERS" EntitySet="ORA_ASPNET_PERSONALIZNALLUSERS" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONALIZATIONPERUSER_PATHID" Association="Model.PERSONALIZATIONPERUSER_PATHID">
+      <End Role="ORA_ASPNET_PATHS" EntitySet="ORA_ASPNET_PATHS" />
+      <End Role="ORA_ASPNET_PERSONALIZNPERUSER" EntitySet="ORA_ASPNET_PERSONALIZNPERUSER" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONALIZATIONPERUSER_USERID" Association="Model.PERSONALIZATIONPERUSER_USERID">
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+      <End Role="ORA_ASPNET_PERSONALIZNPERUSER" EntitySet="ORA_ASPNET_PERSONALIZNPERUSER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROFILE_USERID" Association="Model.FK_PROFILE_USERID">
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+      <End Role="ORA_ASPNET_PROFILE" EntitySet="ORA_ASPNET_PROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USER_ZONE_R01" Association="Model.SEC_USER_ZONE_R01">
+      <End Role="SET_ZONE" EntitySet="SET_ZONE" />
+      <End Role="SEC_USER_ZONE" EntitySet="SEC_USER_ZONE" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USERS_R02" Association="Model.SEC_USERS_R02">
+      <End Role="SET_DEPARTMENT" EntitySet="SET_DEPARTMENT" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USERS_R03" Association="Model.SEC_USERS_R03">
+      <End Role="SET_DESIGNATION" EntitySet="SET_DESIGNATION" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="SET_BOOK_PROJ_TYPE_R01" Association="Model.SET_BOOK_PROJ_TYPE_R01">
+      <End Role="SET_BOOK_BRAND_TYPE" EntitySet="SET_BOOK_BRAND_TYPE" />
+      <End Role="SET_BOOK_PROJ_TYPE" EntitySet="SET_BOOK_PROJ_TYPE" />
+    </AssociationSet>
+    <AssociationSet Name="SET_BOOK_GROUP_R01" Association="Model.SET_BOOK_GROUP_R01">
+      <End Role="SET_BOOK_PROJ_TYPE" EntitySet="SET_BOOK_PROJ_TYPE" />
+      <End Role="SET_BOOK_GROUP" EntitySet="SET_BOOK_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="SET_BOOK_TYPE_R01" Association="Model.SET_BOOK_TYPE_R01">
+      <End Role="SET_BOOK_GROUP" EntitySet="SET_BOOK_GROUP" />
+      <End Role="SET_BOOK_TYPE" EntitySet="SET_BOOK_TYPE" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_SUBJECT_R03" Association="Model.SET_TEACHER_SUBJECT_R03">
+      <End Role="SET_CLASS" EntitySet="SET_CLASS" />
+      <End Role="SET_TEACHER_SUBJECT" EntitySet="SET_TEACHER_SUBJECT" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R01" Association="Model.SET_CLIENT_INFO_R01">
+      <End Role="SET_DIVISION" EntitySet="SET_DIVISION" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R02" Association="Model.SET_CLIENT_INFO_R02">
+      <End Role="SET_ZONE" EntitySet="SET_ZONE" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R03" Association="Model.SET_CLIENT_INFO_R03">
+      <End Role="SET_ZILLA" EntitySet="SET_ZILLA" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R04" Association="Model.SET_CLIENT_INFO_R04">
+      <End Role="SET_THANA" EntitySet="SET_THANA" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R11" Association="Model.TRN_DCR_DET_R11">
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="SET_DEPARTMENT_R02" Association="Model.SET_DEPARTMENT_R02">
+      <End Role="SET_COMPANY" EntitySet="SET_COMPANY" />
+      <End Role="SET_DEPARTMENT" EntitySet="SET_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SET_DEPARTMENT_R01" Association="Model.SET_DEPARTMENT_R01">
+      <End Role="SET_DEPARTMENT" EntitySet="SET_DEPARTMENT" />
+      <End Role="SET_DEPARTMENT1" EntitySet="SET_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_INFO_R01" Association="Model.SET_TEACHER_INFO_R01">
+      <End Role="SET_INSTITUTE" EntitySet="SET_INSTITUTE" />
+      <End Role="SET_TEACHER_INFO" EntitySet="SET_TEACHER_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R03" Association="Model.TRN_DCR_DET_R03">
+      <End Role="SET_INSTITUTE" EntitySet="SET_INSTITUTE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="SET_MASTER_DATA_LIST_R01" Association="Model.SET_MASTER_DATA_LIST_R01">
+      <End Role="SET_MASTER_DATA" EntitySet="SET_MASTER_DATA" />
+      <End Role="SET_MASTER_DATA_LIST" EntitySet="SET_MASTER_DATA_LIST" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R09" Association="Model.TRN_DCR_DET_R09">
+      <End Role="SET_ORG_TYPE" EntitySet="SET_ORG_TYPE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R10" Association="Model.TRN_DCR_DET_R10">
+      <End Role="SET_PROMO_ITEM" EntitySet="SET_PROMO_ITEM" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R02" Association="Model.TRN_DCR_DET_R02">
+      <End Role="SET_REASON" EntitySet="SET_REASON" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R01" Association="Model.TRN_DCR_DET_R01">
+      <End Role="SET_SPECIMEN" EntitySet="SET_SPECIMEN" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_SUBJECT_R02" Association="Model.SET_TEACHER_SUBJECT_R02">
+      <End Role="SET_SUBJECT" EntitySet="SET_SUBJECT" />
+      <End Role="SET_TEACHER_SUBJECT" EntitySet="SET_TEACHER_SUBJECT" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_INFO_R02" Association="Model.SET_TEACHER_INFO_R02">
+      <End Role="SET_TEACHER_DESIG" EntitySet="SET_TEACHER_DESIG" />
+      <End Role="SET_TEACHER_INFO" EntitySet="SET_TEACHER_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R06" Association="Model.TRN_DCR_DET_R06">
+      <End Role="SET_TEACHER_INFO" EntitySet="SET_TEACHER_INFO" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R05" Association="Model.TRN_DCR_DET_R05">
+      <End Role="SET_TRANSPORT_TYPE" EntitySet="SET_TRANSPORT_TYPE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R04" Association="Model.TRN_DCR_DET_R04">
+      <End Role="SET_WORK_PURPOSE" EntitySet="SET_WORK_PURPOSE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R12" Association="Model.TRN_DCR_DET_R12">
+      <End Role="TRN_SMS_RECEIVE" EntitySet="TRN_SMS_RECEIVE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_MSG_R01" Association="Model.TRN_MSG_R01">
+      <End Role="TRN_MSG" EntitySet="TRN_MSG" />
+      <End Role="TRN_MSG1" EntitySet="TRN_MSG" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_SMS_SEND_R02" Association="Model.TRN_SMS_SEND_R02">
+      <End Role="TRN_SMS_SEND" EntitySet="TRN_SMS_SEND" />
+      <End Role="TRN_SMS_SEND1" EntitySet="TRN_SMS_SEND" />
+    </AssociationSet>
+    <AssociationSet Name="ORA_ASPNET_USERSINROLES" Association="Model.ORA_ASPNET_USERSINROLES">
+      <End Role="ORA_ASPNET_ROLES" EntitySet="ORA_ASPNET_ROLES" />
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+    </AssociationSet>
+    <FunctionImport Name="SEC_USERS_INSERT" ReturnType="Collection(Decimal)">
+      <Parameter Name="P_USER_MOBILE" Mode="In" Type="String" />
+      <Parameter Name="P_USER_ADDR" Mode="In" Type="String" />
+      <Parameter Name="P_USER_EMAIL" Mode="In" Type="String" />
+      <Parameter Name="P_USER_NAME" Mode="In" Type="String" />
+      <Parameter Name="P_USER_PWD" Mode="In" Type="String" />
+      <Parameter Name="P_USER_PARENT_NO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_IS_MULTI_LOGIN" Mode="In" Type="Decimal" />
+      <Parameter Name="P_MULTI_LOGIN_QTY" Mode="In" Type="Decimal" />
+      <Parameter Name="P_IS_MULTI_LOGIN_SEQUENTIAL" Mode="In" Type="Decimal" />
+      <Parameter Name="P_IS_MULTI_DCR_APPROVE" Mode="In" Type="Decimal" />
+      <Parameter Name="P_MULTI_DCR_APPROVE_QTY" Mode="In" Type="Decimal" />
+      <Parameter Name="P_IS_DCR_APPROVE_SEQUENTIAL" Mode="In" Type="Decimal" />
+      <Parameter Name="P_IS_ACTIVE" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ACTIVE_FROM" Mode="In" Type="DateTime" />
+      <Parameter Name="P_ACTIVE_TO" Mode="In" Type="DateTime" />
+      <Parameter Name="P_INSERT_USER_NO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_INSERT_LOGON_NO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_USER_TYPE_NO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_DEPT_NO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_DESIG_NO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_HR_EMP_ID" Mode="In" Type="String" />
+      <Parameter Name="P_USER_FULL_NAME" Mode="In" Type="String" />
+      <Parameter Name="P_USER_NICK_NAME" Mode="In" Type="String" />
+      <Parameter Name="P_USER_CONTACT" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="GEN_APPROVE_TYPE">
+    <Key>
+      <PropertyRef Name="APPROVE_TYPE_NO" />
+    </Key>
+    <Property Name="APPROVE_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TYPE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SEC_USER_LOGON_APPROVE" Relationship="Model.SEC_USER_LOGON_APPROVE_R02" FromRole="GEN_APPROVE_TYPE" ToRole="SEC_USER_LOGON_APPROVE" />
+    <NavigationProperty Name="SEC_USER_LOGONS" Relationship="Model.SEC_USER_LOGONS_R01" FromRole="GEN_APPROVE_TYPE" ToRole="SEC_USER_LOGONS" />
+  </EntityType>
+  <EntityType Name="GEN_DATA_TYPE">
+    <Key>
+      <PropertyRef Name="DATA_TYPE_NO" />
+    </Key>
+    <Property Name="DATA_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DATA_TYPE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SET_MASTER_DATA" Relationship="Model.SET_MASTER_DATA_R01" FromRole="GEN_DATA_TYPE" ToRole="SET_MASTER_DATA" />
+  </EntityType>
+  <EntityType Name="GEN_DATA_VERSION">
+    <Key>
+      <PropertyRef Name="VER_NO" />
+    </Key>
+    <Property Name="VER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="OBJECT_NAME" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CURR_VER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GEN_DCR_TYPE">
+    <Key>
+      <PropertyRef Name="DCR_TYPE_NO" />
+    </Key>
+    <Property Name="DCR_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DCR_TYPE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R08" FromRole="GEN_DCR_TYPE" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="GEN_SMS_TYPE">
+    <Key>
+      <PropertyRef Name="SMS_TYPE_NO" />
+    </Key>
+    <Property Name="SMS_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SMS_TYPE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TRN_SMS_SEND" Relationship="Model.TRN_SMS_SEND_R03" FromRole="GEN_SMS_TYPE" ToRole="TRN_SMS_SEND" />
+  </EntityType>
+  <EntityType Name="GEN_USER_TYPES">
+    <Key>
+      <PropertyRef Name="USER_TYPE_NO" />
+    </Key>
+    <Property Name="USER_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_TYPE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SHORT_NAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IS_MULTI_LOGIN" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SEC_USERS" Relationship="Model.SEC_USERS_R01" FromRole="GEN_USER_TYPES" ToRole="SEC_USERS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_APPLICATIONS">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+    </Key>
+    <Property Name="APPLICATIONNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDAPPLICATIONNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="ORA_ASPNET_ROLES" Relationship="Model.FK_APPLICATIONID" FromRole="ORA_ASPNET_APPLICATIONS" ToRole="ORA_ASPNET_ROLES" />
+    <NavigationProperty Name="ORA_ASPNET_MEMBERSHIP" Relationship="Model.FK_MEMBERSHIP_APPID" FromRole="ORA_ASPNET_APPLICATIONS" ToRole="ORA_ASPNET_MEMBERSHIP" />
+    <NavigationProperty Name="ORA_ASPNET_PATHS" Relationship="Model.FK_PATHS_APPID" FromRole="ORA_ASPNET_APPLICATIONS" ToRole="ORA_ASPNET_PATHS" />
+    <NavigationProperty Name="ORA_ASPNET_SITEMAP" Relationship="Model.FK_SITEMAP_APPID" FromRole="ORA_ASPNET_APPLICATIONS" ToRole="ORA_ASPNET_SITEMAP" />
+    <NavigationProperty Name="ORA_ASPNET_USERS" Relationship="Model.FK_USERS_APPID" FromRole="ORA_ASPNET_APPLICATIONS" ToRole="ORA_ASPNET_USERS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_MEMBERSHIP">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="USERID" Type="Guid" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PASSWORDFORMAT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PASSWORDSALT" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="MOBILEPIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDEMAIL" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PASSWORDQUESTION" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PASSWORDANSWER" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="ISAPPROVED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ISLOCKEDOUT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LASTLOGINDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LASTPASSWORDCHANGEDDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LASTLOCKOUTDATE" Type="DateTime" Nullable="false" />
+    <Property Name="FAILEDPWDATTEMPTCOUNT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FAILEDPWDATTEMPTWINSTART" Type="DateTime" Nullable="false" />
+    <Property Name="FAILEDPWDANSWERATTEMPTCOUNT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FAILEDPWDANSWERATTEMPTWINSTART" Type="DateTime" Nullable="false" />
+    <Property Name="COMMENTS" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="ORA_ASPNET_APPLICATIONS" Relationship="Model.FK_MEMBERSHIP_APPID" FromRole="ORA_ASPNET_MEMBERSHIP" ToRole="ORA_ASPNET_APPLICATIONS" />
+    <NavigationProperty Name="ORA_ASPNET_USERS" Relationship="Model.FK_MEMBERSHIP_USERID" FromRole="ORA_ASPNET_MEMBERSHIP" ToRole="ORA_ASPNET_USERS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_PATHS">
+    <Key>
+      <PropertyRef Name="PATHID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="PATHID" Type="Guid" Nullable="false" />
+    <Property Name="PATH" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDPATH" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="ORA_ASPNET_APPLICATIONS" Relationship="Model.FK_PATHS_APPID" FromRole="ORA_ASPNET_PATHS" ToRole="ORA_ASPNET_APPLICATIONS" />
+    <NavigationProperty Name="ORA_ASPNET_PERSONALIZNALLUSERS" Relationship="Model.PERSONALIZATIONALLUSERS_PATHID" FromRole="ORA_ASPNET_PATHS" ToRole="ORA_ASPNET_PERSONALIZNALLUSERS" />
+    <NavigationProperty Name="ORA_ASPNET_PERSONALIZNPERUSER" Relationship="Model.PERSONALIZATIONPERUSER_PATHID" FromRole="ORA_ASPNET_PATHS" ToRole="ORA_ASPNET_PERSONALIZNPERUSER" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_PERSONALIZNALLUSERS">
+    <Key>
+      <PropertyRef Name="PAGESETTINGS" />
+      <PropertyRef Name="LASTUPDATEDDATE" />
+    </Key>
+    <Property Name="PATHID" Type="Guid" />
+    <Property Name="PAGESETTINGS" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LASTUPDATEDDATE" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ORA_ASPNET_PATHS" Relationship="Model.PERSONALIZATIONALLUSERS_PATHID" FromRole="ORA_ASPNET_PERSONALIZNALLUSERS" ToRole="ORA_ASPNET_PATHS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_PERSONALIZNPERUSER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="PATHID" Type="Guid" />
+    <Property Name="USERID" Type="Guid" />
+    <Property Name="PAGESETTINGS" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LASTUPDATEDDATE" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ORA_ASPNET_PATHS" Relationship="Model.PERSONALIZATIONPERUSER_PATHID" FromRole="ORA_ASPNET_PERSONALIZNPERUSER" ToRole="ORA_ASPNET_PATHS" />
+    <NavigationProperty Name="ORA_ASPNET_USERS" Relationship="Model.PERSONALIZATIONPERUSER_USERID" FromRole="ORA_ASPNET_PERSONALIZNPERUSER" ToRole="ORA_ASPNET_USERS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_PROFILE">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Guid" Nullable="false" />
+    <Property Name="PROPERTYNAMES" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PROPERTYVALUESSTRING" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PROPERTYVALUESBINARY" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LASTUPDATEDDATE" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ORA_ASPNET_USERS" Relationship="Model.FK_PROFILE_USERID" FromRole="ORA_ASPNET_PROFILE" ToRole="ORA_ASPNET_USERS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_ROLES">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="ROLEID" Type="Guid" Nullable="false" />
+    <Property Name="ROLENAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDROLENAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="ORA_ASPNET_APPLICATIONS" Relationship="Model.FK_APPLICATIONID" FromRole="ORA_ASPNET_ROLES" ToRole="ORA_ASPNET_APPLICATIONS" />
+    <NavigationProperty Name="ORA_ASPNET_USERS" Relationship="Model.ORA_ASPNET_USERSINROLES" FromRole="ORA_ASPNET_ROLES" ToRole="ORA_ASPNET_USERS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_SESSIONAPPLICATIONS">
+    <Key>
+      <PropertyRef Name="APPID" />
+    </Key>
+    <Property Name="APPID" Type="Guid" Nullable="false" />
+    <Property Name="APPNAME" Type="String" Nullable="false" MaxLength="280" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_SESSIONS">
+    <Key>
+      <PropertyRef Name="SESSIONID" />
+    </Key>
+    <Property Name="SESSIONID" Type="String" Nullable="false" MaxLength="116" Unicode="true" FixedLength="false" />
+    <Property Name="CREATED" Type="DateTime" Nullable="false" />
+    <Property Name="EXPIRES" Type="DateTime" Nullable="false" />
+    <Property Name="LOCKDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LOCKDATELOCAL" Type="DateTime" Nullable="false" />
+    <Property Name="LOCKCOOKIE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="TIMEOUT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LOCKED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SESSIONITEMSHORT" Type="Binary" MaxLength="2000" FixedLength="false" />
+    <Property Name="SESSIONITEMLONG" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FLAGS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_SITEMAP">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TITLE" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="URL" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="ROLES" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="PARENT" Type="Int32" />
+    <NavigationProperty Name="ORA_ASPNET_APPLICATIONS" Relationship="Model.FK_SITEMAP_APPID" FromRole="ORA_ASPNET_SITEMAP" ToRole="ORA_ASPNET_APPLICATIONS" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_USERS">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="USERID" Type="Guid" Nullable="false" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDUSERNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MOBILEALIAS" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="ISANONYMOUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LASTACTIVITYDATE" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ORA_ASPNET_APPLICATIONS" Relationship="Model.FK_USERS_APPID" FromRole="ORA_ASPNET_USERS" ToRole="ORA_ASPNET_APPLICATIONS" />
+    <NavigationProperty Name="ORA_ASPNET_MEMBERSHIP" Relationship="Model.FK_MEMBERSHIP_USERID" FromRole="ORA_ASPNET_USERS" ToRole="ORA_ASPNET_MEMBERSHIP" />
+    <NavigationProperty Name="ORA_ASPNET_PERSONALIZNPERUSER" Relationship="Model.PERSONALIZATIONPERUSER_USERID" FromRole="ORA_ASPNET_USERS" ToRole="ORA_ASPNET_PERSONALIZNPERUSER" />
+    <NavigationProperty Name="ORA_ASPNET_PROFILE" Relationship="Model.FK_PROFILE_USERID" FromRole="ORA_ASPNET_USERS" ToRole="ORA_ASPNET_PROFILE" />
+    <NavigationProperty Name="ORA_ASPNET_ROLES" Relationship="Model.ORA_ASPNET_USERSINROLES" FromRole="ORA_ASPNET_USERS" ToRole="ORA_ASPNET_ROLES" />
+  </EntityType>
+  <EntityType Name="SEC_USER_CLOSURE">
+    <Key>
+      <PropertyRef Name="CLOSE_NO" />
+    </Key>
+    <Property Name="CLOSE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ANCESTOR_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DESCENDANT_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REL_DEPTH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SEC_USER_DCR_APPROVE">
+    <Key>
+      <PropertyRef Name="USER_DCR_APPROVE_NO" />
+    </Key>
+    <Property Name="USER_DCR_APPROVE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_SEQUENCE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_USER_LOGON_APPROVE">
+    <Key>
+      <PropertyRef Name="LOGON_APPROVE_NO" />
+    </Key>
+    <Property Name="LOGON_APPROVE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_SEQUENCE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="GEN_APPROVE_TYPE" Relationship="Model.SEC_USER_LOGON_APPROVE_R02" FromRole="SEC_USER_LOGON_APPROVE" ToRole="GEN_APPROVE_TYPE" />
+  </EntityType>
+  <EntityType Name="SEC_USER_LOGONS">
+    <Key>
+      <PropertyRef Name="LOGON_NO" />
+    </Key>
+    <Property Name="LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IP_ADDR" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LOGOUT_TIME" Type="DateTime" />
+    <Property Name="IS_LOGGED_IN" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_REQUIRED_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_AQUIRED_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SESS_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_MOBILE" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="WEB_SERVER_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="APP_VERSION" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_SIM" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="GEN_APPROVE_TYPE" Relationship="Model.SEC_USER_LOGONS_R01" FromRole="SEC_USER_LOGONS" ToRole="GEN_APPROVE_TYPE" />
+  </EntityType>
+  <EntityType Name="SEC_USER_MULTI_LOGIN">
+    <Key>
+      <PropertyRef Name="MULTI_LOGIN_NO" />
+    </Key>
+    <Property Name="MULTI_LOGIN_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_SEQUENCE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_USER_ZONE">
+    <Key>
+      <PropertyRef Name="USER_ZONE_NO" />
+    </Key>
+    <Property Name="USER_ZONE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ZONE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_ZONE" Relationship="Model.SEC_USER_ZONE_R01" FromRole="SEC_USER_ZONE" ToRole="SET_ZONE" />
+  </EntityType>
+  <EntityType Name="SEC_USERS">
+    <Key>
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DEPT_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DESIG_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="HR_EMP_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_FULL_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_NICK_NAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_CONTACT" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_MOBILE" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_ADDR" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_EMAIL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_PWD" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_PARENT_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MULTI_LOGIN" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MULTI_LOGIN_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MULTI_LOGIN_SEQUENTIAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MULTI_DCR_APPROVE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MULTI_DCR_APPROVE_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_DCR_APPROVE_SEQUENTIAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ENABLE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXISTS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" />
+    <Property Name="ACTIVE_TO" Type="DateTime" />
+    <NavigationProperty Name="GEN_USER_TYPES" Relationship="Model.SEC_USERS_R01" FromRole="SEC_USERS" ToRole="GEN_USER_TYPES" />
+    <NavigationProperty Name="SET_DEPARTMENT" Relationship="Model.SEC_USERS_R02" FromRole="SEC_USERS" ToRole="SET_DEPARTMENT" />
+    <NavigationProperty Name="SET_DESIGNATION" Relationship="Model.SEC_USERS_R03" FromRole="SEC_USERS" ToRole="SET_DESIGNATION" />
+  </EntityType>
+  <EntityType Name="SEC_USERS_HIS">
+    <Key>
+      <PropertyRef Name="HIS_NO" />
+    </Key>
+    <Property Name="HIS_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DEPT_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DESIG_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="HR_EMP_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_FULL_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_NICK_NAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_CONTACT" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_MOBILE" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_ADDR" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="USER_EMAIL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_PWD" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="USER_PARENT_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MULTI_LOGIN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MULTI_LOGIN_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MULTI_LOGIN_SEQUENTIAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MULTI_DCR_APPROVE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MULTI_DCR_APPROVE_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_DCR_APPROVE_SEQUENTIAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ENABLE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXISTS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_BRAND_TYPE">
+    <Key>
+      <PropertyRef Name="BOOK_BRAND_TYPE_NO" />
+    </Key>
+    <Property Name="BOOK_BRAND_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_BRAND_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_BRAND_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_BOOK_PROJ_TYPE" Relationship="Model.SET_BOOK_PROJ_TYPE_R01" FromRole="SET_BOOK_BRAND_TYPE" ToRole="SET_BOOK_PROJ_TYPE" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_GROUP">
+    <Key>
+      <PropertyRef Name="BOOK_GROUP_NO" />
+    </Key>
+    <Property Name="BOOK_GROUP_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_GROUP_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_GROUP_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_PROJ_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_BOOK_PROJ_TYPE" Relationship="Model.SET_BOOK_GROUP_R01" FromRole="SET_BOOK_GROUP" ToRole="SET_BOOK_PROJ_TYPE" />
+    <NavigationProperty Name="SET_BOOK_TYPE" Relationship="Model.SET_BOOK_TYPE_R01" FromRole="SET_BOOK_GROUP" ToRole="SET_BOOK_TYPE" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_PROJ_TYPE">
+    <Key>
+      <PropertyRef Name="BOOK_PROJ_TYPE_NO" />
+    </Key>
+    <Property Name="BOOK_PROJ_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_PROJ_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_PROJ_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_BRAND_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_BOOK_BRAND_TYPE" Relationship="Model.SET_BOOK_PROJ_TYPE_R01" FromRole="SET_BOOK_PROJ_TYPE" ToRole="SET_BOOK_BRAND_TYPE" />
+    <NavigationProperty Name="SET_BOOK_GROUP" Relationship="Model.SET_BOOK_GROUP_R01" FromRole="SET_BOOK_PROJ_TYPE" ToRole="SET_BOOK_GROUP" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_TYPE">
+    <Key>
+      <PropertyRef Name="BOOK_TYPE_NO" />
+    </Key>
+    <Property Name="BOOK_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_GROUP_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_BOOK_GROUP" Relationship="Model.SET_BOOK_TYPE_R01" FromRole="SET_BOOK_TYPE" ToRole="SET_BOOK_GROUP" />
+  </EntityType>
+  <EntityType Name="SET_CLASS">
+    <Key>
+      <PropertyRef Name="CLASS_NO" />
+    </Key>
+    <Property Name="CLASS_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLASS_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLASS_NAME_BNG" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLASS_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_TEACHER_SUBJECT" Relationship="Model.SET_TEACHER_SUBJECT_R03" FromRole="SET_CLASS" ToRole="SET_TEACHER_SUBJECT" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_INFO">
+    <Key>
+      <PropertyRef Name="CLIENT_NO" />
+    </Key>
+    <Property Name="CLIENT_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLIENT_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLIENT_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLIENT_NICK_NAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLIENT_DOB" Type="DateTime" />
+    <Property Name="CLIENT_MARRIAGE_DATE" Type="DateTime" />
+    <Property Name="CLIENT_ADDR" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CLIENT_COMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ZONE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ZILLA_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="THANA_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="DateTime" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_APPROVED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_DIVISION" Relationship="Model.SET_CLIENT_INFO_R01" FromRole="SET_CLIENT_INFO" ToRole="SET_DIVISION" />
+    <NavigationProperty Name="SET_ZONE" Relationship="Model.SET_CLIENT_INFO_R02" FromRole="SET_CLIENT_INFO" ToRole="SET_ZONE" />
+    <NavigationProperty Name="SET_ZILLA" Relationship="Model.SET_CLIENT_INFO_R03" FromRole="SET_CLIENT_INFO" ToRole="SET_ZILLA" />
+    <NavigationProperty Name="SET_THANA" Relationship="Model.SET_CLIENT_INFO_R04" FromRole="SET_CLIENT_INFO" ToRole="SET_THANA" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R11" FromRole="SET_CLIENT_INFO" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_COMPANY">
+    <Key>
+      <PropertyRef Name="COMP_NO" />
+    </Key>
+    <Property Name="COMP_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="COMP_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="COMP_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_DEPARTMENT" Relationship="Model.SET_DEPARTMENT_R02" FromRole="SET_COMPANY" ToRole="SET_DEPARTMENT" />
+  </EntityType>
+  <EntityType Name="SET_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+    </Key>
+    <Property Name="DEPT_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DEPT_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="COMP_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PARENT_DEPT_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SEC_USERS" Relationship="Model.SEC_USERS_R02" FromRole="SET_DEPARTMENT" ToRole="SEC_USERS" />
+    <NavigationProperty Name="SET_COMPANY" Relationship="Model.SET_DEPARTMENT_R02" FromRole="SET_DEPARTMENT" ToRole="SET_COMPANY" />
+    <NavigationProperty Name="SET_DEPARTMENT1" Relationship="Model.SET_DEPARTMENT_R01" FromRole="SET_DEPARTMENT" ToRole="SET_DEPARTMENT1" />
+    <NavigationProperty Name="SET_DEPARTMENT2" Relationship="Model.SET_DEPARTMENT_R01" FromRole="SET_DEPARTMENT1" ToRole="SET_DEPARTMENT" />
+  </EntityType>
+  <EntityType Name="SET_DESIGNATION">
+    <Key>
+      <PropertyRef Name="DESIG_NO" />
+    </Key>
+    <Property Name="DESIG_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DESIG_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DESIG_CODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DESIG_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SEC_USERS" Relationship="Model.SEC_USERS_R03" FromRole="SET_DESIGNATION" ToRole="SEC_USERS" />
+  </EntityType>
+  <EntityType Name="SET_DIVISION">
+    <Key>
+      <PropertyRef Name="DIVISION_NO" />
+    </Key>
+    <Property Name="DIVISION_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NAME_BNG" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MARKET_DIV_DETAILS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_MANAGER" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXISTS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="ACTUAL_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTUAL_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_CLIENT_INFO" Relationship="Model.SET_CLIENT_INFO_R01" FromRole="SET_DIVISION" ToRole="SET_CLIENT_INFO" />
+  </EntityType>
+  <EntityType Name="SET_DIVISION_HIS">
+    <Key>
+      <PropertyRef Name="HIS_NO" />
+    </Key>
+    <Property Name="HIS_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DIVISION_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NAME_BNG" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MARKET_DIV_DETAILS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_MANAGER" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXISTS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="ACTUAL_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTUAL_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SET_EXP_TYPE">
+    <Key>
+      <PropertyRef Name="EXP_TYPE_NO" />
+    </Key>
+    <Property Name="EXP_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="EXP_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="EXP_TYPE_DETAILS" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="EXP_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SET_FISCAL_YEAR">
+    <Key>
+      <PropertyRef Name="FY_NO" />
+    </Key>
+    <Property Name="FY_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FY_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="START_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="END_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="IS_CURRENT_YEAR" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SET_INST_TYPE">
+    <Key>
+      <PropertyRef Name="INST_TYPE_NO" />
+    </Key>
+    <Property Name="INST_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="INST_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="INST_TYPE_CODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="INST_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SET_INSTITUTE">
+    <Key>
+      <PropertyRef Name="INSTITUTE_NO" />
+    </Key>
+    <Property Name="INSTITUTE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="INSTITUTE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="INSTITUTE_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="INSTITUTE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="INST_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="THANA_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="F_INSTITUTION_DB_ID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EIIN_NUMBER" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MEET_PERSON_NAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_NUMBER" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTUAL_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTUAL_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_TEACHER_INFO" Relationship="Model.SET_TEACHER_INFO_R01" FromRole="SET_INSTITUTE" ToRole="SET_TEACHER_INFO" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R03" FromRole="SET_INSTITUTE" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_MASTER_DATA">
+    <Key>
+      <PropertyRef Name="MASTER_DATA_NO" />
+    </Key>
+    <Property Name="MASTER_DATA_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DATA_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DATA_LABEL" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DATA_VALUE" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="IS_LIST" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="GEN_DATA_TYPE" Relationship="Model.SET_MASTER_DATA_R01" FromRole="SET_MASTER_DATA" ToRole="GEN_DATA_TYPE" />
+    <NavigationProperty Name="SET_MASTER_DATA_LIST" Relationship="Model.SET_MASTER_DATA_LIST_R01" FromRole="SET_MASTER_DATA" ToRole="SET_MASTER_DATA_LIST" />
+  </EntityType>
+  <EntityType Name="SET_MASTER_DATA_LIST">
+    <Key>
+      <PropertyRef Name="DATA_LIST_NO" />
+    </Key>
+    <Property Name="DATA_LIST_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MASTER_DATA_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LIST_LABEL" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LIST_VALUE" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SET_MASTER_DATA" Relationship="Model.SET_MASTER_DATA_LIST_R01" FromRole="SET_MASTER_DATA_LIST" ToRole="SET_MASTER_DATA" />
+  </EntityType>
+  <EntityType Name="SET_ORG_TYPE">
+    <Key>
+      <PropertyRef Name="ORG_TYPE_NO" />
+    </Key>
+    <Property Name="ORG_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ORG_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ORG_TYPE_CODE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ORG_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R09" FromRole="SET_ORG_TYPE" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_PROMO_ITEM">
+    <Key>
+      <PropertyRef Name="PROMO_ITEM_NO" />
+    </Key>
+    <Property Name="PROMO_ITEM_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ITEM_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PROMO_ITEM_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ITEM_CODE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ITEM_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R10" FromRole="SET_PROMO_ITEM" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_PROMO_ITEM_TYPE">
+    <Key>
+      <PropertyRef Name="PROMO_ITEM_TYPE_NO" />
+    </Key>
+    <Property Name="PROMO_ITEM_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ITEM_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ITEM_TYPE_CODE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ITEM_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SET_REASON">
+    <Key>
+      <PropertyRef Name="REASON_NO" />
+    </Key>
+    <Property Name="REASON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REASON_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="REASON_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="REASON_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R02" FromRole="SET_REASON" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_SPECIMEN">
+    <Key>
+      <PropertyRef Name="SPECIMEN_NO" />
+    </Key>
+    <Property Name="SPECIMEN_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SPECIMEN_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SPECIMEN_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SPECIMEN_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SPECIMEN_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="BOOK_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="BOOK_UNIQUE_CODE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="POSITION_ID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IS_CHECK_BY_ADMIN" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R01" FromRole="SET_SPECIMEN" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_SUBJECT">
+    <Key>
+      <PropertyRef Name="SUBJECT_NO" />
+    </Key>
+    <Property Name="SUBJECT_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SUBJECT_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SUBJECT_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SUBJECT_CODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SUBJECT_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_TEACHER_SUBJECT" Relationship="Model.SET_TEACHER_SUBJECT_R02" FromRole="SET_SUBJECT" ToRole="SET_TEACHER_SUBJECT" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_CONTACT">
+    <Key>
+      <PropertyRef Name="TEACH_CONTACT_NO" />
+    </Key>
+    <Property Name="TEACH_CONTACT_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CONTACT_NUMBER" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IS_FIRST_PRIORITY" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_NUMBER_WORKING" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="DateTime" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_APPROVED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_DESIG">
+    <Key>
+      <PropertyRef Name="TEACH_DESIG_NO" />
+    </Key>
+    <Property Name="TEACH_DESIG_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_DESIG_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_DESIG_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_DESIG_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_TEACHER_INFO" Relationship="Model.SET_TEACHER_INFO_R02" FromRole="SET_TEACHER_DESIG" ToRole="SET_TEACHER_INFO" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_INFO">
+    <Key>
+      <PropertyRef Name="TEACHER_NO" />
+    </Key>
+    <Property Name="TEACHER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_NICK_NAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_DOB" Type="DateTime" />
+    <Property Name="TEACHER_MARRIAGE_DATE" Type="DateTime" />
+    <Property Name="TEACHER_ADDR" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_COMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="INSTITUTE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="TEACH_DESIG_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="DateTime" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_APPROVED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_INSTITUTE" Relationship="Model.SET_TEACHER_INFO_R01" FromRole="SET_TEACHER_INFO" ToRole="SET_INSTITUTE" />
+    <NavigationProperty Name="SET_TEACHER_DESIG" Relationship="Model.SET_TEACHER_INFO_R02" FromRole="SET_TEACHER_INFO" ToRole="SET_TEACHER_DESIG" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R06" FromRole="SET_TEACHER_INFO" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_SUBJECT">
+    <Key>
+      <PropertyRef Name="TEACH_SUB_NO" />
+    </Key>
+    <Property Name="TEACH_SUB_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TEACHER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SUBJECT_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CLASS_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ALL_CLASS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="DateTime" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_APPROVED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_CLASS" Relationship="Model.SET_TEACHER_SUBJECT_R03" FromRole="SET_TEACHER_SUBJECT" ToRole="SET_CLASS" />
+    <NavigationProperty Name="SET_SUBJECT" Relationship="Model.SET_TEACHER_SUBJECT_R02" FromRole="SET_TEACHER_SUBJECT" ToRole="SET_SUBJECT" />
+  </EntityType>
+  <EntityType Name="SET_THANA">
+    <Key>
+      <PropertyRef Name="THANA_NO" />
+    </Key>
+    <Property Name="THANA_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ZONE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ZILLA_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="THANA_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="THANA_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="THANA_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="THANA_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ACTUAL_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTUAL_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_CLIENT_INFO" Relationship="Model.SET_CLIENT_INFO_R04" FromRole="SET_THANA" ToRole="SET_CLIENT_INFO" />
+  </EntityType>
+  <EntityType Name="SET_TRANSPORT_TYPE">
+    <Key>
+      <PropertyRef Name="TRANS_TYPE_NO" />
+    </Key>
+    <Property Name="TRANS_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TRANS_TYPE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TRANS_TYPE_DETAILS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TRANS_TYPE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R05" FromRole="SET_TRANSPORT_TYPE" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_WORK_PURPOSE">
+    <Key>
+      <PropertyRef Name="WORK_PUR_NO" />
+    </Key>
+    <Property Name="WORK_PUR_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="WORK_PUR_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="WORK_PUR_DETAILS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="WORK_PUR_CODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="WORK_PUR_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R04" FromRole="SET_WORK_PURPOSE" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="SET_ZILLA">
+    <Key>
+      <PropertyRef Name="ZILLA_NO" />
+    </Key>
+    <Property Name="ZILLA_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ZILLA_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ZILLA_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ZILLA_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ZILLA_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ACTUAL_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTUAL_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SET_CLIENT_INFO" Relationship="Model.SET_CLIENT_INFO_R03" FromRole="SET_ZILLA" ToRole="SET_CLIENT_INFO" />
+  </EntityType>
+  <EntityType Name="SET_ZONE">
+    <Key>
+      <PropertyRef Name="ZONE_NO" />
+    </Key>
+    <Property Name="ZONE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_MIGRATED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MIGRATE_DATE" Type="DateTime" />
+    <Property Name="MIGRATE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DIVISION_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ZONE_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ZONE_NAME_BNG" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ZONE_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ZONE_DETAILS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ZONE_DESC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TOTAL_STUDENTS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ZONE_GRADE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ACTUAL_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTUAL_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LATI_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TO_LONG_VAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_VOID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_EXIST" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_ACTIVE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="DateTime" Nullable="false" />
+    <Property Name="SL_NUM" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="SEC_USER_ZONE" Relationship="Model.SEC_USER_ZONE_R01" FromRole="SET_ZONE" ToRole="SEC_USER_ZONE" />
+    <NavigationProperty Name="SET_CLIENT_INFO" Relationship="Model.SET_CLIENT_INFO_R02" FromRole="SET_ZONE" ToRole="SET_CLIENT_INFO" />
+  </EntityType>
+  <EntityType Name="TRN_DCR">
+    <Key>
+      <PropertyRef Name="DCR_NO" />
+    </Key>
+    <Property Name="DCR_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_OFFLINE_TIME" Type="DateTime" />
+    <Property Name="LAST_ACTION_OFFLINE_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LAST_IS_OFFLINE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_OFFLINE_TIME" Type="DateTime" />
+    <Property Name="INSERT_OFFLINE_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSERT_IS_OFFLINE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_OFFLINE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_OFFLINE_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_IS_OFFLINE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FY_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="AGENT_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TRN_DCR_DATE" Type="DateTime" />
+    <Property Name="APPROVE_TYPE_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_REQUIRED_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_AQUIRED_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ORDER_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="COLLECTION_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="OTH_EXP_DETAILS" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="OTH_EXP_AMT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="OFFICIAL_CALL_MINUTES" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MARKET_CALL_MINUTES" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_TRN_LOCKED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_LOCK_BY_SYSTEM" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TRN_LOCK_DATE" Type="DateTime" />
+    <Property Name="TRN_LOCK_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TRN_LOCK_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="TRN_DCR_APPROVE">
+    <Key>
+      <PropertyRef Name="DCR_APPROVE_NO" />
+    </Key>
+    <Property Name="DCR_APPROVE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DCR_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_SEQUENCE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_COMMENTS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TRN_DCR_DET">
+    <Key>
+      <PropertyRef Name="DCR_DET_NO" />
+    </Key>
+    <Property Name="DCR_DET_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_OFFLINE_TIME" Type="DateTime" />
+    <Property Name="LAST_ACTION_OFFLINE_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LAST_IS_OFFLINE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_OFFLINE_TIME" Type="DateTime" />
+    <Property Name="INSERT_OFFLINE_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSERT_IS_OFFLINE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_OFFLINE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_OFFLINE_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_IS_OFFLINE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DCR_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DCR_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TYPE_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TIME" Type="DateTime" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REASON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REAMRKS" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="WORK_AREA_FROM_LAT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="WORK_AREA_FROM_LON" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="WORK_AREA_FROM_NAME" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="WORK_AREA_TO_LAT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="WORK_AREA_TO_LON" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="WORK_AREA_TO_NAME" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="TIME_FROM" Type="DateTime" />
+    <Property Name="TIME_TO" Type="DateTime" />
+    <Property Name="TIME_GAP" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DIVISION_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ZONE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ZILLA_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="THANA_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSTITUTE_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_FOR_TEACHER" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TEACHER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MEET_PERSON_NAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MEET_PERSON_MOBILE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SPECIMEN_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SPECIMEN_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REF_ZM_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="WORK_PUR_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="TRANS_TYPE_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_CONVEYANCE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CONVENYANCE_BILL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_SMS_IMPORT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SMS_REC_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SMS_IMPORT_TIME" Type="DateTime" />
+    <Property Name="SMS_IMPORT_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SMS_IMPORT_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PROMO_ITEM_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_FOR_CLIENT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CLIENT_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PLAIN_ENTRY" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PROMO_NAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_DOB" Type="DateTime" />
+    <Property Name="PROMO_MOBILE" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ADDR" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PROMO_ORGANIZATION" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ORG_TYPE_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PROMO_ITEM_QTY" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="GEN_DCR_TYPE" Relationship="Model.TRN_DCR_DET_R08" FromRole="TRN_DCR_DET" ToRole="GEN_DCR_TYPE" />
+    <NavigationProperty Name="SET_CLIENT_INFO" Relationship="Model.TRN_DCR_DET_R11" FromRole="TRN_DCR_DET" ToRole="SET_CLIENT_INFO" />
+    <NavigationProperty Name="SET_INSTITUTE" Relationship="Model.TRN_DCR_DET_R03" FromRole="TRN_DCR_DET" ToRole="SET_INSTITUTE" />
+    <NavigationProperty Name="SET_ORG_TYPE" Relationship="Model.TRN_DCR_DET_R09" FromRole="TRN_DCR_DET" ToRole="SET_ORG_TYPE" />
+    <NavigationProperty Name="SET_PROMO_ITEM" Relationship="Model.TRN_DCR_DET_R10" FromRole="TRN_DCR_DET" ToRole="SET_PROMO_ITEM" />
+    <NavigationProperty Name="SET_REASON" Relationship="Model.TRN_DCR_DET_R02" FromRole="TRN_DCR_DET" ToRole="SET_REASON" />
+    <NavigationProperty Name="SET_SPECIMEN" Relationship="Model.TRN_DCR_DET_R01" FromRole="TRN_DCR_DET" ToRole="SET_SPECIMEN" />
+    <NavigationProperty Name="SET_TEACHER_INFO" Relationship="Model.TRN_DCR_DET_R06" FromRole="TRN_DCR_DET" ToRole="SET_TEACHER_INFO" />
+    <NavigationProperty Name="SET_TRANSPORT_TYPE" Relationship="Model.TRN_DCR_DET_R05" FromRole="TRN_DCR_DET" ToRole="SET_TRANSPORT_TYPE" />
+    <NavigationProperty Name="SET_WORK_PURPOSE" Relationship="Model.TRN_DCR_DET_R04" FromRole="TRN_DCR_DET" ToRole="SET_WORK_PURPOSE" />
+    <NavigationProperty Name="TRN_SMS_RECEIVE" Relationship="Model.TRN_DCR_DET_R12" FromRole="TRN_DCR_DET" ToRole="TRN_SMS_RECEIVE" />
+  </EntityType>
+  <EntityType Name="TRN_DOWNLOAD_LOG">
+    <Key>
+      <PropertyRef Name="DOWN_NO" />
+    </Key>
+    <Property Name="DOWN_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DOWN_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="SESS_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_MOBILE" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="WEB_SERVER_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="APP_VERSION" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_SIM" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TRN_MSG">
+    <Key>
+      <PropertyRef Name="MSG_NO" />
+    </Key>
+    <Property Name="MSG_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROM_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MSG_SUBJECT" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MSG_BODY" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="IS_FOR_ALL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_REPLY_ALLOW" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REF_MSG_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_REPLY" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TRN_MSG1" Relationship="Model.TRN_MSG_R01" FromRole="TRN_MSG" ToRole="TRN_MSG1" />
+    <NavigationProperty Name="TRN_MSG2" Relationship="Model.TRN_MSG_R01" FromRole="TRN_MSG1" ToRole="TRN_MSG" />
+  </EntityType>
+  <EntityType Name="TRN_MSG_RECIEVER">
+    <Key>
+      <PropertyRef Name="MSG_REC_NO" />
+    </Key>
+    <Property Name="MSG_REC_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LAST_ACTION_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPDATE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MSG_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="REC_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_READ" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="READ_TIME" Type="DateTime" />
+    <Property Name="READ_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="READ_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="READ_OFFLINE_TIME" Type="DateTime" />
+    <Property Name="READ_OFFLINE_SYNC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="READ_IS_OFFLINE" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="TRN_SMS_RECEIVE">
+    <Key>
+      <PropertyRef Name="SMS_REC_NO" />
+    </Key>
+    <Property Name="SMS_REC_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FROM_MOBILE" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="SMS_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="SMS_BODY" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_VALID_FORMAT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="APPROVE_TYPE_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPROVE_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="IS_PROCESSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PROCESS_USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PROCESS_LOGON_NO" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TRN_DCR_DET" Relationship="Model.TRN_DCR_DET_R12" FromRole="TRN_SMS_RECEIVE" ToRole="TRN_DCR_DET" />
+  </EntityType>
+  <EntityType Name="TRN_SMS_SEND">
+    <Key>
+      <PropertyRef Name="SMS_SEND_NO" />
+    </Key>
+    <Property Name="SMS_SEND_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INSERT_TIME" Type="DateTime" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INSERT_LOGON_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SMS_TYPE_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FROM_MOBILE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TO_MOBILE" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SMS_BODY" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="JOB_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SMS_RESPONSE_TEXT" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="SMS_PROVIDER_NAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_SUCCESS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IS_DELIVERED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DELIVERY_TIME" Type="DateTime" />
+    <Property Name="IS_RETRY" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PARENT_SMS_SEND_NO" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="GEN_SMS_TYPE" Relationship="Model.TRN_SMS_SEND_R03" FromRole="TRN_SMS_SEND" ToRole="GEN_SMS_TYPE" />
+    <NavigationProperty Name="TRN_SMS_SEND1" Relationship="Model.TRN_SMS_SEND_R02" FromRole="TRN_SMS_SEND" ToRole="TRN_SMS_SEND1" />
+    <NavigationProperty Name="TRN_SMS_SEND2" Relationship="Model.TRN_SMS_SEND_R02" FromRole="TRN_SMS_SEND1" ToRole="TRN_SMS_SEND" />
+  </EntityType>
+  <EntityType Name="TRN_UPLOAD_LOG">
+    <Key>
+      <PropertyRef Name="UP_NO" />
+    </Key>
+    <Property Name="UP_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="USER_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UP_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="SESS_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_MOBILE" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="WEB_SERVER_ID" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="APP_VERSION" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_SIM" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ORA_VW_ASPNET_APPLICATIONS">
+    <Key>
+      <PropertyRef Name="APPLICATIONNAME" />
+      <PropertyRef Name="LOWEREDAPPLICATIONNAME" />
+      <PropertyRef Name="APPLICATIONID" />
+    </Key>
+    <Property Name="APPLICATIONNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDAPPLICATIONNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ORA_VW_ASPNET_MEMUSERS">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="PASSWORDFORMAT" />
+      <PropertyRef Name="ISAPPROVED" />
+      <PropertyRef Name="ISLOCKEDOUT" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTLOGINDATE" />
+      <PropertyRef Name="LASTPASSWORDCHANGEDDATE" />
+      <PropertyRef Name="LASTLOCKOUTDATE" />
+      <PropertyRef Name="FAILEDPWDATTEMPTCOUNT" />
+      <PropertyRef Name="FAILEDPWDATTEMPTWINSTART" />
+      <PropertyRef Name="FAILEDPWDANSWERATTEMPTCOUNT" />
+      <PropertyRef Name="FAILEDPWDANSWERATTEMPTWINSTART" />
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="USERNAME" />
+      <PropertyRef Name="ISANONYMOUS" />
+      <PropertyRef Name="LASTACTIVITYDATE" />
+    </Key>
+    <Property Name="USERID" Type="Guid" Nullable="false" />
+    <Property Name="PASSWORDFORMAT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MOBILEPIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDEMAIL" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PASSWORDQUESTION" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PASSWORDANSWER" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="ISAPPROVED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ISLOCKEDOUT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LASTLOGINDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LASTPASSWORDCHANGEDDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LASTLOCKOUTDATE" Type="DateTime" Nullable="false" />
+    <Property Name="FAILEDPWDATTEMPTCOUNT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FAILEDPWDATTEMPTWINSTART" Type="DateTime" Nullable="false" />
+    <Property Name="FAILEDPWDANSWERATTEMPTCOUNT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FAILEDPWDANSWERATTEMPTWINSTART" Type="DateTime" Nullable="false" />
+    <Property Name="COMMENTS" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MOBILEALIAS" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="ISANONYMOUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LASTACTIVITYDATE" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORA_VW_ASPNET_PROFILES">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="LASTUPDATEDDATE" />
+    </Key>
+    <Property Name="USERID" Type="Guid" Nullable="false" />
+    <Property Name="LASTUPDATEDDATE" Type="DateTime" Nullable="false" />
+    <Property Name="DATASIZE" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="ORA_VW_ASPNET_ROLES">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="ROLEID" />
+      <PropertyRef Name="ROLENAME" />
+      <PropertyRef Name="LOWEREDROLENAME" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="ROLEID" Type="Guid" Nullable="false" />
+    <Property Name="ROLENAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDROLENAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ORA_VW_ASPNET_SESSIONS">
+    <Key>
+      <PropertyRef Name="SESSIONID" />
+      <PropertyRef Name="CREATED" />
+      <PropertyRef Name="EXPIRES" />
+      <PropertyRef Name="LOCKDATE" />
+      <PropertyRef Name="LOCKDATELOCAL" />
+      <PropertyRef Name="LOCKCOOKIE" />
+      <PropertyRef Name="TIMEOUT" />
+      <PropertyRef Name="LOCKED" />
+      <PropertyRef Name="FLAGS" />
+    </Key>
+    <Property Name="SESSIONID" Type="String" Nullable="false" MaxLength="116" Unicode="true" FixedLength="false" />
+    <Property Name="CREATED" Type="DateTime" Nullable="false" />
+    <Property Name="EXPIRES" Type="DateTime" Nullable="false" />
+    <Property Name="LOCKDATE" Type="DateTime" Nullable="false" />
+    <Property Name="LOCKDATELOCAL" Type="DateTime" Nullable="false" />
+    <Property Name="LOCKCOOKIE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="TIMEOUT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LOCKED" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DATASIZE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FLAGS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="ORA_VW_ASPNET_UIR">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="USERID" Type="Guid" Nullable="false" />
+    <Property Name="ROLEID" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORA_VW_ASPNET_USERS">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="USERNAME" />
+      <PropertyRef Name="LOWEREDUSERNAME" />
+      <PropertyRef Name="ISANONYMOUS" />
+      <PropertyRef Name="LASTACTIVITYDATE" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="Guid" Nullable="false" />
+    <Property Name="USERID" Type="Guid" Nullable="false" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LOWEREDUSERNAME" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MOBILEALIAS" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="ISANONYMOUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LASTACTIVITYDATE" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <Association Name="SEC_USER_LOGON_APPROVE_R02">
+    <End Role="GEN_APPROVE_TYPE" Type="Model.GEN_APPROVE_TYPE" Multiplicity="1" />
+    <End Role="SEC_USER_LOGON_APPROVE" Type="Model.SEC_USER_LOGON_APPROVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_APPROVE_TYPE">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_LOGON_APPROVE">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USER_LOGONS_R01">
+    <End Role="GEN_APPROVE_TYPE" Type="Model.GEN_APPROVE_TYPE" Multiplicity="1" />
+    <End Role="SEC_USER_LOGONS" Type="Model.SEC_USER_LOGONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_APPROVE_TYPE">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_LOGONS">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_MASTER_DATA_R01">
+    <End Role="GEN_DATA_TYPE" Type="Model.GEN_DATA_TYPE" Multiplicity="1" />
+    <End Role="SET_MASTER_DATA" Type="Model.SET_MASTER_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_DATA_TYPE">
+        <PropertyRef Name="DATA_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_MASTER_DATA">
+        <PropertyRef Name="DATA_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R08">
+    <End Role="GEN_DCR_TYPE" Type="Model.GEN_DCR_TYPE" Multiplicity="1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_DCR_TYPE">
+        <PropertyRef Name="DCR_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="DCR_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_SMS_SEND_R03">
+    <End Role="GEN_SMS_TYPE" Type="Model.GEN_SMS_TYPE" Multiplicity="1" />
+    <End Role="TRN_SMS_SEND" Type="Model.TRN_SMS_SEND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_SMS_TYPE">
+        <PropertyRef Name="SMS_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_SMS_SEND">
+        <PropertyRef Name="SMS_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USERS_R01">
+    <End Role="GEN_USER_TYPES" Type="Model.GEN_USER_TYPES" Multiplicity="1" />
+    <End Role="SEC_USERS" Type="Model.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_USER_TYPES">
+        <PropertyRef Name="USER_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="USER_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APPLICATIONID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_ROLES" Type="Model.ORA_ASPNET_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_ROLES">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBERSHIP_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_MEMBERSHIP" Type="Model.ORA_ASPNET_MEMBERSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_MEMBERSHIP">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PATHS_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_PATHS" Type="Model.ORA_ASPNET_PATHS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PATHS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SITEMAP_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.ORA_ASPNET_APPLICATIONS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ORA_ASPNET_SITEMAP" Type="Model.ORA_ASPNET_SITEMAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_SITEMAP">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERS_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_USERS" Type="Model.ORA_ASPNET_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBERSHIP_USERID">
+    <End Role="ORA_ASPNET_USERS" Type="Model.ORA_ASPNET_USERS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_MEMBERSHIP" Type="Model.ORA_ASPNET_MEMBERSHIP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_MEMBERSHIP">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONALIZATIONALLUSERS_PATHID">
+    <End Role="ORA_ASPNET_PATHS" Type="Model.ORA_ASPNET_PATHS" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ORA_ASPNET_PERSONALIZNALLUSERS" Type="Model.ORA_ASPNET_PERSONALIZNALLUSERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_PATHS">
+        <PropertyRef Name="PATHID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PERSONALIZNALLUSERS">
+        <PropertyRef Name="PATHID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONALIZATIONPERUSER_PATHID">
+    <End Role="ORA_ASPNET_PATHS" Type="Model.ORA_ASPNET_PATHS" Multiplicity="0..1" />
+    <End Role="ORA_ASPNET_PERSONALIZNPERUSER" Type="Model.ORA_ASPNET_PERSONALIZNPERUSER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_PATHS">
+        <PropertyRef Name="PATHID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PERSONALIZNPERUSER">
+        <PropertyRef Name="PATHID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONALIZATIONPERUSER_USERID">
+    <End Role="ORA_ASPNET_USERS" Type="Model.ORA_ASPNET_USERS" Multiplicity="0..1" />
+    <End Role="ORA_ASPNET_PERSONALIZNPERUSER" Type="Model.ORA_ASPNET_PERSONALIZNPERUSER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PERSONALIZNPERUSER">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROFILE_USERID">
+    <End Role="ORA_ASPNET_USERS" Type="Model.ORA_ASPNET_USERS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_PROFILE" Type="Model.ORA_ASPNET_PROFILE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PROFILE">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USER_ZONE_R01">
+    <End Role="SET_ZONE" Type="Model.SET_ZONE" Multiplicity="1" />
+    <End Role="SEC_USER_ZONE" Type="Model.SEC_USER_ZONE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ZONE">
+        <PropertyRef Name="ZONE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_ZONE">
+        <PropertyRef Name="ZONE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USERS_R02">
+    <End Role="SET_DEPARTMENT" Type="Model.SET_DEPARTMENT" Multiplicity="0..1" />
+    <End Role="SEC_USERS" Type="Model.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DEPARTMENT">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USERS_R03">
+    <End Role="SET_DESIGNATION" Type="Model.SET_DESIGNATION" Multiplicity="0..1" />
+    <End Role="SEC_USERS" Type="Model.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DESIGNATION">
+        <PropertyRef Name="DESIG_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="DESIG_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_BOOK_PROJ_TYPE_R01">
+    <End Role="SET_BOOK_BRAND_TYPE" Type="Model.SET_BOOK_BRAND_TYPE" Multiplicity="1" />
+    <End Role="SET_BOOK_PROJ_TYPE" Type="Model.SET_BOOK_PROJ_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_BOOK_BRAND_TYPE">
+        <PropertyRef Name="BOOK_BRAND_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_BOOK_PROJ_TYPE">
+        <PropertyRef Name="BOOK_BRAND_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_BOOK_GROUP_R01">
+    <End Role="SET_BOOK_PROJ_TYPE" Type="Model.SET_BOOK_PROJ_TYPE" Multiplicity="1" />
+    <End Role="SET_BOOK_GROUP" Type="Model.SET_BOOK_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_BOOK_PROJ_TYPE">
+        <PropertyRef Name="BOOK_PROJ_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_BOOK_GROUP">
+        <PropertyRef Name="BOOK_PROJ_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_BOOK_TYPE_R01">
+    <End Role="SET_BOOK_GROUP" Type="Model.SET_BOOK_GROUP" Multiplicity="1" />
+    <End Role="SET_BOOK_TYPE" Type="Model.SET_BOOK_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_BOOK_GROUP">
+        <PropertyRef Name="BOOK_GROUP_NO" />
+      </Principal>
+      <Dependent Role="SET_BOOK_TYPE">
+        <PropertyRef Name="BOOK_GROUP_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_SUBJECT_R03">
+    <End Role="SET_CLASS" Type="Model.SET_CLASS" Multiplicity="0..1" />
+    <End Role="SET_TEACHER_SUBJECT" Type="Model.SET_TEACHER_SUBJECT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLASS">
+        <PropertyRef Name="CLASS_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_SUBJECT">
+        <PropertyRef Name="CLASS_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R01">
+    <End Role="SET_DIVISION" Type="Model.SET_DIVISION" Multiplicity="1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DIVISION">
+        <PropertyRef Name="DIVISION_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="DIVISION_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R02">
+    <End Role="SET_ZONE" Type="Model.SET_ZONE" Multiplicity="1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ZONE">
+        <PropertyRef Name="ZONE_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="ZONE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R03">
+    <End Role="SET_ZILLA" Type="Model.SET_ZILLA" Multiplicity="1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ZILLA">
+        <PropertyRef Name="ZILLA_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="ZILLA_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R04">
+    <End Role="SET_THANA" Type="Model.SET_THANA" Multiplicity="0..1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_THANA">
+        <PropertyRef Name="THANA_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="THANA_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R11">
+    <End Role="SET_CLIENT_INFO" Type="Model.SET_CLIENT_INFO" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_INFO">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_DEPARTMENT_R02">
+    <End Role="SET_COMPANY" Type="Model.SET_COMPANY" Multiplicity="1" />
+    <End Role="SET_DEPARTMENT" Type="Model.SET_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_COMPANY">
+        <PropertyRef Name="COMP_NO" />
+      </Principal>
+      <Dependent Role="SET_DEPARTMENT">
+        <PropertyRef Name="COMP_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_DEPARTMENT_R01">
+    <End Role="SET_DEPARTMENT" Type="Model.SET_DEPARTMENT" Multiplicity="0..1" />
+    <End Role="SET_DEPARTMENT1" Type="Model.SET_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DEPARTMENT">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SET_DEPARTMENT1">
+        <PropertyRef Name="PARENT_DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_INFO_R01">
+    <End Role="SET_INSTITUTE" Type="Model.SET_INSTITUTE" Multiplicity="1" />
+    <End Role="SET_TEACHER_INFO" Type="Model.SET_TEACHER_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_INSTITUTE">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_INFO">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R03">
+    <End Role="SET_INSTITUTE" Type="Model.SET_INSTITUTE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_INSTITUTE">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_MASTER_DATA_LIST_R01">
+    <End Role="SET_MASTER_DATA" Type="Model.SET_MASTER_DATA" Multiplicity="1" />
+    <End Role="SET_MASTER_DATA_LIST" Type="Model.SET_MASTER_DATA_LIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_MASTER_DATA">
+        <PropertyRef Name="MASTER_DATA_NO" />
+      </Principal>
+      <Dependent Role="SET_MASTER_DATA_LIST">
+        <PropertyRef Name="MASTER_DATA_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R09">
+    <End Role="SET_ORG_TYPE" Type="Model.SET_ORG_TYPE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ORG_TYPE">
+        <PropertyRef Name="ORG_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="ORG_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R10">
+    <End Role="SET_PROMO_ITEM" Type="Model.SET_PROMO_ITEM" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_PROMO_ITEM">
+        <PropertyRef Name="PROMO_ITEM_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="PROMO_ITEM_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R02">
+    <End Role="SET_REASON" Type="Model.SET_REASON" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_REASON">
+        <PropertyRef Name="REASON_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="REASON_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R01">
+    <End Role="SET_SPECIMEN" Type="Model.SET_SPECIMEN" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_SPECIMEN">
+        <PropertyRef Name="SPECIMEN_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="SPECIMEN_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_SUBJECT_R02">
+    <End Role="SET_SUBJECT" Type="Model.SET_SUBJECT" Multiplicity="1" />
+    <End Role="SET_TEACHER_SUBJECT" Type="Model.SET_TEACHER_SUBJECT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_SUBJECT">
+        <PropertyRef Name="SUBJECT_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_SUBJECT">
+        <PropertyRef Name="SUBJECT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_INFO_R02">
+    <End Role="SET_TEACHER_DESIG" Type="Model.SET_TEACHER_DESIG" Multiplicity="1" />
+    <End Role="SET_TEACHER_INFO" Type="Model.SET_TEACHER_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_TEACHER_DESIG">
+        <PropertyRef Name="TEACH_DESIG_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_INFO">
+        <PropertyRef Name="TEACH_DESIG_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R06">
+    <End Role="SET_TEACHER_INFO" Type="Model.SET_TEACHER_INFO" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_TEACHER_INFO">
+        <PropertyRef Name="TEACHER_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="TEACHER_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R05">
+    <End Role="SET_TRANSPORT_TYPE" Type="Model.SET_TRANSPORT_TYPE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_TRANSPORT_TYPE">
+        <PropertyRef Name="TRANS_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="TRANS_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R04">
+    <End Role="SET_WORK_PURPOSE" Type="Model.SET_WORK_PURPOSE" Multiplicity="1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_WORK_PURPOSE">
+        <PropertyRef Name="WORK_PUR_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="WORK_PUR_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R12">
+    <End Role="TRN_SMS_RECEIVE" Type="Model.TRN_SMS_RECEIVE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_SMS_RECEIVE">
+        <PropertyRef Name="SMS_REC_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="SMS_REC_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_MSG_R01">
+    <End Role="TRN_MSG" Type="Model.TRN_MSG" Multiplicity="0..1" />
+    <End Role="TRN_MSG1" Type="Model.TRN_MSG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_MSG">
+        <PropertyRef Name="MSG_NO" />
+      </Principal>
+      <Dependent Role="TRN_MSG1">
+        <PropertyRef Name="REF_MSG_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_SMS_SEND_R02">
+    <End Role="TRN_SMS_SEND" Type="Model.TRN_SMS_SEND" Multiplicity="0..1" />
+    <End Role="TRN_SMS_SEND1" Type="Model.TRN_SMS_SEND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_SMS_SEND">
+        <PropertyRef Name="SMS_SEND_NO" />
+      </Principal>
+      <Dependent Role="TRN_SMS_SEND1">
+        <PropertyRef Name="PARENT_SMS_SEND_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORA_ASPNET_USERSINROLES">
+    <End Role="ORA_ASPNET_ROLES" Type="Model.ORA_ASPNET_ROLES" Multiplicity="*" />
+    <End Role="ORA_ASPNET_USERS" Type="Model.ORA_ASPNET_USERS" Multiplicity="*" />
+  </Association>
+</Schema>

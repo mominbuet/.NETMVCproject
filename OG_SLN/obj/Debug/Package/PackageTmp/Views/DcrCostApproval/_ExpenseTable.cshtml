@@ -1,0 +1,163 @@
+﻿@{
+    Layout = null;
+    IList<OG_SLN.TRN_EXPENSE_APPROVAL_GET_Result> expenses = ViewBag.expenses as IList<OG_SLN.TRN_EXPENSE_APPROVAL_GET_Result>;
+}
+<h2>
+    Other Expense</h2>
+<table class="table table-responsive small-font">
+    <tr>
+        <th>
+            Distributor Name
+        </th>
+        <th>
+            Designation
+        </th>
+        <th>
+            Distibutor Division
+        </th>
+        <th>
+            Distibutor Zilla
+        </th>
+        <th>
+            Expense Type
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+            Vendor/Person Name
+        </th>
+        <th>
+            Comment
+        </th>
+        <th>
+            Expense Date
+        </th>
+         @if (!(bool)Session["sess_Is_ZonalOrAgent"])
+         {
+        <th>
+            Status
+        </th>
+         }
+    </tr>
+    @{if (expenses != null)
+      {
+          foreach (var item in expenses)
+          {
+              string tr_class = @"information";
+              if (item.APPROVE_TYPE_NO.HasValue)
+              {
+                  if (item.APPROVE_TYPE_NO == 1)
+                  {
+                      tr_class = @"success";
+                  }
+                  else if (item.APPROVE_TYPE_NO == 2)
+                  {
+                      tr_class = @"danger";
+                  }
+                  else
+                  {
+                  }
+              }
+        <tr id="@item.EXP_DET_NO" class="@tr_class">
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_FULL_NAME)
+                <br />(@Html.DisplayFor(modelItem => item.USER_MOBILE))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESIG_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIVISION_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZILLA_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EXP_TYPE_NAME)
+            </td>
+            <td>
+                <input type="hidden" id="hid_@item.EXP_DET_NO" name="hid_@item.EXP_DET_NO" value="@item.APPROVE_EXP_TYPE_NO" />
+                <input id="txt_@item.EXP_DET_NO" class = "form-control input-small input-block-level expenseCost" style="width:65px" value="@item.APPROVE_EXP_AMT" />
+            </td>
+            <td>
+                 @if (!String.IsNullOrEmpty(item.LAT_VAL.ToString()))
+                {
+                    <a class="btn btn-link" target="_blank" title="@item.LAT_VAL : @item.LON_VAL" href="https://www.google.com/maps/place/@item.LAT_VAL,@item.LON_VAL" >@item.VENDOR</a>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.VENDOR)
+                }
+            </td>
+            <td>
+                @item.COMMENTS
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.TRN_EXP_DATE, "{0:dd-MM-yyyy}") @*at
+                @Html.ValueFor(modelItem => item.TRN_EXP_DATE, "{0:hh:mm tt}")*@
+            </td>
+             @if (!(bool)Session["sess_Is_ZonalOrAgent"])
+                {
+            <td>
+                <div class="btn-group btn-group-sm">
+                    @if (item.APPROVE_TYPE_NO.HasValue)
+                    {
+                        if (item.APPROVE_TYPE_NO != 1)
+                        {
+                        <input id="btnConfirm" attr="@item.EXP_DET_NO" type="button" class="btn btn-success btn-small" value="Approve" onclick="btnConfirm2($(this),1);expenseCost = 0.0;set_expense_cost" />
+                        }
+                    }
+                    @if (item.APPROVE_TYPE_NO.HasValue)
+                    {
+                        if (item.APPROVE_TYPE_NO != 2)
+                        {
+                        <input id="btnReject" attr="@item.EXP_DET_NO" type="button" class="btn btn-warning btn-small" value="Reject" onclick="btnConfirm2($(this),2);expenseCost = 0.0;set_expense_cost();"/>
+                        }
+                    }</div>
+            </td>
+                 }
+        </tr>
+          }
+
+      }}
+       <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        <b>Total</b>
+        </td>
+        <td id="lblETotal">
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    var expenseCost = 0.0;
+    $(document).ready(function () {
+        set_expense_cost();
+    });
+    function set_expense_cost() {
+        $(".expenseCost").each(function () {
+            //alert($(this).val());
+            if ($(this).val() != "") {
+                expenseCost += parseFloat($(this).val());
+                //console.log(parseFloat($(this).val()));
+            }
+        });
+        $("#lblETotal").html(expenseCost);
+    }
+</script>

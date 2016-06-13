@@ -1,0 +1,1329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F44DDEDF-4A3C-4584-A283-11B616DAB96A}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OG_SLN</RootNamespace>
+    <AssemblyName>OG_SLN</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ActionsController.cs" />
+    <Compile Include="Controllers\ChallanController.cs" />
+    <Compile Include="Controllers\ClientEntryController.cs" />
+    <Compile Include="Controllers\DCRApproveController.cs" />
+    <Compile Include="Controllers\DCRController.cs" />
+    <Compile Include="Controllers\DcrCostApprovalController.cs" />
+    <Compile Include="Controllers\DcrExpenseAllCostController.cs" />
+    <Compile Include="Controllers\DCRSummarySearchController.cs" />
+    <Compile Include="Controllers\DownloadsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExpenseApproveController.cs" />
+    <Compile Include="Controllers\ExpenseController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
+    <Compile Include="Controllers\FeedbackTypeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MsgController.cs" />
+    <Compile Include="Controllers\OfflineEntryMonitorController.cs" />
+    <Compile Include="Controllers\OfflineExpenseCheckController.cs" />
+    <Compile Include="Controllers\PromotionalItemDistributionController.cs" />
+    <Compile Include="Controllers\PromotionalItemTypeController.cs" />
+    <Compile Include="Controllers\PromotionaltemController.cs" />
+    <Compile Include="Controllers\PublishController.cs" />
+    <Compile Include="Controllers\QuestionMonitorController.cs" />
+    <Compile Include="Controllers\QuestionProjectController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SetBookBrandTypeController.cs" />
+    <Compile Include="Controllers\SetBookGroupController.cs" />
+    <Compile Include="Controllers\SetBookProjTypeController.cs" />
+    <Compile Include="Controllers\SetClassController.cs" />
+    <Compile Include="Controllers\SetFiscalController.cs" />
+    <Compile Include="Controllers\SetInstituteController.cs" />
+    <Compile Include="Controllers\SetZoneController.cs" />
+    <Compile Include="Controllers\SET_BOOK_TYPEController.cs" />
+    <Compile Include="Controllers\SpecimenController.cs" />
+    <Compile Include="Controllers\SpecimenDistributionController.cs" />
+    <Compile Include="Controllers\TeacherEntryController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\UserInstituteController.cs" />
+    <Compile Include="Controllers\UserLocationController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\ViewDCRSheetController.cs" />
+    <Compile Include="Controllers\WebApi\MobileLogger.cs" />
+    <Compile Include="Controllers\WebApi\TRN_USER_MOVEMENTSController.cs" />
+    <Compile Include="Controllers\WebApi\WS_DownloadApiController.cs" />
+    <Compile Include="Controllers\WebApi\WS_DOWN_GET_SEC_USERSController.cs" />
+    <Compile Include="Controllers\WebApi\WS_FileUploadsController.cs" />
+    <Compile Include="Controllers\WebApi\WS_SEC_USERSController.cs" />
+    <Compile Include="Controllers\WebApi\WS_UploadApiController.cs" />
+    <Compile Include="Controllers\WebRequestsController.cs" />
+    <Compile Include="Filters\CheckPermissionAttribute.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AdjustmentUserViewModel.cs" />
+    <Compile Include="Models\AppVersionSearchModel.cs" />
+    <Compile Include="Models\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\Class_Subject.cs" />
+    <Compile Include="Models\ClientSearchViewModel.cs" />
+    <Compile Include="Models\ControllerActionViewModel.cs" />
+    <Compile Include="Models\CrashReport.cs" />
+    <Compile Include="Models\DashboardSearchModel.cs" />
+    <Compile Include="Models\DcrExpenseAllCostSearch.cs" />
+    <Compile Include="Models\DcrPublishSearchModel.cs" />
+    <Compile Include="Models\DcrPublishViewModel.cs" />
+    <Compile Include="Models\DCRSearch.cs" />
+    <Compile Include="Models\DcrVerifyApproveSearch.cs" />
+    <Compile Include="Models\DCRViewSearchModel.cs" />
+    <Compile Include="Models\DownloadDetailsModel.cs" />
+    <Compile Include="Models\EChallanTypes.cs" />
+    <Compile Include="Models\ExpenseDetVerifySearch.cs" />
+    <Compile Include="Models\INSTITUTE_INFO_VIEWMODEL.cs" />
+    <Compile Include="Models\Institute_Subject.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PublishDisburseModel.cs" />
+    <Compile Include="Models\PublishSalesSearchModel.cs" />
+    <Compile Include="Models\SET_FEEDBACK_TYPE_Metadata.cs" />
+    <Compile Include="Models\SET_FISCAL_YEAR_Metadata.cs" />
+    <Compile Include="Models\SET_USER_ACTION_Metadata.cs" />
+    <Compile Include="Models\SpecimenAdjustmentSearchModel.cs" />
+    <Compile Include="Models\TPR_PROJECT_INSTITUTE_Metadata.cs" />
+    <Compile Include="Models\TPR_PROJECT_Metadata.cs" />
+    <Compile Include="Models\TPR_UPLOAD_LIST_Metadata.cs" />
+    <Compile Include="Models\TRN_CHALLAN_UPLOAD_Metadata.cs" />
+    <Compile Include="Models\UpDownSearchModel.cs" />
+    <Compile Include="Models\DOWN_MASTER.cs" />
+    <Compile Include="Models\EUserTypes.cs" />
+    <Compile Include="Models\FeedbackSearchViewModel.cs" />
+    <Compile Include="Models\Helper\AcessValidator.cs" />
+    <Compile Include="Models\Helper\CustomValidator.cs" />
+    <Compile Include="Models\Helper\DbErrorTracker.cs" />
+    <Compile Include="Models\InsituteSearch.cs" />
+    <Compile Include="Models\InstituteSearchViewModel.cs" />
+    <Compile Include="Models\MessageSearchViewModel.cs" />
+    <Compile Include="Models\PromotionalItemSearch.cs" />
+    <Compile Include="Models\SearchExpense.cs" />
+    <Compile Include="Models\SearchOfflineEntry.cs" />
+    <Compile Include="Models\SEC_USERS_Metadata.cs" />
+    <Compile Include="Models\SEC_USER_INSTITUTE_Metadata.cs" />
+    <Compile Include="Models\SEC_USER_THANA_Metadata.cs" />
+    <Compile Include="Models\SET_BOOK_BRAND_TYPE_Metadata.cs" />
+    <Compile Include="Models\SET_BOOK_GROUP_Metadata.cs" />
+    <Compile Include="Models\SET_BOOK_PROJ_TYPE_Metadata.cs" />
+    <Compile Include="Models\SET_BOOK_TYPE_Metadata.cs" />
+    <Compile Include="Models\SET_CLASS_Metadata.cs" />
+    <Compile Include="Models\SET_CLIENT_INFO_Metadata.cs" />
+    <Compile Include="Models\SET_COMPANY_Metadata.cs" />
+    <Compile Include="Models\SET_DEPARTMENT_Metadata.cs" />
+    <Compile Include="Models\SET_DESIGNATION_Metadata.cs" />
+    <Compile Include="Models\SET_DIVISION_Metadata.cs" />
+    <Compile Include="Models\SET_INSTITUTE_Metadata.cs" />
+    <Compile Include="Models\SET_PROMO_ITEM_Metadata.cs" />
+    <Compile Include="Models\SET_PROMO_ITEM_TYPE_Metadata.cs" />
+    <Compile Include="Models\SET_ROLE_ACTION_Metadata.cs" />
+    <Compile Include="Models\SET_SPECIMEN_Metadata.cs" />
+    <Compile Include="Models\SET_SUBJECT_Metadata.cs" />
+    <Compile Include="Models\SET_TEACHER_DESIG_Metadata.cs" />
+    <Compile Include="Models\SET_TEACHER_INFO_Metadata.cs" />
+    <Compile Include="Models\SET_THANA_Metadata.cs" />
+    <Compile Include="Models\SET_ZILLA_Metadata.cs" />
+    <Compile Include="Models\SET_ZONE_Metadata.cs" />
+    <Compile Include="Models\SpecimenDistSearch.cs" />
+    <Compile Include="Models\TeacherSearchViewModel.cs" />
+    <Compile Include="Models\Teacher_Subject.cs" />
+    <Compile Include="Models\temp_TRN_DCR_DET.cs" />
+    <Compile Include="Models\temp_TRN_EXPENSE_DET.cs" />
+    <Compile Include="Models\temp_TRN_USER_PROMO_ITEM.cs" />
+    <Compile Include="Models\temp_TRN_USER_PROMO_ITEM_DET.cs" />
+    <Compile Include="Models\temp_TRN_USER_SPECIMEN.cs" />
+    <Compile Include="Models\temp_TRN_USER_SPECIMEN_DET.cs" />
+    <Compile Include="Models\TRN_DCR_Metadata.cs" />
+    <Compile Include="Models\TRN_EXPENSE_Metadata.cs" />
+    <Compile Include="Models\TRN_LOG_INFO_Metadata.cs" />
+    <Compile Include="Models\TRN_MSG_Metadata.cs" />
+    <Compile Include="Models\TRN_USER_FEED_BACK_Metadata.cs" />
+    <Compile Include="Models\TRN_USER_LOCATION_Metadata.cs" />
+    <Compile Include="Models\TRN_USER_MOVEMENTS_Metadata.cs" />
+    <Compile Include="Models\TRN_USER_PROMO_DET_Metadata.cs" />
+    <Compile Include="Models\TRN_USER_PROMO_ITEM_Metadata.cs" />
+    <Compile Include="Models\TRN_USER_SPECIMEN_DET_Metadata.cs" />
+    <Compile Include="Models\TRN_USER_SPECIMEN_Metadata.cs" />
+    <Compile Include="Models\UploadDetailsModel.cs" />
+    <Compile Include="Models\UserSearchViewModel.cs" />
+    <Compile Include="Models\USER_INFO.cs" />
+    <Compile Include="Models\USER_INFO_VIEWMODEL.cs" />
+    <Compile Include="Models\VIEW_TRN_DCR_APPROVE_GET_Result_Metadata.cs" />
+    <Compile Include="Models\ZonalManagerSearchViewModel.cs" />
+    <Compile Include="Models\ZonalManagerViewModel.cs" />
+    <Compile Include="OGDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OGDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SessionSaveSpecimenDistribution.asmx.cs">
+      <DependentUpon>SessionSaveSpecimenDistribution.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\ZipResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\APP_LOG\dummy.txt" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-timepicker.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Custom.css" />
+    <Content Include="Content\DBError\dummy.txt" />
+    <Content Include="Content\ErrorPath\dummy.txt" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\iconmenu.css" />
+    <Content Include="Content\jquery-tooltip.css" />
+    <Content Include="Content\logo.png" />
+    <Content Include="Content\offcanvas.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\print.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete_book.js" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\correct.gif" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\invalid.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\red_asterisk.png" />
+    <Content Include="Images\src.png" />
+    <Content Include="Images\valid.png" />
+    <Content Include="Images\vertical-separator.gif" />
+    <Content Include="Scripts\autocomplete-2-table.js" />
+    <Content Include="Scripts\autocomplete-table.js" />
+    <Content Include="Scripts\bootstrap-acknowledgeinput.min.js" />
+    <Content Include="Scripts\bootstrap-paginator.js" />
+    <Content Include="Scripts\bootstrap-timepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.simon.min.js" />
+    <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\iconmenu.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery-ui-autocomplete.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\offcanvas.js" />
+    <Content Include="Scripts\prefixfree-1.0.7.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\shad\SpecimenUser.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Services\SessionSaveSpecimenDistribution.asmx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="OGDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OGDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Specimen\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Specimen\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Specimen\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Specimen\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Specimen\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SpecimenDistribution\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SpecimenDistribution\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SpecimenDistribution\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SpecimenDistribution\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SpecimenDistribution\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Test.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_UserSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Admin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Promotionaltem\Create.cshtml" />
+    <Content Include="Views\Promotionaltem\Delete.cshtml" />
+    <Content Include="Views\Promotionaltem\Details.cshtml" />
+    <Content Include="Views\Promotionaltem\Edit.cshtml" />
+    <Content Include="Views\Promotionaltem\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemType\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemType\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemType\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Zonal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Agent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_AllUserSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Msg\Create.cshtml" />
+    <Content Include="Views\Msg\Delete.cshtml" />
+    <Content Include="Views\Msg\Details.cshtml" />
+    <Content Include="Views\Msg\Edit.cshtml" />
+    <Content Include="Views\Msg\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SpecimenDistribution\_SearchSpecimen.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\Approve.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ClientEntry\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ClientEntry\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ClientEntry\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ClientEntry\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ClientEntry\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Actions\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Actions\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Actions\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Actions\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Actions\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Roles\Permissions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Roles\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Roles\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Roles\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Roles\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Roles\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_TeacherSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserLocation\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserLocation\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserLocation\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserLocation\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserLocation\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemDistribution\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemDistribution\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemDistribution\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemDistribution\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemDistribution\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCR\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCR\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCR\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCR\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCR\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PromotionalItemDistribution\_SearchPromotion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRApprove\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRApprove\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRApprove\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRApprove\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRApprove\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRApprove\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookBrandType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookBrandType\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookBrandType\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookBrandType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookBrandType\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookGroup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookGroup\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookGroup\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookGroup\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookGroup\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookProjType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookProjType\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookProjType\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookProjType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetBookProjType\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\_GetInstitutePartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SET_BOOK_TYPE\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SET_BOOK_TYPE\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SET_BOOK_TYPE\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SET_BOOK_TYPE\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SET_BOOK_TYPE\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetZone\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetZone\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetZone\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetZone\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetZone\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ExpenseApprove\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ExpenseApprove\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ExpenseApprove\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TeacherEntry\_TeacherSubjectPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_TeacherApproveSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInstitute\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInstitute\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInstitute\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInstitute\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInstitute\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInstitute\LoadInstitute.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInstitute\LoadUserInstitute.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ViewDCRSheet\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ViewDCRSheet\DcrSheet.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ClientEntry\_ClientSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCR\_SearchDCR.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\ChangePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ViewDCRSheet\_GetZonalManagerPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetInstitute\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetInstitute\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetInstitute\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetInstitute\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetInstitute\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Expense\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Expense\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Expense\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Expense\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Expense\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetInstitute\_SearchInstitute.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRSummarySearch\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRSummarySearch\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Expense\_SearchExpense.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DCRSummarySearch\GetDCRSumDet.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Specimen\_SpecimenSearch.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Msg\_MessageSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Expense\_GetZonalManagerPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Feedback\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Feedback\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Feedback\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Feedback\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Feedback\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Feedback\_FeedbackSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineEntryMonitor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineEntryMonitor\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineEntryMonitor\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineEntryMonitor\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineEntryMonitor\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineEntryMonitor\_SearchOfflineEntry.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\ZonalWiseSpecimen.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\_GetReportingAuthorityPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\DcrPublish.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_DcrDetailsForDate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineExpenseCheck\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineExpenseCheck\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineExpenseCheck\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineExpenseCheck\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineExpenseCheck\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineExpenseCheck\_SearchExpenseCheck.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\_SearchOfflineEntry.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\_ExpenseTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\_DcrTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineEntryMonitor\_DcrOffTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_DcrPublishPrint.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Downloads.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Uploads.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Downloads\Reset.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\ChangePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\AppVersion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_DcrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_ExpenseEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OfflineExpenseCheck\_ExpenseTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetFiscal\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetFiscal\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetFiscal\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetFiscal\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetFiscal\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\SpecimenAdjustment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Home.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\GeneralUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\GeneralPermissions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrExpenseAllCost\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrExpenseAllCost\SearchEntry.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrExpenseAllCost\Result.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Users\Special.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_getAdjustmentUsers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_getDownloadDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_getUploadDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_getApprovedDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Challan\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Challan\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Challan\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Challan\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Challan\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\_DcrAmend.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\_ExpenseAmmend.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DcrCostApproval\CostAmmendment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Challan\Challans.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Challan\Returns.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OG_SLN.ProcedurePagedList\OG_SLN.ProcedurePagedList.csproj">
+      <Project>{5F880B07-3ECE-453A-988E-DF53B6DBB916}</Project>
+      <Name>OG_SLN.ProcedurePagedList</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\Select.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\_InstituteSubjectPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\_GetUserAssignments.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\_GetSubjects.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionMonitor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionMonitor\MonitorSelect.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionMonitor\_SubjectPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionMonitor\_GetAssignedList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionMonitor\_GetInstituteAssignments.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionMonitor\_GetSubjects.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\UploadView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\UploadSelect.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\_GetUploadSubjects.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\_GetUploadForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\AssignSubject.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\_SubjectPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\AddSubject.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\EditAssign.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\_AssignedInstituteFormPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QuestionProject\_GetUploadFiles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SetClass\EditSubject.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FeedbackType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FeedbackType\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FeedbackType\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FeedbackType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FeedbackType\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\SalesPanel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\AccountsPanel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\publish_confirm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\DcrUserPublish.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\ShowPubData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\_PublishListSearchPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\_DcrUserPublishList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\_AccountsPanelResult.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\_SalesPanelResult.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Publish\_PubResult.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Dopdf.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Pdf.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>6336</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6336/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

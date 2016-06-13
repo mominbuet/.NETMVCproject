@@ -1,0 +1,145 @@
+﻿@model IEnumerable<OG_SLN.SEC_USERS_GET_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+@*
+        <th>
+            @Html.DisplayNameFor(model => model.GEN_USER_TYPES.USER_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SET_DEPARTMENT.LAST_ACTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SET_DESIGNATION.LAST_ACTION)
+        </th>
+*@
+        <th>
+            @Html.DisplayNameFor(model => model.HR_EMP_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_FULL_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NICK_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_CONTACT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_MOBILE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_ADDR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_PWD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_PARENT_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_ENABLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_EXISTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_PROCESSED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_ACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVE_FROM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVE_TO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+@*
+        <td>
+            @Html.DisplayFor(modelItem => item.GEN_USER_TYPES.USER_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_DEPARTMENT.LAST_ACTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_DESIGNATION.LAST_ACTION)
+        </td>
+*@
+        <td>
+            @Html.DisplayFor(modelItem => item.HR_EMP_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_FULL_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NICK_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_CONTACT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_MOBILE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_ADDR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_PWD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_PARENT_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_ENABLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_EXISTS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_PROCESSED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_ACTIVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_FROM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_TO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.USER_NO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.USER_NO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.USER_NO })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,159 @@
+﻿@model IEnumerable<OG_SLN.SEC_USER_INSTITUTE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_ACTION_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSERT_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_MIGRATED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MIGRATE_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MIGRATE_COMMENTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEC_USERS.LAST_ACTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SET_INSTITUTE.LAST_ACTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_PROCESSED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_VOID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_EXIST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_ACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVE_FROM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVE_TO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_NUM)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_ACTION_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSERT_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_MIGRATED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIGRATE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIGRATE_COMMENTS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEC_USERS.LAST_ACTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_INSTITUTE.LAST_ACTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_PROCESSED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_VOID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_EXIST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_ACTIVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_FROM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_TO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_NUM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.USER_INSTITUTE_NO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.USER_INSTITUTE_NO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.USER_INSTITUTE_NO })
+        </td>
+    </tr>
+}
+
+</table>

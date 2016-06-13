@@ -1,0 +1,61 @@
+﻿@model OG_SLN.TPR_PROJECT
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Question Project</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+
+        @Html.HiddenFor(model => model.PROJECT_NO)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PROJECT_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PROJECT_NAME)
+            @Html.ValidationMessageFor(model => model.PROJECT_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLASS_NO, "Class")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CLASS_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.CLASS_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DECLARE_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DATE_DECLARE, new { @class = "form-control dateclass" })
+            @Html.ValidationMessageFor(model => model.DECLARE_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DEADLINE_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DATE_DEADLINE, new { @class = "form-control dateclass" })
+            @Html.ValidationMessageFor(model => model.DEADLINE_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_STATUS)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.ACTIVE_STATUS)
+            @Html.ValidationMessageFor(model => model.ACTIVE_STATUS)
+        </div>
+
+        <p>
+            <input type="submit" value="Update" />
+        </p>
+    </fieldset>
+    </div>
+}

@@ -1,0 +1,113 @@
+﻿@*@model IEnumerable<OG_SLN.TRN_DCR_SUM_SEARCH_Result>*@
+@model IEnumerable<OG_SLN.TRN_DCR_SUM_SEARCH_01_Result1>
+@*@model PagedList.IPagedList<OG_SLN.VIEW_TRN_DCR_SUM_SEARCH>*@
+
+@*@model PagedList.IPagedList<OG_SLN.TRN_DCR_SUM_SEARCH_01_Result>*@
+
+@using PagedList.Mvc;
+
+@{
+    Layout = null;
+
+    var request = HttpContext.Current.Request;
+    var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+
+    if (!string.IsNullOrWhiteSpace(appUrl)) {
+        appUrl += "";
+    }
+
+    var baseUrl = string.Format("{0}://{1}{2}", request.Url.Scheme, request.Url.Authority, appUrl);
+
+    //string specifier = "#,#.00#;(#,#.0000#)";
+    string specifier = "";
+
+    int count = 0;
+
+    int? TotalRecords = ViewBag.TotalRecords as int?;
+
+    int? page_number = ViewBag.page_number as int?;
+
+    int page_size = 250;
+    int total_pages = 0;
+
+    if ((TotalRecords % page_size) > 0) {
+        total_pages = (int) Math.Ceiling((double) (TotalRecords.Value / page_size));
+    } else {
+        total_pages = (TotalRecords.Value / page_size);
+    }
+    
+    ;
+}
+
+<br />
+@*<div class="row">*@
+    <div class="col-8 marRight_2">
+            <table class="table table-responsive table-bordered table-hover small-font" style="max-width:100%">
+                <tr class="success">
+                    <th>@Html.DisplayName("SL No.")</th>
+                    <th>@Html.DisplayName("Zonal Name")  <br /> @Html.DisplayName("Contact")</th>
+                    <th>@Html.DisplayName("Department")<br />@Html.DisplayName("Designation")</th>
+                    <th>@Html.DisplayName("Division")<br />@Html.DisplayName("Zilla")<br />@Html.DisplayName("Thana")</th>
+                    @*<th>@Html.DisplayName("Zilla")</th>
+                    <th>@Html.DisplayName("Thana")</th>*@
+                    @*<th>@Html.DisplayName("Designation")</th>*@
+                    @*<th>@Html.DisplayName("Contact")</th>*@
+                    <th>@Html.DisplayName("Total DCR")</th>
+                    @*<th>@Html.DisplayName("DCR Status")</th>*@
+
+                    <th>@Html.DisplayName("SD")</th>
+                    <th>@Html.DisplayName("MP")</th>
+                    <th>@Html.DisplayName("TC")</th>
+                    <th>@Html.DisplayName("LC")</th>
+                    <th>@Html.DisplayName("OW")</th>
+                    <th>@Html.DisplayName("CSR")</th>
+
+                    <th>@Html.DisplayName("Last Update")</th>
+                </tr>
+            @foreach (var item in Model) {
+                count++;
+                decimal total_dcr = ((item.SD_CNT.HasValue ? item.SD_CNT.Value : 0)
+                    + (item.MP_CNT.HasValue ? item.MP_CNT.Value : 0)
+                    + (item.TC_CNT.HasValue ? item.TC_CNT.Value : 0)
+                    + (item.LC_CNT.HasValue ? item.LC_CNT.Value : 0)
+                    + (item.OW_CNT.HasValue ? item.OW_CNT.Value : 0)
+                    + (item.CSR_CNT.HasValue ? item.CSR_CNT.Value : 0));
+                <tr>
+                    <th>@count</th>
+                    <th>@item.USER_FULL_NAME <br /> @item.USER_NAME <br />@item.USER_MOBILE</th>
+                    <th>@item.DEPT_NAME <br />@item.DESIG_NAME</th>
+                    <th>@item.DIVISION_NAME <br />@item.ZILLA_NAME<br />@item.THANA_NAME</th>
+
+                    <th>
+                        @*<a href="#" onclick="return load_dcr('@item.DEPT_NO', '@item.DIVISION_NO' , '@item.ZILLA_NO', '@item.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '')" data-toggle="modal" data-target="#myModal">@total_dcr</a>*@
+                        <a href="#" onclick="return load_dcr('@item.DEPT_NO', '@ViewBag.DIVISION_NO' , '@ViewBag.ZILLA_NO', '@ViewBag.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '')" data-toggle="modal" data-target="#myModal">@total_dcr</a>
+                    </th>
+
+                    <th><a href="#" onclick="return load_dcr('@item.DEPT_NO', '@ViewBag.DIVISION_NO' , '@ViewBag.ZILLA_NO', '@ViewBag.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '1')" data-toggle="modal" data-target="#myModal">@item.SD_CNT</a>  </th>
+                    <th><a href="#" onclick="return load_dcr('@item.DEPT_NO', '@ViewBag.DIVISION_NO' , '@ViewBag.ZILLA_NO', '@ViewBag.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '2')" data-toggle="modal" data-target="#myModal">@item.MP_CNT</a>   </th>
+                    <th><a href="#" onclick="return load_dcr('@item.DEPT_NO', '@ViewBag.DIVISION_NO' , '@ViewBag.ZILLA_NO', '@ViewBag.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '3')" data-toggle="modal" data-target="#myModal">@item.TC_CNT</a>   </th>
+                    <th><a href="#" onclick="return load_dcr('@item.DEPT_NO', '@ViewBag.DIVISION_NO' , '@ViewBag.ZILLA_NO', '@ViewBag.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '4')" data-toggle="modal" data-target="#myModal">@item.LC_CNT</a> </th>
+                    <th><a href="#" onclick="return load_dcr('@item.DEPT_NO', '@ViewBag.DIVISION_NO' , '@ViewBag.ZILLA_NO', '@ViewBag.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '5')" data-toggle="modal" data-target="#myModal">@item.OW_CNT</a>   </th>
+                    <th><a href="#" onclick="return load_dcr('@item.DEPT_NO', '@ViewBag.DIVISION_NO' , '@ViewBag.ZILLA_NO', '@ViewBag.THANA_NO', '@item.USER_NO', '@ViewBag.MON_NO', '@ViewBag.YEAR', '@ViewBag.TRN_DCR_DATE_FROM', '@ViewBag.TRN_DCR_DATE_TO', '6')" data-toggle="modal" data-target="#myModal">@item.CSR_CNT</a>   </th>
+
+                    <th>@item.MAX_UPLOAD</th>
+                </tr>                    
+            }
+            </table>
+        </div>
+    </div>
+@*</div>*@
+<div id='Paging' style="text-align:center">
+    
+    @for (int i = 0; i < total_pages; i++) {
+        string link = (i + 1).ToString();
+        string url = baseUrl + "DCRSummarySearch/GetPaged?page_number=" + link;
+
+        if (page_number == (i + 1)) {
+            <span style="font-weight:bold"> &nbsp;&nbsp; @link &nbsp;&nbsp; </span>
+        } else {
+            <a href="@url" onclick="return load_url('@url')">@link</a>    
+        }
+                
+    }
+</div>

@@ -1,0 +1,193 @@
+﻿@using OG_SLN.Helpers
+@{
+    Layout = null;
+    OG_SLN.SearchDCRCostApproval dcrSearch = ViewBag.dcrSearch as OG_SLN.SearchDCRCostApproval;
+}
+<script src="@Url.Content("~/Scripts/autocomplete-table.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        //overriding jquery-ui.autocomplete .js functions
+
+        function syntaxHighlight(json) {
+            if (typeof json != 'string') {
+                json = JSON.stringify(json, undefined, 2);
+            }
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                var cls = 'number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'key';
+                    } else {
+                        cls = 'string';
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'boolean';
+                } else if (/null/.test(match)) {
+                    cls = 'null';
+                }
+                return '<span class="' + cls + '">' + match + '</span>';
+            });
+        }
+
+        function output(inp) {
+            document.body.appendChild(document.createElement('pre')).innerHTML = inp;
+        }
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+
+      $('#ddldivision').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#ddldivision").val(),type:"division"} ,
+            function( data ) {
+                $("#ddlZillas").html(data.zill);
+                $("#ddlThanas").html(data.thana);
+                $("#zmusers").html(data.zms);
+                console.log(data.zms);
+            });
+        });
+        $('#ddlZillas').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#ddlZillas").val(),type:"zilla"} ,
+            function( data ) {
+                $("#ddlThanas").html(data.thana);
+                $("#zmusers").html(data.zms);
+            });
+        });
+        $('#ddlThanas').on('change', function () {
+            $.post( "@Url.Content("~")"+"OfflineEntryMonitor/GetDDLData",{ id: $("#ddlZillas").val(),type:"thana"} ,
+            function( data ) {
+                $("#zmusers").html(data.zms);
+            });
+        });
+    });
+</script>
+@*@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Get, new { @class = "form-horizontal" }))*@
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Post))
+{   
+    <table class="tabWidth">
+        <tbody>
+            <tr>
+                <td class="adminLef_col">
+                    ZM(iSearch):
+                </td>
+                <td>
+                    <input id="txtZM" type="text" class="form-control" />
+                    @Html.Hidden("USER_NO", "")
+                </td>
+                <td style="width: 2%;">
+                </td>
+                <td class="adminLef_col">
+                    ZM name :
+                </td>
+                <td class="adminRight_col">
+                    <div class="input-group">
+                        @Html.Hidden("USER_NO1", "")
+                        @Html.Hidden("ZONAL_TYPE", "single")
+                        <div class="input-group-btn">
+                            @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Division
+                </td>
+                <td>
+                    @Html.DropDownList("ddldivision", "Please Select")
+                </td>
+                <td style="width: 2%">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    Zilla:
+                </td>
+                <td class="adminRight_col">
+                    <select id="ddlZillas">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Thana
+                </td>
+                <td>
+                    <select id="ddlThanas">
+                    </select>
+                </td>
+                <td style="width: 2%">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    ZM:
+                </td>
+                <td class="adminRight_col">
+                    @Html.DropDownList("zmusers", String.Empty)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminLef_col">
+                    DCR Date From :
+                </td>
+                <td class="adminRight_col">
+                    <input id="DateFrom" name="DateFrom" 
+                     value="@{if (dcrSearch.dateOffFrom.ToString() != "")
+                              {
+                                 @(DateTime.Parse(dcrSearch.dateOffFrom.ToString()).ToString("yyyy-MM-dd"))}}" 
+                                 class="form-control datesinspec"
+                     type="text" />
+                </td>
+                <td style="width: 2%">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    DCR Date To :
+                </td>
+                <td class="adminRight_col">
+                    <input id="DateTo" name="DateTo" 
+                    value="@{if (dcrSearch.dateOffTo.ToString() != "")
+                             {
+                                 @(DateTime.Parse(dcrSearch.dateOffTo.ToString()).ToString("yyyy-MM-dd"))}}"
+                    class="form-control datesinspec"
+                     type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td class="adminLef_col">
+                    Approval Status:
+                </td>
+                <td class="adminRight_col">
+                    <select id="verify_status" name="verify_status">
+                        <option value=""></option>
+                        <option value="1">Approved</option>
+                        <option value="0" selected>Pending</option>
+                        <option value="2">Rejected</option>
+                    </select>
+                </td>
+                <td style="width: 2%">
+                    &nbsp;
+                </td>
+                <td class="adminLef_col">
+                    Fare/Cost (more than) :
+                </td>
+                <td class="adminRight_col">
+                    <input id="fare_cost" name="fare_cost" 
+                    value="@{if (dcrSearch.fare_cost.ToString() != "")
+                             {
+                                 @dcrSearch.fare_cost.ToString()}}"
+                    class="form-control"
+                     type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="btn-group btn-group-sm">
+                        <input id="Submit1" class="btn btn-success" type="submit" value="Search" onclick="return do_search()" />
+                        <input id="btnReset" class="btn btn-warning" type="reset" value="Reset" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+}

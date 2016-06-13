@@ -1,0 +1,91 @@
+﻿@*@model IEnumerable<OG_SLN.SET_TEACHER_INFO>*@
+@model PagedList.IPagedList<OG_SLN.SET_TEACHER_INFO>
+
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<hr />
+@{Html.RenderPartial("_TeacherSearchPartial");}
+
+
+ <p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+  <div class="col-8 marRight_2">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover tabWidth">
+       <tr class="success">
+        <th>
+            @*@Html.DisplayNameFor(model => model.TEACHER_NAME)*@
+            Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TEACHER_MOBILE)*@
+            Mobile
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.BIRTH_DATE)*@
+            Date of Birth
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SET_INSTITUTE.INSTITUTE_NAME)*@
+            Institute
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SET_TEACHER_DESIG.TEACHER_DESIG_NAME)*@
+            Designation
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.ACTIVE_STATUS)*@
+            Active
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.TEACHER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEACHER_MOBILE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BIRTH_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_INSTITUTE.INSTITUTE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_TEACHER_DESIG.TEACHER_DESIG_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE_STATUS)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TEACHER_NO }) 
+            @Html.ActionLink("Details", "Details", new { id=item.TEACHER_NO }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.TEACHER_NO })
+        </td>
+    </tr>
+}
+    </table>
+    </div>
+    <div class="clr"></div>
+   </div>
+
+
+ <div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

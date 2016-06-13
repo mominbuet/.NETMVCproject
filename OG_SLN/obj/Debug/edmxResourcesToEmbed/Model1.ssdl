@@ -1,0 +1,3296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="GEN_APPROVE_TYPE" EntityType="Model.Store.GEN_APPROVE_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="GEN_DATA_TYPE" EntityType="Model.Store.GEN_DATA_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="GEN_DATA_VERSION" EntityType="Model.Store.GEN_DATA_VERSION" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="GEN_DCR_TYPE" EntityType="Model.Store.GEN_DCR_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="GEN_SMS_TYPE" EntityType="Model.Store.GEN_SMS_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="GEN_USER_TYPES" EntityType="Model.Store.GEN_USER_TYPES" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_APPLICATIONS" EntityType="Model.Store.ORA_ASPNET_APPLICATIONS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_MEMBERSHIP" EntityType="Model.Store.ORA_ASPNET_MEMBERSHIP" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_PATHS" EntityType="Model.Store.ORA_ASPNET_PATHS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_PERSONALIZNALLUSERS" EntityType="Model.Store.ORA_ASPNET_PERSONALIZNALLUSERS" store:Type="Tables" store:Schema="OG_DB" store:Name="ORA_ASPNET_PERSONALIZNALLUSERS">
+      <DefiningQuery>SELECT 
+      "ORA_ASPNET_PERSONALIZNALLUSERS"."PATHID" AS "PATHID", 
+      "ORA_ASPNET_PERSONALIZNALLUSERS"."PAGESETTINGS" AS "PAGESETTINGS", 
+      "ORA_ASPNET_PERSONALIZNALLUSERS"."LASTUPDATEDDATE" AS "LASTUPDATEDDATE"
+      FROM "OG_DB"."ORA_ASPNET_PERSONALIZNALLUSERS" "ORA_ASPNET_PERSONALIZNALLUSERS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORA_ASPNET_PERSONALIZNPERUSER" EntityType="Model.Store.ORA_ASPNET_PERSONALIZNPERUSER" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_PROFILE" EntityType="Model.Store.ORA_ASPNET_PROFILE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_ROLES" EntityType="Model.Store.ORA_ASPNET_ROLES" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_SESSIONAPPLICATIONS" EntityType="Model.Store.ORA_ASPNET_SESSIONAPPLICATIONS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_SESSIONS" EntityType="Model.Store.ORA_ASPNET_SESSIONS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_SITEMAP" EntityType="Model.Store.ORA_ASPNET_SITEMAP" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_USERS" EntityType="Model.Store.ORA_ASPNET_USERS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_ASPNET_USERSINROLES" EntityType="Model.Store.ORA_ASPNET_USERSINROLES" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USER_CLOSURE" EntityType="Model.Store.SEC_USER_CLOSURE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USER_DCR_APPROVE" EntityType="Model.Store.SEC_USER_DCR_APPROVE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USER_LOGON_APPROVE" EntityType="Model.Store.SEC_USER_LOGON_APPROVE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USER_LOGONS" EntityType="Model.Store.SEC_USER_LOGONS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USER_MULTI_LOGIN" EntityType="Model.Store.SEC_USER_MULTI_LOGIN" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USER_ZONE" EntityType="Model.Store.SEC_USER_ZONE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USERS" EntityType="Model.Store.SEC_USERS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SEC_USERS_HIS" EntityType="Model.Store.SEC_USERS_HIS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_BOOK_BRAND_TYPE" EntityType="Model.Store.SET_BOOK_BRAND_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_BOOK_GROUP" EntityType="Model.Store.SET_BOOK_GROUP" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_BOOK_PROJ_TYPE" EntityType="Model.Store.SET_BOOK_PROJ_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_BOOK_TYPE" EntityType="Model.Store.SET_BOOK_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_CLASS" EntityType="Model.Store.SET_CLASS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_CLIENT_INFO" EntityType="Model.Store.SET_CLIENT_INFO" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_COMPANY" EntityType="Model.Store.SET_COMPANY" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_DEPARTMENT" EntityType="Model.Store.SET_DEPARTMENT" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_DESIGNATION" EntityType="Model.Store.SET_DESIGNATION" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_DIVISION" EntityType="Model.Store.SET_DIVISION" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_DIVISION_HIS" EntityType="Model.Store.SET_DIVISION_HIS" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_EXP_TYPE" EntityType="Model.Store.SET_EXP_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_FISCAL_YEAR" EntityType="Model.Store.SET_FISCAL_YEAR" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_INST_TYPE" EntityType="Model.Store.SET_INST_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_INSTITUTE" EntityType="Model.Store.SET_INSTITUTE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_MASTER_DATA" EntityType="Model.Store.SET_MASTER_DATA" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_MASTER_DATA_LIST" EntityType="Model.Store.SET_MASTER_DATA_LIST" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_ORG_TYPE" EntityType="Model.Store.SET_ORG_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_PROMO_ITEM" EntityType="Model.Store.SET_PROMO_ITEM" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_PROMO_ITEM_TYPE" EntityType="Model.Store.SET_PROMO_ITEM_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_REASON" EntityType="Model.Store.SET_REASON" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_SPECIMEN" EntityType="Model.Store.SET_SPECIMEN" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_SUBJECT" EntityType="Model.Store.SET_SUBJECT" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_TEACHER_CONTACT" EntityType="Model.Store.SET_TEACHER_CONTACT" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_TEACHER_DESIG" EntityType="Model.Store.SET_TEACHER_DESIG" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_TEACHER_INFO" EntityType="Model.Store.SET_TEACHER_INFO" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_TEACHER_SUBJECT" EntityType="Model.Store.SET_TEACHER_SUBJECT" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_THANA" EntityType="Model.Store.SET_THANA" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_TRANSPORT_TYPE" EntityType="Model.Store.SET_TRANSPORT_TYPE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_WORK_PURPOSE" EntityType="Model.Store.SET_WORK_PURPOSE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_ZILLA" EntityType="Model.Store.SET_ZILLA" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="SET_ZONE" EntityType="Model.Store.SET_ZONE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_DCR" EntityType="Model.Store.TRN_DCR" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_DCR_APPROVE" EntityType="Model.Store.TRN_DCR_APPROVE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_DCR_DET" EntityType="Model.Store.TRN_DCR_DET" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_DOWNLOAD_LOG" EntityType="Model.Store.TRN_DOWNLOAD_LOG" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_MSG" EntityType="Model.Store.TRN_MSG" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_MSG_RECIEVER" EntityType="Model.Store.TRN_MSG_RECIEVER" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_SMS_RECEIVE" EntityType="Model.Store.TRN_SMS_RECEIVE" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_SMS_SEND" EntityType="Model.Store.TRN_SMS_SEND" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="TRN_UPLOAD_LOG" EntityType="Model.Store.TRN_UPLOAD_LOG" store:Type="Tables" Schema="OG_DB" />
+    <EntitySet Name="ORA_VW_ASPNET_APPLICATIONS" EntityType="Model.Store.ORA_VW_ASPNET_APPLICATIONS" store:Type="Views" store:Schema="OG_DB" store:Name="ORA_VW_ASPNET_APPLICATIONS">
+      <DefiningQuery>SELECT 
+      "ORA_VW_ASPNET_APPLICATIONS"."APPLICATIONNAME" AS "APPLICATIONNAME", 
+      "ORA_VW_ASPNET_APPLICATIONS"."LOWEREDAPPLICATIONNAME" AS "LOWEREDAPPLICATIONNAME", 
+      "ORA_VW_ASPNET_APPLICATIONS"."APPLICATIONID" AS "APPLICATIONID", 
+      "ORA_VW_ASPNET_APPLICATIONS"."DESCRIPTION" AS "DESCRIPTION"
+      FROM "OG_DB"."ORA_VW_ASPNET_APPLICATIONS" "ORA_VW_ASPNET_APPLICATIONS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORA_VW_ASPNET_MEMUSERS" EntityType="Model.Store.ORA_VW_ASPNET_MEMUSERS" store:Type="Views" store:Schema="OG_DB" store:Name="ORA_VW_ASPNET_MEMUSERS">
+      <DefiningQuery>SELECT 
+      "ORA_VW_ASPNET_MEMUSERS"."USERID" AS "USERID", 
+      "ORA_VW_ASPNET_MEMUSERS"."PASSWORDFORMAT" AS "PASSWORDFORMAT", 
+      "ORA_VW_ASPNET_MEMUSERS"."MOBILEPIN" AS "MOBILEPIN", 
+      "ORA_VW_ASPNET_MEMUSERS"."EMAIL" AS "EMAIL", 
+      "ORA_VW_ASPNET_MEMUSERS"."LOWEREDEMAIL" AS "LOWEREDEMAIL", 
+      "ORA_VW_ASPNET_MEMUSERS"."PASSWORDQUESTION" AS "PASSWORDQUESTION", 
+      "ORA_VW_ASPNET_MEMUSERS"."PASSWORDANSWER" AS "PASSWORDANSWER", 
+      "ORA_VW_ASPNET_MEMUSERS"."ISAPPROVED" AS "ISAPPROVED", 
+      "ORA_VW_ASPNET_MEMUSERS"."ISLOCKEDOUT" AS "ISLOCKEDOUT", 
+      "ORA_VW_ASPNET_MEMUSERS"."CREATEDATE" AS "CREATEDATE", 
+      "ORA_VW_ASPNET_MEMUSERS"."LASTLOGINDATE" AS "LASTLOGINDATE", 
+      "ORA_VW_ASPNET_MEMUSERS"."LASTPASSWORDCHANGEDDATE" AS "LASTPASSWORDCHANGEDDATE", 
+      "ORA_VW_ASPNET_MEMUSERS"."LASTLOCKOUTDATE" AS "LASTLOCKOUTDATE", 
+      "ORA_VW_ASPNET_MEMUSERS"."FAILEDPWDATTEMPTCOUNT" AS "FAILEDPWDATTEMPTCOUNT", 
+      "ORA_VW_ASPNET_MEMUSERS"."FAILEDPWDATTEMPTWINSTART" AS "FAILEDPWDATTEMPTWINSTART", 
+      "ORA_VW_ASPNET_MEMUSERS"."FAILEDPWDANSWERATTEMPTCOUNT" AS "FAILEDPWDANSWERATTEMPTCOUNT", 
+      "ORA_VW_ASPNET_MEMUSERS"."FAILEDPWDANSWERATTEMPTWINSTART" AS "FAILEDPWDANSWERATTEMPTWINSTART", 
+      "ORA_VW_ASPNET_MEMUSERS"."COMMENTS" AS "COMMENTS", 
+      "ORA_VW_ASPNET_MEMUSERS"."APPLICATIONID" AS "APPLICATIONID", 
+      "ORA_VW_ASPNET_MEMUSERS"."USERNAME" AS "USERNAME", 
+      "ORA_VW_ASPNET_MEMUSERS"."MOBILEALIAS" AS "MOBILEALIAS", 
+      "ORA_VW_ASPNET_MEMUSERS"."ISANONYMOUS" AS "ISANONYMOUS", 
+      "ORA_VW_ASPNET_MEMUSERS"."LASTACTIVITYDATE" AS "LASTACTIVITYDATE"
+      FROM "OG_DB"."ORA_VW_ASPNET_MEMUSERS" "ORA_VW_ASPNET_MEMUSERS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORA_VW_ASPNET_PROFILES" EntityType="Model.Store.ORA_VW_ASPNET_PROFILES" store:Type="Views" store:Schema="OG_DB" store:Name="ORA_VW_ASPNET_PROFILES">
+      <DefiningQuery>SELECT 
+      "ORA_VW_ASPNET_PROFILES"."USERID" AS "USERID", 
+      "ORA_VW_ASPNET_PROFILES"."LASTUPDATEDDATE" AS "LASTUPDATEDDATE", 
+      "ORA_VW_ASPNET_PROFILES"."DATASIZE" AS "DATASIZE"
+      FROM "OG_DB"."ORA_VW_ASPNET_PROFILES" "ORA_VW_ASPNET_PROFILES"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORA_VW_ASPNET_ROLES" EntityType="Model.Store.ORA_VW_ASPNET_ROLES" store:Type="Views" store:Schema="OG_DB" store:Name="ORA_VW_ASPNET_ROLES">
+      <DefiningQuery>SELECT 
+      "ORA_VW_ASPNET_ROLES"."APPLICATIONID" AS "APPLICATIONID", 
+      "ORA_VW_ASPNET_ROLES"."ROLEID" AS "ROLEID", 
+      "ORA_VW_ASPNET_ROLES"."ROLENAME" AS "ROLENAME", 
+      "ORA_VW_ASPNET_ROLES"."LOWEREDROLENAME" AS "LOWEREDROLENAME", 
+      "ORA_VW_ASPNET_ROLES"."DESCRIPTION" AS "DESCRIPTION"
+      FROM "OG_DB"."ORA_VW_ASPNET_ROLES" "ORA_VW_ASPNET_ROLES"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORA_VW_ASPNET_SESSIONS" EntityType="Model.Store.ORA_VW_ASPNET_SESSIONS" store:Type="Views" store:Schema="OG_DB" store:Name="ORA_VW_ASPNET_SESSIONS">
+      <DefiningQuery>SELECT 
+      "ORA_VW_ASPNET_SESSIONS"."SESSIONID" AS "SESSIONID", 
+      "ORA_VW_ASPNET_SESSIONS"."CREATED" AS "CREATED", 
+      "ORA_VW_ASPNET_SESSIONS"."EXPIRES" AS "EXPIRES", 
+      "ORA_VW_ASPNET_SESSIONS"."LOCKDATE" AS "LOCKDATE", 
+      "ORA_VW_ASPNET_SESSIONS"."LOCKDATELOCAL" AS "LOCKDATELOCAL", 
+      "ORA_VW_ASPNET_SESSIONS"."LOCKCOOKIE" AS "LOCKCOOKIE", 
+      "ORA_VW_ASPNET_SESSIONS"."TIMEOUT" AS "TIMEOUT", 
+      "ORA_VW_ASPNET_SESSIONS"."LOCKED" AS "LOCKED", 
+      "ORA_VW_ASPNET_SESSIONS"."DATASIZE" AS "DATASIZE", 
+      "ORA_VW_ASPNET_SESSIONS"."FLAGS" AS "FLAGS"
+      FROM "OG_DB"."ORA_VW_ASPNET_SESSIONS" "ORA_VW_ASPNET_SESSIONS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORA_VW_ASPNET_UIR" EntityType="Model.Store.ORA_VW_ASPNET_UIR" store:Type="Views" store:Schema="OG_DB" store:Name="ORA_VW_ASPNET_UIR">
+      <DefiningQuery>SELECT 
+      "ORA_VW_ASPNET_UIR"."USERID" AS "USERID", 
+      "ORA_VW_ASPNET_UIR"."ROLEID" AS "ROLEID"
+      FROM "OG_DB"."ORA_VW_ASPNET_UIR" "ORA_VW_ASPNET_UIR"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORA_VW_ASPNET_USERS" EntityType="Model.Store.ORA_VW_ASPNET_USERS" store:Type="Views" store:Schema="OG_DB" store:Name="ORA_VW_ASPNET_USERS">
+      <DefiningQuery>SELECT 
+      "ORA_VW_ASPNET_USERS"."APPLICATIONID" AS "APPLICATIONID", 
+      "ORA_VW_ASPNET_USERS"."USERID" AS "USERID", 
+      "ORA_VW_ASPNET_USERS"."USERNAME" AS "USERNAME", 
+      "ORA_VW_ASPNET_USERS"."LOWEREDUSERNAME" AS "LOWEREDUSERNAME", 
+      "ORA_VW_ASPNET_USERS"."MOBILEALIAS" AS "MOBILEALIAS", 
+      "ORA_VW_ASPNET_USERS"."ISANONYMOUS" AS "ISANONYMOUS", 
+      "ORA_VW_ASPNET_USERS"."LASTACTIVITYDATE" AS "LASTACTIVITYDATE"
+      FROM "OG_DB"."ORA_VW_ASPNET_USERS" "ORA_VW_ASPNET_USERS"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_APPLICATIONID" Association="Model.Store.FK_APPLICATIONID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_ROLES" EntitySet="ORA_ASPNET_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASPNET_USERSINROLES_ROLEID" Association="Model.Store.FK_ASPNET_USERSINROLES_ROLEID">
+      <End Role="ORA_ASPNET_ROLES" EntitySet="ORA_ASPNET_ROLES" />
+      <End Role="ORA_ASPNET_USERSINROLES" EntitySet="ORA_ASPNET_USERSINROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASPNET_USERSINROLES_USERID" Association="Model.Store.FK_ASPNET_USERSINROLES_USERID">
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+      <End Role="ORA_ASPNET_USERSINROLES" EntitySet="ORA_ASPNET_USERSINROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBERSHIP_APPID" Association="Model.Store.FK_MEMBERSHIP_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_MEMBERSHIP" EntitySet="ORA_ASPNET_MEMBERSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBERSHIP_USERID" Association="Model.Store.FK_MEMBERSHIP_USERID">
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+      <End Role="ORA_ASPNET_MEMBERSHIP" EntitySet="ORA_ASPNET_MEMBERSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PATHS_APPID" Association="Model.Store.FK_PATHS_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_PATHS" EntitySet="ORA_ASPNET_PATHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROFILE_USERID" Association="Model.Store.FK_PROFILE_USERID">
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+      <End Role="ORA_ASPNET_PROFILE" EntitySet="ORA_ASPNET_PROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SITEMAP_APPID" Association="Model.Store.FK_SITEMAP_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_SITEMAP" EntitySet="ORA_ASPNET_SITEMAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERS_APPID" Association="Model.Store.FK_USERS_APPID">
+      <End Role="ORA_ASPNET_APPLICATIONS" EntitySet="ORA_ASPNET_APPLICATIONS" />
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONALIZATIONALLUSERS_PATHID" Association="Model.Store.PERSONALIZATIONALLUSERS_PATHID">
+      <End Role="ORA_ASPNET_PATHS" EntitySet="ORA_ASPNET_PATHS" />
+      <End Role="ORA_ASPNET_PERSONALIZNALLUSERS" EntitySet="ORA_ASPNET_PERSONALIZNALLUSERS" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONALIZATIONPERUSER_PATHID" Association="Model.Store.PERSONALIZATIONPERUSER_PATHID">
+      <End Role="ORA_ASPNET_PATHS" EntitySet="ORA_ASPNET_PATHS" />
+      <End Role="ORA_ASPNET_PERSONALIZNPERUSER" EntitySet="ORA_ASPNET_PERSONALIZNPERUSER" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONALIZATIONPERUSER_USERID" Association="Model.Store.PERSONALIZATIONPERUSER_USERID">
+      <End Role="ORA_ASPNET_USERS" EntitySet="ORA_ASPNET_USERS" />
+      <End Role="ORA_ASPNET_PERSONALIZNPERUSER" EntitySet="ORA_ASPNET_PERSONALIZNPERUSER" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USER_LOGON_APPROVE_R02" Association="Model.Store.SEC_USER_LOGON_APPROVE_R02">
+      <End Role="GEN_APPROVE_TYPE" EntitySet="GEN_APPROVE_TYPE" />
+      <End Role="SEC_USER_LOGON_APPROVE" EntitySet="SEC_USER_LOGON_APPROVE" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USER_LOGONS_R01" Association="Model.Store.SEC_USER_LOGONS_R01">
+      <End Role="GEN_APPROVE_TYPE" EntitySet="GEN_APPROVE_TYPE" />
+      <End Role="SEC_USER_LOGONS" EntitySet="SEC_USER_LOGONS" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USER_ZONE_R01" Association="Model.Store.SEC_USER_ZONE_R01">
+      <End Role="SET_ZONE" EntitySet="SET_ZONE" />
+      <End Role="SEC_USER_ZONE" EntitySet="SEC_USER_ZONE" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USERS_R01" Association="Model.Store.SEC_USERS_R01">
+      <End Role="GEN_USER_TYPES" EntitySet="GEN_USER_TYPES" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USERS_R02" Association="Model.Store.SEC_USERS_R02">
+      <End Role="SET_DEPARTMENT" EntitySet="SET_DEPARTMENT" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="SEC_USERS_R03" Association="Model.Store.SEC_USERS_R03">
+      <End Role="SET_DESIGNATION" EntitySet="SET_DESIGNATION" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="SET_BOOK_GROUP_R01" Association="Model.Store.SET_BOOK_GROUP_R01">
+      <End Role="SET_BOOK_PROJ_TYPE" EntitySet="SET_BOOK_PROJ_TYPE" />
+      <End Role="SET_BOOK_GROUP" EntitySet="SET_BOOK_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="SET_BOOK_PROJ_TYPE_R01" Association="Model.Store.SET_BOOK_PROJ_TYPE_R01">
+      <End Role="SET_BOOK_BRAND_TYPE" EntitySet="SET_BOOK_BRAND_TYPE" />
+      <End Role="SET_BOOK_PROJ_TYPE" EntitySet="SET_BOOK_PROJ_TYPE" />
+    </AssociationSet>
+    <AssociationSet Name="SET_BOOK_TYPE_R01" Association="Model.Store.SET_BOOK_TYPE_R01">
+      <End Role="SET_BOOK_GROUP" EntitySet="SET_BOOK_GROUP" />
+      <End Role="SET_BOOK_TYPE" EntitySet="SET_BOOK_TYPE" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R01" Association="Model.Store.SET_CLIENT_INFO_R01">
+      <End Role="SET_DIVISION" EntitySet="SET_DIVISION" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R02" Association="Model.Store.SET_CLIENT_INFO_R02">
+      <End Role="SET_ZONE" EntitySet="SET_ZONE" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R03" Association="Model.Store.SET_CLIENT_INFO_R03">
+      <End Role="SET_ZILLA" EntitySet="SET_ZILLA" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_CLIENT_INFO_R04" Association="Model.Store.SET_CLIENT_INFO_R04">
+      <End Role="SET_THANA" EntitySet="SET_THANA" />
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_DEPARTMENT_R01" Association="Model.Store.SET_DEPARTMENT_R01">
+      <End Role="SET_DEPARTMENT" EntitySet="SET_DEPARTMENT" />
+      <End Role="SET_DEPARTMENT1" EntitySet="SET_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SET_DEPARTMENT_R02" Association="Model.Store.SET_DEPARTMENT_R02">
+      <End Role="SET_COMPANY" EntitySet="SET_COMPANY" />
+      <End Role="SET_DEPARTMENT" EntitySet="SET_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SET_MASTER_DATA_LIST_R01" Association="Model.Store.SET_MASTER_DATA_LIST_R01">
+      <End Role="SET_MASTER_DATA" EntitySet="SET_MASTER_DATA" />
+      <End Role="SET_MASTER_DATA_LIST" EntitySet="SET_MASTER_DATA_LIST" />
+    </AssociationSet>
+    <AssociationSet Name="SET_MASTER_DATA_R01" Association="Model.Store.SET_MASTER_DATA_R01">
+      <End Role="GEN_DATA_TYPE" EntitySet="GEN_DATA_TYPE" />
+      <End Role="SET_MASTER_DATA" EntitySet="SET_MASTER_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_INFO_R01" Association="Model.Store.SET_TEACHER_INFO_R01">
+      <End Role="SET_INSTITUTE" EntitySet="SET_INSTITUTE" />
+      <End Role="SET_TEACHER_INFO" EntitySet="SET_TEACHER_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_INFO_R02" Association="Model.Store.SET_TEACHER_INFO_R02">
+      <End Role="SET_TEACHER_DESIG" EntitySet="SET_TEACHER_DESIG" />
+      <End Role="SET_TEACHER_INFO" EntitySet="SET_TEACHER_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_SUBJECT_R02" Association="Model.Store.SET_TEACHER_SUBJECT_R02">
+      <End Role="SET_SUBJECT" EntitySet="SET_SUBJECT" />
+      <End Role="SET_TEACHER_SUBJECT" EntitySet="SET_TEACHER_SUBJECT" />
+    </AssociationSet>
+    <AssociationSet Name="SET_TEACHER_SUBJECT_R03" Association="Model.Store.SET_TEACHER_SUBJECT_R03">
+      <End Role="SET_CLASS" EntitySet="SET_CLASS" />
+      <End Role="SET_TEACHER_SUBJECT" EntitySet="SET_TEACHER_SUBJECT" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R01" Association="Model.Store.TRN_DCR_DET_R01">
+      <End Role="SET_SPECIMEN" EntitySet="SET_SPECIMEN" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R02" Association="Model.Store.TRN_DCR_DET_R02">
+      <End Role="SET_REASON" EntitySet="SET_REASON" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R03" Association="Model.Store.TRN_DCR_DET_R03">
+      <End Role="SET_INSTITUTE" EntitySet="SET_INSTITUTE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R04" Association="Model.Store.TRN_DCR_DET_R04">
+      <End Role="SET_WORK_PURPOSE" EntitySet="SET_WORK_PURPOSE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R05" Association="Model.Store.TRN_DCR_DET_R05">
+      <End Role="SET_TRANSPORT_TYPE" EntitySet="SET_TRANSPORT_TYPE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R06" Association="Model.Store.TRN_DCR_DET_R06">
+      <End Role="SET_TEACHER_INFO" EntitySet="SET_TEACHER_INFO" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R08" Association="Model.Store.TRN_DCR_DET_R08">
+      <End Role="GEN_DCR_TYPE" EntitySet="GEN_DCR_TYPE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R09" Association="Model.Store.TRN_DCR_DET_R09">
+      <End Role="SET_ORG_TYPE" EntitySet="SET_ORG_TYPE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R10" Association="Model.Store.TRN_DCR_DET_R10">
+      <End Role="SET_PROMO_ITEM" EntitySet="SET_PROMO_ITEM" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R11" Association="Model.Store.TRN_DCR_DET_R11">
+      <End Role="SET_CLIENT_INFO" EntitySet="SET_CLIENT_INFO" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_DCR_DET_R12" Association="Model.Store.TRN_DCR_DET_R12">
+      <End Role="TRN_SMS_RECEIVE" EntitySet="TRN_SMS_RECEIVE" />
+      <End Role="TRN_DCR_DET" EntitySet="TRN_DCR_DET" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_MSG_R01" Association="Model.Store.TRN_MSG_R01">
+      <End Role="TRN_MSG" EntitySet="TRN_MSG" />
+      <End Role="TRN_MSG1" EntitySet="TRN_MSG" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_SMS_SEND_R02" Association="Model.Store.TRN_SMS_SEND_R02">
+      <End Role="TRN_SMS_SEND" EntitySet="TRN_SMS_SEND" />
+      <End Role="TRN_SMS_SEND1" EntitySet="TRN_SMS_SEND" />
+    </AssociationSet>
+    <AssociationSet Name="TRN_SMS_SEND_R03" Association="Model.Store.TRN_SMS_SEND_R03">
+      <End Role="GEN_SMS_TYPE" EntitySet="GEN_SMS_TYPE" />
+      <End Role="TRN_SMS_SEND" EntitySet="TRN_SMS_SEND" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="GEN_APPROVE_TYPE">
+    <Key>
+      <PropertyRef Name="APPROVE_TYPE_NO" />
+    </Key>
+    <Property Name="APPROVE_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TYPE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GEN_DATA_TYPE">
+    <Key>
+      <PropertyRef Name="DATA_TYPE_NO" />
+    </Key>
+    <Property Name="DATA_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="DATA_TYPE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GEN_DATA_VERSION">
+    <Key>
+      <PropertyRef Name="VER_NO" />
+    </Key>
+    <Property Name="VER_NO" Type="number" Nullable="false" />
+    <Property Name="OBJECT_NAME" Type="nvarchar2" Nullable="false" MaxLength="1000" />
+    <Property Name="CURR_VER" Type="number" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GEN_DCR_TYPE">
+    <Key>
+      <PropertyRef Name="DCR_TYPE_NO" />
+    </Key>
+    <Property Name="DCR_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="DCR_TYPE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GEN_SMS_TYPE">
+    <Key>
+      <PropertyRef Name="SMS_TYPE_NO" />
+    </Key>
+    <Property Name="SMS_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="SMS_TYPE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GEN_USER_TYPES">
+    <Key>
+      <PropertyRef Name="USER_TYPE_NO" />
+    </Key>
+    <Property Name="USER_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="USER_TYPE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="SHORT_NAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="IS_MULTI_LOGIN" Type="number" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_APPLICATIONS">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+    </Key>
+    <Property Name="APPLICATIONNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="LOWEREDAPPLICATIONNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_MEMBERSHIP">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="PASSWORD" Type="nvarchar2" Nullable="false" MaxLength="128" />
+    <Property Name="PASSWORDFORMAT" Type="number" Nullable="false" />
+    <Property Name="PASSWORDSALT" Type="nvarchar2" Nullable="false" MaxLength="128" />
+    <Property Name="MOBILEPIN" Type="nvarchar2" MaxLength="16" />
+    <Property Name="EMAIL" Type="nvarchar2" MaxLength="256" />
+    <Property Name="LOWEREDEMAIL" Type="nvarchar2" MaxLength="256" />
+    <Property Name="PASSWORDQUESTION" Type="nvarchar2" MaxLength="256" />
+    <Property Name="PASSWORDANSWER" Type="nvarchar2" MaxLength="128" />
+    <Property Name="ISAPPROVED" Type="number" Nullable="false" />
+    <Property Name="ISLOCKEDOUT" Type="number" Nullable="false" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="LASTLOGINDATE" Type="date" Nullable="false" />
+    <Property Name="LASTPASSWORDCHANGEDDATE" Type="date" Nullable="false" />
+    <Property Name="LASTLOCKOUTDATE" Type="date" Nullable="false" />
+    <Property Name="FAILEDPWDATTEMPTCOUNT" Type="number" Nullable="false" />
+    <Property Name="FAILEDPWDATTEMPTWINSTART" Type="date" Nullable="false" />
+    <Property Name="FAILEDPWDANSWERATTEMPTCOUNT" Type="number" Nullable="false" />
+    <Property Name="FAILEDPWDANSWERATTEMPTWINSTART" Type="date" Nullable="false" />
+    <Property Name="COMMENTS" Type="nclob" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_PATHS">
+    <Key>
+      <PropertyRef Name="PATHID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="PATHID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="PATH" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="LOWEREDPATH" Type="nvarchar2" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_ASPNET_PERSONALIZNALLUSERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_ASPNET_PERSONALIZNALLUSERS">
+    <Key>
+      <PropertyRef Name="PAGESETTINGS" />
+      <PropertyRef Name="LASTUPDATEDDATE" />
+    </Key>
+    <Property Name="PATHID" Type="raw" MaxLength="16" />
+    <Property Name="PAGESETTINGS" Type="blob" Nullable="false" />
+    <Property Name="LASTUPDATEDDATE" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_PERSONALIZNPERUSER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="PATHID" Type="raw" MaxLength="16" />
+    <Property Name="USERID" Type="raw" MaxLength="16" />
+    <Property Name="PAGESETTINGS" Type="blob" Nullable="false" />
+    <Property Name="LASTUPDATEDDATE" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_PROFILE">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="PROPERTYNAMES" Type="nclob" Nullable="false" />
+    <Property Name="PROPERTYVALUESSTRING" Type="nclob" Nullable="false" />
+    <Property Name="PROPERTYVALUESBINARY" Type="blob" Nullable="false" />
+    <Property Name="LASTUPDATEDDATE" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_ROLES">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="ROLEID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="ROLENAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="LOWEREDROLENAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_SESSIONAPPLICATIONS">
+    <Key>
+      <PropertyRef Name="APPID" />
+    </Key>
+    <Property Name="APPID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="APPNAME" Type="nvarchar2" Nullable="false" MaxLength="280" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_SESSIONS">
+    <Key>
+      <PropertyRef Name="SESSIONID" />
+    </Key>
+    <Property Name="SESSIONID" Type="nvarchar2" Nullable="false" MaxLength="116" />
+    <Property Name="CREATED" Type="date" Nullable="false" />
+    <Property Name="EXPIRES" Type="date" Nullable="false" />
+    <Property Name="LOCKDATE" Type="date" Nullable="false" />
+    <Property Name="LOCKDATELOCAL" Type="date" Nullable="false" />
+    <Property Name="LOCKCOOKIE" Type="number" Nullable="false" />
+    <Property Name="TIMEOUT" Type="number" Nullable="false" />
+    <Property Name="LOCKED" Type="number" Nullable="false" />
+    <Property Name="SESSIONITEMSHORT" Type="raw" />
+    <Property Name="SESSIONITEMLONG" Type="blob" />
+    <Property Name="FLAGS" Type="number" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_SITEMAP">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="ID" Type="number" Nullable="false" Precision="10" />
+    <Property Name="TITLE" Type="nvarchar2" MaxLength="32" />
+    <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="512" />
+    <Property Name="URL" Type="nvarchar2" MaxLength="512" />
+    <Property Name="ROLES" Type="nvarchar2" MaxLength="512" />
+    <Property Name="PARENT" Type="number" Precision="10" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_USERS">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="USERNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="LOWEREDUSERNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="MOBILEALIAS" Type="nvarchar2" MaxLength="16" />
+    <Property Name="ISANONYMOUS" Type="number" Nullable="false" />
+    <Property Name="LASTACTIVITYDATE" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORA_ASPNET_USERSINROLES">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="ROLEID" Type="raw" Nullable="false" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="SEC_USER_CLOSURE">
+    <Key>
+      <PropertyRef Name="CLOSE_NO" />
+    </Key>
+    <Property Name="CLOSE_NO" Type="number" Nullable="false" />
+    <Property Name="ANCESTOR_NO" Type="number" Nullable="false" />
+    <Property Name="DESCENDANT_NO" Type="number" />
+    <Property Name="REL_DEPTH" Type="number" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_USER_DCR_APPROVE">
+    <Key>
+      <PropertyRef Name="USER_DCR_APPROVE_NO" />
+    </Key>
+    <Property Name="USER_DCR_APPROVE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_SEQUENCE" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_USER_LOGON_APPROVE">
+    <Key>
+      <PropertyRef Name="LOGON_APPROVE_NO" />
+    </Key>
+    <Property Name="LOGON_APPROVE_NO" Type="number" Nullable="false" />
+    <Property Name="LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TIME" Type="date" Nullable="false" />
+    <Property Name="APPROVE_USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_SEQUENCE" Type="number" />
+    <Property Name="APPROVE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SEC_USER_LOGONS">
+    <Key>
+      <PropertyRef Name="LOGON_NO" />
+    </Key>
+    <Property Name="LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="IP_ADDR" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DEVICE_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LOGIN_TIME" Type="date" Nullable="false" />
+    <Property Name="LOGOUT_TIME" Type="date" />
+    <Property Name="IS_LOGGED_IN" Type="number" />
+    <Property Name="APPROVE_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_REQUIRED_QTY" Type="number" />
+    <Property Name="APPROVE_AQUIRED_QTY" Type="number" />
+    <Property Name="SESS_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LOGIN_MOBILE" Type="nvarchar2" MaxLength="500" />
+    <Property Name="WEB_SERVER_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="APP_VERSION" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LOGIN_SIM" Type="nvarchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SEC_USER_MULTI_LOGIN">
+    <Key>
+      <PropertyRef Name="MULTI_LOGIN_NO" />
+    </Key>
+    <Property Name="MULTI_LOGIN_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_SEQUENCE" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_USER_ZONE">
+    <Key>
+      <PropertyRef Name="USER_ZONE_NO" />
+    </Key>
+    <Property Name="USER_ZONE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ZONE_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SEC_USERS">
+    <Key>
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" />
+    <Property Name="INSERT_TIME" Type="date" />
+    <Property Name="INSERT_USER_NO" Type="number" />
+    <Property Name="INSERT_LOGON_NO" Type="number" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="DEPT_NO" Type="number" />
+    <Property Name="DESIG_NO" Type="number" />
+    <Property Name="HR_EMP_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_FULL_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="USER_NICK_NAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="USER_CONTACT" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_MOBILE" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="USER_ADDR" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_EMAIL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="USER_NAME" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="USER_PWD" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="USER_PARENT_NO" Type="number" />
+    <Property Name="IS_MULTI_LOGIN" Type="number" />
+    <Property Name="MULTI_LOGIN_QTY" Type="number" />
+    <Property Name="IS_MULTI_LOGIN_SEQUENTIAL" Type="number" />
+    <Property Name="IS_MULTI_DCR_APPROVE" Type="number" />
+    <Property Name="MULTI_DCR_APPROVE_QTY" Type="number" />
+    <Property Name="IS_DCR_APPROVE_SEQUENTIAL" Type="number" />
+    <Property Name="IS_ENABLE" Type="number" />
+    <Property Name="IS_EXISTS" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" />
+    <Property Name="ACTIVE_FROM" Type="date" />
+    <Property Name="ACTIVE_TO" Type="date" />
+  </EntityType>
+  <EntityType Name="SEC_USERS_HIS">
+    <Key>
+      <PropertyRef Name="HIS_NO" />
+    </Key>
+    <Property Name="HIS_NO" Type="number" Nullable="false" />
+    <Property Name="ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="DEPT_NO" Type="number" />
+    <Property Name="DESIG_NO" Type="number" />
+    <Property Name="HR_EMP_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_FULL_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="USER_NICK_NAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="USER_CONTACT" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_MOBILE" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="USER_ADDR" Type="nvarchar2" MaxLength="500" />
+    <Property Name="USER_EMAIL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="USER_NAME" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="USER_PWD" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="USER_PARENT_NO" Type="number" />
+    <Property Name="IS_MULTI_LOGIN" Type="number" Nullable="false" />
+    <Property Name="MULTI_LOGIN_QTY" Type="number" />
+    <Property Name="IS_MULTI_LOGIN_SEQUENTIAL" Type="number" />
+    <Property Name="IS_MULTI_DCR_APPROVE" Type="number" />
+    <Property Name="MULTI_DCR_APPROVE_QTY" Type="number" />
+    <Property Name="IS_DCR_APPROVE_SEQUENTIAL" Type="number" />
+    <Property Name="IS_ENABLE" Type="number" />
+    <Property Name="IS_EXISTS" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_BRAND_TYPE">
+    <Key>
+      <PropertyRef Name="BOOK_BRAND_TYPE_NO" />
+    </Key>
+    <Property Name="BOOK_BRAND_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_BRAND_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="BOOK_BRAND_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_GROUP">
+    <Key>
+      <PropertyRef Name="BOOK_GROUP_NO" />
+    </Key>
+    <Property Name="BOOK_GROUP_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_GROUP_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="BOOK_GROUP_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_PROJ_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_PROJ_TYPE">
+    <Key>
+      <PropertyRef Name="BOOK_PROJ_TYPE_NO" />
+    </Key>
+    <Property Name="BOOK_PROJ_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_PROJ_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="BOOK_PROJ_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_BRAND_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_BOOK_TYPE">
+    <Key>
+      <PropertyRef Name="BOOK_TYPE_NO" />
+    </Key>
+    <Property Name="BOOK_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="BOOK_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_GROUP_NO" Type="number" Nullable="false" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_CLASS">
+    <Key>
+      <PropertyRef Name="CLASS_NO" />
+    </Key>
+    <Property Name="CLASS_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="CLASS_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="CLASS_NAME_BNG" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="CLASS_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_INFO">
+    <Key>
+      <PropertyRef Name="CLIENT_NO" />
+    </Key>
+    <Property Name="CLIENT_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="CLIENT_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="CLIENT_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="CLIENT_NICK_NAME" Type="nvarchar2" MaxLength="500" />
+    <Property Name="CLIENT_DOB" Type="date" />
+    <Property Name="CLIENT_MARRIAGE_DATE" Type="date" />
+    <Property Name="CLIENT_ADDR" Type="nvarchar2" MaxLength="500" />
+    <Property Name="CLIENT_COMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_NO" Type="number" Nullable="false" />
+    <Property Name="ZONE_NO" Type="number" Nullable="false" />
+    <Property Name="ZILLA_NO" Type="number" Nullable="false" />
+    <Property Name="THANA_NO" Type="number" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="number" Nullable="false" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="date" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="number" />
+    <Property Name="IS_APPROVED" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TIME" Type="date" />
+    <Property Name="APPROVE_USER_NO" Type="number" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_COMPANY">
+    <Key>
+      <PropertyRef Name="COMP_NO" />
+    </Key>
+    <Property Name="COMP_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="COMP_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="COMP_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+    </Key>
+    <Property Name="DEPT_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DEPT_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="COMP_NO" Type="number" Nullable="false" />
+    <Property Name="PARENT_DEPT_NO" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_DESIGNATION">
+    <Key>
+      <PropertyRef Name="DESIG_NO" />
+    </Key>
+    <Property Name="DESIG_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DESIG_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="DESIG_CODE" Type="nvarchar2" MaxLength="50" />
+    <Property Name="DESIG_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_DIVISION">
+    <Key>
+      <PropertyRef Name="DIVISION_NO" />
+    </Key>
+    <Property Name="DIVISION_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="DIVISION_NAME_BNG" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="DIVISION_CODE" Type="nvarchar2" Nullable="false" MaxLength="50" />
+    <Property Name="DIVISION_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="MARKET_DIV_DETAILS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_MANAGER" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXISTS" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="ACTUAL_LATI_VAL" Type="number" />
+    <Property Name="ACTUAL_LONG_VAL" Type="number" />
+    <Property Name="FROM_LATI_VAL" Type="number" />
+    <Property Name="FROM_LONG_VAL" Type="number" />
+    <Property Name="TO_LATI_VAL" Type="number" />
+    <Property Name="TO_LONG_VAL" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_DIVISION_HIS">
+    <Key>
+      <PropertyRef Name="HIS_NO" />
+    </Key>
+    <Property Name="HIS_NO" Type="number" Nullable="false" />
+    <Property Name="ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_NO" Type="number" Nullable="false" />
+    <Property Name="DIVISION_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="DIVISION_NAME_BNG" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="DIVISION_CODE" Type="nvarchar2" Nullable="false" MaxLength="50" />
+    <Property Name="DIVISION_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="MARKET_DIV_DETAILS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_MANAGER" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXISTS" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="ACTUAL_LATI_VAL" Type="number" />
+    <Property Name="ACTUAL_LONG_VAL" Type="number" />
+    <Property Name="FROM_LATI_VAL" Type="number" />
+    <Property Name="FROM_LONG_VAL" Type="number" />
+    <Property Name="TO_LATI_VAL" Type="number" />
+    <Property Name="TO_LONG_VAL" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_EXP_TYPE">
+    <Key>
+      <PropertyRef Name="EXP_TYPE_NO" />
+    </Key>
+    <Property Name="EXP_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="EXP_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="EXP_TYPE_DETAILS" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="EXP_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_FISCAL_YEAR">
+    <Key>
+      <PropertyRef Name="FY_NO" />
+    </Key>
+    <Property Name="FY_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="FY_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="START_DATE" Type="date" Nullable="false" />
+    <Property Name="END_DATE" Type="date" Nullable="false" />
+    <Property Name="IS_CURRENT_YEAR" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_INST_TYPE">
+    <Key>
+      <PropertyRef Name="INST_TYPE_NO" />
+    </Key>
+    <Property Name="INST_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="INST_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="INST_TYPE_CODE" Type="nvarchar2" MaxLength="50" />
+    <Property Name="INST_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_INSTITUTE">
+    <Key>
+      <PropertyRef Name="INSTITUTE_NO" />
+    </Key>
+    <Property Name="INSTITUTE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="INSTITUTE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="INSTITUTE_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="INSTITUTE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="INST_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="THANA_NO" Type="number" Nullable="false" />
+    <Property Name="F_INSTITUTION_DB_ID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EIIN_NUMBER" Type="nvarchar2" MaxLength="100" />
+    <Property Name="MEET_PERSON_NAME" Type="nvarchar2" MaxLength="500" />
+    <Property Name="CONTACT_NUMBER" Type="nvarchar2" MaxLength="100" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="ACTUAL_LATI_VAL" Type="number" />
+    <Property Name="ACTUAL_LONG_VAL" Type="number" />
+    <Property Name="FROM_LATI_VAL" Type="number" />
+    <Property Name="FROM_LONG_VAL" Type="number" />
+    <Property Name="TO_LATI_VAL" Type="number" />
+    <Property Name="TO_LONG_VAL" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_MASTER_DATA">
+    <Key>
+      <PropertyRef Name="MASTER_DATA_NO" />
+    </Key>
+    <Property Name="MASTER_DATA_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="DATA_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="DATA_LABEL" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="DATA_VALUE" Type="nvarchar2" Nullable="false" MaxLength="1000" />
+    <Property Name="IS_LIST" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_MASTER_DATA_LIST">
+    <Key>
+      <PropertyRef Name="DATA_LIST_NO" />
+    </Key>
+    <Property Name="DATA_LIST_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="MASTER_DATA_NO" Type="number" Nullable="false" />
+    <Property Name="LIST_LABEL" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LIST_VALUE" Type="nvarchar2" Nullable="false" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="SET_ORG_TYPE">
+    <Key>
+      <PropertyRef Name="ORG_TYPE_NO" />
+    </Key>
+    <Property Name="ORG_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ORG_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="ORG_TYPE_CODE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="ORG_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_PROMO_ITEM">
+    <Key>
+      <PropertyRef Name="PROMO_ITEM_NO" />
+    </Key>
+    <Property Name="PROMO_ITEM_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="PROMO_ITEM_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="PROMO_ITEM_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="PROMO_ITEM_CODE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="PROMO_ITEM_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_PROMO_ITEM_TYPE">
+    <Key>
+      <PropertyRef Name="PROMO_ITEM_TYPE_NO" />
+    </Key>
+    <Property Name="PROMO_ITEM_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="PROMO_ITEM_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="PROMO_ITEM_TYPE_CODE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="PROMO_ITEM_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_REASON">
+    <Key>
+      <PropertyRef Name="REASON_NO" />
+    </Key>
+    <Property Name="REASON_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="REASON_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="REASON_CODE" Type="nvarchar2" Nullable="false" MaxLength="50" />
+    <Property Name="REASON_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SET_SPECIMEN">
+    <Key>
+      <PropertyRef Name="SPECIMEN_NO" />
+    </Key>
+    <Property Name="SPECIMEN_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="SPECIMEN_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="SPECIMEN_CODE" Type="nvarchar2" Nullable="false" MaxLength="50" />
+    <Property Name="SPECIMEN_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="SPECIMEN_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="BOOK_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="BOOK_UNIQUE_CODE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="POSITION_ID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="IS_CHECK_BY_ADMIN" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_SUBJECT">
+    <Key>
+      <PropertyRef Name="SUBJECT_NO" />
+    </Key>
+    <Property Name="SUBJECT_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="SUBJECT_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="SUBJECT_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="SUBJECT_CODE" Type="nvarchar2" MaxLength="50" />
+    <Property Name="SUBJECT_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_CONTACT">
+    <Key>
+      <PropertyRef Name="TEACH_CONTACT_NO" />
+    </Key>
+    <Property Name="TEACH_CONTACT_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_NO" Type="number" Nullable="false" />
+    <Property Name="CONTACT_NUMBER" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="IS_FIRST_PRIORITY" Type="number" Nullable="false" />
+    <Property Name="IS_NUMBER_WORKING" Type="number" Nullable="false" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="number" Nullable="false" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="date" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="number" />
+    <Property Name="IS_APPROVED" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TIME" Type="date" />
+    <Property Name="APPROVE_USER_NO" Type="number" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_DESIG">
+    <Key>
+      <PropertyRef Name="TEACH_DESIG_NO" />
+    </Key>
+    <Property Name="TEACH_DESIG_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_DESIG_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="TEACHER_DESIG_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_DESIG_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_INFO">
+    <Key>
+      <PropertyRef Name="TEACHER_NO" />
+    </Key>
+    <Property Name="TEACHER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="TEACHER_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_NICK_NAME" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_DOB" Type="date" />
+    <Property Name="TEACHER_MARRIAGE_DATE" Type="date" />
+    <Property Name="TEACHER_ADDR" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_COMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="INSTITUTE_NO" Type="number" Nullable="false" />
+    <Property Name="TEACH_DESIG_NO" Type="number" Nullable="false" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="number" Nullable="false" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="date" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="number" />
+    <Property Name="IS_APPROVED" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TIME" Type="date" />
+    <Property Name="APPROVE_USER_NO" Type="number" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_TEACHER_SUBJECT">
+    <Key>
+      <PropertyRef Name="TEACH_SUB_NO" />
+    </Key>
+    <Property Name="TEACH_SUB_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TEACHER_NO" Type="number" Nullable="false" />
+    <Property Name="SUBJECT_NO" Type="number" Nullable="false" />
+    <Property Name="CLASS_NO" Type="number" />
+    <Property Name="IS_ALL_CLASS" Type="number" Nullable="false" />
+    <Property Name="IS_OFFLINE_ENTRY" Type="number" Nullable="false" />
+    <Property Name="OFFLINE_ENTRY_TIME" Type="date" />
+    <Property Name="OFFLINE_ENTRY_SYNC" Type="number" />
+    <Property Name="IS_APPROVED" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TIME" Type="date" />
+    <Property Name="APPROVE_USER_NO" Type="number" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_THANA">
+    <Key>
+      <PropertyRef Name="THANA_NO" />
+    </Key>
+    <Property Name="THANA_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ZONE_NO" Type="number" Nullable="false" />
+    <Property Name="ZILLA_NO" Type="number" Nullable="false" />
+    <Property Name="THANA_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="THANA_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="THANA_CODE" Type="nvarchar2" Nullable="false" MaxLength="50" />
+    <Property Name="THANA_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ACTUAL_LATI_VAL" Type="number" />
+    <Property Name="ACTUAL_LONG_VAL" Type="number" />
+    <Property Name="FROM_LATI_VAL" Type="number" />
+    <Property Name="FROM_LONG_VAL" Type="number" />
+    <Property Name="TO_LATI_VAL" Type="number" />
+    <Property Name="TO_LONG_VAL" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_TRANSPORT_TYPE">
+    <Key>
+      <PropertyRef Name="TRANS_TYPE_NO" />
+    </Key>
+    <Property Name="TRANS_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TRANS_TYPE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="TRANS_TYPE_DETAILS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TRANS_TYPE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_WORK_PURPOSE">
+    <Key>
+      <PropertyRef Name="WORK_PUR_NO" />
+    </Key>
+    <Property Name="WORK_PUR_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="WORK_PUR_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="WORK_PUR_DETAILS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="WORK_PUR_CODE" Type="nvarchar2" MaxLength="50" />
+    <Property Name="WORK_PUR_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_ZILLA">
+    <Key>
+      <PropertyRef Name="ZILLA_NO" />
+    </Key>
+    <Property Name="ZILLA_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_NO" Type="number" Nullable="false" />
+    <Property Name="ZILLA_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="ZILLA_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ZILLA_CODE" Type="nvarchar2" Nullable="false" MaxLength="50" />
+    <Property Name="ZILLA_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_NAME" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ACTUAL_LATI_VAL" Type="number" />
+    <Property Name="ACTUAL_LONG_VAL" Type="number" />
+    <Property Name="FROM_LATI_VAL" Type="number" />
+    <Property Name="FROM_LONG_VAL" Type="number" />
+    <Property Name="TO_LATI_VAL" Type="number" />
+    <Property Name="TO_LONG_VAL" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="SET_ZONE">
+    <Key>
+      <PropertyRef Name="ZONE_NO" />
+    </Key>
+    <Property Name="ZONE_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="IS_MIGRATED" Type="number" Nullable="false" />
+    <Property Name="MIGRATE_DATE" Type="date" />
+    <Property Name="MIGRATE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="DIVISION_NO" Type="number" Nullable="false" />
+    <Property Name="ZONE_NAME" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="ZONE_NAME_BNG" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ZONE_CODE" Type="nvarchar2" Nullable="false" MaxLength="50" />
+    <Property Name="ZONE_DETAILS" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ZONE_DESC" Type="nvarchar2" MaxLength="500" />
+    <Property Name="TOTAL_STUDENTS" Type="number" />
+    <Property Name="ZONE_GRADE" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ACTUAL_LATI_VAL" Type="number" />
+    <Property Name="ACTUAL_LONG_VAL" Type="number" />
+    <Property Name="FROM_LATI_VAL" Type="number" />
+    <Property Name="FROM_LONG_VAL" Type="number" />
+    <Property Name="TO_LATI_VAL" Type="number" />
+    <Property Name="TO_LONG_VAL" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="IS_VOID" Type="number" />
+    <Property Name="IS_EXIST" Type="number" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="false" />
+    <Property Name="ACTIVE_FROM" Type="date" Nullable="false" />
+    <Property Name="ACTIVE_TO" Type="date" Nullable="false" />
+    <Property Name="SL_NUM" Type="number" />
+  </EntityType>
+  <EntityType Name="TRN_DCR">
+    <Key>
+      <PropertyRef Name="DCR_NO" />
+    </Key>
+    <Property Name="DCR_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_OFFLINE_TIME" Type="date" />
+    <Property Name="LAST_ACTION_OFFLINE_SYNC" Type="number" />
+    <Property Name="LAST_IS_OFFLINE" Type="number" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_OFFLINE_TIME" Type="date" />
+    <Property Name="INSERT_OFFLINE_SYNC" Type="number" />
+    <Property Name="INSERT_IS_OFFLINE" Type="number" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="UPDATE_OFFLINE_TIME" Type="date" />
+    <Property Name="UPDATE_OFFLINE_SYNC" Type="number" />
+    <Property Name="UPDATE_IS_OFFLINE" Type="number" />
+    <Property Name="FY_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="AGENT_USER_NO" Type="number" />
+    <Property Name="TRN_DCR_DATE" Type="date" />
+    <Property Name="APPROVE_TYPE_NO" Type="number" />
+    <Property Name="APPROVE_TIME" Type="date" />
+    <Property Name="APPROVE_USER_NO" Type="number" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" />
+    <Property Name="APPROVE_REQUIRED_QTY" Type="number" />
+    <Property Name="APPROVE_AQUIRED_QTY" Type="number" />
+    <Property Name="ORDER_QTY" Type="number" />
+    <Property Name="COLLECTION_QTY" Type="number" />
+    <Property Name="OTH_EXP_DETAILS" Type="nvarchar2" MaxLength="1000" />
+    <Property Name="OTH_EXP_AMT" Type="number" />
+    <Property Name="OFFICIAL_CALL_MINUTES" Type="number" />
+    <Property Name="MARKET_CALL_MINUTES" Type="number" />
+    <Property Name="IS_TRN_LOCKED" Type="number" />
+    <Property Name="IS_LOCK_BY_SYSTEM" Type="number" />
+    <Property Name="TRN_LOCK_DATE" Type="date" />
+    <Property Name="TRN_LOCK_USER_NO" Type="number" />
+    <Property Name="TRN_LOCK_LOGON_NO" Type="number" />
+  </EntityType>
+  <EntityType Name="TRN_DCR_APPROVE">
+    <Key>
+      <PropertyRef Name="DCR_APPROVE_NO" />
+    </Key>
+    <Property Name="DCR_APPROVE_NO" Type="number" Nullable="false" />
+    <Property Name="DCR_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TIME" Type="date" Nullable="false" />
+    <Property Name="APPROVE_USER_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_SEQUENCE" Type="number" />
+    <Property Name="APPROVE_COMMENTS" Type="nvarchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TRN_DCR_DET">
+    <Key>
+      <PropertyRef Name="DCR_DET_NO" />
+    </Key>
+    <Property Name="DCR_DET_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_OFFLINE_TIME" Type="date" />
+    <Property Name="LAST_ACTION_OFFLINE_SYNC" Type="number" />
+    <Property Name="LAST_IS_OFFLINE" Type="number" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_OFFLINE_TIME" Type="date" />
+    <Property Name="INSERT_OFFLINE_SYNC" Type="number" />
+    <Property Name="INSERT_IS_OFFLINE" Type="number" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="UPDATE_OFFLINE_TIME" Type="date" />
+    <Property Name="UPDATE_OFFLINE_SYNC" Type="number" />
+    <Property Name="UPDATE_IS_OFFLINE" Type="number" />
+    <Property Name="DCR_NO" Type="number" Nullable="false" />
+    <Property Name="DCR_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TYPE_NO" Type="number" />
+    <Property Name="APPROVE_TIME" Type="date" />
+    <Property Name="APPROVE_USER_NO" Type="number" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" />
+    <Property Name="REASON_NO" Type="number" />
+    <Property Name="REAMRKS" Type="nvarchar2" MaxLength="1000" />
+    <Property Name="WORK_AREA_FROM_LAT" Type="number" />
+    <Property Name="WORK_AREA_FROM_LON" Type="number" />
+    <Property Name="WORK_AREA_FROM_NAME" Type="nvarchar2" MaxLength="1000" />
+    <Property Name="WORK_AREA_TO_LAT" Type="number" />
+    <Property Name="WORK_AREA_TO_LON" Type="number" />
+    <Property Name="WORK_AREA_TO_NAME" Type="nvarchar2" MaxLength="1000" />
+    <Property Name="TIME_FROM" Type="date" />
+    <Property Name="TIME_TO" Type="date" />
+    <Property Name="TIME_GAP" Type="number" />
+    <Property Name="DIVISION_NO" Type="number" Nullable="false" />
+    <Property Name="ZONE_NO" Type="number" Nullable="false" />
+    <Property Name="ZILLA_NO" Type="number" />
+    <Property Name="THANA_NO" Type="number" />
+    <Property Name="INSTITUTE_NO" Type="number" />
+    <Property Name="IS_FOR_TEACHER" Type="number" />
+    <Property Name="TEACHER_NO" Type="number" />
+    <Property Name="MEET_PERSON_NAME" Type="nvarchar2" MaxLength="500" />
+    <Property Name="MEET_PERSON_MOBILE" Type="nvarchar2" MaxLength="50" />
+    <Property Name="SPECIMEN_NO" Type="number" />
+    <Property Name="SPECIMEN_QTY" Type="number" />
+    <Property Name="REF_ZM_USER_NO" Type="number" />
+    <Property Name="WORK_PUR_NO" Type="number" Nullable="false" />
+    <Property Name="TRANS_TYPE_NO" Type="number" />
+    <Property Name="IS_CONVEYANCE" Type="number" />
+    <Property Name="CONVENYANCE_BILL" Type="number" />
+    <Property Name="IS_SMS_IMPORT" Type="number" />
+    <Property Name="SMS_REC_NO" Type="number" />
+    <Property Name="SMS_IMPORT_TIME" Type="date" />
+    <Property Name="SMS_IMPORT_USER_NO" Type="number" />
+    <Property Name="SMS_IMPORT_LOGON_NO" Type="number" />
+    <Property Name="PROMO_ITEM_NO" Type="number" />
+    <Property Name="IS_FOR_CLIENT" Type="number" />
+    <Property Name="CLIENT_NO" Type="number" />
+    <Property Name="IS_PLAIN_ENTRY" Type="number" />
+    <Property Name="PROMO_NAME" Type="nvarchar2" MaxLength="500" />
+    <Property Name="PROMO_DOB" Type="date" />
+    <Property Name="PROMO_MOBILE" Type="nvarchar2" MaxLength="500" />
+    <Property Name="PROMO_ADDR" Type="nvarchar2" MaxLength="500" />
+    <Property Name="PROMO_ORGANIZATION" Type="nvarchar2" MaxLength="500" />
+    <Property Name="ORG_TYPE_NO" Type="number" />
+    <Property Name="PROMO_ITEM_QTY" Type="number" />
+  </EntityType>
+  <EntityType Name="TRN_DOWNLOAD_LOG">
+    <Key>
+      <PropertyRef Name="DOWN_NO" />
+    </Key>
+    <Property Name="DOWN_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="DOWN_DATE" Type="date" Nullable="false" />
+    <Property Name="SESS_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LOGIN_MOBILE" Type="nvarchar2" MaxLength="500" />
+    <Property Name="WEB_SERVER_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="APP_VERSION" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LOGIN_SIM" Type="nvarchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TRN_MSG">
+    <Key>
+      <PropertyRef Name="MSG_NO" />
+    </Key>
+    <Property Name="MSG_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="FROM_USER_NO" Type="number" Nullable="false" />
+    <Property Name="MSG_SUBJECT" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="MSG_BODY" Type="nvarchar2" Nullable="false" MaxLength="1000" />
+    <Property Name="IS_FOR_ALL" Type="number" />
+    <Property Name="IS_REPLY_ALLOW" Type="number" />
+    <Property Name="REF_MSG_NO" Type="number" />
+    <Property Name="IS_REPLY" Type="number" />
+  </EntityType>
+  <EntityType Name="TRN_MSG_RECIEVER">
+    <Key>
+      <PropertyRef Name="MSG_REC_NO" />
+    </Key>
+    <Property Name="MSG_REC_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="LAST_ACTION_TIME" Type="date" Nullable="false" />
+    <Property Name="LAST_ACTION_USER_NO" Type="number" Nullable="false" />
+    <Property Name="LAST_ACTION_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="UPDATE_TIME" Type="date" />
+    <Property Name="UPDATE_USER_NO" Type="number" />
+    <Property Name="UPDATE_LOGON_NO" Type="number" />
+    <Property Name="MSG_NO" Type="number" Nullable="false" />
+    <Property Name="REC_USER_NO" Type="number" Nullable="false" />
+    <Property Name="IS_READ" Type="number" />
+    <Property Name="READ_TIME" Type="date" />
+    <Property Name="READ_USER_NO" Type="number" />
+    <Property Name="READ_LOGON_NO" Type="number" />
+    <Property Name="READ_OFFLINE_TIME" Type="date" />
+    <Property Name="READ_OFFLINE_SYNC" Type="number" />
+    <Property Name="READ_IS_OFFLINE" Type="number" />
+  </EntityType>
+  <EntityType Name="TRN_SMS_RECEIVE">
+    <Key>
+      <PropertyRef Name="SMS_REC_NO" />
+    </Key>
+    <Property Name="SMS_REC_NO" Type="number" Nullable="false" />
+    <Property Name="FROM_MOBILE" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="SMS_DATE" Type="date" Nullable="false" />
+    <Property Name="SMS_BODY" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="IS_VALID_FORMAT" Type="number" Nullable="false" />
+    <Property Name="APPROVE_TYPE_NO" Type="number" />
+    <Property Name="APPROVE_USER_NO" Type="number" />
+    <Property Name="APPROVE_LOGON_NO" Type="number" />
+    <Property Name="IS_PROCESSED" Type="number" />
+    <Property Name="PROCESS_USER_NO" Type="number" />
+    <Property Name="PROCESS_LOGON_NO" Type="number" />
+  </EntityType>
+  <EntityType Name="TRN_SMS_SEND">
+    <Key>
+      <PropertyRef Name="SMS_SEND_NO" />
+    </Key>
+    <Property Name="SMS_SEND_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" />
+    <Property Name="INSERT_TIME" Type="date" Nullable="false" />
+    <Property Name="INSERT_USER_NO" Type="number" Nullable="false" />
+    <Property Name="INSERT_LOGON_NO" Type="number" Nullable="false" />
+    <Property Name="SMS_TYPE_NO" Type="number" Nullable="false" />
+    <Property Name="FROM_MOBILE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="TO_MOBILE" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="SMS_BODY" Type="nvarchar2" Nullable="false" MaxLength="500" />
+    <Property Name="JOB_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="SMS_RESPONSE_TEXT" Type="nvarchar2" MaxLength="500" />
+    <Property Name="SMS_PROVIDER_NAME" Type="nvarchar2" MaxLength="500" />
+    <Property Name="IS_SUCCESS" Type="number" Nullable="false" />
+    <Property Name="IS_DELIVERED" Type="number" Nullable="false" />
+    <Property Name="DELIVERY_TIME" Type="date" />
+    <Property Name="IS_RETRY" Type="number" Nullable="false" />
+    <Property Name="PARENT_SMS_SEND_NO" Type="number" />
+  </EntityType>
+  <EntityType Name="TRN_UPLOAD_LOG">
+    <Key>
+      <PropertyRef Name="UP_NO" />
+    </Key>
+    <Property Name="UP_NO" Type="number" Nullable="false" />
+    <Property Name="USER_NO" Type="number" Nullable="false" />
+    <Property Name="UP_DATE" Type="date" Nullable="false" />
+    <Property Name="SESS_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LOGIN_MOBILE" Type="nvarchar2" MaxLength="500" />
+    <Property Name="WEB_SERVER_ID" Type="nvarchar2" MaxLength="500" />
+    <Property Name="APP_VERSION" Type="nvarchar2" MaxLength="500" />
+    <Property Name="LOGIN_SIM" Type="nvarchar2" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_VW_ASPNET_APPLICATIONS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_VW_ASPNET_APPLICATIONS">
+    <Key>
+      <PropertyRef Name="APPLICATIONNAME" />
+      <PropertyRef Name="LOWEREDAPPLICATIONNAME" />
+      <PropertyRef Name="APPLICATIONID" />
+    </Key>
+    <Property Name="APPLICATIONNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="LOWEREDAPPLICATIONNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_VW_ASPNET_MEMUSERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_VW_ASPNET_MEMUSERS">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="PASSWORDFORMAT" />
+      <PropertyRef Name="ISAPPROVED" />
+      <PropertyRef Name="ISLOCKEDOUT" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTLOGINDATE" />
+      <PropertyRef Name="LASTPASSWORDCHANGEDDATE" />
+      <PropertyRef Name="LASTLOCKOUTDATE" />
+      <PropertyRef Name="FAILEDPWDATTEMPTCOUNT" />
+      <PropertyRef Name="FAILEDPWDATTEMPTWINSTART" />
+      <PropertyRef Name="FAILEDPWDANSWERATTEMPTCOUNT" />
+      <PropertyRef Name="FAILEDPWDANSWERATTEMPTWINSTART" />
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="USERNAME" />
+      <PropertyRef Name="ISANONYMOUS" />
+      <PropertyRef Name="LASTACTIVITYDATE" />
+    </Key>
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="PASSWORDFORMAT" Type="number" Nullable="false" />
+    <Property Name="MOBILEPIN" Type="nvarchar2" MaxLength="16" />
+    <Property Name="EMAIL" Type="nvarchar2" MaxLength="256" />
+    <Property Name="LOWEREDEMAIL" Type="nvarchar2" MaxLength="256" />
+    <Property Name="PASSWORDQUESTION" Type="nvarchar2" MaxLength="256" />
+    <Property Name="PASSWORDANSWER" Type="nvarchar2" MaxLength="128" />
+    <Property Name="ISAPPROVED" Type="number" Nullable="false" />
+    <Property Name="ISLOCKEDOUT" Type="number" Nullable="false" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="LASTLOGINDATE" Type="date" Nullable="false" />
+    <Property Name="LASTPASSWORDCHANGEDDATE" Type="date" Nullable="false" />
+    <Property Name="LASTLOCKOUTDATE" Type="date" Nullable="false" />
+    <Property Name="FAILEDPWDATTEMPTCOUNT" Type="number" Nullable="false" />
+    <Property Name="FAILEDPWDATTEMPTWINSTART" Type="date" Nullable="false" />
+    <Property Name="FAILEDPWDANSWERATTEMPTCOUNT" Type="number" Nullable="false" />
+    <Property Name="FAILEDPWDANSWERATTEMPTWINSTART" Type="date" Nullable="false" />
+    <Property Name="COMMENTS" Type="nclob" />
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="USERNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="MOBILEALIAS" Type="nvarchar2" MaxLength="16" />
+    <Property Name="ISANONYMOUS" Type="number" Nullable="false" />
+    <Property Name="LASTACTIVITYDATE" Type="date" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_VW_ASPNET_PROFILES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_VW_ASPNET_PROFILES">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="LASTUPDATEDDATE" />
+    </Key>
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="LASTUPDATEDDATE" Type="date" Nullable="false" />
+    <Property Name="DATASIZE" Type="number" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_VW_ASPNET_ROLES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_VW_ASPNET_ROLES">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="ROLEID" />
+      <PropertyRef Name="ROLENAME" />
+      <PropertyRef Name="LOWEREDROLENAME" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="ROLEID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="ROLENAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="LOWEREDROLENAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_VW_ASPNET_SESSIONS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_VW_ASPNET_SESSIONS">
+    <Key>
+      <PropertyRef Name="SESSIONID" />
+      <PropertyRef Name="CREATED" />
+      <PropertyRef Name="EXPIRES" />
+      <PropertyRef Name="LOCKDATE" />
+      <PropertyRef Name="LOCKDATELOCAL" />
+      <PropertyRef Name="LOCKCOOKIE" />
+      <PropertyRef Name="TIMEOUT" />
+      <PropertyRef Name="LOCKED" />
+      <PropertyRef Name="FLAGS" />
+    </Key>
+    <Property Name="SESSIONID" Type="nvarchar2" Nullable="false" MaxLength="116" />
+    <Property Name="CREATED" Type="date" Nullable="false" />
+    <Property Name="EXPIRES" Type="date" Nullable="false" />
+    <Property Name="LOCKDATE" Type="date" Nullable="false" />
+    <Property Name="LOCKDATELOCAL" Type="date" Nullable="false" />
+    <Property Name="LOCKCOOKIE" Type="number" Nullable="false" />
+    <Property Name="TIMEOUT" Type="number" Nullable="false" />
+    <Property Name="LOCKED" Type="number" Nullable="false" />
+    <Property Name="DATASIZE" Type="number" />
+    <Property Name="FLAGS" Type="number" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_VW_ASPNET_UIR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_VW_ASPNET_UIR">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="ROLEID" Type="raw" Nullable="false" MaxLength="16" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'OG_DB.ORA_VW_ASPNET_USERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ORA_VW_ASPNET_USERS">
+    <Key>
+      <PropertyRef Name="APPLICATIONID" />
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="USERNAME" />
+      <PropertyRef Name="LOWEREDUSERNAME" />
+      <PropertyRef Name="ISANONYMOUS" />
+      <PropertyRef Name="LASTACTIVITYDATE" />
+    </Key>
+    <Property Name="APPLICATIONID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="USERID" Type="raw" Nullable="false" MaxLength="16" />
+    <Property Name="USERNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="LOWEREDUSERNAME" Type="nvarchar2" Nullable="false" MaxLength="256" />
+    <Property Name="MOBILEALIAS" Type="nvarchar2" MaxLength="16" />
+    <Property Name="ISANONYMOUS" Type="number" Nullable="false" />
+    <Property Name="LASTACTIVITYDATE" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_APPLICATIONID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.Store.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_ROLES" Type="Model.Store.ORA_ASPNET_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_ROLES">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASPNET_USERSINROLES_ROLEID">
+    <End Role="ORA_ASPNET_ROLES" Type="Model.Store.ORA_ASPNET_ROLES" Multiplicity="1" />
+    <End Role="ORA_ASPNET_USERSINROLES" Type="Model.Store.ORA_ASPNET_USERSINROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_ROLES">
+        <PropertyRef Name="ROLEID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_USERSINROLES">
+        <PropertyRef Name="ROLEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASPNET_USERSINROLES_USERID">
+    <End Role="ORA_ASPNET_USERS" Type="Model.Store.ORA_ASPNET_USERS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_USERSINROLES" Type="Model.Store.ORA_ASPNET_USERSINROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_USERSINROLES">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBERSHIP_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.Store.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_MEMBERSHIP" Type="Model.Store.ORA_ASPNET_MEMBERSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_MEMBERSHIP">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBERSHIP_USERID">
+    <End Role="ORA_ASPNET_USERS" Type="Model.Store.ORA_ASPNET_USERS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_MEMBERSHIP" Type="Model.Store.ORA_ASPNET_MEMBERSHIP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_MEMBERSHIP">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PATHS_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.Store.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_PATHS" Type="Model.Store.ORA_ASPNET_PATHS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PATHS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROFILE_USERID">
+    <End Role="ORA_ASPNET_USERS" Type="Model.Store.ORA_ASPNET_USERS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_PROFILE" Type="Model.Store.ORA_ASPNET_PROFILE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PROFILE">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SITEMAP_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.Store.ORA_ASPNET_APPLICATIONS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ORA_ASPNET_SITEMAP" Type="Model.Store.ORA_ASPNET_SITEMAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_SITEMAP">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERS_APPID">
+    <End Role="ORA_ASPNET_APPLICATIONS" Type="Model.Store.ORA_ASPNET_APPLICATIONS" Multiplicity="1" />
+    <End Role="ORA_ASPNET_USERS" Type="Model.Store.ORA_ASPNET_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_APPLICATIONS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="APPLICATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONALIZATIONALLUSERS_PATHID">
+    <End Role="ORA_ASPNET_PATHS" Type="Model.Store.ORA_ASPNET_PATHS" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ORA_ASPNET_PERSONALIZNALLUSERS" Type="Model.Store.ORA_ASPNET_PERSONALIZNALLUSERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_PATHS">
+        <PropertyRef Name="PATHID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PERSONALIZNALLUSERS">
+        <PropertyRef Name="PATHID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONALIZATIONPERUSER_PATHID">
+    <End Role="ORA_ASPNET_PATHS" Type="Model.Store.ORA_ASPNET_PATHS" Multiplicity="0..1" />
+    <End Role="ORA_ASPNET_PERSONALIZNPERUSER" Type="Model.Store.ORA_ASPNET_PERSONALIZNPERUSER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_PATHS">
+        <PropertyRef Name="PATHID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PERSONALIZNPERUSER">
+        <PropertyRef Name="PATHID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONALIZATIONPERUSER_USERID">
+    <End Role="ORA_ASPNET_USERS" Type="Model.Store.ORA_ASPNET_USERS" Multiplicity="0..1" />
+    <End Role="ORA_ASPNET_PERSONALIZNPERUSER" Type="Model.Store.ORA_ASPNET_PERSONALIZNPERUSER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORA_ASPNET_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="ORA_ASPNET_PERSONALIZNPERUSER">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USER_LOGON_APPROVE_R02">
+    <End Role="GEN_APPROVE_TYPE" Type="Model.Store.GEN_APPROVE_TYPE" Multiplicity="1" />
+    <End Role="SEC_USER_LOGON_APPROVE" Type="Model.Store.SEC_USER_LOGON_APPROVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_APPROVE_TYPE">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_LOGON_APPROVE">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USER_LOGONS_R01">
+    <End Role="GEN_APPROVE_TYPE" Type="Model.Store.GEN_APPROVE_TYPE" Multiplicity="1" />
+    <End Role="SEC_USER_LOGONS" Type="Model.Store.SEC_USER_LOGONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_APPROVE_TYPE">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_LOGONS">
+        <PropertyRef Name="APPROVE_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USER_ZONE_R01">
+    <End Role="SET_ZONE" Type="Model.Store.SET_ZONE" Multiplicity="1" />
+    <End Role="SEC_USER_ZONE" Type="Model.Store.SEC_USER_ZONE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ZONE">
+        <PropertyRef Name="ZONE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_ZONE">
+        <PropertyRef Name="ZONE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USERS_R01">
+    <End Role="GEN_USER_TYPES" Type="Model.Store.GEN_USER_TYPES" Multiplicity="1" />
+    <End Role="SEC_USERS" Type="Model.Store.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_USER_TYPES">
+        <PropertyRef Name="USER_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="USER_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USERS_R02">
+    <End Role="SET_DEPARTMENT" Type="Model.Store.SET_DEPARTMENT" Multiplicity="0..1" />
+    <End Role="SEC_USERS" Type="Model.Store.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DEPARTMENT">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SEC_USERS_R03">
+    <End Role="SET_DESIGNATION" Type="Model.Store.SET_DESIGNATION" Multiplicity="0..1" />
+    <End Role="SEC_USERS" Type="Model.Store.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DESIGNATION">
+        <PropertyRef Name="DESIG_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="DESIG_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_BOOK_GROUP_R01">
+    <End Role="SET_BOOK_PROJ_TYPE" Type="Model.Store.SET_BOOK_PROJ_TYPE" Multiplicity="1" />
+    <End Role="SET_BOOK_GROUP" Type="Model.Store.SET_BOOK_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_BOOK_PROJ_TYPE">
+        <PropertyRef Name="BOOK_PROJ_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_BOOK_GROUP">
+        <PropertyRef Name="BOOK_PROJ_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_BOOK_PROJ_TYPE_R01">
+    <End Role="SET_BOOK_BRAND_TYPE" Type="Model.Store.SET_BOOK_BRAND_TYPE" Multiplicity="1" />
+    <End Role="SET_BOOK_PROJ_TYPE" Type="Model.Store.SET_BOOK_PROJ_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_BOOK_BRAND_TYPE">
+        <PropertyRef Name="BOOK_BRAND_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_BOOK_PROJ_TYPE">
+        <PropertyRef Name="BOOK_BRAND_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_BOOK_TYPE_R01">
+    <End Role="SET_BOOK_GROUP" Type="Model.Store.SET_BOOK_GROUP" Multiplicity="1" />
+    <End Role="SET_BOOK_TYPE" Type="Model.Store.SET_BOOK_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_BOOK_GROUP">
+        <PropertyRef Name="BOOK_GROUP_NO" />
+      </Principal>
+      <Dependent Role="SET_BOOK_TYPE">
+        <PropertyRef Name="BOOK_GROUP_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R01">
+    <End Role="SET_DIVISION" Type="Model.Store.SET_DIVISION" Multiplicity="1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.Store.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DIVISION">
+        <PropertyRef Name="DIVISION_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="DIVISION_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R02">
+    <End Role="SET_ZONE" Type="Model.Store.SET_ZONE" Multiplicity="1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.Store.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ZONE">
+        <PropertyRef Name="ZONE_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="ZONE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R03">
+    <End Role="SET_ZILLA" Type="Model.Store.SET_ZILLA" Multiplicity="1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.Store.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ZILLA">
+        <PropertyRef Name="ZILLA_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="ZILLA_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_CLIENT_INFO_R04">
+    <End Role="SET_THANA" Type="Model.Store.SET_THANA" Multiplicity="0..1" />
+    <End Role="SET_CLIENT_INFO" Type="Model.Store.SET_CLIENT_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_THANA">
+        <PropertyRef Name="THANA_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_INFO">
+        <PropertyRef Name="THANA_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_DEPARTMENT_R01">
+    <End Role="SET_DEPARTMENT" Type="Model.Store.SET_DEPARTMENT" Multiplicity="0..1" />
+    <End Role="SET_DEPARTMENT1" Type="Model.Store.SET_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DEPARTMENT">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SET_DEPARTMENT1">
+        <PropertyRef Name="PARENT_DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_DEPARTMENT_R02">
+    <End Role="SET_COMPANY" Type="Model.Store.SET_COMPANY" Multiplicity="1" />
+    <End Role="SET_DEPARTMENT" Type="Model.Store.SET_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_COMPANY">
+        <PropertyRef Name="COMP_NO" />
+      </Principal>
+      <Dependent Role="SET_DEPARTMENT">
+        <PropertyRef Name="COMP_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_MASTER_DATA_LIST_R01">
+    <End Role="SET_MASTER_DATA" Type="Model.Store.SET_MASTER_DATA" Multiplicity="1" />
+    <End Role="SET_MASTER_DATA_LIST" Type="Model.Store.SET_MASTER_DATA_LIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_MASTER_DATA">
+        <PropertyRef Name="MASTER_DATA_NO" />
+      </Principal>
+      <Dependent Role="SET_MASTER_DATA_LIST">
+        <PropertyRef Name="MASTER_DATA_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_MASTER_DATA_R01">
+    <End Role="GEN_DATA_TYPE" Type="Model.Store.GEN_DATA_TYPE" Multiplicity="1" />
+    <End Role="SET_MASTER_DATA" Type="Model.Store.SET_MASTER_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_DATA_TYPE">
+        <PropertyRef Name="DATA_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_MASTER_DATA">
+        <PropertyRef Name="DATA_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_INFO_R01">
+    <End Role="SET_INSTITUTE" Type="Model.Store.SET_INSTITUTE" Multiplicity="1" />
+    <End Role="SET_TEACHER_INFO" Type="Model.Store.SET_TEACHER_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_INSTITUTE">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_INFO">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_INFO_R02">
+    <End Role="SET_TEACHER_DESIG" Type="Model.Store.SET_TEACHER_DESIG" Multiplicity="1" />
+    <End Role="SET_TEACHER_INFO" Type="Model.Store.SET_TEACHER_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_TEACHER_DESIG">
+        <PropertyRef Name="TEACH_DESIG_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_INFO">
+        <PropertyRef Name="TEACH_DESIG_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_SUBJECT_R02">
+    <End Role="SET_SUBJECT" Type="Model.Store.SET_SUBJECT" Multiplicity="1" />
+    <End Role="SET_TEACHER_SUBJECT" Type="Model.Store.SET_TEACHER_SUBJECT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_SUBJECT">
+        <PropertyRef Name="SUBJECT_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_SUBJECT">
+        <PropertyRef Name="SUBJECT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SET_TEACHER_SUBJECT_R03">
+    <End Role="SET_CLASS" Type="Model.Store.SET_CLASS" Multiplicity="0..1" />
+    <End Role="SET_TEACHER_SUBJECT" Type="Model.Store.SET_TEACHER_SUBJECT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLASS">
+        <PropertyRef Name="CLASS_NO" />
+      </Principal>
+      <Dependent Role="SET_TEACHER_SUBJECT">
+        <PropertyRef Name="CLASS_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R01">
+    <End Role="SET_SPECIMEN" Type="Model.Store.SET_SPECIMEN" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_SPECIMEN">
+        <PropertyRef Name="SPECIMEN_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="SPECIMEN_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R02">
+    <End Role="SET_REASON" Type="Model.Store.SET_REASON" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_REASON">
+        <PropertyRef Name="REASON_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="REASON_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R03">
+    <End Role="SET_INSTITUTE" Type="Model.Store.SET_INSTITUTE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_INSTITUTE">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="INSTITUTE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R04">
+    <End Role="SET_WORK_PURPOSE" Type="Model.Store.SET_WORK_PURPOSE" Multiplicity="1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_WORK_PURPOSE">
+        <PropertyRef Name="WORK_PUR_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="WORK_PUR_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R05">
+    <End Role="SET_TRANSPORT_TYPE" Type="Model.Store.SET_TRANSPORT_TYPE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_TRANSPORT_TYPE">
+        <PropertyRef Name="TRANS_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="TRANS_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R06">
+    <End Role="SET_TEACHER_INFO" Type="Model.Store.SET_TEACHER_INFO" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_TEACHER_INFO">
+        <PropertyRef Name="TEACHER_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="TEACHER_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R08">
+    <End Role="GEN_DCR_TYPE" Type="Model.Store.GEN_DCR_TYPE" Multiplicity="1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_DCR_TYPE">
+        <PropertyRef Name="DCR_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="DCR_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R09">
+    <End Role="SET_ORG_TYPE" Type="Model.Store.SET_ORG_TYPE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_ORG_TYPE">
+        <PropertyRef Name="ORG_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="ORG_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R10">
+    <End Role="SET_PROMO_ITEM" Type="Model.Store.SET_PROMO_ITEM" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_PROMO_ITEM">
+        <PropertyRef Name="PROMO_ITEM_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="PROMO_ITEM_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R11">
+    <End Role="SET_CLIENT_INFO" Type="Model.Store.SET_CLIENT_INFO" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_INFO">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_DCR_DET_R12">
+    <End Role="TRN_SMS_RECEIVE" Type="Model.Store.TRN_SMS_RECEIVE" Multiplicity="0..1" />
+    <End Role="TRN_DCR_DET" Type="Model.Store.TRN_DCR_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_SMS_RECEIVE">
+        <PropertyRef Name="SMS_REC_NO" />
+      </Principal>
+      <Dependent Role="TRN_DCR_DET">
+        <PropertyRef Name="SMS_REC_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_MSG_R01">
+    <End Role="TRN_MSG" Type="Model.Store.TRN_MSG" Multiplicity="0..1" />
+    <End Role="TRN_MSG1" Type="Model.Store.TRN_MSG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_MSG">
+        <PropertyRef Name="MSG_NO" />
+      </Principal>
+      <Dependent Role="TRN_MSG1">
+        <PropertyRef Name="REF_MSG_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_SMS_SEND_R02">
+    <End Role="TRN_SMS_SEND" Type="Model.Store.TRN_SMS_SEND" Multiplicity="0..1" />
+    <End Role="TRN_SMS_SEND1" Type="Model.Store.TRN_SMS_SEND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_SMS_SEND">
+        <PropertyRef Name="SMS_SEND_NO" />
+      </Principal>
+      <Dependent Role="TRN_SMS_SEND1">
+        <PropertyRef Name="PARENT_SMS_SEND_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TRN_SMS_SEND_R03">
+    <End Role="GEN_SMS_TYPE" Type="Model.Store.GEN_SMS_TYPE" Multiplicity="1" />
+    <End Role="TRN_SMS_SEND" Type="Model.Store.TRN_SMS_SEND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_SMS_TYPE">
+        <PropertyRef Name="SMS_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_SMS_SEND">
+        <PropertyRef Name="SMS_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GEN_DATA_VERSION_GET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="P_VER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_OBJECT_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_CURR_VER" Type="number" Mode="In" />
+    <Parameter Name="P_START_FROM" Type="number" Mode="In" />
+    <Parameter Name="P_PAGE_LENGTH" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_APPS_CREATEAPP" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="APPLICATIONID_" Type="raw" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_CREATEPAGE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPID" Type="raw" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGEID" Type="raw" Mode="InOut" />
+  </Function>
+  <Function Name="ORA_ASPNET_CREATEUSER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONID_" Type="raw" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ISUSERANONYMOUS" Type="number" Mode="In" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="In" />
+    <Parameter Name="USERID_" Type="raw" Mode="InOut" />
+  </Function>
+  <Function Name="ORA_ASPNET_GETSITEMAPDATA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_INDEXEXISTS" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="INDEXNAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_LOGWEBEVENTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="EVENTID" Type="varchar2" Mode="In" />
+    <Parameter Name="EVENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="EVENTTIME" Type="date" Mode="In" />
+    <Parameter Name="EVENTTYPE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="EVENTSEQUENCE" Type="number" Mode="In" />
+    <Parameter Name="EVENTOCCURENCE" Type="number" Mode="In" />
+    <Parameter Name="EVENTCODE" Type="number" Mode="In" />
+    <Parameter Name="EVENTDETAILCODE" Type="number" Mode="In" />
+    <Parameter Name="MESSAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="APPLICATIONPATH" Type="nvarchar2" Mode="In" />
+    <Parameter Name="APPLICATIONVIRTUALPATH" Type="nvarchar2" Mode="In" />
+    <Parameter Name="MACHINENAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="REQUESTURL" Type="nvarchar2" Mode="In" />
+    <Parameter Name="EXCEPTIONTYPE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="DETAILS" Type="nclob" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_CHANGEPWDQANDA" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="NEWPASSWORDQUESTION" Type="nvarchar2" Mode="In" />
+    <Parameter Name="NEWPASSWORDANSWER" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_CREATEUSER" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PASSWORD_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PASSWORDSALT_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="EMAIL_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PASSWORDQUESTION_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PASSWORDANSWER_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ISAPPROVED_" Type="number" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="CREATEDATE_" Type="date" Mode="In" />
+    <Parameter Name="UNIQUEEMAIL" Type="number" Mode="In" />
+    <Parameter Name="PASSWORDFORMAT_" Type="number" Mode="In" />
+    <Parameter Name="USERID_" Type="raw" Mode="InOut" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_DELETEUSER" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="TABLESTODELETEFROM" Type="number" Mode="In" />
+    <Parameter Name="NUMTABLESDELETEDFROM" Type="number" Mode="InOut" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_FINDUSERSBYEML" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="EMAILTOMATCH" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGEINDEX" Type="number" Mode="In" />
+    <Parameter Name="PAGESIZE" Type="number" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="EMAIL_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="PASSWORDQUESTION_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="COMMENTS_" Type="nclob" Mode="Out" />
+    <Parameter Name="ISAPPROVED_" Type="number" Mode="Out" />
+    <Parameter Name="CREATEDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTLOGINDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTPASSWORDCHANGEDDATE_" Type="date" Mode="Out" />
+    <Parameter Name="ISLOCKEDOUT_" Type="number" Mode="Out" />
+    <Parameter Name="LASTLOCKOUTDATE_" Type="date" Mode="Out" />
+    <Parameter Name="USERID_" Type="raw" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_FINDUSERSBYNAME" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAMETOMATCH" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGEINDEX" Type="number" Mode="In" />
+    <Parameter Name="PAGESIZE" Type="number" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="EMAIL_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="PASSWORDQUESTION_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="COMMENTS_" Type="nclob" Mode="Out" />
+    <Parameter Name="ISAPPROVED_" Type="number" Mode="Out" />
+    <Parameter Name="CREATEDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTLOGINDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTPASSWORDCHANGEDDATE_" Type="date" Mode="Out" />
+    <Parameter Name="ISLOCKEDOUT_" Type="number" Mode="Out" />
+    <Parameter Name="LASTLOCKOUTDATE_" Type="date" Mode="Out" />
+    <Parameter Name="USERID_" Type="raw" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_GETALLUSERS" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGEINDEX" Type="number" Mode="In" />
+    <Parameter Name="PAGESIZE" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_GETNUMOFUSERSON" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="MINUTESSINCELASTINACTIVE" Type="number" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_GETPASSWORD" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="MAXINVALIDPASSWORDATTEMPTS" Type="number" Mode="In" />
+    <Parameter Name="PASSWORDATTEMPTWINDOW" Type="number" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="PASSWORDANSWER_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PASSWORD_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="PASSWORDFORMAT_" Type="number" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_GETPWDWITHFMT" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="UPDATELASTLOGINACTIVITYDATE" Type="number" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="PASSWORD_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="PASSWORDFORMAT_" Type="number" Mode="Out" />
+    <Parameter Name="PASSWORDSALT_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="FAILEDPWDATTEMPTCOUNT_" Type="number" Mode="Out" />
+    <Parameter Name="FAILEDPWDANSWERATTEMPTCOUNT_" Type="number" Mode="Out" />
+    <Parameter Name="ISAPPROVED_" Type="number" Mode="Out" />
+    <Parameter Name="LASTLOGINDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_GETUSERBYEML" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="EMAIL_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="MULTIROWS_" Type="number" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_GETUSERBYNAME" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="UPDATELASTACTIVITY" Type="number" Mode="In" />
+    <Parameter Name="EMAIL_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="PASSWORDQUESTION_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="COMMENTS_" Type="nclob" Mode="Out" />
+    <Parameter Name="ISAPPROVED_" Type="number" Mode="Out" />
+    <Parameter Name="CREATEDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTLOGINDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTPASSWORDCHANGEDDATE_" Type="date" Mode="Out" />
+    <Parameter Name="USERID_" Type="raw" Mode="Out" />
+    <Parameter Name="ISLOCKEDOUT_" Type="number" Mode="Out" />
+    <Parameter Name="LASTLOCKOUTDATE_" Type="date" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_GETUSERBYUID" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="USERID_" Type="raw" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="UPDATELASTACTIVITY" Type="number" Mode="In" />
+    <Parameter Name="EMAIL_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="PASSWORDQUESTION_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="COMMENTS_" Type="nclob" Mode="Out" />
+    <Parameter Name="ISAPPROVED_" Type="number" Mode="Out" />
+    <Parameter Name="CREATEDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTLOGINDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTPASSWORDCHANGEDDATE_" Type="date" Mode="Out" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="ISLOCKEDOUT_" Type="number" Mode="Out" />
+    <Parameter Name="LASTLOCKOUTDATE_" Type="date" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_RESETPASSWORD" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="NEWPASSWORD" Type="nvarchar2" Mode="In" />
+    <Parameter Name="MAXINVALIDPASSWORDATTEMPTS" Type="number" Mode="In" />
+    <Parameter Name="PASSWORDATTEMPTWINDOW" Type="number" Mode="In" />
+    <Parameter Name="PASSWORDSALT_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="PASSWORDFORMAT_" Type="number" Mode="In" />
+    <Parameter Name="PASSWORDANSWER_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_SETPASSWORD" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="NEWPASSWORD" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PASSWORDSALT_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="PASSWORDFORMAT_" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_UNLOCKUSER" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_UPDATEUSER" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="EMAIL_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="COMMENTS_" Type="nclob" Mode="In" />
+    <Parameter Name="ISAPPROVED_" Type="number" Mode="In" />
+    <Parameter Name="LASTLOGINDATE_" Type="date" Mode="In" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="In" />
+    <Parameter Name="UNIQUEEMAIL" Type="number" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC_" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_MEM_UPDATEUSERINFO" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ISPASSWORDCORRECT" Type="number" Mode="In" />
+    <Parameter Name="UPDATELASTLOGINACTIVITYDATE" Type="number" Mode="In" />
+    <Parameter Name="MAXINVALIDPASSWORDATTEMPTS" Type="number" Mode="In" />
+    <Parameter Name="PASSWORDATTEMPTWINDOW" Type="number" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="LASTLOGINDATE_" Type="date" Mode="In" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PAU_GETPGSETTINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGESETTINGS" Type="blob" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_PAU_RESETPGSETTINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PAU_SETPGSETTINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGESETTINGS_" Type="blob" Mode="Out" />
+    <Parameter Name="CURRENTTIME" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PA_FINDSTATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="SCOPE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGEINDEX" Type="number" Mode="In" />
+    <Parameter Name="PAGESIZE" Type="number" Mode="In" />
+    <Parameter Name="TOTALRECORDS" Type="number" Mode="Out" />
+    <Parameter Name="USRNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="INACTIVESINCEDATE" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PA_GETCOUNTOFSTATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="SCOPE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="COUNT" Type="number" Mode="Out" />
+    <Parameter Name="USRNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="INACTIVESINCEDATE" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PA_RESETSHAREDSTATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="RESETCOUNT" Type="number" Mode="Out" />
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PA_RESETUSERSTATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="RESETCOUNT" Type="number" Mode="Out" />
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="INACTIVESINCEDATE" Type="date" Mode="In" />
+    <Parameter Name="USRNAME" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PPU_GETPGSETTINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGESETTINGS" Type="blob" Mode="Out" />
+    <Parameter Name="USRNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="CURRENTTIME" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PPU_RESETPGSETTINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USRNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="CURRENTTIME" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PPU_SETPGSETTINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPNAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PAGESETTINGS_" Type="blob" Mode="Out" />
+    <Parameter Name="CURRENTTIME" Type="date" Mode="In" />
+    <Parameter Name="USRNAME" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PROF_DELETEINACTPF" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PROFILEAUTHOPTIONS" Type="number" Mode="In" />
+    <Parameter Name="INACTIVESINCEDATE" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PROF_GETNOFINACTPF" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PROFILEAUTHOPTIONS" Type="number" Mode="In" />
+    <Parameter Name="INACTIVESINCEDATE" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_PROF_GETPROFILES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PROFILEAUTHOPTIONS" Type="number" Mode="In" />
+    <Parameter Name="PAGEINDEX" Type="number" Mode="In" />
+    <Parameter Name="PAGESIZE" Type="number" Mode="In" />
+    <Parameter Name="USERNAMETOMATCH" Type="nvarchar2" Mode="In" />
+    <Parameter Name="INACTIVESINCEDATE" Type="date" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="Out" />
+    <Parameter Name="ISANONYMOUS_" Type="number" Mode="Out" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="Out" />
+    <Parameter Name="LASTUPDATEDDATE_" Type="date" Mode="Out" />
+    <Parameter Name="SIZE_" Type="number" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_PROF_GETPROPERTIES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+    <Parameter Name="NAMES_" Type="nclob" Mode="Out" />
+    <Parameter Name="VALUES_" Type="nclob" Mode="Out" />
+    <Parameter Name="BUF_" Type="blob" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_PROF_SETPROPERTIES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="PROPERTYNAMES_" Type="nclob" Mode="In" />
+    <Parameter Name="PROPERTYVALUESSTRING_" Type="nclob" Mode="In" />
+    <Parameter Name="PROPERTYVALUESBINARY_" Type="blob" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ISUSERANONYMOUS" Type="number" Mode="In" />
+    <Parameter Name="CURRENTTIMEUTC" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_ROLES_CREATEROLE" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ROLENAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_ROLES_DELETEROLE" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ROLENAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="DELETEONLYIFROLEISEMPTY" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_ROLES_GETALLROLES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_ROLES_ROLEEXISTS" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ROLENAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSNAPP_GETAPPID" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="APPID_" Type="raw" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_GETSTATEITEM" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ITEMSHORT" Type="raw" Mode="Out" />
+    <Parameter Name="SESSIONLOCKED" Type="number" Mode="Out" />
+    <Parameter Name="LOCKAGE" Type="number" Mode="Out" />
+    <Parameter Name="SESSIONLOCKCOOKIE" Type="number" Mode="Out" />
+    <Parameter Name="ACTIONFLAGS" Type="number" Mode="Out" />
+    <Parameter Name="ITEMLONG" Type="blob" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_GETSTATEITMEX" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ITEMSHORT" Type="raw" Mode="Out" />
+    <Parameter Name="SESSIONLOCKED" Type="number" Mode="Out" />
+    <Parameter Name="LOCKAGE" Type="number" Mode="Out" />
+    <Parameter Name="SESSIONLOCKCOOKIE" Type="number" Mode="Out" />
+    <Parameter Name="ACTIONFLAGS" Type="number" Mode="Out" />
+    <Parameter Name="ITEMLONG" Type="blob" Mode="Out" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_INSSTATEITEM" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ITEMSHORT" Type="raw" Mode="In" />
+    <Parameter Name="ITEMLONG" Type="blob" Mode="In" />
+    <Parameter Name="SESSIONTIMEOUT" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_INSUNINITITEM" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ITEMSHORT" Type="raw" Mode="In" />
+    <Parameter Name="SESSIONTIMEOUT" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_RELSTATEITMEX" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="SESSIONLOCKCOOKIE" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_RESETTIMEOUT" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_RMSTATEITEM" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="SESSIONLOCKCOOKIE" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_SESSN_UPDSTATEITEM" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ITEMSHORT" Type="raw" Mode="In" />
+    <Parameter Name="ITEMLONG" Type="blob" Mode="In" />
+    <Parameter Name="SESSIONTIMEOUT" Type="number" Mode="In" />
+    <Parameter Name="SESSIONLOCKCOOKIE" Type="number" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_TABLEEXISTS" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="TABLENAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_UIR_FINDUSERSINROLE" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ROLENAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAMETOMATCH" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_UIR_GETROLESFORUSER" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_UIR_GETUSERSINROLES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ROLENAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_UIR_ISUSERINROLE" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ROLENAME_" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="ORA_ASPNET_USERS_CREATEUSER" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONID_" Type="raw" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="ISUSERANONYMOUS" Type="number" Mode="In" />
+    <Parameter Name="LASTACTIVITYDATE_" Type="date" Mode="In" />
+    <Parameter Name="USERID_" Type="raw" Mode="InOut" />
+  </Function>
+  <Function Name="ORA_ASPNET_USERS_DELETEUSER" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="USERNAME_" Type="nvarchar2" Mode="In" />
+    <Parameter Name="TABLESTODELETEFROM" Type="number" Mode="In" />
+    <Parameter Name="NUMTABLESDELETEDFROM" Type="number" Mode="InOut" />
+  </Function>
+  <Function Name="SEC_USERS_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="P_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_LAST_ACTION_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_LAST_ACTION_LOGON_NO" Type="number" Mode="In" />
+  </Function>
+  <Function Name="SEC_USERS_GET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="P_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_LAST_ACTION" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_LAST_ACTION_TIME" Type="date" Mode="In" />
+    <Parameter Name="P_LAST_ACTION_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_LAST_ACTION_LOGON_NO" Type="number" Mode="In" />
+    <Parameter Name="P_INSERT_TIME" Type="date" Mode="In" />
+    <Parameter Name="P_INSERT_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_INSERT_LOGON_NO" Type="number" Mode="In" />
+    <Parameter Name="P_UPDATE_TIME" Type="date" Mode="In" />
+    <Parameter Name="P_UPDATE_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_UPDATE_LOGON_NO" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MIGRATED" Type="number" Mode="In" />
+    <Parameter Name="P_MIGRATE_DATE" Type="date" Mode="In" />
+    <Parameter Name="P_MIGRATE_COMMENTS" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_TYPE_NO" Type="number" Mode="In" />
+    <Parameter Name="P_DEPT_NO" Type="number" Mode="In" />
+    <Parameter Name="P_DESIG_NO" Type="number" Mode="In" />
+    <Parameter Name="P_HR_EMP_ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_FULL_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_NICK_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_CONTACT" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_MOBILE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_ADDR" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_EMAIL" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_PWD" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_PARENT_NO" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_LOGIN" Type="number" Mode="In" />
+    <Parameter Name="P_MULTI_LOGIN_QTY" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_LOGIN_SEQUENTIAL" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_DCR_APPROVE" Type="number" Mode="In" />
+    <Parameter Name="P_MULTI_DCR_APPROVE_QTY" Type="number" Mode="In" />
+    <Parameter Name="P_IS_DCR_APPROVE_SEQUENTIAL" Type="number" Mode="In" />
+    <Parameter Name="P_IS_ENABLE" Type="number" Mode="In" />
+    <Parameter Name="P_IS_EXISTS" Type="number" Mode="In" />
+    <Parameter Name="P_IS_PROCESSED" Type="number" Mode="In" />
+    <Parameter Name="P_IS_ACTIVE" Type="number" Mode="In" />
+    <Parameter Name="P_ACTIVE_FROM" Type="date" Mode="In" />
+    <Parameter Name="P_ACTIVE_TO" Type="date" Mode="In" />
+    <Parameter Name="P_CHECK_ACTIVE" Type="number" Mode="In" />
+  </Function>
+  <Function Name="SEC_USERS_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="P_USER_MOBILE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_ADDR" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_EMAIL" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_PWD" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_PARENT_NO" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_LOGIN" Type="number" Mode="In" />
+    <Parameter Name="P_MULTI_LOGIN_QTY" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_LOGIN_SEQUENTIAL" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_DCR_APPROVE" Type="number" Mode="In" />
+    <Parameter Name="P_MULTI_DCR_APPROVE_QTY" Type="number" Mode="In" />
+    <Parameter Name="P_IS_DCR_APPROVE_SEQUENTIAL" Type="number" Mode="In" />
+    <Parameter Name="P_IS_ACTIVE" Type="number" Mode="In" />
+    <Parameter Name="P_ACTIVE_FROM" Type="date" Mode="In" />
+    <Parameter Name="P_ACTIVE_TO" Type="date" Mode="In" />
+    <Parameter Name="P_INSERT_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_INSERT_LOGON_NO" Type="number" Mode="In" />
+    <Parameter Name="P_USER_TYPE_NO" Type="number" Mode="In" />
+    <Parameter Name="P_DEPT_NO" Type="number" Mode="In" />
+    <Parameter Name="P_DESIG_NO" Type="number" Mode="In" />
+    <Parameter Name="P_HR_EMP_ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_FULL_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_NICK_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_CONTACT" Type="nvarchar2" Mode="In" />
+  </Function>
+  <Function Name="SEC_USERS_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+    <Parameter Name="P_USER_MOBILE" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_ADDR" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_EMAIL" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_PWD" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_PARENT_NO" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_LOGIN" Type="number" Mode="In" />
+    <Parameter Name="P_MULTI_LOGIN_QTY" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_LOGIN_SEQUENTIAL" Type="number" Mode="In" />
+    <Parameter Name="P_IS_MULTI_DCR_APPROVE" Type="number" Mode="In" />
+    <Parameter Name="P_MULTI_DCR_APPROVE_QTY" Type="number" Mode="In" />
+    <Parameter Name="P_IS_DCR_APPROVE_SEQUENTIAL" Type="number" Mode="In" />
+    <Parameter Name="P_IS_ACTIVE" Type="number" Mode="In" />
+    <Parameter Name="P_ACTIVE_FROM" Type="date" Mode="In" />
+    <Parameter Name="P_ACTIVE_TO" Type="date" Mode="In" />
+    <Parameter Name="P_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_UPDATE_USER_NO" Type="number" Mode="In" />
+    <Parameter Name="P_UPDATE_LOGON_NO" Type="number" Mode="In" />
+    <Parameter Name="P_USER_TYPE_NO" Type="number" Mode="In" />
+    <Parameter Name="P_DEPT_NO" Type="number" Mode="In" />
+    <Parameter Name="P_DESIG_NO" Type="number" Mode="In" />
+    <Parameter Name="P_HR_EMP_ID" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_FULL_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_NICK_NAME" Type="nvarchar2" Mode="In" />
+    <Parameter Name="P_USER_CONTACT" Type="nvarchar2" Mode="In" />
+  </Function>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'OG_DB.ORA_ASPNET_WEBEVENTS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="ORA_ASPNET_WEBEVENTS">
+        <Property Name="EVENTID" Type="char" MaxLength="32" />
+        <Property Name="EVENTTIMEUTC" Type="date" />
+        <Property Name="EVENTTIME" Type="date" />
+        <Property Name="EVENTTYPE" Type="nvarchar2" MaxLength="256" />
+        <Property Name="EVENTSEQUENCE" Type="number" Precision="19" />
+        <Property Name="EVENTOCCURENCE" Type="number" Precision="19" />
+        <Property Name="EVENTCODE" Type="number" Precision="10" />
+        <Property Name="EVENTDETAILCODE" Type="number" Precision="10" />
+        <Property Name="MESSAGE" Type="nvarchar2" MaxLength="1000" />
+        <Property Name="APPLICATIONPATH" Type="nvarchar2" MaxLength="256" />
+        <Property Name="APPLICATIONVIRTUALPATH" Type="nvarchar2" MaxLength="256" />
+        <Property Name="MACHINENAME" Type="nvarchar2" MaxLength="256" />
+        <Property Name="REQUESTURL" Type="nvarchar2" MaxLength="256" />
+        <Property Name="EXCEPTIONTYPE" Type="nvarchar2" MaxLength="256" />
+        <Property Name="DETAILS" Type="nclob" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'OG_DB.TEM_PROC_CALL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TEM_PROC_CALL">
+        <Property Name="CALL_TIME" Type="date" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6005: The function 'ORA_ASPNET_PROF_DELETEPROFILES' has a parameter 'USERNAMESARRAY' at parameter index 1 that has a data type 'pl/sql table' which is not supported. The function was excluded.
+      
+      <Function Name="ORA_ASPNET_PROF_DELETEPROFILES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+        <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+      </Function>
+      Errors Found During Generation:
+      warning 6005: The function 'ORA_ASPNET_UIR_ADDUSERSTOROLES' has a parameter 'USERNAMES_' at parameter index 1 that has a data type 'pl/sql table' which is not supported. The function was excluded.
+      warning 6005: The function 'ORA_ASPNET_UIR_ADDUSERSTOROLES' has a parameter 'ROLENAMES_' at parameter index 3 that has a data type 'pl/sql table' which is not supported. The function was excluded.
+      
+      <Function Name="ORA_ASPNET_UIR_ADDUSERSTOROLES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+        <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+        <Parameter Name="USERNAMES_ARR_SIZE" Type="number" Mode="In" />
+        <Parameter Name="ROLENAMES_ARR_SIZE" Type="number" Mode="In" />
+        <Parameter Name="USERNAME" Type="nvarchar2" Mode="Out" />
+        <Parameter Name="ROLENAME" Type="nvarchar2" Mode="Out" />
+      </Function>
+      Errors Found During Generation:
+      warning 6005: The function 'ORA_ASPNET_UIR_REMUSERSFMROLES' has a parameter 'USERNAMES_' at parameter index 1 that has a data type 'pl/sql table' which is not supported. The function was excluded.
+      warning 6005: The function 'ORA_ASPNET_UIR_REMUSERSFMROLES' has a parameter 'ROLENAMES_' at parameter index 3 that has a data type 'pl/sql table' which is not supported. The function was excluded.
+      
+      <Function Name="ORA_ASPNET_UIR_REMUSERSFMROLES" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="OG_DB">
+        <Parameter Name="APPLICATIONNAME_" Type="nvarchar2" Mode="In" />
+        <Parameter Name="USERNAMES_ARR_SIZE" Type="number" Mode="In" />
+        <Parameter Name="ROLENAMES_ARR_SIZE" Type="number" Mode="In" />
+        <Parameter Name="USERNAME" Type="nvarchar2" Mode="Out" />
+        <Parameter Name="ROLENAME" Type="nvarchar2" Mode="Out" />
+      </Function>-->
+</Schema>

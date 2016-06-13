@@ -1,0 +1,77 @@
+﻿@*model IEnumerable<OG_SLN.TRN_USER_SPECIMEN>*@
+@model PagedList.IPagedList<OG_SLN.TRN_USER_SPECIMEN>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<hr />
+@{Html.RenderPartial("_SearchSpecimen");}
+<div class="row">
+    <div class="col-8 marRight_2">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover tabWidth">
+                <tr class="success">
+                    <th>
+                        User Name
+                    </th>
+                    <th>
+                        Assign Date
+                    </th>
+                    <th>
+                        Target Date From
+                    </th>
+                    <th>
+                        Target Date To
+                    </th>
+                    <th>
+                        Active
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SEC_USERS.USER_NAME)
+                        </td>
+                        <td>
+                            @item.ASSIGN_DATE.ToString("yyyy-MM-dd")
+                        </td>
+                        <td>
+                            @DateTime.Parse(item.TARGET_DATE_FROM.ToString()).ToString("yyyy-MM-dd")
+                        </td>
+                        <td>
+                            @DateTime.Parse(item.TARGET_DATE_TO.ToString()).ToString("yyyy-MM-dd")
+                        </td>
+                        <td>
+                            <input class="check-box" type="checkbox" disabled="disabled" tag="@item.IS_ACTIVE"
+                            @if (item.IS_ACTIVE == 1)
+                            { @("checked=\"checked\"");
+                            } />
+                        </td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                @Html.ActionLink("Edit", "Create", new { id = item.USER_SPECIMEN_NO }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("Details", "Details", new { id = item.USER_SPECIMEN_NO }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.USER_SPECIMEN_NO }, new { @class = "btn btn-danger" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+<div id="example">
+</div>
+<div id='Paging' style="text-align: center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

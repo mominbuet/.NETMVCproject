@@ -1,0 +1,126 @@
+﻿@model OG_SLN.SEC_USERS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="rpt_1">
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.GEN_USER_TYPES.USER_TYPE)</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_DEPARTMENT.DEPT_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_DEPARTMENT.DEPT_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_DESIGNATION.DESIG_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_DESIGNATION.DESIG_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HR_EMP_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HR_EMP_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_FULL_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_FULL_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_NICK_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_NICK_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_CONTACT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_CONTACT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_MOBILE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_MOBILE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_ADDR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_ADDR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_EMAIL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_EMAIL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_PWD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_PWD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USER_PARENT_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USER_PARENT_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_ACTIVE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_ACTIVE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ACTIVE_FROM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ACTIVE_FROM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ACTIVE_TO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ACTIVE_TO)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+</div>

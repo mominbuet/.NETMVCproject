@@ -1,0 +1,149 @@
+﻿@model OG_SLN.SET_TEACHER_INFO
+
+@using OG_SLN.Helpers
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<script type="text/javascript">
+    $(function () {
+
+    });
+
+</script>
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="usCreate_1 marRight_1">
+    <fieldset>
+        <legend>Add Teacher</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TEACHER_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TEACHER_NAME)
+            @Html.ValidationMessageFor(model => model.TEACHER_NAME) 
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TEACHER_NAME_BNG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TEACHER_NAME_BNG)
+            @Html.ValidationMessageFor(model => model.TEACHER_NAME_BNG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TEACHER_NICK_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TEACHER_NICK_NAME)
+            @Html.ValidationMessageFor(model => model.TEACHER_NICK_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TEACHER_MOBILE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TEACHER_MOBILE)
+            @Html.ValidationMessageFor(model => model.TEACHER_MOBILE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BIRTH_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.BIRTH_DATE, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.BIRTH_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MARRIAGE_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MARRIAGE_DATE, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.MARRIAGE_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TEACHER_ADDR)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TEACHER_ADDR)
+            @Html.ValidationMessageFor(model => model.TEACHER_ADDR)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSTITUTE_NO)
+        </div>
+        <div class="editor-field">
+            @*@Html.DropDownList("INSTITUTE_NO", String.Empty)*@
+            
+            @Html.HiddenFor(model => model.INSTITUTE_NO)
+            @Html.ValidationMessageFor(model => model.INSTITUTE_NO)
+            @Html.InstituteDialogFormLink("Select", Url.Action("Institute"), "Select Institute")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TEACH_DESIG_NO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TEACH_DESIG_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.TEACH_DESIG_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_STATUS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_STATUS)
+            @Html.ValidationMessageFor(model => model.ACTIVE_STATUS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DATE_FROM)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DATE_FROM, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.DATE_FROM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DATE_TO)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DATE_TO, new { @class = "dateclass" })
+            @Html.ValidationMessageFor(model => model.DATE_TO)
+        </div>
+
+        <br /><br />
+        <p>
+            <input class="btn btn-success butTop_1" type="submit" value="Create" />
+        </p>
+    </fieldset>
+    </div>
+
+    
+    IList<OG_SLN.SET_SUBJECT> subjects = ViewBag.SUBJECT as IList<OG_SLN.SET_SUBJECT>;
+
+    OG_SLN.Teacher_Subject sub = new OG_SLN.Teacher_Subject();
+
+    foreach(OG_SLN.SET_SUBJECT subject in subjects) {
+        sub.SUBJECT_NO = subject.SUBJECT_NO.ToString();
+        sub.SUBJECT_NAME = subject.SUBJECT_NAME;
+        sub.IS_ACTIVE = false;
+        
+        Html.RenderPartial("_TeacherSubjectPartial", sub);
+    }
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

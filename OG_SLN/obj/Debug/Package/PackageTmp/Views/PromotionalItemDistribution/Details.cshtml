@@ -1,0 +1,84 @@
+﻿@model OG_SLN.TRN_USER_PROMO_ITEM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Promotional Item Distribution</legend>
+
+        <table class="table table-responsive">
+        <tr>
+            <td>
+                Zonal Manager
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SEC_USERS.USER_NAME)
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Assign Date
+            </td>
+            <td>
+                @Html.ValueFor(model => model.ASSIGN_DATE, "{0:dd/MM/yyyy}")
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+              
+                @Html.DisplayFor(model => model.ACTIVE_STATUS)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Target Date From
+            </td>
+            <td>@Html.ValueFor(model => model.TARGET_DATE_TO, "{0:dd/MM/yyyy}")
+            </td>
+            <td>
+                To
+            </td>
+            <td>@Html.ValueFor(model => model.TARGET_DATE_FROM, "{0:dd/MM/yyyy}")
+                
+            </td>
+        </tr>
+    </table>
+    <table id="spec_add_table" class="table table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    PromotionalItem Code
+                </th>
+                <th>
+                    PromotionalItem Name
+                </th>
+                <th>
+                    Qty
+                </th>
+                <th>
+                    Status
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var det in ViewBag.dets)
+        {
+            <tr id="@det.PROMO_ITEM_NO" ><td>@det.SET_PROMO_ITEM.PROMO_ITEM_CODE</td><td>@det.SET_PROMO_ITEM.PROMO_ITEM_NAME</td><td>@det.QTY</td><td>@det.IS_ACTIVE</td></tr>
+        }
+       </tbody>
+    </table>
+  
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Create", new { id = Model.USER_PROMO_NO }, new { @class="btn btn-info"}) |
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+</p>

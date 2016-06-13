@@ -1,0 +1,176 @@
+﻿@model OG_SLN.TRN_MSG
+
+@using OG_SLN.Helpers
+
+@{
+    ViewBag.Title = "New Message";
+}
+
+<script type="text/javascript" language="javascript">
+    var zonalcount = 0;
+    $(function () {
+        $('.dialogLink').removeClass('dialogLink').addClass('dialogLinkMultiple');
+
+        $('.dialogLinkMultiple').live('click', function () {
+            var element = $(this);
+
+            // Retrieve values from the HTML5 data attributes of the link
+            var dialogTitle = element.attr('data-dialog-title');
+            var updateTargetId = '#' + element.attr('data-update-target-id');
+            var updateUrl = element.attr('data-update-url');
+
+            var dialogDiv = "<div></div>";
+
+            // Load the form into the dialog div
+            $(dialogDiv).load(this.href, function () {
+                $(this).dialog({
+                    modal: true,
+                    resizable: true,
+                    height: 600,
+                    width: 550,
+                    title: dialogTitle,
+
+                    buttons: {
+                        "Get Selected": function () {
+                            var zonals = $('#zonal_result input[type=checkbox]:checked');
+
+                            var resultdiv = $('#zonalselected');
+                            if (zonals.length > 0 && zonalcount == 0) {
+                                $(resultdiv).append('<tr><th>Full Name</th><th>HR ID</th><th>Mobile</th><th>Email</th></tr>');
+                            }
+                            $.each(zonals, function (i, zonal) {
+                                var parent = $(zonal).parent().parent();
+                                var zonalno = $(parent).find('input[name="ZonalManagers.Index"]').val();
+
+                                var exists = $('#zonalselected').find('input[name="ZonalManagers[' + zonalno + '].USER_NO"]');
+
+                                if (exists.length == 0) {
+                                    var removed = $(parent).find('.check').remove();
+
+                                    $(resultdiv).append('<tr>' + $(parent).html()
+                                        + '<td><a class="delete btn btn-danger" href="#">Delete</a></td></tr>');
+                                    zonalcount++;
+                                }
+                            });
+
+                            //$(this).dialog('close');
+                            $(this).remove();
+                        }
+                    },
+
+                    close: function (event, ui) {
+                        //$(this).dialog('destroy');
+                        $(this).remove();
+                    }
+                });
+            });
+            return false;
+        });
+
+        $('.delete').live('click', function () {
+            $(this).parent().parent().remove();
+        });
+
+        $('.selectall').live('click', function () {
+            $('#zonal_result input[type=checkbox]').prop('checked', true);
+        });
+
+        $('.unselectall').live('click', function () {
+            $('#zonal_result input[type=checkbox]').prop('checked', false);
+        });
+    });
+
+    function verify() {
+        if (confirm("Do you really want to send this message?")) {
+            return true;
+        }
+        return false;
+    }
+</script>
+
+<h2>New Message</h2>
+
+ @using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Post, new { @class = "form-horizontal" }))
+ {
+    @Html.ValidationSummary(true)
+    <div class="col-6 col-sm-6 col-lg-10 marRight_2">
+   
+        <legend>Send New Message</legend>
+        <table class="tabWidth">
+        <tr class="success2">
+               <td>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-5 control-label">
+                        Zonal Manager
+                        @Html.Hidden("USER_NO", "")
+                        @Html.Hidden("ZONAL_TYPE", "multi")
+                    </label>
+                    <div class="col-sm-5">
+                        @Html.ZonalManagerDialogFormLink("Select", Url.Action("ZonalManager", "ViewDCRSheet"), "Select Zonal Manager")
+                        @Html.ValidationMessageFor(model => model.REF_MSG_NO)
+                    </div>
+                </div>
+               
+               </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            @Html.LabelFor(model => model.MSG_SUBJECT)
+                        </label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.MSG_SUBJECT, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.MSG_SUBJECT)
+                        </div>
+                     </div>
+                </td>
+                <td></td>
+                
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            @Html.LabelFor(model => model.MSG_BODY_ML)
+                        </label>
+                        <div class="col-sm-9">
+                            @Html.EditorFor(model => model.MSG_BODY_ML, new { @Class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.MSG_BODY_ML)
+                        </div>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            @*<tr class="success2">
+               <td>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-5 control-label">
+                            @Html.LabelFor(model => model.REF_MSG_NO, "TRN_MSG2")
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.DropDownList("REF_MSG_NO", String.Empty)
+                            @Html.ValidationMessageFor(model => model.REF_MSG_NO)
+                        </div>
+                    </div>
+               </td>
+            </tr>*@
+
+            
+            <tr><table class="table table-responsive" id="zonalselected">
+                </table></tr>
+            <tr><td colspan="3">&nbsp;</td></tr>
+            <tr>  
+                <td colspan="3" style="text-align:center">
+                    <input class="btn btn-success" type="submit" name="Search" id="Search" value="Send Message" onclick="verify();">
+                </td>
+            </tr>
+       </table>
+    
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class="btn btn-primary"})
+</div>

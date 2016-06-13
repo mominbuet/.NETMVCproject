@@ -1,0 +1,122 @@
+D:\OG_SLN\OG_SLN\OG_SLN\obj\Debug\OG_SLN.csprojResolveAssemblyReference.cache
+D:\OG_SLN\OG_SLN\OG_SLN\bin\OG_SLN.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\OG_SLN.pdb
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Antlr3.Runtime.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.AspNet.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.Core.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OAuth.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OpenId.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\EntityFramework.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Ionic.Zip.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Microsoft.Web.Infrastructure.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Newtonsoft.Json.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\OG_SLN.ProcedurePagedList.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\PagedList.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\PagedList.Mvc.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Net.Http.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Net.Http.Formatting.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Net.Http.WebRequest.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Helpers.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Http.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Http.WebHost.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Mvc.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Optimization.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Razor.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.WebPages.Deployment.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.WebPages.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.WebPages.Razor.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\WebGrease.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\WebMatrix.Data.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\WebMatrix.WebData.dll
+D:\OG_SLN\OG_SLN\OG_SLN\bin\OG_SLN.ProcedurePagedList.pdb
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Ionic.Zip.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Newtonsoft.Json.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\PagedList.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\PagedList.Mvc.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\EntityFramework.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Net.Http.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Net.Http.Formatting.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Net.Http.WebRequest.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Helpers.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Http.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Http.WebHost.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Mvc.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.Razor.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.WebPages.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.WebPages.Deployment.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\System.Web.WebPages.Razor.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\WebMatrix.Data.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\WebMatrix.WebData.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.AspNet.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.Core.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OAuth.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OpenId.xml
+D:\OG_SLN\OG_SLN\OG_SLN\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\OG_SLN\OG_SLN\OG_SLN\obj\Debug\OG_SLN.dll
+D:\OG_SLN\OG_SLN\OG_SLN\obj\Debug\OG_SLN.pdb
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\OG_SLN.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\OG_SLN.pdb
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Antlr3.Runtime.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.AspNet.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.Core.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OAuth.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OpenId.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\EntityFramework.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Ionic.Zip.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Microsoft.Web.Infrastructure.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Newtonsoft.Json.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\OG_SLN.ProcedurePagedList.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\PagedList.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\PagedList.Mvc.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Net.Http.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Net.Http.Formatting.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Net.Http.WebRequest.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Helpers.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Http.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Http.WebHost.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Mvc.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Optimization.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Razor.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.WebPages.Deployment.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.WebPages.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.WebPages.Razor.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\WebGrease.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\WebMatrix.Data.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\WebMatrix.WebData.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\OG_SLN.ProcedurePagedList.pdb
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Ionic.Zip.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Newtonsoft.Json.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\PagedList.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\PagedList.Mvc.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\EntityFramework.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Net.Http.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Net.Http.Formatting.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Net.Http.WebRequest.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Helpers.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Http.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Http.WebHost.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Mvc.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.Razor.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.WebPages.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.WebPages.Deployment.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\System.Web.WebPages.Razor.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\WebMatrix.Data.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\WebMatrix.WebData.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.AspNet.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.Core.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OAuth.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OpenId.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\synesisit projects\OG_WINSERVER\OG_SLN\obj\Debug\OG_SLN.csprojResolveAssemblyReference.cache
+D:\synesisit projects\OG_WINSERVER\OG_SLN\obj\Debug\OG_SLN.dll
+D:\synesisit projects\OG_WINSERVER\OG_SLN\obj\Debug\OG_SLN.pdb

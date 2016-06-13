@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OG_SLN.TPR_ASSIGN_MONITOR_GET_Result>
+
+@{
+    int serial = 1;
+}
+
+@foreach (var item in Model)
+{
+    <tr class="trhead">
+        <td>@serial</td>
+
+        <td>
+            <p>@item.USER_FULL_NAME -<br />
+            @item.USER_NAME <br />
+            (@item.USER_MOBILE)</p>
+        </td>
+        
+        <td>@item.DIVISION_NAME,<br />
+            @item.ZILLA_NAME,<br />
+            @item.THANA_NAME
+        </td>
+
+        <td>
+            <a href="#" onclick="return getDetails(@item.USER_NO, 0, 0);"  data-toggle="modal" data-target="#institutes">
+                @item.INS_CNT
+            </a>
+        </td>
+
+        <td>
+            <a href="#" onclick="return getDetails(@item.USER_NO, 0, 0);"  data-toggle="modal" data-target="#institutes">
+                @item.ASSIGN_CNT
+            </a>
+        </td>
+
+        <td>
+            <a href="#" onclick="return getDetails(@item.USER_NO, 1, 0);"  data-toggle="modal" data-target="#institutes">
+                @item.COLLECT_CNT
+            </a>
+        </td>
+
+        <td>
+            <a href="#" onclick="return getDetails(@item.USER_NO, 1, 1);"  data-toggle="modal" data-target="#institutes">
+                @item.NEW_COLLECT
+            </a>
+        </td>
+    </tr> 
+    
+    serial++;
+}

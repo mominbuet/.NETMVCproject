@@ -1,0 +1,205 @@
+﻿@model OG_SLN.SEC_USER_INSTITUTE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SEC_USER_INSTITUTE</legend>
+
+        @Html.HiddenFor(model => model.USER_INSTITUTE_NO)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_TIME)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_USER_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LAST_ACTION_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.LAST_ACTION_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_TIME)
+            @Html.ValidationMessageFor(model => model.INSERT_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_USER_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSERT_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INSERT_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.INSERT_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_TIME)
+            @Html.ValidationMessageFor(model => model.UPDATE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_USER_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_MIGRATED)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_MIGRATED)
+            @Html.ValidationMessageFor(model => model.IS_MIGRATED)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MIGRATE_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MIGRATE_DATE)
+            @Html.ValidationMessageFor(model => model.MIGRATE_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MIGRATE_COMMENTS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MIGRATE_COMMENTS)
+            @Html.ValidationMessageFor(model => model.MIGRATE_COMMENTS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.USER_NO, "SEC_USERS")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("USER_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INSTITUTE_NO, "SET_INSTITUTE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("INSTITUTE_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.INSTITUTE_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_PROCESSED)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_PROCESSED)
+            @Html.ValidationMessageFor(model => model.IS_PROCESSED)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_VOID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_VOID)
+            @Html.ValidationMessageFor(model => model.IS_VOID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_EXIST)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_EXIST)
+            @Html.ValidationMessageFor(model => model.IS_EXIST)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_ACTIVE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_ACTIVE)
+            @Html.ValidationMessageFor(model => model.IS_ACTIVE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_FROM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_FROM)
+            @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTIVE_TO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTIVE_TO)
+            @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SL_NUM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SL_NUM)
+            @Html.ValidationMessageFor(model => model.SL_NUM)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,473 @@
+﻿@model OG_SLN.VIEW_TRN_DCR_APPROVE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>VIEW_TRN_DCR_APPROVE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AGENT_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AGENT_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AGENT_USER_FULL_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AGENT_USER_FULL_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AGENT_USER_MOBILE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AGENT_USER_MOBILE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AGENT_USER_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AGENT_USER_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_REF_ZM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_REF_ZM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REF_ZM_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REF_ZM_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REF_ZM_USER_FULL_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REF_ZM_USER_FULL_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REF_ZM_USER_MOBILE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REF_ZM_USER_MOBILE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REF_ZM_USER_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REF_ZM_USER_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REF_ZM_MOBILE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REF_ZM_MOBILE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WORK_AREA_FROM_LAT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WORK_AREA_FROM_LAT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WORK_AREA_FROM_LON)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WORK_AREA_FROM_LON)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WORK_AREA_FROM_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WORK_AREA_FROM_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WORK_AREA_TO_LAT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WORK_AREA_TO_LAT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WORK_AREA_TO_LON)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WORK_AREA_TO_LON)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WORK_AREA_TO_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WORK_AREA_TO_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TIME_FROM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TIME_FROM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TIME_TO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TIME_TO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TIME_GAP)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TIME_GAP)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DIVISION_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DIVISION_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DIVISION_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DIVISION_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DIVISION_NAME_BNG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DIVISION_NAME_BNG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DIVISION_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DIVISION_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZONE_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZONE_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZONE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZONE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZONE_NAME_BNG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZONE_NAME_BNG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZONE_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZONE_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZILLA_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZILLA_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZILLA_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZILLA_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZILLA_NAME_BNG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZILLA_NAME_BNG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ZILLA_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZILLA_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.THANA_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.THANA_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.THANA_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.THANA_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.THANA_NAME_BNG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.THANA_NAME_BNG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.THANA_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.THANA_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSTITUTE_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSTITUTE_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSTITUTE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSTITUTE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSTITUTE_NAME_BNG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSTITUTE_NAME_BNG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSTITUTE_DESC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSTITUTE_DESC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.F_INSTITUTION_DB_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.F_INSTITUTION_DB_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EIIN_NUMBER)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EIIN_NUMBER)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INST_TYPE_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INST_TYPE_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INST_TYPE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INST_TYPE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INST_TYPE_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INST_TYPE_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INST_TYPE_DESC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INST_TYPE_DESC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TRANS_TYPE_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TRANS_TYPE_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TRANS_TYPE_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TRANS_TYPE_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TRANS_TYPE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TRANS_TYPE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.APPROVE_TRANS_TYPE_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.APPROVE_TRANS_TYPE_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.APPROVE_TRANS_TYPE_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.APPROVE_TRANS_TYPE_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.APPROVE_TRANS_TYPE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.APPROVE_TRANS_TYPE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FARE_AMT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FARE_AMT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.APPROVE_FARE_AMT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.APPROVE_FARE_AMT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.APPROVE_TYPE_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.APPROVE_TYPE_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.APPROVE_TYPE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.APPROVE_TYPE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REASON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REASON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REASON_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REASON_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REASON_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REASON_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REAMRKS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REAMRKS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_MANUAL_ENTRY)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_MANUAL_ENTRY)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_TRN_LOCKED)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_TRN_LOCKED)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IS_LOCK_BY_SYSTEM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_LOCK_BY_SYSTEM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OFFLINE_DCR_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OFFLINE_DCR_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.COMMENTS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.COMMENTS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INSERT_IS_OFFLINE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INSERT_IS_OFFLINE)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

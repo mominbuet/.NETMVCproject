@@ -1,0 +1,51 @@
+﻿@{
+    OG_SLN.InsituteSearch insSearch = ViewBag.insSearch as OG_SLN.InsituteSearch;
+}
+@using (Html.BeginForm(ViewContext.RouteData.GetRequiredString("action"), ViewContext.RouteData.GetRequiredString("Controller"), FormMethod.Get, new { @class = "form-horizontal" }))
+{
+    <div class="col-8 marRight_2">
+        <table class="tabWidth">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">
+                        Institute name :
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("insName", @insSearch.insName, new { @class = "form-control" })
+                    </td>
+                    <td class="midWidth"></td>
+                    <td class="adminLef_col">
+                        Institute Id :
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("insID", @insSearch.insID, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                        EIIN NUMBER:
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("EIIN_NUMBER", @insSearch.EIIN_NUMBER, new { @class = "form-control" })
+                    </td>
+                    <td class="midWidth"></td>
+                    <td class="adminLef_col">
+                        F INSTITUTION DB ID
+                    </td>
+                    <td class="adminRight_col">
+                        @Html.TextBox("F_INSTITUTION_DB_ID", @insSearch.F_INSTITUTION_DB_ID, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Submit1" class="btn btn-success" type="submit" value="Search" />
+                    </td>
+                    <td>
+                        <input id="Reset1" class="btn btn-warning" type="reset" value="Reset" />
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+    </div>
+}

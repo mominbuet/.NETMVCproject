@@ -1,0 +1,109 @@
+﻿@model OG_SLN.GEN_CONTROLLER_ACTION
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>GEN_CONTROLLER_ACTION</legend>
+
+        @Html.HiddenFor(model => model.ACTION_NO)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CONTROLLER_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CONTROLLER_NAME)
+            @Html.ValidationMessageFor(model => model.CONTROLLER_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ACTION_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ACTION_NAME)
+            @Html.ValidationMessageFor(model => model.ACTION_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_ACTIVE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_ACTIVE)
+            @Html.ValidationMessageFor(model => model.IS_ACTIVE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_PUBLIC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_PUBLIC)
+            @Html.ValidationMessageFor(model => model.IS_PUBLIC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PARENT_ACTION_NO, "GEN_CONTROLLER_ACTION2")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PARENT_ACTION_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.PARENT_ACTION_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_MENU)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_MENU)
+            @Html.ValidationMessageFor(model => model.IS_MENU)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MENU_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MENU_NAME)
+            @Html.ValidationMessageFor(model => model.MENU_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PARENT_MENU_NO, "GEN_CONTROLLER_ACTION3")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PARENT_MENU_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.PARENT_MENU_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IS_SUB_MENU)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_SUB_MENU)
+            @Html.ValidationMessageFor(model => model.IS_SUB_MENU)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DETAILS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DETAILS)
+            @Html.ValidationMessageFor(model => model.DETAILS)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

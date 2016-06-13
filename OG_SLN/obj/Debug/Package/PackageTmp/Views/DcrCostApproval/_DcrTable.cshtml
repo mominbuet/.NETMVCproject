@@ -1,0 +1,266 @@
+﻿@{
+    Layout = null;
+    IList<OG_SLN.TRN_DCR_APPROVAL_GET_Result> dcr_list = ViewBag.dcr_List as IList<OG_SLN.TRN_DCR_APPROVAL_GET_Result>;   
+}
+<br />
+<h2>
+    DCR Entry</h2>
+<script type="text/javascript">
+function changeSDonApprove(dcr_det_id){
+    
+    //console.log(dcr_det_id.attr('attr'));
+            /*console.log($("#txtsdup"+$(this).attr('attr')).attr('value'));*/
+            $.getJSON("@Url.Content("~")"+"DcrCostApproval/setUpdatedSDQuantity?dcrDetNo="+dcr_det_id.attr('attr')+"&value="+$("#txtsdup"+dcr_det_id.attr('attr')).val(), function( data ) {
+                
+                console.log(data.html);
+                if(data.html=="1")
+                    alert("Specimen quantity updated successfully.");
+                else
+                    alert("Somehing went wrong, the process is logged.");
+            });
+}
+    $(document).ready(function () {
+        
+        $(".mdl").on("click", function () {
+            var dcrNo = ($(this).attr("attr"));
+            $.getJSON("@Url.Content("~")"+"DcrCostApproval/getDCRDetailsEditable?dcrNo="+dcrNo, function( data ) {
+                
+                $(".modal-body").html(data.html);
+            });
+        });
+    });
+</script>
+<div style="display: none;" class="modal fade bs-example-modal-lg" tabindex="-1"
+    role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    Close</button>
+                <h4 class="modal-title" id="myLargeModalLabel">
+                    DCR Details</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<br />
+<table class="table table-responsive table-bordered table-hover tabWidth small-font">
+    <tr class="success" style="font-size: 1.1em">
+        <th>
+            Distributor Name
+        </th>
+        <th>
+            Designation
+        </th>
+        <th>
+            Institution Name, Thana, Zilla, Division
+        </th>
+        <th>
+            Meet Person Cell
+        </th>
+        <th>
+            Area From-To /<br />
+            Comments
+        </th>
+        <th>
+            Time From-To
+        </th>
+        <th>
+            Work Type
+        </th>
+        <th>
+            Transport Type
+        </th>
+        <th>
+            Fare (TK)
+        </th>
+        @if (!(bool)Session["sess_Is_ZonalOrAgent"])
+        {
+            <th>
+                Status
+            </th>
+        }
+    </tr>
+    @foreach (var item in dcr_list)
+    {
+        string tr_class = @"information";
+        string btn_class = @" btn-primary btn-sm";
+        if (item.CNT_VAL != 0)
+        {
+            btn_class = @" btn-default btn-danger";
+        }
+        if (item.APPROVE_TYPE_NO.HasValue)
+        {
+            if (item.APPROVE_TYPE_NO == 1)
+            {
+                tr_class = @"success";
+            }
+            else if (item.APPROVE_TYPE_NO == 2)
+            {
+                tr_class = @"danger";
+            }
+            else
+            {
+            }
+        }
+        <tr id="@item.DCR_NO" class="@tr_class">
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_FULL_NAME)
+                <br />
+                (@Html.DisplayFor(modelItem => item.USER_MOBILE))
+                @if (item.IS_REF_ZM != null)
+                {
+                    if (item.IS_REF_ZM != 0 && item.REF_USER_FULL_NAME != null)
+                    {
+                    @Html.Raw("on behalf ") @item.REF_USER_FULL_NAME
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESIG_CODE)
+            </td>
+            <td>
+                @if (item.INSTITUTE_NO != null)
+                {
+                    @Html.DisplayFor(modelItem => item.INSTITUTE_NAME)
+                    @Html.Raw("(")
+                    @Html.ValueFor(modelItem => item.INSTITUTE_NO, "{0:0}")
+                    @Html.Raw(")")
+                }
+                @Html.Raw(",")
+                @Html.DisplayFor(modelItem => item.THANA_NAME),
+                @Html.DisplayFor(modelItem => item.ZILLA_NAME),
+                @Html.DisplayFor(modelItem => item.DIVISION_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TEACHER_MOBILE)
+                @Html.DisplayFor(modelItem => item.CLIENT_MOBILE)
+            </td>
+            <td>
+                @if (!String.IsNullOrEmpty(item.WORK_AREA_FROM_LAT.ToString()))
+                {
+                    <a class="btn btn-link" target="_blank" title="@item.WORK_AREA_FROM_LAT : @item.WORK_AREA_FROM_LON" href="https://www.google.com/maps/place/@item.WORK_AREA_FROM_LAT,@item.WORK_AREA_FROM_LON" >@item.WORK_AREA_FROM_NAME</a>
+                }
+                else
+                {
+                    @item.WORK_AREA_FROM_NAME
+                }
+                - @*<a class="btn btn-link" title="@item.WORK_AREA_TO_LAT : @item.WORK_AREA_TO_LON" href="#">@item.WORK_AREA_TO_NAME</a>*@
+                @if (!String.IsNullOrEmpty(item.WORK_AREA_TO_LAT.ToString()))
+                {
+                    <a class="btn btn-link" target="_blank" title="@item.WORK_AREA_TO_LAT : @item.WORK_AREA_TO_LON" href="https://www.google.com/maps/place/@item.WORK_AREA_TO_LAT,@item.WORK_AREA_TO_LON" >@item.WORK_AREA_TO_NAME</a>
+                }
+                else
+                {
+                    @item.WORK_AREA_TO_NAME
+                }
+                @if (!String.IsNullOrEmpty(item.WORK_AREA_FROM_LAT.ToString()) && !String.IsNullOrEmpty(item.WORK_AREA_FROM_LON.ToString())
+                    && !String.IsNullOrEmpty(item.WORK_AREA_TO_LAT.ToString()) && !String.IsNullOrEmpty(item.WORK_AREA_TO_LON.ToString()))
+                { 
+                    <a class="btn btn-link" target="_blank" href="https://www.google.com/maps/dir/'@item.WORK_AREA_FROM_LAT,@item.WORK_AREA_FROM_LON'/'@item.WORK_AREA_TO_LAT,@item.WORK_AREA_TO_LON'" >
+                        Path</a>
+                }
+                <p>
+                @if (!string.IsNullOrEmpty(item.COMMENTS))
+                {
+                    <span style="color:Blue">
+                        Comments:
+                        @item.COMMENTS
+                    </span>
+                }
+                </p>
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.TIME_FROM, "{0:dd-MM-yyyy}") at
+                @Html.ValueFor(modelItem => item.TIME_FROM, "{0:HH:mm}")
+                to
+                @Html.ValueFor(modelItem => item.TIME_TO, "{0:HH:mm}")
+            </td>
+            <td>
+                <button class="@btn_class mdl" attr="@item.DCR_NO" data-toggle="modal" data-target=".bs-example-modal-lg">@item.DCR_TYPE_CODE</button>
+                @* @Html.DisplayFor(modelItem => item.DCR_TYPE_CODE)*@
+            </td>
+            <td>
+                @* @{
+                Func<char, MvcHtmlString> function = (c) => Model != null && item.TRANS_TYPE_NO == c
+                ? MvcHtmlString.Create("selected='selected'")
+                : MvcHtmlString.Empty;
+                }
+                @Html.DropDownList("trnasType")*@ @*@Html.DropDownListFor(modelItem => item.TRANS_TYPE_NO, ViewBag.trnasType as SelectList)*@
+                <select runat="server" id="ddl_@item.DCR_NO" style="min-width:85px">
+                    @foreach (var irm in ViewBag.trnasType)
+                    {
+                        <option value="@irm.TRANS_TYPE_NO" @((item.APPROVE_TRANS_TYPE_NO == irm.TRANS_TYPE_NO) ? "selected=selected" : "")>
+                            @irm.TRANS_TYPE_NAME</option>            
+                    }
+                </select>
+            </td>
+            <td>
+                <input id="txt_@item.DCR_NO" class = "form-control input-small input-block-level dcrCost" value="@item.APPROVE_FARE_AMT" style="width:55px" />
+                @*@Html.TextBoxFor(modelItem => item.FARE_AMT, "{0:0}", new { @class = "form-control input-small input-block-level" })*@
+            </td>
+            @if (!(bool)Session["sess_Is_ZonalOrAgent"])
+            {
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        @if (item.APPROVE_TYPE_NO.HasValue) { if (item.APPROVE_TYPE_NO != 1) {
+                        <button id="btnConfirm" attr="@item.DCR_NO"  class="btn btn-success " onclick="btnConfirm($(this),1);dcrCost=0;set_dcr_cost();" >
+                            Approve</button>
+                        } } else {
+                        <button id="btnConfirm" attr="@item.DCR_NO"  class="btn btn-success " onclick="btnConfirm($(this),1);dcrCost=0;set_dcr_cost();" >
+                            Approve</button>
+                        } @if (item.APPROVE_TYPE_NO.HasValue) { if (item.APPROVE_TYPE_NO != 2) {
+                        <button id="btnReject" attr="@item.DCR_NO" class="btn btn-warning " value="Reject" onclick="btnConfirm($(this),2);dcrCost=0;set_dcr_cost();">
+                            Reject</button>
+                        } } else {
+                        <button id="btnReject" attr="@item.DCR_NO" class="btn btn-warning " value="Reject" onclick="btnConfirm($(this),2);dcrCost=0;set_dcr_cost();">
+                            Reject</button>
+                        }
+                    </div>
+                </td>
+            }
+        </tr>
+    }
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <b>Total</b>
+        </td>
+        <td id="lblTotal">
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    var dcrCost = 0;
+    $(document).ready(function () {
+        set_dcr_cost();
+    });
+    function set_dcr_cost() {
+        $(".dcrCost").each(function () {
+            //alert($(this).val());
+            if ($(this).val() != "")
+                dcrCost += parseFloat($(this).val());
+        });
+        $("#lblTotal").html(dcrCost);
+    }
+</script>
+@{Html.RenderPartial("_ExpenseTable");}

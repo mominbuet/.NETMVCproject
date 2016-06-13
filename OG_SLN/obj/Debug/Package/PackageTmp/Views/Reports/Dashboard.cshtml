@@ -1,0 +1,340 @@
+﻿@using OG_SLN.Models
+@using OG_SLN.Helpers
+
+@model System.Data.Objects.ObjectResult<OG_SLN.DASHBOARD_REPORT_Result>
+@{
+    ViewBag.Title = "Dashboard";
+
+    long dcrCountEntered = 0;
+    long dcrCountApproved = 0;
+    long derCountEntered = 0;
+    long derCountApproved = 0;
+
+    long dcrAmountClaimed = 0;
+    long dcrAmountApproved = 0;
+    long derAmountClaimed = 0;
+    long derAmountApproved = 0;
+
+    long sdCountReceived = 0;
+    long sdCountReturned = 0;
+    long sdCountDelivered = 0;
+
+    int count = 0;
+}
+<h2>
+    Dashboard
+</h2>
+
+<style type="text/css">
+    .right
+    {
+        text-align:right;
+    }
+</style>
+
+@{
+
+    string datefrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+    string dateto = DateTime.Today.ToString("yyyy-MM-dd");
+    string amno = "";
+
+    DashboardSearchModel searchModel = ViewBag.Search_Model as DashboardSearchModel;
+    if (searchModel != null)
+    {
+        if (searchModel.Search_AM_User.HasValue)
+        {
+            amno = searchModel.Search_AM_User.Value.ToString();
+        }
+        if (searchModel.Search_Date_From.HasValue)
+        {
+            datefrom = searchModel.Search_Date_From.Value.ToString("yyyy-MM-dd");
+        }
+        if (searchModel.Search_Date_To.HasValue)
+        {
+            dateto = searchModel.Search_Date_To.Value.ToString("yyyy-MM-dd");
+        }
+    }
+}
+<div class="row">
+@using (Html.BeginForm("Dashboard", "Reports", FormMethod.Get, new { @id = "DashboardForm" }))
+{   
+    <div class="col-6 col-sm-6 col-lg-10 marRight_2">
+        <table class="tabWidth">
+            <tbody>
+                <tr>
+                    <td class="adminLef_col">
+                        Date From:
+                    </td>
+                    <td class="td_1 adminRight_col">
+                        @Html.TextBox("Search_Date_From", datefrom, new { @class = "dateclass form-control" })
+                    </td>
+                    <td class="midWidth">
+                        &nbsp;
+                    </td>
+                    <td class="adminLef_col">
+                        Date To:
+                    </td>
+                    <td class="td_1 adminRight_col">
+                        @Html.TextBox("Search_Date_To", dateto, new { @class = "dateclass  form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminLef_col">
+                    </td>
+                    <td class="adminRight_col">
+                    </td>
+                    <td class="midWidth">
+                    </td>
+                    <td style="text-align: center;">
+                        <input class="btn btn-success" type="submit" name="Search" id="Search" value="Search" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+}
+</div>
+
+@if (Model != null)
+{
+    decimal? prev_am_no = null;
+    
+    <div class="row table-responsive">
+        <table class="table table-stripped table-responsive table-bordered table-hover tabWidth">
+            <tr>
+                <th colspan="3" class="right"></th>
+                <th colspan="2" class="right">DCR</th>
+                <th colspan="2" class="right">DER</th>
+                <th colspan="2" class="right">DCR (Taka)</th>
+                <th colspan="2" class="right">DER (Taka)</th>
+                <th colspan="3" class="right">SD</th>
+            </tr>
+            <tr>
+                <th>AM Name</th>
+                <th>ZM Name <br /> ID (Cell) </th>
+                <th>Division, <br />Zilla,<br /> Thana</th>
+                <th class="right">Entered</th>
+                <th class="right">Approved</th>
+                <th class="right">Entered</th>
+                <th class="right">Approved</th>
+                <th class="right">Claimed</th>
+                <th class="right">Approved</th>
+                <th class="right">Claimed</th>
+                <th class="right">Approved</th>
+                <th class="right">Received</th>
+                <th class="right">Returned</th>
+                <th class="right">Delivered</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                count++;
+                string trclass = " class=warning";
+                if (count % 2 != 0)
+                {
+                    trclass = "";
+                }
+                <tr @trclass>
+                @if (item.AM_NO == prev_am_no)
+                {
+                    <td></td> 
+                }
+                else
+                {
+                    prev_am_no = item.AM_NO;
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AM_NAME)
+                    </td>
+                }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZM_NAME)
+                        <br />
+                        @item.USER_NAME (@item.USER_MOBILE)
+                    </td>
+                    <td>
+                        @item.DIVISION_NAME,
+                        <br />
+                        @item.ZILLA_NAME,
+                        <br />
+                        @item.THANA_NAME
+                    </td>
+                    <td class="right">
+                        @long.Parse(item.DCR_CNT.ToString())
+                        @{ dcrCountEntered += (long)item.DCR_CNT; }
+                    </td>
+                    <td class="right">
+                        @long.Parse(item.DCR_APPR_CNT.ToString())
+                        @{ dcrCountApproved += (long)item.DCR_APPR_CNT; }
+                    </td>
+                    <td class="right">
+                        @long.Parse(item.DER_CNT.ToString())
+                        @{ derCountEntered += (long)item.DER_CNT; }
+                    </td>
+                    <td class="right">
+                        @long.Parse(item.DER_APPR_CNT.ToString())
+                        @{ derCountApproved += (long)item.DER_APPR_CNT; }
+                    </td>
+                    <td class="right">
+                        @Html.ThousandConvert((long)item.DCR_AMT)
+                        @{ dcrAmountClaimed += (long)item.DCR_AMT; }
+                    </td>
+                    <td class="right">
+                        @Html.ThousandConvert((long)item.DCR_APPR_AMT)
+                        @{ dcrAmountApproved += (long)item.DCR_APPR_AMT; }
+                    </td>
+                    <td class="right">
+                        @Html.ThousandConvert((long)item.DER_AMT)
+                        @{ derAmountClaimed += (long)item.DER_AMT; }
+                    </td>
+                    <td class="right">
+                        @Html.ThousandConvert((long)item.DER_APPR_AMT)
+                        @{ derAmountApproved += (long)item.DER_APPR_AMT; }
+                    </td>
+                    <td class="right">
+                        @long.Parse(item.REC_QTY.ToString())
+                        @{ sdCountReceived += (long)item.REC_QTY; }
+                    </td>
+                    <td class="right">
+                        @long.Parse(item.RET_QTY.ToString())
+                        @{ sdCountReturned += (long)item.RET_QTY; }
+                    </td>
+                    <td class="right">
+                        @long.Parse(item.DELI_QTY.ToString())
+                        @{ sdCountDelivered += (long)item.DELI_QTY; }
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <th colspan="3" class="right"></th>
+                <th colspan="2" class="right">DCR</th>
+                <th colspan="2" class="right">DER</th>
+                <th colspan="2" class="right">DCR (Taka)</th>
+                <th colspan="2" class="right">DER (Taka)</th>
+                <th colspan="3" class="right">SD</th>
+            </tr>
+            <tr>
+                <th colspan="3" class="right"></th>
+                <th class="right">Entered</th>
+                <th class="right">Approved</th>
+                <th class="right">Entered</th>
+                <th class="right">Approved</th>
+                <th class="right">Claimed</th>
+                <th class="right">Approved</th>
+                <th class="right">Claimed</th>
+                <th class="right">Approved</th>
+                <th class="right">Received</th>
+                <th class="right">Returned</th>
+                <th class="right">Delivered</th>
+            </tr>
+
+            <tr>
+                <td colspan="3" class="right" style="font-weight: bold">
+                    Total
+                </td>
+                <td class="right">@dcrCountEntered</td>
+                <td class="right">@dcrCountApproved</td>
+                <td class="right">@derCountEntered</td>
+                <td class="right">@derCountApproved</td>
+                <td class="right">@Html.ThousandConvert(dcrAmountClaimed)</td>
+                <td class="right">@Html.ThousandConvert(dcrAmountApproved)</td>
+                <td class="right">@Html.ThousandConvert(derAmountClaimed)</td>
+                <td class="right">@Html.ThousandConvert(derAmountApproved)</td>
+                <td class="right">@sdCountReceived</td>
+                <td class="right">@sdCountReturned</td>
+                <td class="right">@sdCountDelivered</td>
+            </tr>
+
+            @if (count > 0)
+            {
+            <tr>
+                <td colspan="3" class="right" style="font-weight: bold">
+                    AVG
+                </td>
+                <td class="right">@decimal.Parse(((decimal)dcrCountEntered / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)dcrCountApproved / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)derCountEntered / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)derCountApproved / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)dcrAmountClaimed / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)dcrAmountApproved / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)derAmountClaimed / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)derAmountApproved / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)sdCountReceived / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)sdCountReturned / count).ToString("F2"))</td>
+                <td class="right">@decimal.Parse(((decimal)sdCountDelivered / count).ToString("F2"))</td>
+            </tr>
+                
+                decimal dcrCountPercent = 0;
+                decimal derCountPercent = 0;
+                decimal dcrAmountPercent = 0;
+                decimal derAmountPercent = 0;
+
+                decimal sdReturnedPercent = 0;
+                decimal sdDeliveredPercent = 0;
+                if (dcrCountEntered > 0)
+                {
+                    dcrCountPercent = (decimal)dcrCountApproved / dcrCountEntered;
+                }
+                if (derCountEntered > 0)
+                {
+                    derCountPercent = (decimal)derCountApproved / derCountEntered;
+                }
+                if (dcrAmountClaimed > 0)
+                {
+                    dcrAmountPercent = (decimal)dcrAmountApproved / dcrAmountClaimed;
+                }
+                if (derAmountClaimed > 0)
+                {
+                    derAmountPercent = (decimal)derAmountApproved / derAmountClaimed;
+                }
+
+                if (sdCountReceived > 0)
+                {
+                    sdReturnedPercent = (decimal)sdCountReturned / sdCountReceived;
+                    sdDeliveredPercent = (decimal)sdCountDelivered / sdCountReceived;
+                }
+                
+            <tr>
+                <td colspan="3" class="right" style="font-weight: bold">
+                    %
+                </td>
+                <td colspan="2" class="right">@dcrCountPercent.ToString("P")</td>
+                <td colspan="2" class="right">@derCountPercent.ToString("P")</td>
+                <td colspan="2" class="right">@dcrAmountPercent.ToString("P")</td>
+                <td colspan="2" class="right">@derAmountPercent.ToString("P")</td>
+                <td colspan="2" class="right">@sdReturnedPercent.ToString("P")</td>
+                <td             class="right">@sdDeliveredPercent.ToString("P")</td>
+            </tr>
+            }
+            
+            <tr style="font-weight: bold">
+                <td colspan="3" class="right">DCR & DER</td>
+                <td colspan="2" class="right">Claimed (Taka)</td>
+                <td colspan="2" class="right">Approved (Taka)</td>
+                <td colspan="7" class="right"></td>
+            </tr>
+
+            @{
+                long totalAmountClaimed = dcrAmountClaimed + derAmountClaimed;
+                long totalAmountApproved = dcrAmountApproved + derAmountApproved;
+            }
+
+            <tr>
+                <td colspan="3" class="right" style="font-weight: bold">Total</td>
+                <td colspan="2" class="right">@Html.ThousandConvert(totalAmountClaimed)</td>
+                <td colspan="2" class="right">@Html.ThousandConvert(totalAmountApproved)</td>
+                <td colspan="7" class="right"></td>
+            </tr>
+            @if (totalAmountClaimed > 0)
+            {
+                decimal totalAmountPercent = (decimal)totalAmountApproved / totalAmountClaimed;
+            
+            <tr>
+                <td colspan="3" class="right" style="font-weight: bold">%</td>
+                <td colspan="4" class="right">@totalAmountPercent.ToString("P")</td>
+                <td colspan="7" class="right"></td>
+            </tr>
+            }
+        </table>
+    </div>
+}

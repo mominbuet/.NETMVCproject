@@ -1,0 +1,48 @@
+﻿@using OG_SLN.Models
+@model List<OG_SLN.DCR_PUB_ACCOUNTS_GET_Result>
+@{
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "AccountsPanel";
+    int serialno = 1;
+}
+<h2>
+    Accounts Manager Panel</h2>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Filter_Type').val('A');
+
+        $('.pubselect').live('click', function () {
+            $('#Search_pubno').val($(this).attr('pub-no'));
+
+            var frm = $('form');
+            var url = $(frm).attr('action');
+            var data = $(frm).serialize();
+
+            $.post(url, data, function (res) {
+                $('#div_display').html(res);
+            });
+            return false;
+        });
+
+        $('#disburse').live('click', function () {
+            if ($('#comment').val() == '') {
+                alert("Please put your comments !!!");
+                return;
+            }
+
+            var data = {
+                'Comments': $('#comment').val(),
+                'PUBLISH_NO': $('#Search_pubno').val()
+            };
+
+            $.post("/Publish/DcrDoDisburse", data, function (res) {
+                console.log(res);
+            });
+        });
+    });
+</script>
+<div id="div_search">
+    @{Html.RenderPartial("_PublishListSearchPartial", new ViewDataDictionary { {"Filter_Type", "A"}});}
+</div>
+<div id="div_display">
+</div>

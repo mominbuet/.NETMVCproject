@@ -1,0 +1,64 @@
+﻿@model IEnumerable<OG_SLN.VIEW_TRN_EXPENSE_APPROVE_GET_Result>
+@{
+    Layout = null;
+}
+<p>&nbsp;
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<div class="row">
+      <div class="col-8 marRight_2">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover tabWidth">
+    <tr class="success">        
+        <th>            
+            @Html.DisplayName("Fiscal Year")
+        </th>
+        <th>
+            @Html.DisplayName("ZM")
+        </th>
+        <th>
+            @Html.DisplayName("Agent")
+        </th>                
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        <th>
+            @Html.DisplayName("Approval Status")
+        </th>        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>        
+        <td>
+            @Html.DisplayFor(modelItem => item.FY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZM_USER_FULL_NAME) 
+            Mob: 
+            @Html.DisplayFor(modelItem => item.ZM_USER_MOBILE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AGENT_USER_FULL_NAME)
+            Mob: 
+            @Html.DisplayFor(modelItem => item.AGENT_USER_MOBILE)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.TRN_EXP_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_TYPE)
+        </td>  
+         @if (!(bool)Session["sess_Is_ZonalOrAgent"])
+         {      
+        <td>
+            @Html.ActionLink("View", "Details", new { id = item.EXP_NO }, new { @target = "_blank" })             
+        </td>
+         }
+    </tr>
+}
+
+</table>
+</div>
+</div>
+</div>

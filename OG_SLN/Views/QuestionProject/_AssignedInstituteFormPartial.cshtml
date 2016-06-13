@@ -1,0 +1,182 @@
+﻿
+@{
+    decimal PROJECT_NO = ViewBag.PROJECT_NO;
+    decimal USER_NO = ViewBag.USER_NO;
+}
+<script type="text/javascript">
+
+    function get_zilla(){ 
+        $.ajax({
+            url: "@Url.Content("~")"+"web/webrequests/zilla/"+$("#Division_No").val(),
+            dataType: "json",
+            success: function(data) {
+                $("#Zilla_No").empty();
+                $("#Zonal_Thana").empty();
+                $("#Zilla_No").append('<option value=""></option>');
+                $.each(data, function(i, val){
+                    $("#Zilla_No").append('<option value="' + val.zillano + '">' + val.zillaname + '</option>');
+                }); 
+                        
+            }, error: function(data) {
+                console.log('error :' + data);
+            }
+        });
+    }
+
+    function get_thana(){
+        $.ajax({
+            url: "@Url.Content("~")"+"web/webrequests/thana/"+$("#Zilla_No").val(),
+            dataType: "json",
+            success: function(data) {
+                $("#Zonal_Thana").empty();
+                $("#Zonal_Thana").append('<option value=""></option>');
+                $.each(data, function(i, val){
+                    $("#Zonal_Thana").append('<option value="' + val.thanano + '">' + val.thananame + '</option>');
+                }); 
+                        
+            }, error: function(data) {
+                console.log('error :' + data);
+            }
+        });
+    }
+    
+
+    function institute_search() {
+        var form = $('#GetAssignedInstituteForm');
+
+        $.ajax({
+            url: "@Url.Content("~")" + "web/webrequests/AssignedInstitute",
+            type: 'POST',
+            data: form.serialize(),
+            dataType: 'json',
+            success: function (data) {
+                var resdiv = $('#ins_result');
+                $(resdiv).empty();
+
+                if(data.length > 0)
+                {
+                    var header = '<tr><th>Select</th><th>Institute Name</th><th>Division, <br />Zilla, Thana</th><th>Code</th><th>EIIN</th></tr>';
+                    $(resdiv).append(header);
+                }
+
+                $.each(data, function(i, v) {
+                    var html = '';
+                    html += '<tr>';
+                    html += '<td><a href="#" data-ins-name="'+ v.insname +'" data-division="'+ v.division +'" data-zilla="'+ v.zilla +'" data-thana="'+ v.thana +'" class="selectlink" no="'+v.insno+'">Select</a></td>';
+                    html += '<td>'+ v.insname + '</td>';
+                    html += '<td>'+ v.division + '<br />,' + v.zilla + ',' + v.thana +'</td>';
+                    html += '<td>'+ v.insno +'</td>';
+                    html += '<td>'+ v.inseiin +'</td>';
+                    html += '</tr>';
+
+                    $(resdiv).append(html);
+                });
+
+                $('.selectlink').live('click', function () {
+                    var insno = $(this).attr('no');
+                    $("#INSTITUTE_NO").val(insno);
+                    /*
+                    $("#Search_Insert_User").val(zonalno);
+                    $("#Search_User").val(zonalno);
+                    $("#Selected_Zonal").val($(this).parent().next().text());
+                    $("#Zonal_Name").val($(this).parent().next().text());
+                    //console.log($(this).text());
+                    //$('div.ui-dialog-content').dialog('destroy');
+                    */
+                    $('#txtINS').val($(this).attr('data-ins-name'));
+
+                    var content = '';
+
+                    content += '<table class="table table-responsive table-bordered tabWidth">';
+                    content += '<tr><td class="tdLeft">Institute :</td><td>' + $(this).attr('data-ins-name') + '</td></tr>';
+                    content += '<tr><td class="tdLeft">Code :</td><td>' + insno + '</td></tr>';
+                    content += '<tr><td class="tdLeft">Division :</td><td>' + $(this).attr('data-division') + '</td></tr>';
+                    content += '<tr><td class="tdLeft">Zilla :</td><td>' + $(this).attr('data-zilla') + '</td></tr>';
+                    content += '<tr><td class="tdLeft">Thana :</td><td>' + $(this).attr('data-thana') + '</td></tr>';
+                    content += '</table>';
+
+                    $('#ins_res').html(content);
+
+                    $('#Search').trigger('click');
+
+                    $('div.ui-dialog-content').remove();
+                });
+            }
+        });
+    }
+    
+</script>
+
+<style type="text/css">
+    .Left_col
+    {
+        width: 120px;
+        vertical-align: top;
+    }
+    
+    .Right_col
+    {
+        width: 150px;
+        padding: 0 15px 20px 0;
+    }
+</style>
+
+@using (Html.BeginForm("AssignedInstitute", "WebRequests", FormMethod.Post, new { @id = "GetAssignedInstituteForm" }))
+{ 
+    @Html.ValidationSummary(true)
+
+    <div>
+    <table>
+      <tr>
+        <td class="Left_col">Institute Name:</td>
+        <td class="Right_col">
+            @Html.Hidden("PROJECT_NO", PROJECT_NO)
+            @Html.Hidden("USER_NO", USER_NO)
+            <input class="form-control" type="text" name="Institute_Name" id="Institute_Name" value="" />
+        </td>
+
+        <td class="Left_col">Institute Code:</td>
+        <td class="Right_col">
+            <input class="form-control" type="text" name="Institute_Code" id="Institute_Code" value="" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class="Left_col">Institute EIIN:</td>
+        <td class="Right_col">
+            <input class="form-control" type="text" name="Institute_Eiin" id="Institute_Eiin" value="" />
+            
+        </td>
+
+        <td class="Left_col">Division:</td>
+        <td class="Right_col">
+            @Html.DropDownList("Division_No", ViewBag.Division_No as IEnumerable<SelectListItem>, String.Empty, new { @onchange="get_zilla();" })
+        </td>
+      </tr>
+
+
+      <tr>
+        <td class="Left_col">Zilla:</td>
+        <td class="Right_col">
+            @Html.DropDownList("Zilla_No", null, new { @onchange = "get_thana();" })
+        </td>
+
+        <td class="Left_col">Thana:</td>
+        <td class="Right_col">
+            @Html.DropDownList("Zonal_Thana", String.Empty)
+        </td>
+      </tr>
+
+
+      <tr>
+        <td colspan="4">
+            <input class="btn btn-success butTop_1" type="button" onclick="institute_search();" value="Get Assigned Institutes" />
+        </td>
+      </tr>
+    </table>
+    </div>
+}
+
+<table id="ins_result" class="table table-responsive table-bordered tabWidth">
+    
+</table>
